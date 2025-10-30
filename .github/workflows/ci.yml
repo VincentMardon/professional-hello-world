@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Say hello professionally
-        run: echo "Tunning professional hello world pipeline..."
+        run: echo "Running professional hello world pipeline..."
