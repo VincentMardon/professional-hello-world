@@ -1,4 +1,4 @@
-# Professional Hello World! ->[👨🏻‍💻](coding-cat.png)<-
+# Professional Hello World! ->[👨🏻‍💻](docs/assets/images/coding-cat.png)<-
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](#)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-blue)](#)
