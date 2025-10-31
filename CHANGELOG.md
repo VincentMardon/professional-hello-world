@@ -7,6 +7,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ---
 
+## [1.0.1] - 2025-10-31
+
+### Added
+- CI status badge in README pointing to the actual GitHub Actions workflow.
+
+### Notes
+- This change is mostly cosmetic but increases perceived project maturity.
+
+
 ## [1.0.0] - 2025-10-31
 
 ### Added
