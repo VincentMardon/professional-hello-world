@@ -1,6 +1,6 @@
 # Professional Hello World! ->[👨🏻‍💻](docs/assets/images/coding-cat.png)<-
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](#)
+[![CI](https://github.com/VincentMardon/professional-hello-world/actions/workflows/ci.yml/badge.svg)](https://github.com/VincentMardon/professional-hello-world/actions/workflows/ci.yml)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-blue)](#)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-orange)](#)
