@@ -7,6 +7,24 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ---
 
+## [2.0.0] - 2025-10-31
+
+### Added
+- Introduced `hello.html`, a raw, zero-style HTML entrypoint with an intentionally overpopulated `<head>` section for future ceremonial assets.
+- Introduced `hello.py`, a Python variant of the greeting featuring unused imports, a typed getter, and an unnecessary `if __name__ == "__main__":` entrypoint.
+
+### Rationale
+- This release formalizes the existence of **runtime-level greetings** alongside the previously established documentation and CI layers.
+- The project is no longer purely theoretical or satirical: it now contains actual, executable greetings.
+
+### Breaking changes
+- The project has moved from “purely conceptual” to “conceptual with working examples.” Some expectations about our level of seriousness may be broken.
+
+### Notes
+- Version number bumped to **major** to honor the disproportion between the simplicity of the feature and the ambition of the repository.
+- Future minor versions will add styling, telemetry, and the Global Hello Session feature.
+
+
 ## [1.0.1] - 2025-10-31
 
 ### Added
