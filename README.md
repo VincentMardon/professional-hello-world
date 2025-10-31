@@ -21,3 +21,17 @@ each responsible for a unique and highly specific task — mainly ensuring that
 2. Deploy the backend with Kubernetes (obviously)  
 3. Install 37 dependencies  
 4. Finally, display "Hello, World!"
+
+---
+
+## 📜 License
+
+**Professional Hello World** is proudly released under the [MIT License](./LICENSE).
+
+This means that anyone, anywhere, is legally permitted to:
+- fork the absurdity,
+- modify the overengineering,
+- and redistribute the inefficiency,
+provided they include this very statement of freedom.
+
+> Because true professionalism starts with open licensing.
