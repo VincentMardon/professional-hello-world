@@ -9,6 +9,10 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [2.1.1] - 2025-11-01
 
+### Fixed
+- CONTRIBUTING.md was accidentally omitted due to an unsaved edit.  
+  This tragic event has been addressed with full transparency.
+
 ### Added
 - CONTRIBUTING.md documenting how to contribute, how to name commits, and when to bump versions in an intentionally over-documented project.
 
