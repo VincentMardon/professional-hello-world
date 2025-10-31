@@ -34,3 +34,7 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 - CLI client for terminal-based salutations
 - CI steps for linting, testing and building
 - Optional Prometheus `/metrics` endpoint counting greetings per minute
+- Add "Global Hello Session" feature to enable synchronized greeting events.
+- Instrument the feature in order to demonstrate real-time usage analytics on a trivial interaction.
+- Expose a public stats page to showcase the collected data.
+
