@@ -7,6 +7,31 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ---
 
+## [2.1.0] - 2025-11-01
+
+### Added
+- Introduced a structured prelaunch layout in `hello.html`, featuring:
+  - A container `<div>` with nested `<div>` elements.
+  - A formal announcement of “Professional Hello, World!” followed by the message “Coming soon ...”.
+- Established the concept of an evolving **public-facing interface**, signaling that the greeting experience will soon be interactive.
+
+### Changed
+- Replaced the plain text `Hello, World!` with a two-line declarative structure, reflecting the project's transition from raw existence to product awareness.
+- Retained all redundant metadata and unused imports in the `<head>` section for legacy and cultural continuity.
+
+### Rationale
+- This release marks the beginning of the *Prelaunch Phase* of the Professional Hello World project.
+- The greeting has matured from a raw existential statement to a **marketing-aware artifact**.
+- The change embodies the project’s philosophy: <em>each iteration must increase complexity without altering purpose.</em>
+
+### Notes
+- The body now contains more HTML tags than actual content, demonstrating substantial architectural growth.
+- No functionality has been harmed in the making of this release.
+- The next version (<strong>2.2.0</strong>) is expected to introduce visual styling, animations, and optional telemetry for audience measurement.
+
+<em>Tagline:</em> “We are no longer saying hello. We are announcing that we will soon say hello.”
+
+
 ## [2.0.0] - 2025-10-31
 
 ### Added
