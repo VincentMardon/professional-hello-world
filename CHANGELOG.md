@@ -7,6 +7,22 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ---
 
+## [2.1.1] - 2025-11-01
+
+### Changed
+- Refined the HTML greeting to emphasize the canonical phrase **"Hello, World!"** using semantic `<strong>` markup.
+- Kept the rest of the page intentionally unstyled to preserve the pedagogical contrast between minimal UI and maximal documentation.
+
+### Rationale
+- This release introduces the principle of **minimal emphasis as style direction**: one visual affordance is enough to suggest a future design system.
+- By highlighting only the core message, the project reinforces that everything else (CI, docs, analytics) is in orbit around the greeting.
+
+### Notes
+- No breaking changes.
+- This release exists mainly to document intent.
+- This is, unapologetically, a documentation-driven UI change.
+
+
 ## [2.1.0] - 2025-11-01
 
 ### Added
