@@ -7,6 +7,29 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ---
 
+## [2.1.2] - 2025-11-01
+
+### Added
+- Introduced `<em>` to the HTML greeting to emphasize the temporal nature of the announcement line.
+  The structure now separates the *eternal message* (“Professional Hello, World!”) from the *fleeting promise* (“Coming soon ...”).
+
+### Changed
+- Updated `hello.html` to include both `<strong>` and `<em>` elements, establishing a full semantic hierarchy.
+- Continued the project’s tradition of minimal visual markup with maximal philosophical implications.
+
+### Rationale
+- This release marks the beginning of **The Italic Rebellion**:  
+  a bold act of softness, asserting that emotion too deserves documentation.
+- Where `<strong>` declared conviction, `<em>` introduces vulnerability — 
+  thus balancing assertive confidence with quiet anticipation.
+
+### Notes
+- Still no CSS.
+- Still no JavaScript.
+- Only feelings.
+- Next planned evolution: **2.2.0 — The Visual Awakening**, when style sheets shall descend upon the markup.
+
+
 ## [2.1.1] - 2025-11-01
 
 ### Fixed
