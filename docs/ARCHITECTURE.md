@@ -1,149 +1,67 @@
 # Professional Hello World — Architecture
 
-## 1. Purpose
+## Purpose
 
-This document describes the technical architecture of the **Professional Hello World** platform, a distributed, observable and CI-first system whose primary business objective is to display the string **"Hello, World!"** across multiple channels (web, CLI, future mobile).
+This project brings together an artistic return, practical learning, and a deliberately excessive approach to saying “Hello, World!”. Technical experiments should contribute to that experience or teach something worth exploring. Their value is not measured by the number of services required to render a sentence.
 
-While the functional scope is intentionally trivial, the architecture is designed to mimic production-grade patterns in order to practice DevOps, documentation and code organization skills.
+This document separates the implementation from the architectural ambitions. The imaginary procurement department may continue planning at full capacity.
 
----
+## Current Implementation
 
-## 2. High-Level Overview
+| Component | Location | Actual behavior |
+|-----------|----------|-----------------|
+| Web greeting | `frontend/src/hello.html` | Static prelaunch text with bold and italic emphasis |
+| Terminal greeting | `backend/src/hello.py` | Prints a greeting; provides a function accepting an optional target |
+| CI | `.github/workflows/ci.yml` | Checks out the repository and prints a message on pushes and pull requests |
 
-The system is composed of several logical layers:
+The two examples are independent. There is no API, database, frontend framework, container setup, or connection between them. CI does not yet run tests or measure coverage.
 
-1. **Presentation layer**  
-   - React/Next.js frontend consuming the API  
-   - Optional CLI client for terminal-based rendering  
-   - Future support for WebGL / animated experience
+The HTML references absent CSS, JavaScript, and font files. Its Open Graph image path also differs from the existing image at `docs/assets/images/coding-cat.png`. These references are placeholders, not implemented capabilities.
 
-2. **API layer**  
-   - Django + Django REST Framework  
-   - Exposes a `/api/greetings/{code}/` endpoint returning the greeting payload  
-   - Includes healthcheck endpoints for monitoring
+The Python script prepares a timestamp and a logging payload but prints only the greeting. Its internal version remains `0.0.1-dev`; the historical project release recorded in the changelog is `2.1.2`.
 
-3. **Data layer**  
-   - Relational database (SQLite in dev, PostgreSQL in production-like setups)  
-   - Stores greetings, languages and platform-specific display metadata
+## Running the Existing Examples
 
-4. **Operations / CI/CD layer**  
-   - GitHub Actions workflow triggered on `push` and `pull_request`  
-   - Future steps: lint, tests, build, containerization  
-   - Logs must remain professional in tone
+Open `frontend/src/hello.html` directly in a browser. To run the terminal example, use `python backend/src/hello.py` from the repository root with Python 3.11 or newer.
 
----
+There is currently no `manage.py` or `package.json`. Django and npm startup commands belong to a possible future implementation.
 
-## 3. Component Breakdown
+## Proposed Directions
 
-### 3.1 Frontend
+The following ideas preserve the original architectural ambitions. They are not an installed stack or a commitment to implement every layer.
 
-- **Technology**: Next.js (React + TypeScript)
-- **Styling**: Vanilla Extract, optional glassmorphism for theatrical impact
-- **Responsibility**:
-  - Fetch greeting from `/api/greetings/default/`
-  - Render it with exaggerated visual fidelity
-  - Display auxiliary metadata (language, source, node name)
+### Presentation
 
-**Rationale**: even a single string deserves a dedicated rendering pipeline.
+React/Next.js with TypeScript was proposed for an API-driven interface. Vanilla Extract and elaborate visual treatments were also considered. A future WebGL experiment could become both an artistic medium and a learning exercise; its role will be discussed before implementation.
 
----
+The experience should remain understandable without reading the artist's personal history. A small interaction can carry the return on its own.
 
-### 3.2 Backend (API)
+### Greeting API
 
-- **Technology**: Django, Django REST Framework
-- **Responsibility**:
-  - Provide a stable contract: `GET /api/greetings/:code`
-  - Enforce that a greeting exists (i.e. "Hello, World!")
-  - Log all accesses for imaginary audit purposes
+Django and Django REST Framework were proposed to expose `GET /api/greetings/{code}/`, with `default` as an example greeting code. Health checks, request logging, and a response-time target could provide practical exercises in operating a service.
 
-**Non-functional requirements**:
-- Must respond under 200ms (because it’s funny)
-- Must be testable via `pytest` or `manage.py test`
-- Must expose a `/health` or `/ping` endpoint, because DevOps
+No endpoint or performance guarantee exists yet. A greeting may eventually require a service-level agreement, but it has not signed one.
 
----
+### Storage
 
-### 3.3 Database
+SQLite for local development and PostgreSQL for a more elaborate deployment were proposed. A possible `greetings` table would contain `id`, `code`, `text`, and `language`.
 
-- **Dev**: SQLite (zero-config)
-- **Prod-like**: PostgreSQL (via Docker compose)
-- **Schema (minimal)**:
+The [Global Hello Session proposal](FEATURE-global-hello.md) would introduce sessions and responses if pursued. Its storage and participant rules remain to be designed.
 
-  | Table     | Columns                                  |
-  |-----------|-------------------------------------------|
-  | greetings | id (PK), code (unique), text, language    |
+### Shared Interaction
 
-**Note**: while the business object is just a string, we still isolate it in its own table to demonstrate separation of concerns.
+A visitor could initiate a greeting and watch other visitors answer during a short window. This would extend the individual “I am here again” into an encounter with others. The proposal describes a possible experience, not an existing feature.
 
----
+### Operations and Observation
 
-## 4. CI/CD
+Possible exercises include meaningful tests, linting, builds, containers, and greeting metrics. Each should be introduced alongside the behavior it would verify or explain. Example metrics from the original plan include `hello_requests_total` and counts by language or client.
 
-### 4.1 Current workflow
+Any public service would also need appropriate access controls and consideration of rate limits. Instrumentation choices and public statistics should be specified before implementation; there is currently no analytics collection in the application code.
 
-- Location: `.github/workflows/ci.yml`
-- Trigger: `push`, `pull_request`
-- Steps:
-  1. Checkout repository
-  2. Print a highly professional message to assert pipeline authority
+## Development Approach
 
-This step is intentionally simple to validate that the CI is wired before adding real jobs.
+Vincent implements the code as part of learning. The assistant presents code and explanations in the conversation and may edit prose documentation directly, as specified in [AGENTS.md](../AGENTS.md).
 
-### 4.2 Future extensions
+Choose the next experiment together. Keep documentation explicit about whether something exists, is proposed, or has been deferred. WebGL, dark mode, multilingual greetings, and other ambitious salutation infrastructure remain possible topics rather than release obligations.
 
-- Node setup (`actions/setup-node`)
-- Python setup (`actions/setup-python`)
-- `npm run lint` for frontend
-- `pytest` / `manage.py test` for backend
-- Build Docker image
-- Push to registry (optional)
-- Notify imaginary Slack channel
-
----
-
-## 5. Observability & Monitoring
-
-Even though the system prints only “Hello, World!”, production-like applications must be observable.
-
-**Planned instrumentation**:
-- Request-level logging on the API
-- Prometheus-style `/metrics` endpoint returning:
-  - `hello_requests_total`
-  - `hello_requests_by_lang{lang="en"}`
-  - `hello_requests_by_client{type="web"|"cli"}`
-- Synthetic checks to confirm that the greeting remains polite
-
----
-
-## 6. Security Considerations
-
-- Public endpoints should not allow arbitrary mutation of greetings without authentication.
-- Rate limiting may be added to prevent denial-of-salutation.
-- Secrets (if any) must be stored in GitHub Actions secrets, not in the repository.
-
----
-
-## 7. Local Development
-
-1. Clone the repository  
-2. Start Django API (`python manage.py runserver`)  
-3. Start frontend (`npm run dev`)  
-4. Open browser → admire “Hello, World!” rendered as if it were a billion-euro product
-
----
-
-## 8. Roadmap
-
-- Add multilingual greetings
-- Add audit trail for greeting reads
-- Add SLA document for greeting availability
-- Add AI to suggest greeting tone based on time of day
-- Add dark mode (most important)
-
----
-
-## 9. Conclusion
-
-This architecture intentionally **over-engineers a trivial requirement** in order to practice real-world patterns without the cognitive load of a complex domain.
-
-In other words: _“we built a spaceship to go to the bakery.”_
+The engineering ceremony can grow. The person doing the work must have room to grow with it.

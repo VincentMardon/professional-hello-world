@@ -7,6 +7,29 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ---
 
+## [Unreleased]
+
+### Added
+- Collaboration rules in `AGENTS.md`: Vincent applies code changes himself; the assistant explains code in the conversation and may edit prose documentation.
+- Recovery addendum to the unsaved-file postmortem, acknowledging the personal effort behind the return to artistic work.
+- English as the language for all project documentation.
+
+### Changed
+- Reframed the README around the artistic return, practical learning, and deliberate software ceremony.
+- Separated existing examples from proposed architecture and Global Hello Session features.
+- Replaced hypothetical setup instructions with instructions for the existing HTML and Python examples.
+- Removed the decorative coverage badge and clarified what the current CI actually does.
+- Aligned contribution guidance with the learning process and the project's tone.
+
+### Possible Future Work
+- Visual exploration of the prelaunch greeting, with WebGL to be discussed when appropriate.
+- Greeting API, shared hello sessions, and suitable aggregate statistics.
+- Tests, linting, builds, and operational exercises as the implementation develops.
+
+These are exploratory directions, not committed release contents. The entries below preserve the original release narrative, including the expectations expressed at the time.
+
+---
+
 ## [2.1.2] - 2025-11-01
 
 ### Added
@@ -122,18 +145,4 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
   - multi-language hellos,
   - observability of greetings,
   - and dark-mode greetings.
-
----
-
-## [Unreleased]
-
-### Planned
-- Frontend landing page: “PROFESSIONAL HELLO, WORLD! — Coming soon…”
-- Django/DRF backend exposing `/api/greetings/default/`
-- CLI client for terminal-based salutations
-- CI steps for linting, testing and building
-- Optional Prometheus `/metrics` endpoint counting greetings per minute
-- Add "Global Hello Session" feature to enable synchronized greeting events.
-- Instrument the feature in order to demonstrate real-time usage analytics on a trivial interaction.
-- Expose a public stats page to showcase the collected data.
 
