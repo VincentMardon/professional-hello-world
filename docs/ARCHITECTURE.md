@@ -13,10 +13,11 @@ This document separates the implementation from the architectural ambitions. The
 | Web greeting | `frontend/src/hello.html` | Static prelaunch text with bold and italic emphasis |
 | Terminal greeting | `backend/src/hello.py` | Prints a greeting; provides a function accepting an optional target |
 | CI | `.github/workflows/ci.yml` | Checks out the repository and prints a message on pushes and pull requests |
+| Publication | `.github/workflows/pages.yml` | Prepares a static artifact and deploys it to GitHub Pages; first live deployment pending verification |
 
 The two examples are independent. There is no API, database, frontend framework, container setup, or connection between them. CI does not yet run tests or measure coverage.
 
-The HTML references absent CSS, JavaScript, and font files. Its Open Graph image path also differs from the existing image at `docs/assets/images/coding-cat.png`. These references are placeholders, not implemented capabilities.
+The absent CSS, JavaScript, and font references are now commented out. Open Graph metadata points to the intended Pages URL and the coding cat image included in the publication artifact. These metadata changes do not implement styling, analytics, or custom fonts.
 
 The Python script prepares a timestamp and a logging payload but prints only the greeting. Its internal version remains `0.0.1-dev`; the historical project release recorded in the changelog is `2.1.2`.
 
@@ -25,6 +26,12 @@ The Python script prepares a timestamp and a logging payload but prints only the
 Open `frontend/src/hello.html` directly in a browser. To run the terminal example, use `python backend/src/hello.py` from the repository root with Python 3.11 or newer.
 
 There is currently no `manage.py` or `package.json`. Django and npm startup commands belong to a possible future implementation.
+
+## Static Publication
+
+The Pages workflow runs on pushes to `main` or manual dispatch. It copies `frontend/src/` to `_site/`, adds a homepage copy named `index.html`, and includes `docs/assets/images/coding-cat.png`. Only this prepared directory is uploaded for deployment. The Python example is not deployed as a server.
+
+Publication uses the `github-pages` environment with repository read, Pages write, and identity-token permissions. The Pages source must be configured as GitHub Actions. A successful workflow run and a live page check are still required to confirm the first deployment; no runtime validation is claimed here.
 
 ## Proposed Directions
 

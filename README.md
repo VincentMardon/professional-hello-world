@@ -19,17 +19,26 @@ The project takes software rituals very seriously for someone whose principal de
 - A static HTML page displaying **Professional "Hello, World!":** followed by *Coming soon ...*.
 - A Python script that prints `Hello, World!`, with more preparation than the sentence requires.
 - A GitHub Actions workflow that checks out the repository and prints a ceremonial message. It does not yet run tests, measure coverage, or build the project.
+- A separate GitHub Pages workflow that prepares and deploys the static greeting; its first live deployment remains to be verified.
 - Documentation, historical release notes, and an [official coding cat](docs/assets/images/coding-cat.png).
 
-The latest recorded release is **2.1.2 — The Italic Rebellion**. Current documentation changes are listed under [Unreleased](CHANGELOG.md#unreleased).
+The latest recorded release is **2.1.2 — The Italic Rebellion**. Current changes are listed under [Unreleased](CHANGELOG.md#unreleased).
 
 ## Getting Started
 
-Open `frontend/src/hello.html` in a browser to see the prelaunch greeting. The page references placeholder stylesheets, scripts, and a font that are absent from the repository; the visible content uses the browser's default styling.
+Open `frontend/src/hello.html` in a browser to see the prelaunch greeting. Placeholder stylesheets, scripts, and a font are preserved in HTML comments, so the browser does not request those absent files. The visible content uses the browser's default styling.
 
 For the terminal greeting, run `python backend/src/hello.py` from the repository root with Python 3.11 or newer. The script uses only the standard library.
 
 No application framework or dependency installation is needed for these examples. Kubernetes remains available for ceremonial consultation.
+
+## Publishing the Greeting
+
+The workflow in `.github/workflows/pages.yml` runs on pushes to `main` and can also be started manually. In the repository's **Settings → Pages**, select **GitHub Actions** as the publishing source.
+
+It copies `frontend/src/` into a temporary `_site` directory, copies `hello.html` to `index.html` as the homepage, and includes the coding cat at `docs/assets/images/coding-cat.png`. GitHub then receives and deploys that directory. The source HTML keeps its existing filename.
+
+The intended public address is [vincentmardon.github.io/professional-hello-world/](https://vincentmardon.github.io/professional-hello-world/). This configuration still requires a successful first deployment and live verification; the address is not evidence of a completed publication. Check the **Publish the Greeting** run in Actions after pushing.
 
 ## Possible Next Greetings
 

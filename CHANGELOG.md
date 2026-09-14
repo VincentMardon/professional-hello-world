@@ -10,11 +10,14 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 ## [Unreleased]
 
 ### Added
+- GitHub Pages publication workflow for the static greeting, including a generated homepage copy and the coding cat asset. First live deployment pending verification.
 - Collaboration rules in `AGENTS.md`: Vincent applies code changes himself; the assistant explains code in the conversation and may edit prose documentation.
 - Recovery addendum to the unsaved-file postmortem, acknowledging the personal effort behind the return to artistic work.
 - English as the language for all project documentation.
 
 ### Changed
+- Updated Open Graph URLs for the intended Pages address and commented out requests for absent stylesheets, scripts, and the placeholder font.
+- Documented the Pages publication process and its current verification status.
 - Reframed the README around the artistic return, practical learning, and deliberate software ceremony.
 - Separated existing examples from proposed architecture and Global Hello Session features.
 - Replaced hypothetical setup instructions with instructions for the existing HTML and Python examples.
