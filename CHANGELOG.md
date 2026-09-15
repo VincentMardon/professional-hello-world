@@ -9,6 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Department of Visual Dignity
+
+- Added Vanilla Extract and its Next.js plugin with explicit opt-in to experimental Turbopack integration through `unstable_turbopack.mode: "auto"`.
+- Added `page.css.ts` and applied its generated class: `2rem` padding, a system sans-serif font, and `1.5` line height.
+- Recorded version-specific npm install-script approvals for `@swc/core` and `esbuild`; Vincent successfully rebuilt both packages.
+- Preserved static export and the existing Pages workflow. Vincent confirmed local checks and appearance; generated CSS was inspected. Remote deployment of these styling changes remains pending.
+- Updated documentation to reflect styling and the successful deployment of the preceding Next.js migration.
+- Granted the greeting physical space and an entirely disproportionate administrative identity. No new numbered release is declared here.
+
 ### Next.js Migration
 
 - Added a Next.js App Router frontend with React, TypeScript, typed metadata and viewport exports, and the existing two-line greeting.
@@ -17,10 +26,10 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 - Added the public coding cat asset, dependency lockfile, development scripts, and generated-file exclusions.
 - Replaced direct HTML packaging in the Pages workflow with dependency installation, Biome checks, TypeScript checking, and a Next.js build publishing `frontend/out`.
 - Retained `frontend/src/hello.html` as a historical reference; it no longer supplies the published homepage.
-- Local operation was reported by Vincent, and the generated homepage's Open Graph addresses and image were inspected. Remote publication of this migration remains unverified.
+- Local operation was reported by Vincent, and the generated homepage's Open Graph addresses and image were inspected. The Pages deployment subsequently succeeded for commit #30.
 
 ### Added
-- GitHub Pages publication workflow for the static greeting, including a generated homepage copy and the coding cat asset. The original HTML deployment succeeded for commit #29; the Next.js replacement awaits remote verification.
+- GitHub Pages publication workflow for the static greeting, including a generated homepage copy and the coding cat asset. The original HTML deployment succeeded for commit #29; the Next.js replacement succeeded for commit #30.
 - Collaboration rules in `AGENTS.md`: Vincent applies code changes himself; the assistant explains code in the conversation and may edit prose documentation.
 - Recovery addendum to the unsaved-file postmortem, acknowledging the personal effort behind the return to artistic work.
 - English as the language for all project documentation.

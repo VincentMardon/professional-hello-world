@@ -19,7 +19,7 @@ The project takes software rituals very seriously for someone whose principal de
 - A Next.js App Router frontend, exported as a static site, displaying **Professional "Hello, World!":** followed by *Coming soon ...*.
 - A Python script that prints `Hello, World!`, with more preparation than the sentence requires.
 - A GitHub Actions workflow that checks out the repository and prints a ceremonial message. It does not yet run tests, measure coverage, or build the project.
-- A separate Pages workflow that installs dependencies, checks code with Biome and TypeScript, builds Next.js, and publishes the static export. The Next.js deployment awaits remote verification.
+- A separate Pages workflow that installs dependencies, checks code with Biome and TypeScript, builds Next.js, and publishes the static export. The Next.js migration was successfully deployed for commit #30. The subsequent styling integration awaits publication.
 - Documentation, historical release notes, and an [official coding cat](docs/assets/images/coding-cat.png).
 
 The latest recorded release is **2.1.2 — The Italic Rebellion**. Current changes are listed under [Unreleased](CHANGELOG.md#unreleased).
@@ -30,7 +30,7 @@ Use Node.js 24 and npm. From `frontend`, run `npm ci` to install the recorded de
 
 Open [localhost:3000/professional-hello-world/](http://localhost:3000/professional-hello-world/). The project prefix applies locally as well as on GitHub Pages; the bare localhost root is not the greeting route.
 
-The web page is split between `src/app/layout.tsx` (document structure, metadata, and viewport) and `src/app/page.tsx` (the greeting). The original `src/hello.html` remains a historical reference and is not used by the new publication workflow. Reserved fonts, stylesheets, and scripts remain inactive comments.
+The web page is split between `src/app/layout.tsx` (document structure, metadata, and viewport) and `src/app/page.tsx` (the greeting). The original `src/hello.html` remains a historical reference and is not used by the new publication workflow. Legacy resource placeholders remain inactive comments. Active styles live in `src/app/page.css.ts`: Vanilla Extract generates a class providing `2rem` of padding, a system sans-serif font, and a line height of `1.5`. The greeting has acquired breathing room without commissioning a custom typeface.
 
 ### Checks and Formatting
 
@@ -52,7 +52,7 @@ The workflow in `.github/workflows/pages.yml` runs on pushes to `main` and suppo
 
 The workflow uses Node.js 24 and `npm ci` inside `frontend`, then runs Biome checks, TypeScript checks, and the Next.js build. It uploads `frontend/out` and deploys that artifact. Files from `frontend/public` are included in the export, including the coding cat at `docs/assets/images/coding-cat.png`.
 
-The public address is [vincentmardon.github.io/professional-hello-world/](https://vincentmardon.github.io/professional-hello-world/). The original HTML deployment succeeded for commit #29. The replacement Next.js pipeline still requires a successful remote run and live verification after publication.
+The public address is [vincentmardon.github.io/professional-hello-world/](https://vincentmardon.github.io/professional-hello-world/). The original HTML deployment succeeded for commit #29. The Next.js deployment succeeded for commit #30. The subsequent Vanilla Extract integration has been verified locally and awaits remote deployment.
 ## Possible Next Greetings
 
 The [architecture document](docs/ARCHITECTURE.md) records the current implementation and possible technical directions. The [Global Hello Session proposal](docs/FEATURE-global-hello.md) imagines one person saying hello and others answering together.

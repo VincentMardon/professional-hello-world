@@ -13,13 +13,23 @@ This document separates the implementation from the architectural ambitions. The
 | Web greeting | `frontend/src/app/layout.tsx` and `page.tsx` | Next.js App Router with metadata, viewport, and the existing greeting |
 | Terminal greeting | `backend/src/hello.py` | Prints a greeting; provides a function accepting an optional target |
 | CI | `.github/workflows/ci.yml` | Checks out the repository and prints a message on pushes and pull requests |
-| Publication | `.github/workflows/pages.yml` | Checks and builds the Next.js frontend, then publishes `frontend/out`; remote migration verification pending |
+| Publication | `.github/workflows/pages.yml` | Checks and builds the Next.js frontend, then publishes `frontend/out`; migration deployed for commit #30 |
 
 The two examples are independent. The frontend uses Next.js 16.3.5, React 19.3.0, TypeScript 6.0.3, and Biome 2.5.13. There is no API, database, container setup, or connection to the Python example. The Pages workflow runs lint, format, type, and build checks; it does not run application tests or measure coverage.
 
 The absent CSS, JavaScript, and font references are retained as JSX comments in the layout. Next.js generates the metadata and viewport tags from typed exports. Open Graph metadata points to the intended Pages URL and the coding cat image included in the publication artifact. These metadata changes do not implement styling, analytics, or custom fonts.
 
 The Python script prepares a timestamp and a logging payload but prints only the greeting. Its internal version remains `0.0.1-dev`; the historical project release recorded in the changelog is `2.1.2`.
+
+## Styling the Greeting
+
+`frontend/src/app/page.css.ts` defines a Vanilla Extract class imported by `page.tsx`: `2rem` padding, `system-ui, sans-serif`, and a line height of `1.5`. This is inner spacing, not a margin declaration. The department of visual dignity currently administers three declarations.
+
+`@vanilla-extract/css` supplies the styling API. The Next.js configuration uses `@vanilla-extract/next-plugin`, pinned to `2.5.2`, with `unstable_turbopack.mode: "auto"`. This explicitly enables the plugin's experimental Turbopack integration; see the [official documentation](https://vanilla-extract.style/documentation/integrations/next/). Styles are extracted into CSS during the build without adding a styling runtime. Next.js still produces its own JavaScript.
+
+The project records version-specific npm install-script approvals for `@swc/core@1.16.2` and `esbuild@0.28.2`. Vincent successfully rebuilt both after approving their initially blocked scripts. Updated versions may require fresh approval under that npm policy.
+
+Vincent confirmed passing local checks and the intended visual result. Inspection of the static export confirmed the CSS declarations. The existing static export configuration and Pages workflow are retained; remote deployment of this integration remains pending.
 
 ## Running the Existing Examples
 
@@ -33,7 +43,7 @@ The terminal example remains `python backend/src/hello.py`, run from the reposit
 
 The Pages workflow installs the lockfile's dependencies with `npm ci`, runs Biome and TypeScript checks, builds Next.js, and uploads `frontend/out`. It runs on pushes to `main` or manual dispatch with the `github-pages` environment and the existing publication permissions. The Python example is not deployed as a server.
 
-The previous HTML publication succeeded for commit #29. Vincent reported the Next.js version working locally; inspection of the generated export confirmed the homepage, corrected Open Graph URLs, and image file. The new workflow's remote deployment remains to be verified after publication.
+The previous HTML publication succeeded for commit #29. Vincent reported the Next.js version working locally; inspection of the generated export confirmed the homepage, corrected Open Graph URLs, and image file. The Next.js deployment subsequently succeeded for commit #30. The newer styling integration awaits its own remote deployment.
 
 `frontend/src/hello.html` remains a historical reference. The generated export, `.next`, route declarations, and TypeScript build information are excluded from version control. The package lockfile is committed. Biome excludes generated content and the legacy HTML.
 ## Proposed Directions
@@ -42,7 +52,7 @@ The following ideas preserve the original architectural ambitions. They are not 
 
 ### Presentation
 
-React/Next.js with TypeScript is now implemented for the static greeting; an API-driven interface remains a proposal. Vanilla Extract and elaborate visual treatments were also considered. A future WebGL experiment could become both an artistic medium and a learning exercise; its role will be discussed before implementation.
+React/Next.js with TypeScript is now implemented for the static greeting; an API-driven interface remains a proposal. Vanilla Extract now provides the initial styles; elaborate visual treatments remain exploratory. A future WebGL experiment could become both an artistic medium and a learning exercise; its role will be discussed before implementation.
 
 The experience should remain understandable without reading the artist's personal history. A small interaction can carry the return on its own.
 

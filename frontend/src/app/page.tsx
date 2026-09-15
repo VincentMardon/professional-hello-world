@@ -1,6 +1,8 @@
+import { greeting } from "./page.css";
+
 export default function HomePage() {
   return (
-    <div>
+    <div className={greeting}>
       <div>
         Professional <strong>&quot;Hello, World!&quot;</strong>:
       </div>
