@@ -18,6 +18,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: frontend
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -26,20 +30,32 @@ jobs:
       - name: Retrieve the ceremonial materials
         uses: actions/checkout@v4
 
+      - name: Prepare the JavaScript department
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Prepare the public greeting
-        run: |
-          mkdir -p _site/docs/assets/images
-          cp -R frontend/src/. _site/
-          cp frontend/src/hello.html _site/index.html
-          cp docs/assets/images/coding-cat.png _site/docs/assets/images/
+      - name: Install the officially recorded dependencies
+        run: npm ci
+
+      - name: Inspect spelling-adjacent matters
+        run: npm run check
+
+      - name: Verify the types of our intentions
+        run: npm run typecheck
+
+      - name: Construct the disproportionately qualified greeting
+        run: npm run build
 
       - name: Package the greeting
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: frontend/out
 
       - name: Release the greeting into the world
         id: deployment

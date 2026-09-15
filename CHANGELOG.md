@@ -9,8 +9,18 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### Next.js Migration
+
+- Added a Next.js App Router frontend with React, TypeScript, typed metadata and viewport exports, and the existing two-line greeting.
+- Added Biome for linting and formatting, using the recommended preset; ESLint and Prettier are not part of the final dependency set.
+- Configured ECMAScript modules, static export, the project base path, and trailing slashes.
+- Added the public coding cat asset, dependency lockfile, development scripts, and generated-file exclusions.
+- Replaced direct HTML packaging in the Pages workflow with dependency installation, Biome checks, TypeScript checking, and a Next.js build publishing `frontend/out`.
+- Retained `frontend/src/hello.html` as a historical reference; it no longer supplies the published homepage.
+- Local operation was reported by Vincent, and the generated homepage's Open Graph addresses and image were inspected. Remote publication of this migration remains unverified.
+
 ### Added
-- GitHub Pages publication workflow for the static greeting, including a generated homepage copy and the coding cat asset. First live deployment pending verification.
+- GitHub Pages publication workflow for the static greeting, including a generated homepage copy and the coding cat asset. The original HTML deployment succeeded for commit #29; the Next.js replacement awaits remote verification.
 - Collaboration rules in `AGENTS.md`: Vincent applies code changes himself; the assistant explains code in the conversation and may edit prose documentation.
 - Recovery addendum to the unsaved-file postmortem, acknowledging the personal effort behind the return to artistic work.
 - English as the language for all project documentation.

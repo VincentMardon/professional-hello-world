@@ -117,12 +117,15 @@ Yes, we really do that here.
 ## 4. CI / GitHub Actions
 
 - CI must be green. Even for a `<div>`.
-- If CI fails, investigate and describe the failure accurately. The current workflow only prints a message; a green run does not establish that the application works.
+- If CI fails, investigate and describe the failure accurately. The legacy CI workflow only prints a message. The Pages workflow additionally runs Biome, TypeScript checks, and the Next.js build; a green legacy CI badge alone does not establish that these checks passed.
 - State how you checked the actual change. Do not claim tests or coverage that were not performed.
 
 ---
 
 ## 5. Style guidelines
+
+For the Next.js frontend, run `npm run check:fix` from `frontend` to apply safe Biome fixes, then `npm run check`, `npm run typecheck`, and `npm run build`. Review the changes before committing. These checks do not replace checking the page and its links in a browser.
+
 
 - HTML: keep it simple, even when the `<head>` is overpopulated.
 - Python: prefer structure (functions, `if __name__ == "__main__":`) even for one print.

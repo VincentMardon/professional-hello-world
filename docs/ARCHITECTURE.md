@@ -10,36 +10,39 @@ This document separates the implementation from the architectural ambitions. The
 
 | Component | Location | Actual behavior |
 |-----------|----------|-----------------|
-| Web greeting | `frontend/src/hello.html` | Static prelaunch text with bold and italic emphasis |
+| Web greeting | `frontend/src/app/layout.tsx` and `page.tsx` | Next.js App Router with metadata, viewport, and the existing greeting |
 | Terminal greeting | `backend/src/hello.py` | Prints a greeting; provides a function accepting an optional target |
 | CI | `.github/workflows/ci.yml` | Checks out the repository and prints a message on pushes and pull requests |
-| Publication | `.github/workflows/pages.yml` | Prepares a static artifact and deploys it to GitHub Pages; first live deployment pending verification |
+| Publication | `.github/workflows/pages.yml` | Checks and builds the Next.js frontend, then publishes `frontend/out`; remote migration verification pending |
 
-The two examples are independent. There is no API, database, frontend framework, container setup, or connection between them. CI does not yet run tests or measure coverage.
+The two examples are independent. The frontend uses Next.js 16.3.5, React 19.3.0, TypeScript 6.0.3, and Biome 2.5.13. There is no API, database, container setup, or connection to the Python example. The Pages workflow runs lint, format, type, and build checks; it does not run application tests or measure coverage.
 
-The absent CSS, JavaScript, and font references are now commented out. Open Graph metadata points to the intended Pages URL and the coding cat image included in the publication artifact. These metadata changes do not implement styling, analytics, or custom fonts.
+The absent CSS, JavaScript, and font references are retained as JSX comments in the layout. Next.js generates the metadata and viewport tags from typed exports. Open Graph metadata points to the intended Pages URL and the coding cat image included in the publication artifact. These metadata changes do not implement styling, analytics, or custom fonts.
 
 The Python script prepares a timestamp and a logging payload but prints only the greeting. Its internal version remains `0.0.1-dev`; the historical project release recorded in the changelog is `2.1.2`.
 
 ## Running the Existing Examples
 
-Open `frontend/src/hello.html` directly in a browser. To run the terminal example, use `python backend/src/hello.py` from the repository root with Python 3.11 or newer.
+From `frontend`, use Node.js 24 and run `npm ci`, then `npm run dev`. The local route is `http://localhost:3000/professional-hello-world/`. The scripts in `package.json` also provide Biome checks and fixes, formatting, TypeScript checking, and a production build.
 
-There is currently no `manage.py` or `package.json`. Django and npm startup commands belong to a possible future implementation.
+The terminal example remains `python backend/src/hello.py`, run from the repository root with Python 3.11 or newer. No Django application or `manage.py` exists.
 
 ## Static Publication
 
-The Pages workflow runs on pushes to `main` or manual dispatch. It copies `frontend/src/` to `_site/`, adds a homepage copy named `index.html`, and includes `docs/assets/images/coding-cat.png`. Only this prepared directory is uploaded for deployment. The Python example is not deployed as a server.
+`next.config.ts` sets `output: "export"`, `basePath: "/professional-hello-world"`, and `trailingSlash: true`. Next.js builds the public site in `frontend/out`. The coding cat is copied into the export from `frontend/public/docs/assets/images/coding-cat.png`.
 
-Publication uses the `github-pages` environment with repository read, Pages write, and identity-token permissions. The Pages source must be configured as GitHub Actions. A successful workflow run and a live page check are still required to confirm the first deployment; no runtime validation is claimed here.
+The Pages workflow installs the lockfile's dependencies with `npm ci`, runs Biome and TypeScript checks, builds Next.js, and uploads `frontend/out`. It runs on pushes to `main` or manual dispatch with the `github-pages` environment and the existing publication permissions. The Python example is not deployed as a server.
 
+The previous HTML publication succeeded for commit #29. Vincent reported the Next.js version working locally; inspection of the generated export confirmed the homepage, corrected Open Graph URLs, and image file. The new workflow's remote deployment remains to be verified after publication.
+
+`frontend/src/hello.html` remains a historical reference. The generated export, `.next`, route declarations, and TypeScript build information are excluded from version control. The package lockfile is committed. Biome excludes generated content and the legacy HTML.
 ## Proposed Directions
 
 The following ideas preserve the original architectural ambitions. They are not an installed stack or a commitment to implement every layer.
 
 ### Presentation
 
-React/Next.js with TypeScript was proposed for an API-driven interface. Vanilla Extract and elaborate visual treatments were also considered. A future WebGL experiment could become both an artistic medium and a learning exercise; its role will be discussed before implementation.
+React/Next.js with TypeScript is now implemented for the static greeting; an API-driven interface remains a proposal. Vanilla Extract and elaborate visual treatments were also considered. A future WebGL experiment could become both an artistic medium and a learning exercise; its role will be discussed before implementation.
 
 The experience should remain understandable without reading the artist's personal history. A small interaction can carry the return on its own.
 
@@ -61,7 +64,7 @@ A visitor could initiate a greeting and watch other visitors answer during a sho
 
 ### Operations and Observation
 
-Possible exercises include meaningful tests, linting, builds, containers, and greeting metrics. Each should be introduced alongside the behavior it would verify or explain. Example metrics from the original plan include `hello_requests_total` and counts by language or client.
+Biome checks and Next.js builds are now part of publication. Further exercises could include application tests, containers, and greeting metrics. Each should be introduced alongside the behavior it would verify or explain. Example metrics from the original plan include `hello_requests_total` and counts by language or client.
 
 Any public service would also need appropriate access controls and consideration of rate limits. Instrumentation choices and public statistics should be specified before implementation; there is currently no analytics collection in the application code.
 

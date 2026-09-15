@@ -16,30 +16,43 @@ The project takes software rituals very seriously for someone whose principal de
 
 ## What Exists Today
 
-- A static HTML page displaying **Professional "Hello, World!":** followed by *Coming soon ...*.
+- A Next.js App Router frontend, exported as a static site, displaying **Professional "Hello, World!":** followed by *Coming soon ...*.
 - A Python script that prints `Hello, World!`, with more preparation than the sentence requires.
 - A GitHub Actions workflow that checks out the repository and prints a ceremonial message. It does not yet run tests, measure coverage, or build the project.
-- A separate GitHub Pages workflow that prepares and deploys the static greeting; its first live deployment remains to be verified.
+- A separate Pages workflow that installs dependencies, checks code with Biome and TypeScript, builds Next.js, and publishes the static export. The Next.js deployment awaits remote verification.
 - Documentation, historical release notes, and an [official coding cat](docs/assets/images/coding-cat.png).
 
 The latest recorded release is **2.1.2 — The Italic Rebellion**. Current changes are listed under [Unreleased](CHANGELOG.md#unreleased).
 
 ## Getting Started
 
-Open `frontend/src/hello.html` in a browser to see the prelaunch greeting. Placeholder stylesheets, scripts, and a font are preserved in HTML comments, so the browser does not request those absent files. The visible content uses the browser's default styling.
+Use Node.js 24 and npm. From `frontend`, run `npm ci` to install the recorded dependencies, then `npm run dev` to start the development server. On Windows, use `npm.cmd` if the PowerShell npm launcher fails.
 
-For the terminal greeting, run `python backend/src/hello.py` from the repository root with Python 3.11 or newer. The script uses only the standard library.
+Open [localhost:3000/professional-hello-world/](http://localhost:3000/professional-hello-world/). The project prefix applies locally as well as on GitHub Pages; the bare localhost root is not the greeting route.
 
-No application framework or dependency installation is needed for these examples. Kubernetes remains available for ceremonial consultation.
+The web page is split between `src/app/layout.tsx` (document structure, metadata, and viewport) and `src/app/page.tsx` (the greeting). The original `src/hello.html` remains a historical reference and is not used by the new publication workflow. Reserved fonts, stylesheets, and scripts remain inactive comments.
+
+### Checks and Formatting
+
+Run these commands from `frontend`:
+
+- `npm run check`: Biome lint and formatting checks without edits.
+- `npm run check:fix`: apply Biome's safe automatic fixes and formatting.
+- `npm run format`: format supported project files.
+- `npm run typecheck`: generate Next.js route types and check TypeScript.
+- `npm run build`: create the production static export in `out`.
+
+Biome handles code checks and formatting; TypeScript checks types. Neither can determine whether a correctly formed URL names the right repository. No automated application test suite or coverage measurement is provided yet.
+
+The independent terminal greeting still runs with `python backend/src/hello.py` from the repository root, using Python 3.11 or newer.
 
 ## Publishing the Greeting
 
-The workflow in `.github/workflows/pages.yml` runs on pushes to `main` and can also be started manually. In the repository's **Settings → Pages**, select **GitHub Actions** as the publishing source.
+The workflow in `.github/workflows/pages.yml` runs on pushes to `main` and supports manual dispatch. The repository's Pages publishing source is GitHub Actions.
 
-It copies `frontend/src/` into a temporary `_site` directory, copies `hello.html` to `index.html` as the homepage, and includes the coding cat at `docs/assets/images/coding-cat.png`. GitHub then receives and deploys that directory. The source HTML keeps its existing filename.
+The workflow uses Node.js 24 and `npm ci` inside `frontend`, then runs Biome checks, TypeScript checks, and the Next.js build. It uploads `frontend/out` and deploys that artifact. Files from `frontend/public` are included in the export, including the coding cat at `docs/assets/images/coding-cat.png`.
 
-The intended public address is [vincentmardon.github.io/professional-hello-world/](https://vincentmardon.github.io/professional-hello-world/). This configuration still requires a successful first deployment and live verification; the address is not evidence of a completed publication. Check the **Publish the Greeting** run in Actions after pushing.
-
+The public address is [vincentmardon.github.io/professional-hello-world/](https://vincentmardon.github.io/professional-hello-world/). The original HTML deployment succeeded for commit #29. The replacement Next.js pipeline still requires a successful remote run and live verification after publication.
 ## Possible Next Greetings
 
 The [architecture document](docs/ARCHITECTURE.md) records the current implementation and possible technical directions. The [Global Hello Session proposal](docs/FEATURE-global-hello.md) imagines one person saying hello and others answering together.
