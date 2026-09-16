@@ -10,40 +10,44 @@ This document separates the implementation from the architectural ambitions. The
 
 | Component | Location | Actual behavior |
 |-----------|----------|-----------------|
-| Web greeting | `frontend/src/app/layout.tsx` and `page.tsx` | Next.js App Router with metadata, viewport, and the existing greeting |
-| Terminal greeting | `backend/src/hello.py` | Prints a greeting; provides a function accepting an optional target |
+| Web greeting | `frontend/src/app/layout.tsx`, `page.tsx`, and `src/components/` | Next.js App Router with metadata, viewport, and two greeting components centred in a flex column |
+| Former terminal greeting | Git history of `backend/src/hello.py` | Removed in commit #33; no current terminal greeting command |
 | CI | `.github/workflows/ci.yml` | Checks out the repository and prints a message on pushes and pull requests |
 | Publication | `.github/workflows/pages.yml` | Checks and builds the Next.js frontend, then publishes `frontend/out`; migration deployed for commit #30 |
 
-The two examples are independent. The frontend uses Next.js 16.3.5, React 19.3.0, TypeScript 6.0.3, and Biome 2.5.13. There is no API, database, container setup, or connection to the Python example. The Pages workflow runs lint, format, type, and build checks; it does not run application tests or measure coverage.
+The frontend uses Next.js 16.3.5, React 19.3.0, TypeScript 6.0.3, and Biome 2.5.13. There is no API, database, container setup, or active Python greeting. The Pages workflow runs lint, format, type, and build checks; it does not run application tests or measure coverage.
 
 The absent CSS, JavaScript, and font references are retained as JSX comments in the layout. Next.js generates the metadata and viewport tags from typed exports. Open Graph metadata points to the intended Pages URL and the coding cat image included in the publication artifact. These metadata changes do not implement styling, analytics, or custom fonts.
 
-The Python script prepares a timestamp and a logging payload but prints only the greeting. Its internal version remains `0.0.1-dev`; the historical project release recorded in the changelog is `2.1.2`.
+The Python example was removed in commit #33. Its historical implementation remains in Git; the latest recorded project release is still `2.1.2`.
+
+## Greeting Components
+
+`ProfessionalHelloWorld.tsx` renders the first line with its existing strong emphasis. `ComingSoon.tsx` renders the italic announcement. Both use named exports and are composed by `page.tsx` inside the existing styled `div`. The first line no longer includes its former trailing colon. The components require no client directive, state, or additional dependencies.
 
 ## Styling the Greeting
 
-`frontend/src/app/page.css.ts` defines a Vanilla Extract class imported by `page.tsx`: `2rem` padding, `system-ui, sans-serif`, and a line height of `1.5`. This is inner spacing, not a margin declaration. The department of visual dignity currently administers three declarations.
+`frontend/src/app/page.css.ts` defines a Vanilla Extract class imported by `page.tsx`: `2rem` padding, `system-ui, sans-serif`, and a line height of `1.5`. This is inner spacing, not a margin declaration. The class also establishes a flex column, centres its children on both axes, and uses `minHeight: "100dvh"` with border-box sizing so padding is included in the minimum height. Text is centred and may wrap naturally. A global body rule removes the browser's default margin; no media-query breakpoints are defined.
 
 `@vanilla-extract/css` supplies the styling API. The Next.js configuration uses `@vanilla-extract/next-plugin`, pinned to `2.5.2`, with `unstable_turbopack.mode: "auto"`. This explicitly enables the plugin's experimental Turbopack integration; see the [official documentation](https://vanilla-extract.style/documentation/integrations/next/). Styles are extracted into CSS during the build without adding a styling runtime. Next.js still produces its own JavaScript.
 
 The project records version-specific npm install-script approvals for `@swc/core@1.16.2` and `esbuild@0.28.2`. Vincent successfully rebuilt both after approving their initially blocked scripts. Updated versions may require fresh approval under that npm policy.
 
-Vincent confirmed passing local checks and the intended visual result. Inspection of the static export confirmed the CSS declarations. The existing static export configuration and Pages workflow are retained; remote deployment of this integration remains pending.
+Vincent confirmed passing local checks and the intended visual result. Inspection of the static export confirmed the CSS declarations. The existing static export configuration and Pages workflow are retained; the initial integration deployed successfully for commit #31. The subsequent component extraction and centring await publication.
 
-## Running the Existing Examples
+## Running the Frontend
 
 From `frontend`, use Node.js 24 and run `npm ci`, then `npm run dev`. The local route is `http://localhost:3000/professional-hello-world/`. The scripts in `package.json` also provide Biome checks and fixes, formatting, TypeScript checking, and a production build.
 
-The terminal example remains `python backend/src/hello.py`, run from the repository root with Python 3.11 or newer. No Django application or `manage.py` exists.
+The terminal script was removed in commit #33, so its old command no longer works. No Django application or `manage.py` exists.
 
 ## Static Publication
 
 `next.config.ts` sets `output: "export"`, `basePath: "/professional-hello-world"`, and `trailingSlash: true`. Next.js builds the public site in `frontend/out`. The coding cat is copied into the export from `frontend/public/docs/assets/images/coding-cat.png`.
 
-The Pages workflow installs the lockfile's dependencies with `npm ci`, runs Biome and TypeScript checks, builds Next.js, and uploads `frontend/out`. It runs on pushes to `main` or manual dispatch with the `github-pages` environment and the existing publication permissions. The Python example is not deployed as a server.
+The Pages workflow installs the lockfile's dependencies with `npm ci`, runs Biome and TypeScript checks, builds Next.js, and uploads `frontend/out`. It runs on pushes to `main` or manual dispatch with the `github-pages` environment and the existing publication permissions. No Python server is deployed.
 
-The previous HTML publication succeeded for commit #29. Vincent reported the Next.js version working locally; inspection of the generated export confirmed the homepage, corrected Open Graph URLs, and image file. The Next.js deployment subsequently succeeded for commit #30. The newer styling integration awaits its own remote deployment.
+The previous HTML publication succeeded for commit #29. Vincent reported the Next.js version working locally; inspection of the generated export confirmed the homepage, corrected Open Graph URLs, and image file. The Next.js deployment subsequently succeeded for commit #30. The initial styling integration subsequently deployed for commit #31, and the workflow succeeded after the Python removal in commit #33. The new component extraction and centring still await their own remote run.
 
 `frontend/src/hello.html` remains a historical reference. The generated export, `.next`, route declarations, and TypeScript build information are excluded from version control. The package lockfile is committed. Biome excludes generated content and the legacy HTML.
 ## Proposed Directions

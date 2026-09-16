@@ -9,12 +9,27 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### A Limited Resumption of Movement
+
+- Extracted the two greeting lines into named React components, `ProfessionalHelloWorld` and `ComingSoon`, assembled by `page.tsx`.
+- Removed the trailing colon from the first line while preserving strong emphasis and the italic announcement.
+- Centred the existing page container horizontally and vertically using a flex column, `100dvh` minimum height, border-box sizing, and centred text.
+- Removed the default body margin while retaining `2rem` padding, system typography, and `1.5` line height. Text wraps naturally without dedicated breakpoints.
+- Vincent approved the visual result. TypeScript checking without emit or incremental output passed; a production build for this change has not been independently verified by the assistant. Remote deployment remains pending.
+- Updated the README and architecture document to reflect the current frontend and the earlier retirement of the terminal example.
+
+### Previously Published Pause and Retreat
+
+- Commit #32 recorded an intentional empty commit, leaving the tracked file tree unchanged.
+- Commit #33 removed `backend/src/hello.py` and its 57 lines. This deletion is already committed; its documentation is reconciled here.
+- The Pages workflows for both commits succeeded. These gestures remain distinct from a new numbered release.
+
 ### The Department of Visual Dignity
 
 - Added Vanilla Extract and its Next.js plugin with explicit opt-in to experimental Turbopack integration through `unstable_turbopack.mode: "auto"`.
 - Added `page.css.ts` and applied its generated class: `2rem` padding, a system sans-serif font, and `1.5` line height.
 - Recorded version-specific npm install-script approvals for `@swc/core` and `esbuild`; Vincent successfully rebuilt both packages.
-- Preserved static export and the existing Pages workflow. Vincent confirmed local checks and appearance; generated CSS was inspected. Remote deployment of these styling changes remains pending.
+- Preserved static export and the existing Pages workflow. Vincent confirmed local checks and appearance; generated CSS was inspected. The initial styling integration deployed successfully for commit #31.
 - Updated documentation to reflect styling and the successful deployment of the preceding Next.js migration.
 - Granted the greeting physical space and an entirely disproportionate administrative identity. No new numbered release is declared here.
 

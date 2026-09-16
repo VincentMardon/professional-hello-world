@@ -16,10 +16,10 @@ The project takes software rituals very seriously for someone whose principal de
 
 ## What Exists Today
 
-- A Next.js App Router frontend, exported as a static site, displaying **Professional "Hello, World!":** followed by *Coming soon ...*.
-- A Python script that prints `Hello, World!`, with more preparation than the sentence requires.
+- A Next.js App Router frontend, exported as a static site, displaying **Professional "Hello, World!"** followed by *Coming soon ...*, with a component for each line and a layout centred horizontally and vertically.
+- The former Python greeting was removed in commit #33; its implementation remains in Git history.
 - A GitHub Actions workflow that checks out the repository and prints a ceremonial message. It does not yet run tests, measure coverage, or build the project.
-- A separate Pages workflow that installs dependencies, checks code with Biome and TypeScript, builds Next.js, and publishes the static export. The Next.js migration was successfully deployed for commit #30. The subsequent styling integration awaits publication.
+- A separate Pages workflow that installs dependencies, checks code with Biome and TypeScript, builds Next.js, and publishes the static export. The Next.js migration was successfully deployed for commit #30. The initial Vanilla Extract integration was deployed for commit #31; the current component extraction and centring await publication.
 - Documentation, historical release notes, and an [official coding cat](docs/assets/images/coding-cat.png).
 
 The latest recorded release is **2.1.2 — The Italic Rebellion**. Current changes are listed under [Unreleased](CHANGELOG.md#unreleased).
@@ -30,7 +30,7 @@ Use Node.js 24 and npm. From `frontend`, run `npm ci` to install the recorded de
 
 Open [localhost:3000/professional-hello-world/](http://localhost:3000/professional-hello-world/). The project prefix applies locally as well as on GitHub Pages; the bare localhost root is not the greeting route.
 
-The web page is split between `src/app/layout.tsx` (document structure, metadata, and viewport) and `src/app/page.tsx` (the greeting). The original `src/hello.html` remains a historical reference and is not used by the new publication workflow. Legacy resource placeholders remain inactive comments. Active styles live in `src/app/page.css.ts`: Vanilla Extract generates a class providing `2rem` of padding, a system sans-serif font, and a line height of `1.5`. The greeting has acquired breathing room without commissioning a custom typeface.
+The web page is split between `src/app/layout.tsx` (document structure, metadata, and viewport) and `src/app/page.tsx` (composition of `ProfessionalHelloWorld` and `ComingSoon`, defined in `src/components`). The original `src/hello.html` remains a historical reference and is not used by the new publication workflow. Legacy resource placeholders remain inactive comments. Active styles live in `src/app/page.css.ts`: Vanilla Extract generates a class providing `2rem` of padding, a system sans-serif font, and a line height of `1.5`. The class now uses a flex column centred on both axes with a minimum height of `100dvh`, border-box sizing, and centred text. A global body rule removes the default margin. Text can wrap on narrow screens; no breakpoint-specific layout is introduced.
 
 ### Checks and Formatting
 
@@ -44,7 +44,7 @@ Run these commands from `frontend`:
 
 Biome handles code checks and formatting; TypeScript checks types. Neither can determine whether a correctly formed URL names the right repository. No automated application test suite or coverage measurement is provided yet.
 
-The independent terminal greeting still runs with `python backend/src/hello.py` from the repository root, using Python 3.11 or newer.
+The former `python backend/src/hello.py` command is no longer available following the script's removal in commit #33.
 
 ## Publishing the Greeting
 
@@ -52,7 +52,7 @@ The workflow in `.github/workflows/pages.yml` runs on pushes to `main` and suppo
 
 The workflow uses Node.js 24 and `npm ci` inside `frontend`, then runs Biome checks, TypeScript checks, and the Next.js build. It uploads `frontend/out` and deploys that artifact. Files from `frontend/public` are included in the export, including the coding cat at `docs/assets/images/coding-cat.png`.
 
-The public address is [vincentmardon.github.io/professional-hello-world/](https://vincentmardon.github.io/professional-hello-world/). The original HTML deployment succeeded for commit #29. The Next.js deployment succeeded for commit #30. The subsequent Vanilla Extract integration has been verified locally and awaits remote deployment.
+The public address is [vincentmardon.github.io/professional-hello-world/](https://vincentmardon.github.io/professional-hello-world/). The original HTML deployment succeeded for commit #29. The Next.js deployment succeeded for commit #30. The Vanilla Extract integration deployed successfully for commit #31, and the publication workflow also succeeded after the Python removal in commit #33. The current component extraction and centring await their own remote deployment.
 ## Possible Next Greetings
 
 The [architecture document](docs/ARCHITECTURE.md) records the current implementation and possible technical directions. The [Global Hello Session proposal](docs/FEATURE-global-hello.md) imagines one person saying hello and others answering together.
