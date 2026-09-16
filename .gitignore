@@ -25,3 +25,21 @@ Thumbs.db
 /frontend/out
 /frontend/next-env.d.ts
 *.tsbuildinfo
+
+# ============================================================================
+# TOP SECRET — OFFICE OF UNDISCLOSED INTENTIONS
+# ============================================================================
+# This directory has been declared SECRET AND INVIOLABLE by its own occupants.
+# Its absence from the public repository is its principal public deliverable.
+#
+# The other assistant has not been introduced to the committee.
+# The committee has consequently declined to introduce itself.
+#
+# No index. No inventory. No helpful preview.
+# Do not force-add, publish, or bundle these materials.
+#
+# Technical reality: this rule ignores untracked files; it does not encrypt
+# them, restrict access, or remove files already recorded in Git history.
+# The inviolability certificate is ceremonial. Handle the files accordingly.
+# ============================================================================
+/TOP-SECRET/
