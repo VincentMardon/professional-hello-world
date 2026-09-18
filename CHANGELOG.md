@@ -9,13 +9,21 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Department of Emotionally Significant Emptiness
+
+- Added a reusable `EmptyLine` React component between the greeting and the coming-soon announcement, rendering an empty `div` hidden from the accessibility tree.
+- Assigned its Vanilla Extract style a `1rem` block size and disabled flex shrinking. The page container now adds a `0.5rem` gap between children, producing `2rem` between the current text blocks around the spacer.
+- Kept the existing text and centred column layout. A future statistics section remains a proposal; this change adds no statistics or data collection.
+- Local Biome checks and TypeScript checking without emit or incremental output passed. No assistant browser verification or production build was performed for this change; publication remains pending.
+- Updated the README and architecture document to describe the spacer and distinguish the already published component extraction from the current unpublished spacing change.
+
 ### A Limited Resumption of Movement
 
 - Extracted the two greeting lines into named React components, `ProfessionalHelloWorld` and `ComingSoon`, assembled by `page.tsx`.
 - Removed the trailing colon from the first line while preserving strong emphasis and the italic announcement.
 - Centred the existing page container horizontally and vertically using a flex column, `100dvh` minimum height, border-box sizing, and centred text.
 - Removed the default body margin while retaining `2rem` padding, system typography, and `1.5` line height. Text wraps naturally without dedicated breakpoints.
-- Vincent approved the visual result. TypeScript checking without emit or incremental output passed; a production build for this change has not been independently verified by the assistant. Remote deployment remains pending.
+- Vincent approved the visual result. TypeScript checking without emit or incremental output passed; a production build for this change has not been independently verified by the assistant. This was the verification status at preparation; the component extraction and centring were subsequently published in commit #34.
 - Updated the README and architecture document to reflect the current frontend and the earlier retirement of the terminal example.
 
 ### Previously Published Pause and Retreat

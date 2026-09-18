@@ -10,7 +10,7 @@ This document separates the implementation from the architectural ambitions. The
 
 | Component | Location | Actual behavior |
 |-----------|----------|-----------------|
-| Web greeting | `frontend/src/app/layout.tsx`, `page.tsx`, and `src/components/` | Next.js App Router with metadata, viewport, and two greeting components centred in a flex column |
+| Web greeting | `frontend/src/app/layout.tsx`, `page.tsx`, and `src/components/` | Next.js App Router with metadata, viewport, and two greeting components and an empty spacer centred in a flex column |
 | Former terminal greeting | Git history of `backend/src/hello.py` | Removed in commit #33; no current terminal greeting command |
 | CI | `.github/workflows/ci.yml` | Checks out the repository and prints a message on pushes and pull requests |
 | Publication | `.github/workflows/pages.yml` | Checks and builds the Next.js frontend, then publishes `frontend/out`; migration deployed for commit #30 |
@@ -23,17 +23,19 @@ The Python example was removed in commit #33. Its historical implementation rema
 
 ## Greeting Components
 
-`ProfessionalHelloWorld.tsx` renders the first line with its existing strong emphasis. `ComingSoon.tsx` renders the italic announcement. Both use named exports and are composed by `page.tsx` inside the existing styled `div`. The first line no longer includes its former trailing colon. The components require no client directive, state, or additional dependencies.
+`ProfessionalHelloWorld.tsx` renders the first line with its existing strong emphasis. `ComingSoon.tsx` renders the italic announcement. Both use named exports and are composed by `page.tsx` inside the existing styled `div`, with `EmptyLine.tsx` between them. `EmptyLine` renders an empty `div` with `aria-hidden="true"`; it has no semantic separator role and carries no content. The first line no longer includes its former trailing colon. The components require no client directive, state, or additional dependencies.
+
+The spacer is reusable between future sections. A statistics section between the two greeting lines is an intended direction, not an implemented component or data collection feature.
 
 ## Styling the Greeting
 
-`frontend/src/app/page.css.ts` defines a Vanilla Extract class imported by `page.tsx`: `2rem` padding, `system-ui, sans-serif`, and a line height of `1.5`. This is inner spacing, not a margin declaration. The class also establishes a flex column, centres its children on both axes, and uses `minHeight: "100dvh"` with border-box sizing so padding is included in the minimum height. Text is centred and may wrap naturally. A global body rule removes the browser's default margin; no media-query breakpoints are defined.
+`frontend/src/app/page.css.ts` defines a Vanilla Extract class imported by `page.tsx`: `2rem` padding, `system-ui, sans-serif`, and a line height of `1.5`. This is inner spacing, not a margin declaration. The class also establishes a flex column, centres its children on both axes, and uses `minHeight: "100dvh"` with border-box sizing so padding is included in the minimum height. The container uses `gap: "0.5rem"` between consecutive children. `frontend/src/components/EmptyLine.css.ts` assigns the spacer `blockSize: "1rem"` and `flexShrink: 0`. Its height plus the two adjacent gaps yields `2rem` between the current text blocks; this is block spacing, not a measurement between visible glyphs. Text is centred and may wrap naturally. A global body rule removes the browser's default margin; no media-query breakpoints are defined.
 
 `@vanilla-extract/css` supplies the styling API. The Next.js configuration uses `@vanilla-extract/next-plugin`, pinned to `2.5.2`, with `unstable_turbopack.mode: "auto"`. This explicitly enables the plugin's experimental Turbopack integration; see the [official documentation](https://vanilla-extract.style/documentation/integrations/next/). Styles are extracted into CSS during the build without adding a styling runtime. Next.js still produces its own JavaScript.
 
 The project records version-specific npm install-script approvals for `@swc/core@1.16.2` and `esbuild@0.28.2`. Vincent successfully rebuilt both after approving their initially blocked scripts. Updated versions may require fresh approval under that npm policy.
 
-Vincent confirmed passing local checks and the intended visual result. Inspection of the static export confirmed the CSS declarations. The existing static export configuration and Pages workflow are retained; the initial integration deployed successfully for commit #31. The subsequent component extraction and centring await publication.
+Vincent confirmed passing local checks and the intended visual result. Inspection of the static export confirmed the CSS declarations. The existing static export configuration and Pages workflow are retained; the initial integration deployed successfully for commit #31. Component extraction and centring were published in commit #34. For the new spacer, local Biome checks and TypeScript checking with no emit or incremental output passed; no assistant browser check or production build is claimed.
 
 ## Running the Frontend
 
@@ -47,7 +49,7 @@ The terminal script was removed in commit #33, so its old command no longer work
 
 The Pages workflow installs the lockfile's dependencies with `npm ci`, runs Biome and TypeScript checks, builds Next.js, and uploads `frontend/out`. It runs on pushes to `main` or manual dispatch with the `github-pages` environment and the existing publication permissions. No Python server is deployed.
 
-The previous HTML publication succeeded for commit #29. Vincent reported the Next.js version working locally; inspection of the generated export confirmed the homepage, corrected Open Graph URLs, and image file. The Next.js deployment subsequently succeeded for commit #30. The initial styling integration subsequently deployed for commit #31, and the workflow succeeded after the Python removal in commit #33. The new component extraction and centring still await their own remote run.
+The previous HTML publication succeeded for commit #29. Vincent reported the Next.js version working locally; inspection of the generated export confirmed the homepage, corrected Open Graph URLs, and image file. The Next.js deployment subsequently succeeded for commit #30. The initial styling integration subsequently deployed for commit #31, and the workflow succeeded after the Python removal in commit #33. Component extraction and centring were published in commit #34. The new spacer awaits publication and deployment verification.
 
 `frontend/src/hello.html` remains a historical reference. The generated export, `.next`, route declarations, and TypeScript build information are excluded from version control. The package lockfile is committed. Biome excludes generated content and the legacy HTML.
 ## Proposed Directions

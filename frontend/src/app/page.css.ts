@@ -10,6 +10,7 @@ export const greeting = style({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
+  gap: "0.5rem",
   alignItems: "center",
   padding: "2rem",
   fontFamily: "system-ui, sans-serif",
