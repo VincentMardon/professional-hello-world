@@ -9,12 +9,22 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Inspection Department Begins Inspecting
+
+- Replaced the ceremonial CI message with locked dependency installation, Biome checks, TypeScript checking, and the Next.js production build on pushes, pull requests, and manual runs.
+- Made CI the publication entry point: successful runs on `main` outside pull-request events upload `frontend/out` and call the reusable Pages workflow through a job depending on `sanity`.
+- Removed checkout, installation, checks, and rebuilding from the Pages workflow. It configures Pages and deploys the artifact produced by the calling CI run.
+- Moved manual publication to CI, retained the Pages environment and deployment concurrency group, and scoped publication permissions to the relevant jobs.
+- Updated checkout and Node setup to v7 and selected `ubuntu-24.04` explicitly. The frontend continues using Node.js 24.
+- Removed the separate CI/publication double build on `main`. Push and pull-request triggers can still produce separate CI executions for an open repository PR.
+- Updated README, architecture, and contribution guidance. Local file review and whitespace checks passed; this arrangement awaits its first GitHub execution and deployment verification.
+
 ### The Department of Emotionally Significant Emptiness
 
 - Added a reusable `EmptyLine` React component between the greeting and the coming-soon announcement, rendering an empty `div` hidden from the accessibility tree.
 - Assigned its Vanilla Extract style a `1rem` block size and disabled flex shrinking. The page container now adds a `0.5rem` gap between children, producing `2rem` between the current text blocks around the spacer.
 - Kept the existing text and centred column layout. A future statistics section remains a proposal; this change adds no statistics or data collection.
-- Local Biome checks and TypeScript checking without emit or incremental output passed. No assistant browser verification or production build was performed for this change; publication remains pending.
+- Local Biome checks and TypeScript checking without emit or incremental output passed. At preparation, no assistant browser verification or production build had been performed. Commit #36 subsequently completed its production build and deployment on GitHub; no assistant browser inspection is claimed.
 - Updated the README and architecture document to describe the spacer and distinguish the already published component extraction from the current unpublished spacing change.
 
 ### A Limited Resumption of Movement

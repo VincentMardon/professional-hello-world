@@ -117,7 +117,9 @@ Yes, we really do that here.
 ## 4. CI / GitHub Actions
 
 - CI must be green. Even for a `<div>`.
-- If CI fails, investigate and describe the failure accurately. The legacy CI workflow only prints a message. The Pages workflow additionally runs Biome, TypeScript checks, and the Next.js build; a green legacy CI badge alone does not establish that these checks passed.
+- If CI fails, investigate and describe the failure accurately. CI installs the locked dependencies, runs Biome and TypeScript checks, and builds Next.js. Inspect the run for the actual commit; a historical green badge is not evidence that a newly edited workflow has executed successfully.
+- Publication on `main` depends on successful CI and deploys its existing Pages artifact through a reusable workflow. For manual publication, run **CI** on `main`. Pull requests are checked and built without publishing; no automated application test suite or coverage measurement is implied.
+- The reusable publication arrangement currently awaits its first GitHub verification. Check the artifact upload and deployment result after publication, as well as the checks themselves.
 - State how you checked the actual change. Do not claim tests or coverage that were not performed.
 
 ---

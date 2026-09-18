@@ -18,8 +18,8 @@ The project takes software rituals very seriously for someone whose principal de
 
 - A Next.js App Router frontend, exported as a static site, displaying **Professional "Hello, World!"** followed by *Coming soon ...*, with a component for each line, a reusable `EmptyLine` spacer, and a layout centred horizontally and vertically.
 - The former Python greeting was removed in commit #33; its implementation remains in Git history.
-- A GitHub Actions workflow that checks out the repository and prints a ceremonial message. It does not yet run tests, measure coverage, or build the project.
-- A separate Pages workflow that installs dependencies, checks code with Biome and TypeScript, builds Next.js, and publishes the static export. The Next.js migration was successfully deployed for commit #30. The initial Vanilla Extract integration was deployed for commit #31; component extraction and centring were published in commit #34. The new `EmptyLine` spacing awaits publication.
+- A CI workflow that installs dependencies and runs Biome, TypeScript checks, and the Next.js build on pushes, pull requests, and manual dispatch. No automated application test suite or coverage measurement is provided.
+- A reusable Pages workflow called by CI after successful checks on `main`, publishing the already built artifact. This workflow restructuring is implemented locally and awaits its first GitHub execution.
 - Documentation, historical release notes, and an [official coding cat](docs/assets/images/coding-cat.png).
 
 The latest recorded release is **2.1.2 — The Italic Rebellion**. Current changes are listed under [Unreleased](CHANGELOG.md#unreleased).
@@ -48,11 +48,18 @@ The former `python backend/src/hello.py` command is no longer available followin
 
 ## Publishing the Greeting
 
-The workflow in `.github/workflows/pages.yml` runs on pushes to `main` and supports manual dispatch. The repository's Pages publishing source is GitHub Actions.
+CI in `.github/workflows/ci.yml` is the entry point for pushes, pull requests, and manual runs. It uses Ubuntu 24.04, `actions/checkout@v7`, `actions/setup-node@v7`, and Node.js 24. Its `sanity` job runs `npm ci`, `npm run check`, `npm run typecheck`, and `npm run build` from `frontend`.
 
-The workflow uses Node.js 24 and `npm ci` inside `frontend`, then runs Biome checks, TypeScript checks, and the Next.js build. It uploads `frontend/out` and deploys that artifact. Files from `frontend/public` are included in the export, including the coding cat at `docs/assets/images/coding-cat.png`.
+For a push or manual run on `main`, CI packages `frontend/out` as a Pages artifact. The `publish` job requires `sanity` to succeed, then calls `.github/workflows/pages.yml` through `workflow_call`. That workflow configures Pages and deploys the artifact from the same run without installing dependencies or building again. Pull requests and other branches run the checks and build without publishing.
 
-The public address is [vincentmardon.github.io/professional-hello-world/](https://vincentmardon.github.io/professional-hello-world/). The original HTML deployment succeeded for commit #29. The Next.js deployment succeeded for commit #30. The Vanilla Extract integration deployed successfully for commit #31, and the publication workflow also succeeded after the Python removal in commit #33. Component extraction and centring were published in commit #34. The new spacer has not yet been published or verified in a production build by the assistant.
+To publish manually, select **CI**, choose **Run workflow**, and select `main`. The reusable Pages workflow has no independent push or manual trigger. Publication uses the `github-pages` environment and grants `pages: write` and `id-token: write` to the deployment job. The `pages` concurrency group serializes deployment jobs; CI builds can still run concurrently.
+
+There is one build per CI execution. A push to a repository branch with an open pull request can still trigger both push and pull-request executions. The removed duplication is the separate CI and publication builds for a push to `main`.
+
+The repository's Pages publishing source remains GitHub Actions. Files from `frontend/public` are included in the export, including the coding cat at `docs/assets/images/coding-cat.png`. The public address is [vincentmardon.github.io/professional-hello-world/](https://vincentmardon.github.io/professional-hello-world/).
+
+The original HTML deployment succeeded for commit #29, the Next.js migration for #30, and the initial Vanilla Extract integration for #31. The publication workflow also succeeded after the Python removal in #33. Component extraction and centring were published in #34. The spacer was published in #36, with [its production build and deployment successful](https://github.com/VincentMardon/professional-hello-world/actions/runs/35374942348). These results belong to the previous workflow arrangement. The new CI-to-Pages handoff has been reviewed locally and awaits verification on GitHub.
+
 ## Possible Next Greetings
 
 The [architecture document](docs/ARCHITECTURE.md) records the current implementation and possible technical directions. The [Global Hello Session proposal](docs/FEATURE-global-hello.md) imagines one person saying hello and others answering together.
