@@ -6,6 +6,7 @@ export default function HomePage() {
   return (
     <div className={greeting}>
       <ProfessionalHelloWorld />
+      <br />
       <ComingSoon />
     </div>
   );
