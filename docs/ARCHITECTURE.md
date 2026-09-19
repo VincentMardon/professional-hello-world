@@ -12,10 +12,19 @@ This document separates the implementation from the architectural ambitions. The
 |-----------|----------|-----------------|
 | Web greeting | `frontend/src/app/layout.tsx`, `page.tsx`, and `src/components/` | Next.js App Router with metadata, viewport, and two greeting components and an empty spacer centred in a flex column |
 | Former terminal greeting | Git history of `backend/src/hello.py` | Removed in commit #33; no current terminal greeting command |
-| CI | `.github/workflows/ci.yml` | Installs dependencies, checks with Biome and TypeScript, and builds on pushes, pull requests, and manual runs |
+| Page tests | `frontend/src/app/page.test.tsx` | Four Vitest tests render the real page in jsdom and check content, semantics, and the decorative interval |
+| CI | `.github/workflows/ci.yml` | Installs dependencies, checks with Biome and TypeScript, runs Vitest, and builds on pushes, pull requests, and manual runs |
 | Publication | `.github/workflows/pages.yml` | Reusable workflow called by CI to deploy the verified Pages artifact on main; no second build |
 
-The frontend uses Next.js 16.3.5, React 19.3.0, TypeScript 6.0.3, and Biome 2.5.13. There is no API, database, container setup, or active Python greeting. The CI workflow runs lint, format, type, and build checks; it does not run application tests or measure coverage.
+The frontend uses Next.js 16.3.5, React 19.3.0, TypeScript 6.0.3, and Biome 2.5.13. There is no API, database, container setup, or active Python greeting. The CI workflow runs lint, format, type, application-test, and build checks; it does not measure coverage.
+
+## Testing the Greeting
+
+`frontend/vitest.config.ts` selects jsdom, discovers `src/**/*.test.{ts,tsx}`, and loads `vitest.setup.ts`. React and Vanilla Extract Vite plugins transform the component and style imports independently of the Next.js build configuration. The setup imports jest-dom's Vitest matchers and explicitly calls React Testing Library cleanup after each test.
+
+The single page suite renders `HomePage` without mocking its children. Four tests check the complete greeting and punctuation, the quoted greeting's strong importance, the coming-soon announcement's semantic emphasis, and the empty `aria-hidden` interval placed between the two lines. Text assertions normalize whitespace; they do not measure typography.
+
+The initial local run passed all four tests, Biome, and TypeScript with `--noEmit --incremental false`. No production build or browser inspection was performed for this introduction, and the new CI test step awaits execution on GitHub. jsdom does not calculate layout; generated metadata, production-export behavior, and visual rendering remain outside this suite. Coverage measurement, E2E, mutation testing, and multi-browser automation are deferred until relevant behavior justifies them.
 
 The absent CSS, JavaScript, and font references are retained as JSX comments in the layout. Next.js generates the metadata and viewport tags from typed exports. Open Graph metadata points to the intended Pages URL and the coding cat image included in the publication artifact. These metadata changes do not implement styling, analytics, or custom fonts.
 
@@ -47,7 +56,7 @@ The terminal script was removed in commit #33, so its old command no longer work
 
 `next.config.ts` sets `output: "export"`, `basePath: "/professional-hello-world"`, and `trailingSlash: true`. Next.js builds the public site in `frontend/out`. The coding cat is copied from `frontend/public/docs/assets/images/coding-cat.png`. These build settings are explicit and do not depend on outputs from `configure-pages`.
 
-`.github/workflows/ci.yml` runs on pushes, pull requests, and manual dispatch. The `sanity` job checks out the source, sets up Node.js 24 with npm caching keyed from `frontend/package-lock.json`, installs with `npm ci`, runs Biome and TypeScript checks, and builds the static export. Both workflows use `ubuntu-24.04`; checkout and Node setup use major version 7, whose action runtime is Node 24. The action runtime and the application's selected Node.js version are separate settings.
+`.github/workflows/ci.yml` runs on pushes, pull requests, and manual dispatch. The `sanity` job checks out the source, sets up Node.js 24 with npm caching keyed from `frontend/package-lock.json`, installs with `npm ci`, runs Biome and TypeScript checks, executes the Vitest suite with `npm run test:run`, and builds the static export. Both workflows use `ubuntu-24.04`; checkout and Node setup use major version 7, whose action runtime is Node 24. The action runtime and the application's selected Node.js version are separate settings.
 
 Only executions on `refs/heads/main` whose event is not `pull_request` upload the Pages artifact and enter the `publish` job. `needs: sanity` prevents publication after a failed prerequisite. The job calls the repository-local `pages.yml` at the same commit via `workflow_call`.
 
@@ -55,7 +64,7 @@ The reusable workflow configures Pages and deploys the artifact from the calling
 
 CI defaults to `contents: read`. The calling publication job grants the permissions needed by the reusable workflow, whose deployment job requests `pages: write` and `id-token: write`. Deployment retains the `github-pages` environment, reported page URL, and `pages` concurrency group with `cancel-in-progress: false`. This serializes deployment jobs, not the preceding CI builds, and does not establish a guaranteed ordering of concurrent build completions.
 
-There is one build per CI execution. Keeping both push and pull-request triggers can still produce two executions for a push to a repository branch with an open PR. No application tests, coverage measurement, or Python server are introduced.
+There is one build per CI execution. Keeping both push and pull-request triggers can still produce two executions for a push to a repository branch with an open PR. The page tests run before the build. Coverage measurement and a Python server are not provided.
 
 The earlier publication pipeline succeeded for the HTML greeting in #29, the Next.js migration in #30, the initial styles in #31, and the Python removal in #33. Component extraction and centring were published in #34. The spacer's [build and deployment succeeded for #36](https://github.com/VincentMardon/professional-hello-world/actions/runs/35374942348). The revised reusable-workflow arrangement is implemented in the working tree; its artifact handoff and deployment have not yet been verified by a GitHub run.
 
@@ -89,7 +98,7 @@ A visitor could initiate a greeting and watch other visitors answer during a sho
 
 ### Operations and Observation
 
-Biome checks and Next.js builds are now part of publication. Further exercises could include application tests, containers, and greeting metrics. Each should be introduced alongside the behavior it would verify or explain. Example metrics from the original plan include `hello_requests_total` and counts by language or client.
+Biome checks, TypeScript checking, Vitest page tests, and Next.js builds are now part of the publication prerequisites. Further exercises could include broader tests, containers, and greeting metrics. Each should be introduced alongside the behavior it would verify or explain. Example metrics from the original plan include `hello_requests_total` and counts by language or client.
 
 Any public service would also need appropriate access controls and consideration of rate limits. Instrumentation choices and public statistics should be specified before implementation; there is currently no analytics collection in the application code.
 

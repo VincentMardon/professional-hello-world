@@ -36,6 +36,9 @@ jobs:
       - name: Verify the types of our intentions
         run: npm run typecheck
 
+      - name: Hear the sworn testimony of the greeting
+        run: npm run test:run
+
       - name: Construct the disproportionately qualified greeting
         run: npm run build
 

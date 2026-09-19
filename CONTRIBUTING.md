@@ -117,8 +117,8 @@ Yes, we really do that here.
 ## 4. CI / GitHub Actions
 
 - CI must be green. Even for a `<div>`.
-- If CI fails, investigate and describe the failure accurately. CI installs the locked dependencies, runs Biome and TypeScript checks, and builds Next.js. Inspect the run for the actual commit; a historical green badge is not evidence that a newly edited workflow has executed successfully.
-- Publication on `main` depends on successful CI and deploys its existing Pages artifact through a reusable workflow. For manual publication, run **CI** on `main`. Pull requests are checked and built without publishing; no automated application test suite or coverage measurement is implied.
+- If CI fails, investigate and describe the failure accurately. CI installs the locked dependencies, runs Biome, TypeScript checks, and `npm run test:run`, then builds Next.js. Inspect the run for the actual commit; a historical green badge is not evidence that a newly edited workflow has executed successfully.
+- Publication on `main` depends on successful CI, including the Vitest suite, and deploys its existing Pages artifact through a reusable workflow. For manual publication, run **CI** on `main`. Pull requests are checked, tested, and built without publishing. Coverage measurement is not configured.
 - The reusable publication arrangement currently awaits its first GitHub verification. Check the artifact upload and deployment result after publication, as well as the checks themselves.
 - State how you checked the actual change. Do not claim tests or coverage that were not performed.
 
@@ -126,7 +126,18 @@ Yes, we really do that here.
 
 ## 5. Style guidelines
 
-For the Next.js frontend, run `npm run check:fix` from `frontend` to apply safe Biome fixes, then `npm run check`, `npm run typecheck`, and `npm run build`. Review the changes before committing. These checks do not replace checking the page and its links in a browser.
+For the Next.js frontend, run `npm run check:fix` from `frontend` to apply safe Biome fixes, then `npm run check`, `npm run typecheck`, `npm run test:run`, and `npm run build`. Review the changes before committing. These checks do not replace checking the page and its links in a browser.
+
+### Testing Conventions
+
+The testing ambition includes code behavior and the full page experience. Build the suite progressively around real requirements and risks. Even 100% coverage would not establish that assertions are sufficient; coverage is not currently measured.
+
+- Use poetic, disproportionately ceremonial English `describe()` names, such as `the solemn assembly of the Professional Hello World page`. Keep `it()` descriptions precise enough to identify the failing behavior.
+- The current suite lives in `frontend/src/app/page.test.tsx` and renders the real page components. Check meaningful content, semantics, and composition; avoid duplicating assertions merely to create a test file for every component.
+- Prefer queries based on accessible roles or text. Inspect DOM structure when it is itself the contract, as with the empty decorative interval and its position.
+- Use `npm test` while developing and `npm run test:run` for a single execution. Explicit cleanup in `vitest.setup.ts` isolates each test's rendered DOM.
+- jsdom does not calculate visual layout. Check spacing, centring, narrow screens, and zoom in a real browser; passing DOM assertions do not establish complete accessibility or visual correctness.
+- Introduce E2E, mutation, and multi-browser testing when the implementation gives them a concrete purpose. The current suite does not verify generated metadata or the production export.
 
 
 - HTML: keep it simple, even when the `<head>` is overpopulated.

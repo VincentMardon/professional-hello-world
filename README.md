@@ -18,7 +18,7 @@ The project takes software rituals very seriously for someone whose principal de
 
 - A Next.js App Router frontend, exported as a static site, displaying **Professional "Hello, World!"** followed by *Coming soon ...*, with a component for each line, a reusable `EmptyLine` spacer, and a layout centred horizontally and vertically.
 - The former Python greeting was removed in commit #33; its implementation remains in Git history.
-- A CI workflow that installs dependencies and runs Biome, TypeScript checks, and the Next.js build on pushes, pull requests, and manual dispatch. No automated application test suite or coverage measurement is provided.
+- A CI workflow that installs dependencies and runs Biome, TypeScript checks, four Vitest page tests, and the Next.js build on pushes, pull requests, and manual dispatch. Coverage measurement is not configured.
 - A reusable Pages workflow called by CI after successful checks on `main`, publishing the already built artifact. This workflow restructuring is implemented locally and awaits its first GitHub execution.
 - Documentation, historical release notes, and an [official coding cat](docs/assets/images/coding-cat.png).
 
@@ -39,16 +39,22 @@ Run these commands from `frontend`:
 - `npm run check`: Biome lint and formatting checks without edits.
 - `npm run check:fix`: apply Biome's safe automatic fixes and formatting.
 - `npm run format`: format supported project files.
+- `npm test`: run Vitest in watch mode during development.
+- `npm run test:run`: run the test suite once, as CI does.
 - `npm run typecheck`: generate Next.js route types and check TypeScript.
 - `npm run build`: create the production static export in `out`.
 
-Biome handles code checks and formatting; TypeScript checks types. Neither can determine whether a correctly formed URL names the right repository. No automated application test suite or coverage measurement is provided yet.
+Biome handles code checks and formatting; TypeScript checks types. Neither can determine whether a correctly formed URL names the right repository.
+
+The first test suite renders `HomePage` with its real components using Vitest, React Testing Library, jest-dom, and jsdom. Four tests check the greeting and punctuation, strong importance, the coming-soon announcement and its emphasis, and the empty decorative interval between the two lines. The test configuration transforms React and Vanilla Extract imports through their Vite plugins and cleans up the DOM after each test.
+
+These are DOM tests, not a rendered-layout inspection. Check centring, spacing, narrow screens, and zoom in a browser. The suite does not verify Next.js-generated metadata or the production export. Coverage measurement, E2E tests, mutation testing, and automated multi-browser checks are not configured; heavier layers will be introduced when they have real behavior to verify. See the [testing conventions](CONTRIBUTING.md#testing-conventions).
 
 The former `python backend/src/hello.py` command is no longer available following the script's removal in commit #33.
 
 ## Publishing the Greeting
 
-CI in `.github/workflows/ci.yml` is the entry point for pushes, pull requests, and manual runs. It uses Ubuntu 24.04, `actions/checkout@v7`, `actions/setup-node@v7`, and Node.js 24. Its `sanity` job runs `npm ci`, `npm run check`, `npm run typecheck`, and `npm run build` from `frontend`.
+CI in `.github/workflows/ci.yml` is the entry point for pushes, pull requests, and manual runs. It uses Ubuntu 24.04, `actions/checkout@v7`, `actions/setup-node@v7`, and Node.js 24. Its `sanity` job runs `npm ci`, `npm run check`, `npm run typecheck`, `npm run test:run`, and `npm run build` from `frontend`. A failing test prevents the subsequent build, artifact upload, and publication. The newly added test step awaits its first GitHub execution.
 
 For a push or manual run on `main`, CI packages `frontend/out` as a Pages artifact. The `publish` job requires `sanity` to succeed, then calls `.github/workflows/pages.yml` through `workflow_call`. That workflow configures Pages and deploys the artifact from the same run without installing dependencies or building again. Pull requests and other branches run the checks and build without publishing.
 

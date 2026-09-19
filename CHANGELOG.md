@@ -9,6 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Greeting Is Called to Testify
+
+- Added Vitest, React Testing Library, jest-dom, and jsdom, with Vite plugins for React and Vanilla Extract and explicit DOM cleanup after each test.
+- Added four tests rendering the real homepage: greeting text and punctuation, strong importance, the coming-soon announcement and its emphasis, and the empty accessibility-hidden interval between the two lines.
+- Added `npm test` for watch mode and `npm run test:run` for a single execution. CI now runs the suite after TypeScript checks and before the build, making passing tests a publication prerequisite.
+- Established poetic English suite names and progressive testing conventions covering both code behavior and the page experience. Coverage percentages are not a substitute for meaningful assertions.
+- The initial local run passed all four tests, Biome, and TypeScript without emit or incremental output. The new CI step awaits its first GitHub run; no production build or browser inspection is claimed for this change.
+- Coverage measurement, E2E, mutation testing, and multi-browser automation are not configured. The current DOM suite does not verify visual layout, Next.js-generated metadata, or the production export.
+
 ### The Inspection Department Begins Inspecting
 
 - Replaced the ceremonial CI message with locked dependency installation, Biome checks, TypeScript checking, and the Next.js production build on pushes, pull requests, and manual runs.
@@ -79,7 +88,7 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 ### Possible Future Work
 - Visual exploration of the prelaunch greeting, with WebGL to be discussed when appropriate.
 - Greeting API, shared hello sessions, and suitable aggregate statistics.
-- Tests, linting, builds, and operational exercises as the implementation develops.
+- Broader testing and operational exercises as the implementation develops; linting, type checks, page tests, and builds are already configured.
 
 These are exploratory directions, not committed release contents. The entries below preserve the original release narrative, including the expectations expressed at the time.
 
