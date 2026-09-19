@@ -119,7 +119,7 @@ Yes, we really do that here.
 - CI must be green. Even for a `<div>`.
 - If CI fails, investigate and describe the failure accurately. CI installs the locked dependencies, runs Biome, TypeScript checks, and `npm run test:run`, then builds Next.js. Inspect the run for the actual commit; a historical green badge is not evidence that a newly edited workflow has executed successfully.
 - Publication on `main` depends on successful CI, including the Vitest suite, and deploys its existing Pages artifact through a reusable workflow. For manual publication, run **CI** on `main`. Pull requests are checked, tested, and built without publishing. Coverage measurement is not configured.
-- The reusable publication arrangement currently awaits its first GitHub verification. Check the artifact upload and deployment result after publication, as well as the checks themselves.
+- The reusable publication arrangement succeeded for commits #37 and #38, with the new test step also passing for #38. Check the artifact upload and deployment result for each new publication, as well as the checks themselves.
 - State how you checked the actual change. Do not claim tests or coverage that were not performed.
 
 ---

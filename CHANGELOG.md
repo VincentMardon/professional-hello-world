@@ -9,13 +9,23 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+No additional changes recorded beyond the 3.0.0 release preparation.
+
+## [3.0.0] — The Great Invisible Reconstruction — In preparation
+
+This major release gathers the reconstruction since `v2.1.2`: a Next.js and TypeScript frontend, extracted styles, reusable components, a retired Python greeting, real CI, static publication, and the first behavioral test suite. The greeting remains recognizably itself; its supporting institution has been rebuilt.
+
+The visible changes include centred layout, system typography, spacing through `EmptyLine`, and removal of the greeting's trailing colon. The claim is continuity of purpose, not pixel-for-pixel identity.
+
+Release notes are prepared in [The Great Invisible Reconstruction](docs/RELEASE-3.0.0.md). The release tag and GitHub release have not yet been published. The entries below record the development history included in this milestone; preparation-time verification statements are retained with subsequent results where available.
+
 ### The Greeting Is Called to Testify
 
 - Added Vitest, React Testing Library, jest-dom, and jsdom, with Vite plugins for React and Vanilla Extract and explicit DOM cleanup after each test.
 - Added four tests rendering the real homepage: greeting text and punctuation, strong importance, the coming-soon announcement and its emphasis, and the empty accessibility-hidden interval between the two lines.
 - Added `npm test` for watch mode and `npm run test:run` for a single execution. CI now runs the suite after TypeScript checks and before the build, making passing tests a publication prerequisite.
 - Established poetic English suite names and progressive testing conventions covering both code behavior and the page experience. Coverage percentages are not a substitute for meaningful assertions.
-- The initial local run passed all four tests, Biome, and TypeScript without emit or incremental output. The new CI step awaits its first GitHub run; no production build or browser inspection is claimed for this change.
+- The initial local run passed all four tests, Biome, and TypeScript without emit or incremental output. At preparation, the new CI step awaited its first GitHub run. [The run for commit #38](https://github.com/VincentMardon/professional-hello-world/actions/runs/35448593710) subsequently passed the tests, production build, artifact packaging, and deployment. No assistant browser inspection is claimed.
 - Coverage measurement, E2E, mutation testing, and multi-browser automation are not configured. The current DOM suite does not verify visual layout, Next.js-generated metadata, or the production export.
 
 ### The Inspection Department Begins Inspecting
@@ -26,7 +36,7 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 - Moved manual publication to CI, retained the Pages environment and deployment concurrency group, and scoped publication permissions to the relevant jobs.
 - Updated checkout and Node setup to v7 and selected `ubuntu-24.04` explicitly. The frontend continues using Node.js 24.
 - Removed the separate CI/publication double build on `main`. Push and pull-request triggers can still produce separate CI executions for an open repository PR.
-- Updated README, architecture, and contribution guidance. Local file review and whitespace checks passed; this arrangement awaits its first GitHub execution and deployment verification.
+- Updated README, architecture, and contribution guidance. Local file review and whitespace checks passed. [The run for commit #37](https://github.com/VincentMardon/professional-hello-world/actions/runs/35402940885) subsequently verified the build-to-publication handoff successfully; the run for #38 also succeeded with the new tests.
 
 ### The Department of Emotionally Significant Emptiness
 
@@ -49,7 +59,7 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 - Commit #32 recorded an intentional empty commit, leaving the tracked file tree unchanged.
 - Commit #33 removed `backend/src/hello.py` and its 57 lines. This deletion is already committed; its documentation is reconciled here.
-- The Pages workflows for both commits succeeded. These gestures remain distinct from a new numbered release.
+- The Pages workflows for both commits succeeded. These gestures preceded this release preparation and are retained here as part of its development history.
 
 ### The Department of Visual Dignity
 
@@ -58,7 +68,7 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 - Recorded version-specific npm install-script approvals for `@swc/core` and `esbuild`; Vincent successfully rebuilt both packages.
 - Preserved static export and the existing Pages workflow. Vincent confirmed local checks and appearance; generated CSS was inspected. The initial styling integration deployed successfully for commit #31.
 - Updated documentation to reflect styling and the successful deployment of the preceding Next.js migration.
-- Granted the greeting physical space and an entirely disproportionate administrative identity. No new numbered release is declared here.
+- Granted the greeting physical space and an entirely disproportionate administrative identity. The styling change itself did not declare a numbered release; it is now included in the 3.0.0 preparation.
 
 ### Next.js Migration
 
@@ -85,7 +95,7 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 - Removed the decorative coverage badge and clarified what the current CI actually does.
 - Aligned contribution guidance with the learning process and the project's tone.
 
-### Possible Future Work
+### Beyond This Release
 - Visual exploration of the prelaunch greeting, with WebGL to be discussed when appropriate.
 - Greeting API, shared hello sessions, and suitable aggregate statistics.
 - Broader testing and operational exercises as the implementation develops; linting, type checks, page tests, and builds are already configured.

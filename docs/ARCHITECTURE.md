@@ -24,11 +24,11 @@ The frontend uses Next.js 16.3.5, React 19.3.0, TypeScript 6.0.3, and Biome 2.5.
 
 The single page suite renders `HomePage` without mocking its children. Four tests check the complete greeting and punctuation, the quoted greeting's strong importance, the coming-soon announcement's semantic emphasis, and the empty `aria-hidden` interval placed between the two lines. Text assertions normalize whitespace; they do not measure typography.
 
-The initial local run passed all four tests, Biome, and TypeScript with `--noEmit --incremental false`. No production build or browser inspection was performed for this introduction, and the new CI test step awaits execution on GitHub. jsdom does not calculate layout; generated metadata, production-export behavior, and visual rendering remain outside this suite. Coverage measurement, E2E, mutation testing, and multi-browser automation are deferred until relevant behavior justifies them.
+The initial local run passed all four tests, Biome, and TypeScript with `--noEmit --incremental false`. No local production build or assistant browser inspection was performed during that initial check. The [GitHub run for commit #38](https://github.com/VincentMardon/professional-hello-world/actions/runs/35448593710) subsequently passed the tests, production build, artifact packaging, and deployment. jsdom does not calculate layout; generated metadata, production-export behavior, and visual rendering remain outside this suite. Coverage measurement, E2E, mutation testing, and multi-browser automation are deferred until relevant behavior justifies them.
 
 The absent CSS, JavaScript, and font references are retained as JSX comments in the layout. Next.js generates the metadata and viewport tags from typed exports. Open Graph metadata points to the intended Pages URL and the coding cat image included in the publication artifact. These metadata changes do not implement styling, analytics, or custom fonts.
 
-The Python example was removed in commit #33. Its historical implementation remains in Git; the latest recorded project release is still `2.1.2`.
+The Python example was removed in commit #33. Its historical implementation remains in Git; the latest published project release is still `2.1.2`, with [3.0.0 in preparation](RELEASE-3.0.0.md).
 
 ## Greeting Components
 
@@ -66,7 +66,7 @@ CI defaults to `contents: read`. The calling publication job grants the permissi
 
 There is one build per CI execution. Keeping both push and pull-request triggers can still produce two executions for a push to a repository branch with an open PR. The page tests run before the build. Coverage measurement and a Python server are not provided.
 
-The earlier publication pipeline succeeded for the HTML greeting in #29, the Next.js migration in #30, the initial styles in #31, and the Python removal in #33. Component extraction and centring were published in #34. The spacer's [build and deployment succeeded for #36](https://github.com/VincentMardon/professional-hello-world/actions/runs/35374942348). The revised reusable-workflow arrangement is implemented in the working tree; its artifact handoff and deployment have not yet been verified by a GitHub run.
+The earlier publication pipeline succeeded for the HTML greeting in #29, the Next.js migration in #30, the initial styles in #31, and the Python removal in #33. Component extraction and centring were published in #34. The spacer's [build and deployment succeeded for #36](https://github.com/VincentMardon/professional-hello-world/actions/runs/35374942348). The revised reusable-workflow arrangement passed its artifact handoff and deployment in [the run for commit #37](https://github.com/VincentMardon/professional-hello-world/actions/runs/35402940885). The run for #38 also passed with the added test step.
 
 `frontend/src/hello.html` remains a historical reference. The generated export, `.next`, route declarations, and TypeScript build information are excluded from version control. The package lockfile is committed. Biome excludes generated content and the legacy HTML.
 
