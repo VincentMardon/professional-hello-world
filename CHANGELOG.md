@@ -9,15 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-No additional changes recorded beyond the 3.0.0 release preparation.
+No additional implementation changes recorded. Documentation now confirms publication of 3.0.0.
 
-## [3.0.0] — The Great Invisible Reconstruction — In preparation
+## [3.0.0] - 2026-09-19 — The Great Invisible Reconstruction
 
 This major release gathers the reconstruction since `v2.1.2`: a Next.js and TypeScript frontend, extracted styles, reusable components, a retired Python greeting, real CI, static publication, and the first behavioral test suite. The greeting remains recognizably itself; its supporting institution has been rebuilt.
 
 The visible changes include centred layout, system typography, spacing through `EmptyLine`, and removal of the greeting's trailing colon. The claim is continuity of purpose, not pixel-for-pixel identity.
 
-Release notes are prepared in [The Great Invisible Reconstruction](docs/RELEASE-3.0.0.md). The release tag and GitHub release have not yet been published. The entries below record the development history included in this milestone; preparation-time verification statements are retained with subsequent results where available.
+Published as [v3.0.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v3.0.0), targeting commit #39 (`a14a2cd`). [Its CI run](https://github.com/VincentMardon/professional-hello-world/actions/runs/35449649488) passed the checks, tests, build, artifact packaging, and deployment. See [The Great Invisible Reconstruction](docs/RELEASE-3.0.0.md) for the release account. The entries below record the development history included in this milestone; preparation-time verification statements are retained with subsequent results where available.
 
 ### The Greeting Is Called to Testify
 

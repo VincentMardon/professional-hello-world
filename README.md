@@ -22,7 +22,7 @@ The project takes software rituals very seriously for someone whose principal de
 - A reusable Pages workflow called by CI after successful checks on `main`, publishing the already built artifact. Its build-to-deployment path has succeeded on GitHub, including the tests introduced in commit #38.
 - Documentation, historical release notes, and an [official coding cat](docs/assets/images/coding-cat.png).
 
-**3.0.0 — The Great Invisible Reconstruction** is in preparation: the same greeting, now supported by a rebuilt frontend, real checks, and four behavioral tests. Read the [release notes](docs/RELEASE-3.0.0.md) and [changelog](CHANGELOG.md). The latest published release remains **2.1.2 — The Italic Rebellion** until the new tag and GitHub release are published.
+The latest published release is [**3.0.0 — The Great Invisible Reconstruction**](https://github.com/VincentMardon/professional-hello-world/releases/tag/v3.0.0), released on September 19, 2026: the familiar greeting, now supported by a rebuilt frontend, real checks, and four behavioral tests. Read the [release notes](docs/RELEASE-3.0.0.md) and [changelog](CHANGELOG.md).
 
 ## Getting Started
 

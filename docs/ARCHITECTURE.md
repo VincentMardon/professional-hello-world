@@ -28,7 +28,7 @@ The initial local run passed all four tests, Biome, and TypeScript with `--noEmi
 
 The absent CSS, JavaScript, and font references are retained as JSX comments in the layout. Next.js generates the metadata and viewport tags from typed exports. Open Graph metadata points to the intended Pages URL and the coding cat image included in the publication artifact. These metadata changes do not implement styling, analytics, or custom fonts.
 
-The Python example was removed in commit #33. Its historical implementation remains in Git; the latest published project release is still `2.1.2`, with [3.0.0 in preparation](RELEASE-3.0.0.md).
+The Python example was removed in commit #33. Its historical implementation remains in Git; the latest published project release is [3.0.0 — The Great Invisible Reconstruction](RELEASE-3.0.0.md), tagged at commit #39 (`a14a2cd`) on September 19, 2026.
 
 ## Greeting Components
 

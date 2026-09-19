@@ -1,6 +1,6 @@
 # 3.0.0 — The Great Invisible Reconstruction
 
-*Release preparation. The implementation through application commit #38 is published and its CI run succeeded. The `v3.0.0` tag and GitHub release have not yet been created. These notes are prepared for Vincent to review and publish.*
+*Published September 19, 2026 as [v3.0.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v3.0.0). The annotated tag targets release-preparation commit #39, `a14a2cd00e3ef27d4e37f6944e044f9987ddcb9a`.*
 
 ## The Same Greeting, Under Entirely New Management
 
@@ -63,7 +63,7 @@ The private frontend package and its lockfile now identify version `3.0.0`, alig
 
 The [CI run for application commit #38](https://github.com/VincentMardon/professional-hello-world/actions/runs/35448593710) passed dependency installation, Biome, TypeScript, the test suite, the production build, artifact packaging, and deployment. The initial local verification also passed all four tests, Biome, and TypeScript checking without emit or incremental output.
 
-This is evidence for that exact commit. The final release commit must have its own CI result checked before it is tagged and published.
+The [CI run for release-preparation commit #39](https://github.com/VincentMardon/professional-hello-world/actions/runs/35449649488) also passed the checks, tests, build, artifact packaging, and deployment. The annotated `v3.0.0` tag targets that exact commit; the GitHub release was published after this verification.
 
 jsdom does not calculate visual layout. These tests do not verify centring, zoom, narrow-screen rendering, generated metadata, or the production export as experienced in a browser. No new assistant browser inspection is claimed here.
 
