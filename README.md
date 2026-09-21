@@ -75,6 +75,7 @@ Visual experiments, including WebGL, may become part of the learning process whe
 ## Further Reading
 
 - [Contributing](CONTRIBUTING.md): tone, working practices, and documentation conventions.
+- [Correspondence registry](records/README.md): issued administrative satire and the standing format for future letters, beginning with the refusal of pull request No. 1.
 - [Changelog](CHANGELOG.md): an unusually eventful history of very small changes.
 - [Recovery addendum](docs/postmortem-unsaved-guideline.md#recovery-addendum--the-maintainer-was-also-unsaved): the more personal context, for those who want it.
 - [Collaboration rules](AGENTS.md): Vincent writes the code; the assistant explains proposals and may edit documentation.

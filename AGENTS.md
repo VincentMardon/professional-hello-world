@@ -23,6 +23,12 @@ This artistic and humorous project also serves as a learning environment. Its de
 - Clearly distinguish between ideas, proposals, and actual implementation. Do not document a proposal as already implemented.
 - Summarize documentation changes in the conversation.
 
+## Administrative Correspondence
+
+- Follow the standing structure in `records/README.md` for all future project correspondence, using the first registered PDF as the visual reference.
+- Logos and colours may evolve; preserve the first-page administrative sidebar, the letter hierarchy, the one-to-four-line closing overflow and the administrative footer on every page.
+- Keep correspondence in English and distinguish fictional bureaucracy from verified technical findings. Preserve issued records rather than silently rewriting their history.
+
 ## Commits: Vincent Reviews and Executes Them
 
 - Vincent reviews, adjusts, and executes every commit himself so that its wording and contents reflect his intention.

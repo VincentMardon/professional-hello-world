@@ -11,6 +11,13 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 No additional implementation changes recorded. Documentation now confirms publication of 3.0.0.
 
+### The Greeting Acquires an Outgoing Mail Department
+
+- Added the English rejection notice for pull request No. 1 to `records/`, preserving the approved two-page PDF with its PHW letterhead, administrative sidebar, three-line closing overflow and repeated footer.
+- Established the standing correspondence structure in `records/README.md`, allowing the logo and colours to evolve while retaining the layout. Linked the registry from the README and the collaboration rules.
+- Recorded Vincent's report that he delivered the letter through the closed pull request. No recipient acknowledgement is claimed.
+- This is an artistic correspondence archive and documentation convention, not an application change, automated mail service or new release.
+
 ## [3.0.0] - 2026-09-19 — The Great Invisible Reconstruction
 
 This major release gathers the reconstruction since `v2.1.2`: a Next.js and TypeScript frontend, extracted styles, reusable components, a retired Python greeting, real CI, static publication, and the first behavioral test suite. The greeting remains recognizably itself; its supporting institution has been rebuilt.
