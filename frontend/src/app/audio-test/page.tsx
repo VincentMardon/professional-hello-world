@@ -7,11 +7,8 @@ import {
 } from "beep-engine";
 import { useEffect, useState } from "react";
 
-type Sound = "startupBeep" | "crashSound";
-
-function errorMessage(error: unknown): string {
-  return error instanceof Error ? error.message : String(error);
-}
+import type { Sound } from "../../features/audio-test/types/Sound";
+import { errorMessage } from "../../shared/errors/errorMessage";
 
 export default function AudioTestPage() {
   const [engine, setEngine] = useState<BeepEngine | null>(null);
