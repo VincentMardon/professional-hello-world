@@ -146,7 +146,7 @@ describe("the solemn administration of the BeepEngine listening room", () => {
         await openListeningRoom();
 
         fireEvent.change(screen.getByRole("slider"), {
-            target: { value: "50" },
+          target: { value: "50" },
         });
         setVolume.mockClear();
 
