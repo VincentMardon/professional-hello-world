@@ -64,9 +64,7 @@ describe("the solemn administration of the BeepEngine listening room", () => {
       expect(screen.getByRole("combobox", { name: "Sample rate" })).toHaveValue(
         "48000",
       );
-      expect(screen.getByRole("slider", { name: "Volume: 100%" })).toHaveValue(
-        "100",
-      );
+      expect(screen.getByRole("slider", { name: "Volume" })).toHaveValue("100");
     });
 
     it.each([
@@ -157,9 +155,14 @@ describe("the solemn administration of the BeepEngine listening room", () => {
           target: { value: String(volume) },
         });
 
+        const slider = screen.getByRole("slider", { name: "Volume" });
+
+        expect(slider).toHaveValue(String(volume));
+        expect(slider).toHaveAttribute("aria-orientation", "vertical");
+        expect(slider).toHaveAttribute("aria-valuetext", `${volume}%`);
         expect(
-          screen.getByRole("slider", { name: `Volume: ${volume}%` }),
-        ).toHaveValue(String(volume));
+          screen.getByText(`${volume}%`, { exact: true }),
+        ).toBeInTheDocument();
         expect(setVolume).toHaveBeenLastCalledWith(volume / 100);
 
         setVolume.mockClear();
