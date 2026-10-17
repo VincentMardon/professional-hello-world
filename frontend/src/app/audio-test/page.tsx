@@ -87,7 +87,7 @@ export default function AudioTestPage() {
         <select
           id="sample-rate"
           value={sampleRate}
-          onChange={(event) => 
+          onChange={(event) =>
             setSampleRate(event.target.value === "44100" ? 44100 : 48000)
           }
         >
@@ -109,11 +109,7 @@ export default function AudioTestPage() {
         />
       </p>
 
-      <button
-        type="button"
-        disabled={!engine}
-        onClick={() => void play()}
-      >
+      <button type="button" disabled={!engine} onClick={() => void play()}>
         Play
       </button>
 
