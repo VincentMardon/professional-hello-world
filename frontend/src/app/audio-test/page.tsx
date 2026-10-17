@@ -2,6 +2,7 @@
 
 import { SampleRateSelector } from "../../features/audio-test/components/SampleRateSelector";
 import { SoundSelector } from "../../features/audio-test/components/SoundSelector";
+import { VolumeControl } from "../../features/audio-test/components/VolumeControl";
 import { useAudioTest } from "../../features/audio-test/hooks/useAudioTest";
 
 export default function AudioTestPage() {
@@ -23,19 +24,7 @@ export default function AudioTestPage() {
 
       <SoundSelector value={selectedSound} onChange={setSelectedSound} />
       <SampleRateSelector value={sampleRate} onChange={setSampleRate} />
-
-      <p>
-        <label htmlFor="volume">Volume: {volume}%</label>
-        <input
-          id="volume"
-          type="range"
-          min="0"
-          max="100"
-          step="1"
-          value={volume}
-          onChange={(event) => changeVolume(Number(event.target.value))}
-        />
-      </p>
+      <VolumeControl value={volume} onChange={changeVolume} />
 
       <button type="button" disabled={!isReady} onClick={() => void play()}>
         Play
