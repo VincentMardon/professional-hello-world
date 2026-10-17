@@ -1,42 +1,17 @@
 "use client";
 
-import {
-  type BeepEngine,
-  createBeepEngine,
-  type SampleRate,
-} from "beep-engine";
-import { useEffect, useState } from "react";
+import type { SampleRate } from "beep-engine";
+import { useState } from "react";
 
+import { useBeepEngine } from "../../features/audio-test/hooks/useBeepEngine";
 import type { Sound } from "../../features/audio-test/types/Sound";
 import { errorMessage } from "../../shared/errors/errorMessage";
 
 export default function AudioTestPage() {
-  const [engine, setEngine] = useState<BeepEngine | null>(null);
+  const { engine, status, setStatus } = useBeepEngine();
   const [sampleRate, setSampleRate] = useState<SampleRate>(48000);
   const [selectedSound, setSelectedSound] = useState<Sound>("startupBeep");
   const [volume, setVolume] = useState(100);
-  const [status, setStatus] = useState("Loading BeepEngine...");
-
-  useEffect(() => {
-    let cancelled = false;
-
-    createBeepEngine()
-      .then((loadedEngine) => {
-        if (!cancelled) {
-          setEngine(loadedEngine);
-          setStatus("Ready.");
-        }
-      })
-      .catch((error: unknown) => {
-        if (!cancelled) {
-          setStatus(`Initialization failed: ${errorMessage(error)}`);
-        }
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   function changeVolume(value: number) {
     setVolume(value);
