@@ -1,36 +1,19 @@
 "use client";
 
-import type { SampleRate } from "beep-engine";
-import { useState } from "react";
-
-import { useBeepEngine } from "../../features/audio-test/hooks/useBeepEngine";
-import type { Sound } from "../../features/audio-test/types/Sound";
-import { errorMessage } from "../../shared/errors/errorMessage";
+import { useAudioTest } from "../../features/audio-test/hooks/useAudioTest";
 
 export default function AudioTestPage() {
-  const { engine, status, setStatus } = useBeepEngine();
-  const [sampleRate, setSampleRate] = useState<SampleRate>(48000);
-  const [selectedSound, setSelectedSound] = useState<Sound>("startupBeep");
-  const [volume, setVolume] = useState(100);
-
-  function changeVolume(value: number) {
-    setVolume(value);
-    engine?.setVolume(value / 100);
-  }
-
-  async function play() {
-    if (!engine) {
-      return;
-    }
-
-    try {
-      engine.setVolume(volume / 100);
-      await engine[selectedSound](sampleRate);
-      setStatus(`Started ${selectedSound} at ${sampleRate} Hz.`);
-    } catch (error: unknown) {
-      setStatus(`Playback failed: ${errorMessage(error)}`);
-    }
-  }
+  const {
+    isReady,
+    status,
+    sampleRate,
+    setSampleRate,
+    selectedSound,
+    setSelectedSound,
+    volume,
+    changeVolume,
+    play,
+  } = useAudioTest();
 
   return (
     <main>
@@ -81,7 +64,7 @@ export default function AudioTestPage() {
         />
       </p>
 
-      <button type="button" disabled={!engine} onClick={() => void play()}>
+      <button type="button" disabled={!isReady} onClick={() => void play()}>
         Play
       </button>
 
