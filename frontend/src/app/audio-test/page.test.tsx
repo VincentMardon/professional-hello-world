@@ -52,7 +52,10 @@ describe("the solemn administration of the BeepEngine listening room", () => {
       await openListeningRoom();
 
       expect(
-        screen.getByRole("heading", { name: "BeepEngine audio test" }),
+        screen.getByRole("heading", { level: 1, name: "BeepEngine" }),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByRole("heading", { level: 2, name: "The audio test" }),
       ).toBeInTheDocument();
       expect(screen.getByRole("button", { name: "Play" })).toBeEnabled();
       expect(screen.getByRole("combobox", { name: "Sound" })).toHaveValue(

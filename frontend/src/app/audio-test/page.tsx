@@ -1,5 +1,6 @@
 "use client";
 
+import { AudioTestHeader } from "../../features/audio-test/components/AudioTestHeader";
 import { PlaybackControls } from "../../features/audio-test/components/PlaybackControls";
 import { SampleRateSelector } from "../../features/audio-test/components/SampleRateSelector";
 import { SoundSelector } from "../../features/audio-test/components/SoundSelector";
@@ -21,8 +22,7 @@ export default function AudioTestPage() {
 
   return (
     <main>
-      <h1>BeepEngine audio test</h1>
-
+      <AudioTestHeader />
       <SoundSelector value={selectedSound} onChange={setSelectedSound} />
       <SampleRateSelector value={sampleRate} onChange={setSampleRate} />
       <VolumeControl value={volume} onChange={changeVolume} />
