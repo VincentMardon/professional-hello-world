@@ -1,5 +1,6 @@
 "use client";
 
+import { SoundSelector } from "../../features/audio-test/components/SoundSelector";
 import { useAudioTest } from "../../features/audio-test/hooks/useAudioTest";
 
 export default function AudioTestPage() {
@@ -19,23 +20,7 @@ export default function AudioTestPage() {
     <main>
       <h1>BeepEngine audio test</h1>
 
-      <p>
-        <label htmlFor="sound">Sound </label>
-        <select
-          id="sound"
-          value={selectedSound}
-          onChange={(event) =>
-            setSelectedSound(
-              event.target.value === "crashSound"
-                ? "crashSound"
-                : "startupBeep",
-            )
-          }
-        >
-          <option value="startupBeep">Startup beep</option>
-          <option value="crashSound">Crash sound</option>
-        </select>
-      </p>
+      <SoundSelector value={selectedSound} onChange={setSelectedSound} />
 
       <p>
         <label htmlFor="sample-rate">Sample rate</label>
