@@ -1,5 +1,6 @@
 "use client";
 
+import { PlaybackControls } from "../../features/audio-test/components/PlaybackControls";
 import { SampleRateSelector } from "../../features/audio-test/components/SampleRateSelector";
 import { SoundSelector } from "../../features/audio-test/components/SoundSelector";
 import { VolumeControl } from "../../features/audio-test/components/VolumeControl";
@@ -25,12 +26,7 @@ export default function AudioTestPage() {
       <SoundSelector value={selectedSound} onChange={setSelectedSound} />
       <SampleRateSelector value={sampleRate} onChange={setSampleRate} />
       <VolumeControl value={volume} onChange={changeVolume} />
-
-      <button type="button" disabled={!isReady} onClick={() => void play()}>
-        Play
-      </button>
-
-      <p role="status">{status}</p>
+      <PlaybackControls isReady={isReady} status={status} onPlay={play} />
     </main>
   );
 }
