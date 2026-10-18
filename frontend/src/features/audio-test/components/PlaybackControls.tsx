@@ -1,4 +1,4 @@
-import { playButton, statusFrame } from "./PlaybackControls.css";
+import { playButton, playIcon, statusFrame } from "./PlaybackControls.css";
 
 type PlaybackControlsProps = {
   isReady: boolean;
@@ -21,14 +21,18 @@ export function PlaybackControls({
         onClick={() => void onPlay()}
       >
         <svg
-          width="24"
-          height="24"
+          className={playIcon}
+          width="48"
+          height="48"
           viewBox="0 0 24 24"
-          fill="currentColor"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeLinejoin="round"
           aria-hidden="true"
           focusable="false"
         >
-          <path d="M7 4L21 12L7 20Z" />
+          <path d="M8 5L20 12L8 19Z" />
         </svg>
       </button>
 

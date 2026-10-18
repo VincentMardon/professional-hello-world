@@ -9,6 +9,14 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### Playback Receives a Gold-Rimmed Instrument of Extraordinary Importance
+
+- Enlarged the circular Play button from 3.5rem to 5rem and its SVG from 24px to 48px, with an outlined triangle and a 2px gold border.
+- Added a dark surface, diagonal lighting, inset shadows, and a hover halo. The ivory triangle becomes gold and filled on hover; the active state darkens the triangle and border and depresses the button by 1px.
+- Added a playIcon class whose selector targets the icon according to the parent button's hover state, respecting Vanilla Extract's selector constraints.
+- Retained the accessible Play label, decorative SVG attributes, disabled behavior, status frame, and playback callback. Added a gold focus ring and reduced-motion rules that suppress transitions and the active displacement.
+- Vincent approved the visual result. Targeted Biome checking found an import-formatting issue in PlaybackControls.tsx; no new automated test-suite run, production build, or CI result is claimed.
+
 ### The Audio Test Establishes a Ministry of Color
 
 - Added primitiveColors.css.ts and semanticColors.css.ts under frontend/src/features/audio-test/styles/, separating named color values from their intended interface roles.

@@ -16,7 +16,7 @@ The project takes software rituals very seriously for someone whose principal de
 
 ## What Exists Today
 
-- The audio test page now uses an ivory foreground (#F5F1E8) on an ebony background (#050505), drawn from feature-local primitive and semantic color definitions in frontend/src/features/audio-test/styles/. The remaining palette roles are available for subsequent design work; the main greeting retains its existing styling.
+- The audio test page now uses an ivory foreground (#F5F1E8) on an ebony background (#050505), drawn from feature-local primitive and semantic color definitions in frontend/src/features/audio-test/styles/. The Play control uses a 5rem circular surface, a gold border, and a 48px outlined ivory triangle that fills with gold on hover. Pressing darkens the triangle and border; the main greeting retains its existing styling.
 
 - A Next.js App Router frontend, exported as a static site, displaying **Professional "Hello, World!"** followed by *Coming soon ...*, with a component for each line, a reusable `EmptyLine` spacer, and a layout centred horizontally and vertically.
 - The former Python greeting was removed in commit #33; its implementation remains in Git history.
