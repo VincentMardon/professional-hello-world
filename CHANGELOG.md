@@ -9,6 +9,16 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Ministry of Volume Installs a Graduated Gold Fader
+
+- Restyled VolumeControl with a dark translucent housing, softly lit ivory edges, and a percentage readout inside the same frame, without a gold perimeter border.
+- Retained the native vertical 0–100 range input and its existing label, value text, and change callback. A CSS custom property drives the decorative gold fill.
+- Added eleven decorative 2px ivory graduations with longer marks at 0%, 50%, and 100%.
+- Added a permanently visible rectangular gold thumb with a central groove, polished gradients, inset highlights, an active shadow treatment, and a keyboard focus outline. Separate WebKit and Firefox pseudo-element rules style the native control.
+- Vincent adjusted the WebKit thumb alignment and housing spacing and approved this design as the current baseline. No cross-browser equivalence is inferred from that approval.
+- Initial preparation checks identified formatting, trailing whitespace, and an array-index key warning. Source review also identified a missing comma join for the housing's background layers; these corrections are proposed before committing. No new automated test execution, production build, or CI result is claimed.
+
+
 ### The Header Receives Its Letters Patent in Gold and Ivory
 
 - Added feature-local font configuration for Michroma, Oxanium, and Space Grotesk through next/font/google, with font variables applied to the audio test page.
