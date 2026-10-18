@@ -1,10 +1,13 @@
 import { globalStyle, style } from "@vanilla-extract/css";
+import { semanticColors } from "../../features/audio-test/styles/semanticColors.css";
 
 globalStyle("body", {
   margin: 0,
 });
 
 export const audioTestPage = style({
+  color: semanticColors.textPrimary,
+  backgroundColor: semanticColors.backgroundPage,
   boxSizing: "border-box",
   minHeight: "100dvh",
   display: "flex",

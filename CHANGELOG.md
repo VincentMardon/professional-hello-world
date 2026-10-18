@@ -9,7 +9,14 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-No additional implementation changes recorded. Documentation now confirms publication of 3.0.0.
+### The Audio Test Establishes a Ministry of Color
+
+- Added primitiveColors.css.ts and semanticColors.css.ts under frontend/src/features/audio-test/styles/, separating named color values from their intended interface roles.
+- Applied the semantic primary text and page background colors to the audio test page: ivory (#F5F1E8) on ebony (#050505).
+- Kept the palette local to the audio test feature. Other semantic roles are defined for future use; the main greeting styling is unchanged.
+- Targeted Biome checks passed for the three affected style files. No new browser inspection, test-suite execution, production build, or CI result is claimed.
+
+
 
 ### The Greeting Acquires an Outgoing Mail Department
 
