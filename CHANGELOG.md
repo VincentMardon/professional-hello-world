@@ -9,6 +9,14 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Listening Room Receives an Outer Case
+
+- Added darkGlassFrame as a composed variant of the existing glassFrame style, with a darker translucent background, restrained reflections, deeper shadows, 1rem corners, and a 1px ivory border at 12% opacity.
+- Applied the variant to AudioTestPanel's existing grid container without adding a wrapper or changing audio behavior.
+- Added 2rem panel padding; at widths up to 30rem, reduced padding to 1rem vertically and 0.75rem horizontally and the grid gap to 1rem.
+- Vincent approved the result. Targeted Biome and tracked-diff whitespace checks passed. No new browser inspection, automated test execution, production build, or CI result is claimed.
+
+
 ### The Selection Counters Share Their Glass and Rotate Their Signage
 
 - Extracted the volume housing's visual treatment into glassFrame.css.ts and composed it into VolumeControl and the existing AudioSettings wrapper, keeping component-specific dimensions separate.

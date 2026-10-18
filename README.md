@@ -16,6 +16,8 @@ The project takes software rituals very seriously for someone whose principal de
 
 ## What Exists Today
 
+- The audio controls sit inside a darker glass-like outer housing with a faint ivory border. This darkGlassFrame variant composes the shared glass material; panel padding and spacing decrease below 30rem.
+
 - The audio settings reuse the volume housing through a feature-local glassFrame style. Their selectors have a 12rem preferred width constrained by available space, matching anchored picker widths, raised resting surfaces and recessed open states. Supported picker arrows rotate clockwise on opening and closing, with reduced-motion handling.
 
 - The volume control uses a dark glass-like housing around the fader and percentage readout, eleven ivory graduations with longer marks at 0, 50, and 100%, and a polished gold guide and permanently visible rectangular thumb. The underlying control remains a native vertical range input.
