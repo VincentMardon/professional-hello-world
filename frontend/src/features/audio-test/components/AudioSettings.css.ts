@@ -14,6 +14,13 @@ globalStyle(`${settings} > p`, {
   gap: "0.75rem",
   margin: 0,
   textAlign: "left",
+
+  "@media": {
+    "screen and (max-width: 30rem)": {
+      gridTemplateColumns: "minmax(0, 1fr)",
+      gap: "0.25rem",
+    },
+  },
 });
 
 globalStyle(`${settings} select`, {
