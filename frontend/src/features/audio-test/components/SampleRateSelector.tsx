@@ -1,4 +1,5 @@
 import type { SampleRate } from "beep-engine";
+import { usePickerMotion } from "../hooks/usePickerMotion";
 
 type SampleRateSelectorProps = {
   value: SampleRate;
@@ -9,10 +10,13 @@ export function SampleRateSelector({
   value,
   onChange,
 }: SampleRateSelectorProps) {
+  const pickerMotion = usePickerMotion();
+
   return (
     <p>
       <label htmlFor="sample-rate">Sample rate</label>
       <select
+        {...pickerMotion}
         id="sample-rate"
         value={value}
         onChange={(event) =>

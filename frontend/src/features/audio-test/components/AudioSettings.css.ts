@@ -1,33 +1,44 @@
 import { globalStyle, style } from "@vanilla-extract/css";
-
+import { glassFrame } from "../styles/glassFrame.css";
+import { pickerClosing, pickerOpening } from "../styles/pickerMotion.css";
 import { semanticColors } from "../styles/semanticColors.css";
 
-export const settings = style({
-  display: "flex",
-  flexDirection: "column",
-  gap: "0.75rem",
-  width: "100%",
-});
+const selectWidth = "12rem";
+
+export const settings = style([
+  glassFrame,
+  {
+    boxSizing: "border-box",
+    display: "flex",
+    flexDirection: "column",
+    gap: "1.5rem",
+    width: "100%",
+    minWidth: 0,
+    padding: "1.5rem 2rem",
+  },
+]);
 
 globalStyle(`${settings} > p`, {
   display: "grid",
   gridTemplateColumns: "6rem minmax(0, 1fr)",
   alignItems: "center",
-  gap: "0.75rem",
+  columnGap: "1.25rem",
+  rowGap: "0.5rem",
   margin: 0,
   textAlign: "left",
 
   "@media": {
     "screen and (max-width: 30rem)": {
       gridTemplateColumns: "minmax(0, 1fr)",
-      gap: "0.25rem",
+      columnGap: 0,
+      rowGap: "0.5rem",
     },
   },
 });
 
 const glassSurface = {
   color: semanticColors.textPrimary,
-  border: "1px solid rgb(216 181 100 / 45%)",
+  border: "1px solid transparent",
   borderRadius: "0.625rem",
 
   backgroundColor: "rgb(20 20 20 / 55%)",
@@ -46,22 +57,47 @@ const glassSurface = {
 
 globalStyle(`${settings} select`, {
   ...glassSurface,
+
+  backgroundImage: [
+    "linear-gradient(135deg, rgb(245 241 232 / 16%), transparent 50%)",
+    "linear-gradient(180deg, rgb(216 181 100 / 8%), transparent 45%, rgb(0 0 0 / 25%))",
+  ].join(", "),
+
+  boxShadow: [
+    "inset 0 1px 0 rgb(245 241 232 / 40%)",
+    "inset 1px 0 0 rgb(245 241 232 / 12%)",
+    "inset 0 -2px 2px rgb(0 0 0 / 65%)",
+    "0 3px 4px rgb(0 0 0 / 65%)",
+    "0 0 5px rgb(216 181 100 / 12%)",
+  ].join(", "),
+
   boxSizing: "border-box",
-  width: "100%",
+  width: selectWidth,
+  maxWidth: "100%",
   minWidth: 0,
-  padding: "0.5rem 0.75rem",
+  padding: "0.625rem 0.875rem",
   font: "inherit",
   lineHeight: 1.5,
   cursor: "pointer",
 });
 
+globalStyle(`${settings} select:active, ${settings} select:open`, {
+  backgroundImage: [
+    "linear-gradient(180deg, rgb(0 0 0 / 35%), transparent 75%)",
+    "linear-gradient(135deg, rgb(216 181 100 / 6%), transparent 55%)",
+  ].join(", "),
+
+  boxShadow: [
+    "inset 0 3px 5px rgb(0 0 0 / 80%)",
+    "inset 1px 0 2px rgb(0 0 0 / 45%)",
+    "inset 0 -1px 0 rgb(245 241 232 / 25%)",
+    "0 1px 2px rgb(0 0 0 / 45%)",
+  ].join(", "),
+});
+
 globalStyle(`${settings} select:focus-visible`, {
   outline: `2px solid ${semanticColors.actionPrimaryLight}`,
   outlineOffset: "3px",
-});
-
-globalStyle(`${settings} select:hover`, {
-  borderColor: semanticColors.actionPrimaryLight,
 });
 
 globalStyle(`${settings} select, ${settings} select::picker(select)`, {
@@ -77,11 +113,23 @@ globalStyle(`${settings} select::picker(select)`, {
   boxSizing: "border-box",
 
   backgroundColor: "rgb(20 20 20 / 20%)",
-  backgroundImage:
-    "linear-gradient(135deg, rgb(255 255 255 / 7%), transparent 55%)",
+  backgroundImage: [
+    "linear-gradient(135deg, rgb(245 241 232 / 10%), transparent 55%)",
+    "linear-gradient(180deg, rgb(216 181 100 / 8%), transparent 65%)",
+  ].join(", "),
+  boxShadow: [
+    "inset 0 1px 0 rgb(245 241 232 / 40%)",
+    "inset 1px 0 0 rgb(245 241 232 / 14%)",
+    "inset -1px 0 0 rgb(216 181 100 / 20%)",
+    "0 6px 12px rgb(0 0 0 / 60%)",
+    "0 0 8px rgb(216 181 100 / 16%)",
+  ].join(", "),
   backdropFilter: "blur(10px)",
 
-  padding: "0.375rem",
+  width: "anchor-size(width)",
+  minWidth: "anchor-size(width)",
+  maxWidth: "anchor-size(width)",
+  padding: "0.5rem",
   margin: 0,
   marginBlockStart: "0.375rem",
 
@@ -95,13 +143,42 @@ globalStyle(`${settings} select::picker(select)`, {
 });
 
 globalStyle(`${settings} select::picker-icon`, {
-  color: semanticColors.actionPrimary,
+  color: semanticColors.actionPrimaryLight,
+
+  filter: [
+    "drop-shadow(0 1px 0 rgb(169 133 76 / 80%))",
+    "drop-shadow(0 0 3px rgb(216 181 100 / 30%))",
+  ].join(" "),
+
+  transformOrigin: "center",
+  rotate: "0deg",
 });
+
+globalStyle(`${settings} select:open::picker-icon`, {
+  rotate: "180deg",
+
+  "@media": {
+    "(prefers-reduced-motion: no-preference)": {
+      animation: `${pickerOpening} 220ms ease-in-out both`,
+    },
+  },
+});
+
+globalStyle(
+  `${settings} select[data-picker-animated="true"]:not(:open)::picker-icon`,
+  {
+    "@media": {
+      "(prefers-reduced-motion: no-preference)": {
+        animation: `${pickerClosing} 220ms ease-in-out both`,
+      },
+    },
+  },
+);
 
 globalStyle(`${settings} select option`, {
   "@supports": {
     "(appearance: base-select)": {
-      padding: "0.5rem 0.75rem",
+      padding: "0.625rem 0.875rem",
       borderRadius: "0.375rem",
       backgroundColor: "transparent",
       color: semanticColors.textPrimary,
@@ -151,6 +228,16 @@ globalStyle(`${settings} select option + option`, {
   "@supports": {
     "(appearance: base-select)": {
       marginBlockStart: "0.375rem",
+    },
+  },
+});
+
+globalStyle(`${settings} label[for="sound"]`, {
+  textAlign: "right",
+
+  "@media": {
+    "screen and (max-width: 30rem)": {
+      textAlign: "left",
     },
   },
 });

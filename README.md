@@ -16,6 +16,8 @@ The project takes software rituals very seriously for someone whose principal de
 
 ## What Exists Today
 
+- The audio settings reuse the volume housing through a feature-local glassFrame style. Their selectors have a 12rem preferred width constrained by available space, matching anchored picker widths, raised resting surfaces and recessed open states. Supported picker arrows rotate clockwise on opening and closing, with reduced-motion handling.
+
 - The volume control uses a dark glass-like housing around the fader and percentage readout, eleven ivory graduations with longer marks at 0, 50, and 100%, and a polished gold guide and permanently visible rectangular thumb. The underlying control remains a native vertical range input.
 
 - The audio test header displays Beep Engine in Michroma and The Audio Test in Oxanium, with Space Grotesk for the remaining page text, configured through next/font/google. Gradient lettering, layered shadows, a subdued ivory backdrop halo, and a decorative gold rule give the header a logo-like treatment. The existing EmptyLine component separates it from the controls.

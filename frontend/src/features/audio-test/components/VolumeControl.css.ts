@@ -1,4 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
+import { glassFrame } from "../styles/glassFrame.css";
 import { semanticColors } from "../styles/semanticColors.css";
 
 export const volumeControl = style({
@@ -9,30 +10,17 @@ export const volumeControl = style({
   margin: 0,
 });
 
-export const frame = style({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  width: "3rem",
-  padding: "1.5rem 0.8rem 0.5rem",
-  flexGrow: 1,
-  borderRadius: "0.65rem",
-
-  backgroundColor: "rgb(20 20 20 / 55%)",
-  backgroundImage: [
-    "radial-gradient(ellipse at 15% 0%, rgb(245 241 232 / 12%), transparent 65%)",
-    "linear-gradient(100deg, rgb(245 241 232 / 12%), transparent 45%, rgb(0 0 0 / 15%))",
-  ].join(", "),
-  backdropFilter: "blur(10px)",
-
-  boxShadow: [
-    "inset 1px 0 1px rgb(245 241 232 / 18%)",
-    "inset -1px 0 1px rgb(245 241 232 / 12%)",
-    "inset 0 1px 1px rgb(245 241 232 / 8%)",
-    "inset 0 -2px 4px rgb(0 0 0 / 45%)",
-    "0 3px 8px rgb(0 0 0 / 35%)",
-  ].join(", "),
-});
+export const frame = style([
+  glassFrame,
+  {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    width: "3rem",
+    padding: "1.5rem 0.8rem 0.5rem",
+    flexGrow: 1,
+  },
+]);
 
 export const fader = style({
   position: "relative",
@@ -199,7 +187,7 @@ const thumb = {
 globalStyle(`${slider}::-webkit-slider-thumb`, {
   ...thumb,
   WebkitAppearance: "none",
-  marginLeft: "calc(12.5% - 1.125rem)",
+  marginLeft: "calc(11.6% - 1.125rem)",
 });
 
 globalStyle(`${slider}::-moz-range-thumb`, thumb);

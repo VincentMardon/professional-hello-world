@@ -9,6 +9,17 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Selection Counters Share Their Glass and Rotate Their Signage
+
+- Extracted the volume housing's visual treatment into glassFrame.css.ts and composed it into VolumeControl and the existing AudioSettings wrapper, keeping component-specific dimensions separate.
+- Increased spacing between settings rows and between labels and controls, aligned Sound to the right on wider screens, and retained stacked labels on narrow screens.
+- Replaced the gold control and picker borders with transparent borders while retaining keyboard focus indication.
+- Added shared opening and closing keyframes and a usePickerMotion hook used by both selectors. Opening rotates the arrow from 0 to 180 degrees; closing continues from 180 to 360 degrees, with no initial closing animation and no animation under reduced-motion preferences.
+- Added raised resting surfaces, inset shadows during active/open states, brighter picker reflections, and illuminated gold arrows.
+- Set a 12rem preferred control width with a 100% maximum; open pickers follow their control through anchor-size(width). Increased control, picker, and option padding.
+- Initial targeted Biome checks identified formatting corrections before committing. Tracked-diff whitespace checks passed. No new automated test execution, production build, CI result, or cross-browser verification is claimed.
+
+
 ### The Ministry of Volume Installs a Graduated Gold Fader
 
 - Restyled VolumeControl with a dark translucent housing, softly lit ivory edges, and a percentage readout inside the same frame, without a gold perimeter border.

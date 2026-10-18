@@ -1,3 +1,4 @@
+import { usePickerMotion } from "../hooks/usePickerMotion";
 import type { Sound } from "../types/Sound";
 
 type SoundSelectorProps = {
@@ -6,10 +7,13 @@ type SoundSelectorProps = {
 };
 
 export function SoundSelector({ value, onChange }: SoundSelectorProps) {
+  const pickerMotion = usePickerMotion();
+
   return (
     <p>
       <label htmlFor="sound">Sound </label>
       <select
+        {...pickerMotion}
         id="sound"
         value={value}
         onChange={(event) =>
