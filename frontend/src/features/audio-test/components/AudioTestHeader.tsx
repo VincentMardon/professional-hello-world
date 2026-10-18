@@ -1,8 +1,10 @@
+import { header, subtitle, title } from "./AudioTestHeader.css";
+
 export function AudioTestHeader() {
   return (
-    <header>
-      <h1>BeepEngine</h1>
-      <h2>The audio test</h2>
+    <header className={header}>
+      <h1 className={title}>Beep Engine</h1>
+      <h2 className={subtitle}>The Audio Test</h2>
     </header>
   );
 }

@@ -7,6 +7,12 @@ vi.mock("beep-engine", () => ({
   createBeepEngine: vi.fn(),
 }));
 
+vi.mock("next/font/google", () => ({
+  Michroma: () => ({ variable: "font-audio-title" }),
+  Oxanium: () => ({ variable: "font-audio-subtitle" }),
+  Space_Grotesk: () => ({ variable: "font-audio-body" }),
+}));
+
 const createEngine = vi.mocked(createBeepEngine);
 const setVolume = vi.fn<BeepEngine["setVolume"]>();
 const startupBeep = vi.fn<BeepEngine["startupBeep"]>();
@@ -52,10 +58,10 @@ describe("the solemn administration of the BeepEngine listening room", () => {
       await openListeningRoom();
 
       expect(
-        screen.getByRole("heading", { level: 1, name: "BeepEngine" }),
+        screen.getByRole("heading", { level: 1, name: "Beep Engine" }),
       ).toBeInTheDocument();
       expect(
-        screen.getByRole("heading", { level: 2, name: "The audio test" }),
+        screen.getByRole("heading", { level: 2, name: "The Audio Test" }),
       ).toBeInTheDocument();
       expect(screen.getByRole("button", { name: "Play" })).toBeEnabled();
       expect(screen.getByRole("combobox", { name: "Sound" })).toHaveValue(

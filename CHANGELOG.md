@@ -9,6 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Header Receives Its Letters Patent in Gold and Ivory
+
+- Added feature-local font configuration for Michroma, Oxanium, and Space Grotesk through next/font/google, with font variables applied to the audio test page.
+- Changed the headings to Beep Engine and The Audio Test. Added responsive title sizing, letter spacing, clipped gold and ivory gradients, layered drop shadows, and padding beneath the main title's descenders.
+- Added a decorative gold separator and a subdued radial ivory halo behind the header. The final ellipse uses 40% radii at 40% horizontal and 70% vertical position.
+- Reused the existing EmptyLine component between the header and the audio panel.
+- Updated heading assertions and mocked the font loaders in the existing page tests.
+- Vincent approved the visual result and supplied a screenshot. Initial targeted Biome checks identified import ordering and formatting to correct before committing; no new automated test execution, production build, or CI result is claimed.
+
 ### The Selection Counters Receive Downward-Opening Glass Cabinets
 
 - Styled the existing sound and sample-rate selects in AudioSettings.css.ts with translucent dark surfaces, reflections, gold borders, focus outlines, and backdrop blur, leaving labels and responsive row layout unchanged.

@@ -16,6 +16,8 @@ The project takes software rituals very seriously for someone whose principal de
 
 ## What Exists Today
 
+- The audio test header displays Beep Engine in Michroma and The Audio Test in Oxanium, with Space Grotesk for the remaining page text, configured through next/font/google. Gradient lettering, layered shadows, a subdued ivory backdrop halo, and a decorative gold rule give the header a logo-like treatment. The existing EmptyLine component separates it from the controls.
+
 - The audio test page now uses an ivory foreground (#F5F1E8) on an ebony background (#050505), drawn from feature-local primitive and semantic color definitions in frontend/src/features/audio-test/styles/. The Play control uses a 5rem circular surface, a gold border, and a 48px outlined ivory triangle that fills with gold on hover. Pressing darkens the triangle and border. Status messages use a compact glass-like frame with a translucent surface, reflections, and a subdued gold border, retaining an 18rem width constrained by the available space. The sound and sample-rate selectors use matching glass-like surfaces. In browsers supporting customizable selects, their menus open below the controls with translucent gold selection, gray hover/focus highlights, and spacing between options; other browsers retain native menus. The main greeting retains its existing styling.
 
 - A Next.js App Router frontend, exported as a static site, displaying **Professional "Hello, World!"** followed by *Coming soon ...*, with a component for each line, a reusable `EmptyLine` spacer, and a layout centred horizontally and vertically.

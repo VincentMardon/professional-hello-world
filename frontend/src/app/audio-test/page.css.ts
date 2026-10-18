@@ -16,7 +16,7 @@ export const audioTestPage = style({
   justifyContent: "center",
   gap: "2rem",
   padding: "2rem 1rem",
-  fontFamily: "system-ui, sans-serif",
+  fontFamily: "var(--font-audio-body), system-ui, sans-serif",
   lineHeight: 1.5,
   textAlign: "center",
 });
