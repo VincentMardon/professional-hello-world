@@ -1,4 +1,4 @@
-import { playButton } from "./PlaybackControls.css";
+import { playButton, statusFrame } from "./PlaybackControls.css";
 
 type PlaybackControlsProps = {
   isReady: boolean;
@@ -32,7 +32,9 @@ export function PlaybackControls({
         </svg>
       </button>
 
-      <p role="status">{status}</p>
+      <p className={statusFrame} role="status">
+        {status}
+      </p>
     </>
   );
 }

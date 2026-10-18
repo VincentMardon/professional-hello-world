@@ -25,3 +25,19 @@ export const playButton = style({
     cursor: "not-allowed",
   },
 });
+
+export const statusFrame = style({
+  boxSizing: "border-box",
+  width: "18rem",
+  maxWidth: "100%",
+  minHeight: "4.5rem",
+  margin: 0,
+  padding: "0.75rem 1rem",
+  border: "1px solid currentColor",
+  borderRadius: "0.5rem",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  overflowWrap: "anywhere",
+  fontSize: "0.875rem",
+});
