@@ -89,14 +89,29 @@ export const statusFrame = style({
   boxSizing: "border-box",
   width: "18rem",
   maxWidth: "100%",
-  minHeight: "4.5rem",
+  alignSelf: "center",
   margin: 0,
-  padding: "0.75rem 1rem",
-  border: "1px solid currentColor",
-  borderRadius: "0.5rem",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+  padding: "0.5rem 0.875rem",
+
+  color: semanticColors.textPrimary,
+  border: "1px solid rgb(216 181 100 / 45%)",
+  borderRadius: "0.625rem",
+
+  backgroundColor: "rgb(20 20 20 / 55%)",
+  backgroundImage: [
+    "linear-gradient(135deg, rgb(255 255 255 / 12%), transparent 45%)",
+    "linear-gradient(180deg, rgb(255 255 255 / 4%), rgb(0 0 0 / 12%))",
+  ].join(", "),
+
+  backdropFilter: "blur(8px)",
+  boxShadow: [
+    "inset 0 1px 0 rgb(255 255 255 / 25%)",
+    "inset 0 -1px 0 rgb(255 255 255 / 6%)",
+    "0 3px 10px rgb(0 0 0 / 25%)",
+  ].join(", "),
+
   overflowWrap: "anywhere",
   fontSize: "0.875rem",
+  lineHeight: 1.5,
+  textAlign: "center",
 });

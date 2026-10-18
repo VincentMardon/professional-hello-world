@@ -9,6 +9,14 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Status Office Exchanges Its Ceiling for Glass
+
+- Removed the status frame's 4.5rem minimum height and reduced padding to 0.5rem vertically and 0.875rem horizontally, allowing height to follow the text.
+- Retained the 18rem width and 100% maximum width; centered the frame within its parent.
+- Added an ivory foreground, translucent dark surface, muted gold border, gradient reflections, inset highlights, an external shadow, and an 8px backdrop blur.
+- Replaced internal flex centering with ordinary text layout, explicit line height, and centered text. Long-string wrapping and the existing status role and message logic remain unchanged.
+- Targeted Biome checking and tracked-diff whitespace checks passed. No new browser inspection, automated test-suite run, production build, or CI result is claimed.
+
 ### Playback Receives a Gold-Rimmed Instrument of Extraordinary Importance
 
 - Enlarged the circular Play button from 3.5rem to 5rem and its SVG from 24px to 48px, with an outlined triangle and a 2px gold border.
