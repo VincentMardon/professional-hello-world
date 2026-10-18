@@ -1,5 +1,6 @@
 import type { SampleRate } from "beep-engine";
 import type { Sound } from "../types/Sound";
+import { settings } from "./AudioSettings.css";
 import { SampleRateSelector } from "./SampleRateSelector";
 import { SoundSelector } from "./SoundSelector";
 
@@ -17,7 +18,7 @@ export function AudioSettings({
   onSampleRateChange,
 }: AudioSettingsProps) {
   return (
-    <div>
+    <div className={settings}>
       <SoundSelector value={selectedSound} onChange={onSoundChange} />
       <SampleRateSelector value={sampleRate} onChange={onSampleRateChange} />
     </div>
