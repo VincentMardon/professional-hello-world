@@ -9,6 +9,14 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Selection Counters Receive Downward-Opening Glass Cabinets
+
+- Styled the existing sound and sample-rate selects in AudioSettings.css.ts with translucent dark surfaces, reflections, gold borders, focus outlines, and backdrop blur, leaving labels and responsive row layout unchanged.
+- Enabled appearance: base-select through a support query. Supporting browsers receive a more transparent picker with 10px backdrop blur; other browsers retain native menu behavior.
+- Positioned pickers below their controls using block-end span-inline-end, with automatic alternative placements disabled, a height cap, and vertical scrolling.
+- Distinguished selected options with translucent light gold, unselected hover/focus with translucent light gray, and active options with stronger gold. Added 0.375rem between options.
+- Vincent reports successful behavior after the positioning correction and completion of the checks needed for a commit. Targeted Biome and tracked-diff whitespace checks passed. No specific test-suite, build, or cross-browser outcome is inferred from that report.
+
 ### The Status Office Exchanges Its Ceiling for Glass
 
 - Removed the status frame's 4.5rem minimum height and reduced padding to 0.5rem vertically and 0.875rem horizontally, allowing height to follow the text.
