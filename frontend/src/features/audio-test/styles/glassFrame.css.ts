@@ -5,8 +5,8 @@ export const glassFrame = style({
 
   backgroundColor: "rgb(20 20 20 / 55%)",
   backgroundImage: [
-    "radial-gradient(ellipse at 15% 0%, rgb(245 241 232 / 12%), transparent 65%)",
-    "linear-gradient(100deg, rgb(245 241 232 / 12%), transparent 45%, rgb(0 0 0 / 15%))",
+    "radial-gradient(ellipse at 15% 0%, rgb(245 241 232 / 8%), transparent 65%)",
+    "linear-gradient(100deg, rgb(245 241 232 / 6%), transparent 45%, rgb(0 0 0 / 30%))",
   ].join(", "),
   backdropFilter: "blur(10px)",
 

@@ -3,6 +3,7 @@ import { AudioTestHeader } from "../../features/audio-test/components/AudioTestH
 import { AudioTestPanel } from "../../features/audio-test/components/AudioTestPanel";
 
 import {
+  intelOneMono,
   michroma,
   oxanium,
   spaceGrotesk,
@@ -13,7 +14,7 @@ import { audioTestPage } from "./page.css";
 export default function AudioTestPage() {
   return (
     <main
-      className={`${audioTestPage} ${michroma.variable} ${oxanium.variable} ${spaceGrotesk.variable}`}
+      className={`${audioTestPage} ${intelOneMono.variable} ${michroma.variable} ${oxanium.variable} ${spaceGrotesk.variable}`}
     >
       <AudioTestHeader />
       <EmptyLine />

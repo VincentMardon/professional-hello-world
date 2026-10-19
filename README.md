@@ -16,6 +16,8 @@ The project takes software rituals very seriously for someone whose principal de
 
 ## What Exists Today
 
+- Status messages use Intel One Mono in a full-column recessed display with a fading ivory perimeter and left-aligned, spaced lettering. Shared inner-housing reflections are subdued, and AudioSettings overrides its surface with an opaque #080808 base.
+
 - The audio controls sit inside a darker glass-like outer housing with a faint ivory border. This darkGlassFrame variant composes the shared glass material; panel padding and spacing decrease below 30rem.
 
 - The audio settings reuse the volume housing through a feature-local glassFrame style. Their selectors have a 12rem preferred width constrained by available space, matching anchored picker widths, raised resting surfaces and recessed open states. Supported picker arrows rotate clockwise on opening and closing, with reduced-motion handling.

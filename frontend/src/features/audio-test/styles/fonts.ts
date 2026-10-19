@@ -1,4 +1,16 @@
-import { Michroma, Oxanium, Space_Grotesk } from "next/font/google";
+import {
+  Intel_One_Mono,
+  Michroma,
+  Oxanium,
+  Space_Grotesk,
+} from "next/font/google";
+
+export const intelOneMono = Intel_One_Mono({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-audio-status",
+});
 
 export const michroma = Michroma({
   weight: "400",

@@ -8,6 +8,7 @@ vi.mock("beep-engine", () => ({
 }));
 
 vi.mock("next/font/google", () => ({
+  Intel_One_Mono: () => ({ variable: "font-audio-status" }),
   Michroma: () => ({ variable: "font-audio-title" }),
   Oxanium: () => ({ variable: "font-audio-subtitle" }),
   Space_Grotesk: () => ({ variable: "font-audio-body" }),

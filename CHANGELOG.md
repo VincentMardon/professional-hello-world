@@ -9,6 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Status Office Recesses Its Display and Adopts Monospaced Correspondence
+
+- Expanded statusFrame to the full controls-column width and replaced its gold border with layered backgrounds producing a fading ivory perimeter.
+- Added inset shadows and lower-edge highlights to suggest a recessed display. Adjusted padding, left alignment, 0.75rem text, unit line height, and 0.15rem letter spacing.
+- Configured Intel One Mono through next/font/google and applied its variable only to the status text; updated the existing font-loader test mock.
+- Reduced the shared glassFrame reflections, affecting its consumers including the volume housing. AudioSettings adds an opaque #080808 base with its own reflections; darkGlassFrame retains its existing overrides.
+- Vincent adjusted and approved the treatment. Targeted Biome checks passed for all six changed source and test files, and tracked-diff whitespace checks passed. No new automated test execution, browser inspection, production build, or CI result is claimed.
+
+
 ### The Listening Room Receives an Outer Case
 
 - Added darkGlassFrame as a composed variant of the existing glassFrame style, with a darker translucent background, restrained reflections, deeper shadows, 1rem corners, and a 1px ivory border at 12% opacity.

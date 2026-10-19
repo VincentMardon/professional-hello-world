@@ -87,31 +87,40 @@ export const playIcon = style({
 
 export const statusFrame = style({
   boxSizing: "border-box",
-  width: "18rem",
+  width: "100%",
   maxWidth: "100%",
   alignSelf: "center",
   margin: 0,
-  padding: "0.5rem 0.875rem",
+  padding: "0.55rem 1.1rem",
 
   color: semanticColors.textPrimary,
-  border: "1px solid rgb(216 181 100 / 45%)",
+  border: "1px solid transparent",
   borderRadius: "0.625rem",
 
-  backgroundColor: "rgb(20 20 20 / 55%)",
   backgroundImage: [
-    "linear-gradient(135deg, rgb(255 255 255 / 12%), transparent 45%)",
-    "linear-gradient(180deg, rgb(255 255 255 / 4%), rgb(0 0 0 / 12%))",
+    "linear-gradient(180deg, rgb(0 0 0 / 35%), transparent 80%)",
+    "linear-gradient(rgb(5 5 5 / 75%), rgb(5 5 5 / 75%))",
+    "linear-gradient(135deg, rgb(245 241 232 / 18%), rgb(245 241 232 / 8%) 50%, rgb(245 241 232 / 2%))",
   ].join(", "),
 
+  backgroundOrigin: "padding-box, padding-box, border-box",
+  backgroundClip: "padding-box, padding-box, border-box",
+  backgroundColor: "transparent",
+
   backdropFilter: "blur(8px)",
+
   boxShadow: [
-    "inset 0 1px 0 rgb(255 255 255 / 25%)",
-    "inset 0 -1px 0 rgb(255 255 255 / 6%)",
-    "0 3px 10px rgb(0 0 0 / 25%)",
+    "inset 0 3px 5px rgb(0 0 0 / 85%)",
+    "inset 2px 0 3px rgb(0 0 0 / 55%)",
+    "inset 0 -1px 0 rgb(245 241 232 / 6%)",
+    "0 1px 0 rgb(245 241 232 / 14%)",
+    "1px 0 0 rgb(245 241 232 / 5%)",
   ].join(", "),
 
   overflowWrap: "anywhere",
-  fontSize: "0.875rem",
-  lineHeight: 1.5,
-  textAlign: "center",
+  fontFamily: "var(--font-audio-status), monospace",
+  fontSize: "0.750rem",
+  lineHeight: 1,
+  letterSpacing: "0.15rem",
+  textAlign: "left",
 });

@@ -15,6 +15,11 @@ export const settings = style([
     width: "100%",
     minWidth: 0,
     padding: "1.5rem 2rem",
+    backgroundColor: "#080808",
+    backgroundImage: [
+      "radial-gradient(ellipse at 15% 0%, rgb(245 241 232 / 8%), transparent 65%)",
+      "linear-gradient(100deg, rgb(245 241 232 / 6%), transparent 45%, rgb(0 0 0 / 25%))",
+    ].join(", "),
   },
 ]);
 
