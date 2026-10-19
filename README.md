@@ -16,6 +16,8 @@ The project takes software rituals very seriously for someone whose principal de
 
 ## What Exists Today
 
+- A decorative 2px vertical gold divider separates the volume control from the remaining audio controls, with 2rem of grid spacing on each side, reduced to 1.5rem at viewport widths up to 30rem.
+
 - Status messages use Intel One Mono in a full-column recessed display with a fading ivory perimeter and left-aligned, spaced lettering. Shared inner-housing reflections are subdued, and AudioSettings overrides its surface with an opaque #080808 base.
 
 - The audio controls sit inside a darker glass-like outer housing with a faint ivory border. This darkGlassFrame variant composes the shared glass material; panel padding and spacing decrease below 30rem.

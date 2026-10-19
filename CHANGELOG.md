@@ -9,6 +9,14 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### Two Departments Receive a Gold Boundary and Room to Breathe
+
+- Added a decorative, accessibility-hidden divider between VolumeControl and the remaining controls in AudioTestPanel.
+- Expanded the grid to three columns with a 2px divider column. Set a 2rem gap on each side, reduced to 1.5rem at viewport widths up to 30rem.
+- Styled the divider with semantic gold and ivory gradient stops, rounded ends, a subtle shadow and glow, and 0.5rem vertical margins.
+- Vincent approved the adjusted spacing. Targeted Biome and tracked-diff whitespace checks passed. No new automated test execution, browser inspection, production build, or CI result is claimed.
+
+
 ### The Status Office Recesses Its Display and Adopts Monospaced Correspondence
 
 - Expanded statusFrame to the full controls-column width and replaced its gold border with layered backgrounds producing a fading ivory perimeter.

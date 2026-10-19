@@ -2,7 +2,7 @@
 
 import { useAudioTest } from "../hooks/useAudioTest";
 import { AudioSettings } from "./AudioSettings";
-import { controls, panel } from "./AudioTestPanel.css";
+import { controls, divider, panel } from "./AudioTestPanel.css";
 import { PlaybackControls } from "./PlaybackControls";
 import { VolumeControl } from "./VolumeControl";
 
@@ -22,6 +22,8 @@ export function AudioTestPanel() {
   return (
     <div className={panel}>
       <VolumeControl value={volume} onChange={changeVolume} />
+
+      <div className={divider} aria-hidden="true" />
 
       <div className={controls}>
         <AudioSettings
