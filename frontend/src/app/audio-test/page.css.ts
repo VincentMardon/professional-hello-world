@@ -14,9 +14,16 @@ export const audioTestPage = style({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  gap: "2rem",
+  gap: "1rem",
   padding: "2rem 1rem",
   fontFamily: "var(--font-audio-body), system-ui, sans-serif",
   lineHeight: 1.5,
   textAlign: "center",
+
+  "@media": {
+    "screen and (width > 768px)": {
+      justifyContent: "flex-start",
+      paddingTop: "3rem",
+    },
+  },
 });

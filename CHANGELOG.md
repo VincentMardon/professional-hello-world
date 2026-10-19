@@ -9,6 +9,16 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Fader Keeps Its Dimensions and the Status Finds Its Own Row
+
+- Fixed the volume control's width at 4.6rem and the fader height at 12rem, removed growth that tied its size to adjacent content, and replaced the WebKit thumb's percentage-based margin with 0.375rem.
+- Extracted StatusDisplay and StatusDisplay.css.ts from PlaybackControls, preserving the status paragraph and its existing visual treatment.
+- Added named panel grid areas. The status occupies the right column normally and spans the complete panel width at viewport widths up to 600px.
+- Reduced narrow-screen panel gaps and settings padding, and moved stacked labels to the 600px breakpoint.
+- Set the page gap to 1rem at all widths. Above 768px, top-align content with 3rem upper padding while retaining the existing alignment below that threshold.
+- Vincent approved the positioning adjustments. Initial targeted Biome checks identified formatting and an unnecessary fragment around Play to clean up; tracked-diff whitespace checks passed. No new automated test execution, production build, assistant browser inspection, or CI result is claimed.
+
+
 ### Two Departments Receive a Gold Boundary and Room to Breathe
 
 - Added a decorative, accessibility-hidden divider between VolumeControl and the remaining controls in AudioTestPanel.

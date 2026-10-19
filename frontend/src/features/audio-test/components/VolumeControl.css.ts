@@ -8,6 +8,9 @@ export const volumeControl = style({
   alignItems: "center",
   gap: "0.75rem",
   margin: 0,
+  alignSelf: "start",
+  width: "4.6rem",
+  flexShrink: 0,
 });
 
 export const frame = style([
@@ -18,15 +21,16 @@ export const frame = style([
     alignItems: "center",
     width: "3rem",
     padding: "1.5rem 0.8rem 0.5rem",
-    flexGrow: 1,
+    boxSizing: "content-box",
+    flexShrink: 0,
   },
 ]);
 
 export const fader = style({
   position: "relative",
   width: "100%",
-  minHeight: "12rem",
-  flexGrow: 1,
+  height: "12rem",
+  flexShrink: 0,
 });
 
 export const volumeValue = style({
@@ -187,7 +191,7 @@ const thumb = {
 globalStyle(`${slider}::-webkit-slider-thumb`, {
   ...thumb,
   WebkitAppearance: "none",
-  marginLeft: "calc(11.6% - 1.125rem)",
+  marginLeft: "0.375rem",
 });
 
 globalStyle(`${slider}::-moz-range-thumb`, thumb);

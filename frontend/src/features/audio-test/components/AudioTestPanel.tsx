@@ -2,8 +2,9 @@
 
 import { useAudioTest } from "../hooks/useAudioTest";
 import { AudioSettings } from "./AudioSettings";
-import { controls, divider, panel } from "./AudioTestPanel.css";
+import { controls, divider, panel, statusRegion } from "./AudioTestPanel.css";
 import { PlaybackControls } from "./PlaybackControls";
+import { StatusDisplay } from "./StatusDisplay";
 import { VolumeControl } from "./VolumeControl";
 
 export function AudioTestPanel() {
@@ -32,7 +33,11 @@ export function AudioTestPanel() {
           sampleRate={sampleRate}
           onSampleRateChange={setSampleRate}
         />
-        <PlaybackControls isReady={isReady} status={status} onPlay={play} />
+        <PlaybackControls isReady={isReady} onPlay={play} />
+      </div>
+
+      <div className={statusRegion}>
+        <StatusDisplay status={status} />
       </div>
     </div>
   );

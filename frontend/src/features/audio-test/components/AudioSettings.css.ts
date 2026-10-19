@@ -20,6 +20,13 @@ export const settings = style([
       "radial-gradient(ellipse at 15% 0%, rgb(245 241 232 / 8%), transparent 65%)",
       "linear-gradient(100deg, rgb(245 241 232 / 6%), transparent 45%, rgb(0 0 0 / 25%))",
     ].join(", "),
+
+    "@media": {
+      "screen and (width < 600px)": {
+        padding: "1rem 0.75rem",
+        gap: "1rem",
+      },
+    },
   },
 ]);
 
@@ -33,7 +40,7 @@ globalStyle(`${settings} > p`, {
   textAlign: "left",
 
   "@media": {
-    "screen and (max-width: 30rem)": {
+    "screen and (max-width: 600px)": {
       gridTemplateColumns: "minmax(0, 1fr)",
       columnGap: 0,
       rowGap: "0.5rem",
@@ -241,7 +248,7 @@ globalStyle(`${settings} label[for="sound"]`, {
   textAlign: "right",
 
   "@media": {
-    "screen and (max-width: 30rem)": {
+    "screen and (max-width: 600px)": {
       textAlign: "left",
     },
   },

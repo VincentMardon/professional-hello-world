@@ -16,6 +16,8 @@ The project takes software rituals very seriously for someone whose principal de
 
 ## What Exists Today
 
+- The volume fader now has fixed geometry. StatusDisplay owns its dedicated stylesheet and occupies a full-width row beneath the controls at viewport widths up to 600px. Settings labels stack at that breakpoint; the page uses a 1rem gap, with top-aligned content starting at 3rem above 768px.
+
 - A decorative 2px vertical gold divider separates the volume control from the remaining audio controls, with 2rem of grid spacing on each side, reduced to 1.5rem at viewport widths up to 30rem.
 
 - Status messages use Intel One Mono in a full-column recessed display with a fading ivory perimeter and left-aligned, spaced lettering. Shared inner-housing reflections are subdued, and AudioSettings overrides its surface with an opaque #080808 base.
