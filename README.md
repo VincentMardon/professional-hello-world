@@ -16,6 +16,8 @@ The project takes software rituals very seriously for someone whose principal de
 
 ## What Exists Today
 
+- The audio test now opens with a client-side password form beneath the existing header. Its recessed field reuses statusFrame, and its gold Oxanium label underlines password as a deliberate hint. Verification derives 256 bits with PBKDF2/SHA-256, a fixed feature-specific salt, and 210,000 iterations before comparing all bytes. The panel mounts only after acceptance; reloading closes access again. This static-page gate is a presentation mechanism, not server-enforced authentication. Preparation review identified test updates and an invalid-state correction before committing.
+
 - The volume fader now has fixed geometry. StatusDisplay owns its dedicated stylesheet and occupies a full-width row beneath the controls at viewport widths up to 600px. Settings labels stack at that breakpoint; the page uses a 1rem gap, with top-aligned content starting at 3rem above 768px.
 
 - A decorative 4px gold divider has layered relief and extends beyond the panel. At widths up to 600px, two separate segments leave space around the full-width status row. A two-line Beep Engine mark and a small italic Intel One Mono signature finish the panel footer.

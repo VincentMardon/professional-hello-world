@@ -1,6 +1,5 @@
-import { EmptyLine } from "../../components/EmptyLine";
+import { AudioTestAccess } from "../../features/audio-test/components/AudioTestAccess";
 import { AudioTestHeader } from "../../features/audio-test/components/AudioTestHeader";
-import { AudioTestPanel } from "../../features/audio-test/components/AudioTestPanel";
 
 import {
   intelOneMono,
@@ -17,8 +16,7 @@ export default function AudioTestPage() {
       className={`${audioTestPage} ${intelOneMono.variable} ${michroma.variable} ${oxanium.variable} ${spaceGrotesk.variable}`}
     >
       <AudioTestHeader />
-      <EmptyLine />
-      <AudioTestPanel />
+      <AudioTestAccess />
     </main>
   );
 }

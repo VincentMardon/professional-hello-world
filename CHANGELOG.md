@@ -9,6 +9,16 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### A Trivial Password Receives a Disproportionate Verification Procedure
+
+- Added AudioTestAccess and its stylesheet, preserving the header while initially replacing the audio panel with a password form centered in the remaining page space.
+- Composed the input from statusFrame and styled the gold label in Oxanium, with the word password underlined as a deliberate hint. Enter submits the form.
+- Added PBKDF2/SHA-256 verification with 210,000 iterations, a fixed feature-specific salt, a 256-bit reference key, and a full-byte comparison. The intended password is password, with no trimming or case normalization.
+- Clear the field on submission, prevent concurrent verification, report progress and refusal through a status paragraph, and mount EmptyLine plus AudioTestPanel after acceptance. Authorization is held only in component state.
+- Added a form-dependent page layout rule. The gate is client-side presentation on a static export, not server-enforced authentication or a constant-time guarantee.
+- Preparation review identified formatting corrections, a premature invalid-state assignment, a message typo, and existing audio-page tests that need to accommodate the gate. No new test execution, build, or CI result is claimed.
+
+
 ### The Two-Bip Instrument Receives Its Final Relief Inspection
 
 - Separated Play's 5rem button from a decorative 4px gold ring with an interior gap, layered ring relief, and revised button lighting. Enlarged the SVG to 64px and added uniquely identified ivory and dark-gold gradients, ivory hover fill, and icon shadows.

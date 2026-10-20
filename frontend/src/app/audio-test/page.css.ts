@@ -27,3 +27,9 @@ export const audioTestPage = style({
     },
   },
 });
+
+globalStyle(`${audioTestPage}:has(form)`, {
+  justifyContent: "flex-start",
+  gap: 0,
+  paddingBottom: 0,
+});

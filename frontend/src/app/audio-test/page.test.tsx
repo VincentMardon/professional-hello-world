@@ -14,6 +14,14 @@ vi.mock("next/font/google", () => ({
   Space_Grotesk: () => ({ variable: "font-audio-body" }),
 }));
 
+vi.mock("../../features/audio-test/components/AudioTestAccess", async () => {
+  const { AudioTestPanel } = await import(
+    "../../features/audio-test/components/AudioTestPanel"
+  );
+
+  return { AudioTestAccess: AudioTestPanel };
+});
+
 const createEngine = vi.mocked(createBeepEngine);
 const setVolume = vi.fn<BeepEngine["setVolume"]>();
 const startupBeep = vi.fn<BeepEngine["startupBeep"]>();
