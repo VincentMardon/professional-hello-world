@@ -9,6 +9,11 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Documentation Directorate Opens Its Repository Desk
+
+- Added a documentation charter, a substantial repository-readable overview, and staged delivery checkpoints. The overview maps existing routes, audio hooks, verification boundaries, and practical reading paths.
+- Proposed 4.1.0 as the first useful in-application documentation milestone, subject to completed scope and the release decision. The documentation route and Markdown renderer are now present locally; Mermaid integration and reference generation remain unimplemented. The generated documentation HTML has been inspected locally; browser checks and deployment verification remain pending; no version metadata changed.
+
 ### The Departure Is Entered Into the Register
 
 - Updated release notes, README, architecture, and changelog to record the verified stable v4.0.0 publication, its annotated tag on commit #79 (30eb0a0), and that exact commit's successful CI and Pages deployment. Corrected the release-process link for reuse outside the repository. No application behavior or version metadata changed.

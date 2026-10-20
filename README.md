@@ -94,6 +94,10 @@ The [architecture document](docs/ARCHITECTURE.md) records the current implementa
 
 Visual experiments, including WebGL, may become part of the learning process when their turn comes. These are directions to explore, with no promised delivery date or requirement to build everything at once.
 
+## Documentation Directorate
+
+Start with the [documentation overview](docs/README.md) for a guided map of the current project. It is readable from the repository and supplies the new `/doc` route; the generated documentation HTML has been inspected locally; browser checks and public deployment verification remain pending. The [documentation delivery plan](docs/DOCUMENTATION-DELIVERY.md) sets small release checkpoints, with a useful in-application entrance proposed for 4.1.0.
+
 ## Further Reading
 
 - [Contributing](CONTRIBUTING.md): tone, working practices, and documentation conventions.
