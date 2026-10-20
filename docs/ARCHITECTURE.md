@@ -18,11 +18,17 @@ This document separates the implementation from the architectural ambitions. The
 
 The frontend uses Next.js 16.3.5, React 19.3.0, TypeScript 6.0.3, and Biome 2.5.13. There is no API, database, container setup, or active Python greeting. The CI workflow runs lint, format, type, application-test, and build checks; it does not measure coverage.
 
+## Audio Annex and the 4.0.0 Milestone
+
+The separate audio-test route composes a persistent header and a client-side access gate. After acceptance, the gate mounts the audio panel. Feature-local hooks separate asynchronous engine initialization from settings, volume, and playback orchestration. PHW consumes the vendored beep-engine 0.1.2 package, containing Rust-generated WebAssembly, browser playback code, and TypeScript declarations. Web Audio plays the generated samples through a shared gain node; the main greeting is unchanged.
+
+The audio-page suite mocks the engine and substitutes the panel for the access gate. Its assertions concern audio integration behavior, not real sound output or password acceptance/refusal. The gate is client-side presentation on a static export. The [prepared 4.0.0 notes](RELEASE-4.0.0.md) summarize the design milestone; the tag and GitHub release remain pending. The [release process](RELEASE-PROCESS.md) separates ongoing Pages deployment from named version releases.
+
 ## Testing the Greeting
 
 `frontend/vitest.config.ts` selects jsdom, discovers `src/**/*.test.{ts,tsx}`, and loads `vitest.setup.ts`. React and Vanilla Extract Vite plugins transform the component and style imports independently of the Next.js build configuration. The setup imports jest-dom's Vitest matchers and explicitly calls React Testing Library cleanup after each test.
 
-The single page suite renders `HomePage` without mocking its children. Four tests check the complete greeting and punctuation, the quoted greeting's strong importance, the coming-soon announcement's semantic emphasis, and the empty `aria-hidden` interval placed between the two lines. Text assertions normalize whitespace; they do not measure typography.
+The homepage suite renders `HomePage` without mocking its children. Four tests check the complete greeting and punctuation, the quoted greeting's strong importance, the coming-soon announcement's semantic emphasis, and the empty `aria-hidden` interval placed between the two lines. Text assertions normalize whitespace; they do not measure typography.
 
 The initial local run passed all four tests, Biome, and TypeScript with `--noEmit --incremental false`. No local production build or assistant browser inspection was performed during that initial check. The [GitHub run for commit #38](https://github.com/VincentMardon/professional-hello-world/actions/runs/35448593710) subsequently passed the tests, production build, artifact packaging, and deployment. jsdom does not calculate layout; generated metadata, production-export behavior, and visual rendering remain outside this suite. Coverage measurement, E2E, mutation testing, and multi-browser automation are deferred until relevant behavior justifies them.
 

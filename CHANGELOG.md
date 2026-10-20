@@ -9,6 +9,22 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+No changes recorded after the 4.0.0 release preparation.
+
+## [4.0.0] — Publication pending
+
+### The Great Apparent Standstill
+
+- Prepare a direct transition from 3.0.0 to 4.0.0, with no intermediate 3.x release. Commits and Pages deployments continued between these milestones.
+- The main greeting's composition, styles, layout, and components remain unchanged against the v3.0.0 tag; the new work lives in the separate audio test experience.
+- Integrate the independently developed Rust/WebAssembly BeepEngine through the local 0.1.2 package, with two generated sounds, selectable sample rates, volume, and status feedback.
+- Gather the feature's component and hook separation, behavioral test suite, extensive gold-and-glass design, responsive layout, password ceremony, and SVG ornamentation into one milestone.
+- Close Part V of the wiki at Vincent's request. The release notes end with his commissioned satirical image of an unusually quiet Director, without inferring a private explanation.
+- Add release notes and a reusable release process encouraging patch/minor milestones independently of wiki-part closures. Automation remains a proposal.
+- The CI and Pages deployment for implementation commit #78 (66bb8ad) succeeded. Release metadata alignment, a release-preparation commit and its own verification, tagging, and GitHub release publication remain pending.
+
+The detailed entries below preserve their preparation-stage verification statements as history. Read docs/RELEASE-4.0.0.md for the milestone summary and current publication boundaries.
+
 ### The Listening Room Commissions Wallpaper and Botanical Goldwork
 
 - Added artDecoBackground.css.ts with a repeating 640-by-800px inline SVG of dark arches, fine vertical texture, and a vignette; composed it into the audio page.

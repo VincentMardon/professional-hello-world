@@ -161,6 +161,12 @@ This project would rather be “over-released” than under-documented.
 
 ---
 
+### Release Cadence
+
+Review release readiness after each coherent change. Patch and minor releases should not wait for a finished wiki part or another major artistic milestone. Use the [release process](docs/RELEASE-PROCESS.md) to align versions, verify the exact preparation commit, and publish its tag and notes. Pages deployment does not automatically create a GitHub release. Automation is a separate proposal, not an installed workflow.
+
+---
+
 ## 7. Code of Conduct (non-official)
 
 - Be kind
