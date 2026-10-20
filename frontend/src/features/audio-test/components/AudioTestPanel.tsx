@@ -2,7 +2,15 @@
 
 import { useAudioTest } from "../hooks/useAudioTest";
 import { AudioSettings } from "./AudioSettings";
-import { controls, divider, panel, statusRegion } from "./AudioTestPanel.css";
+import {
+  brand,
+  controls,
+  divider,
+  dividerLower,
+  panel,
+  signature,
+  statusRegion,
+} from "./AudioTestPanel.css";
 import { PlaybackControls } from "./PlaybackControls";
 import { StatusDisplay } from "./StatusDisplay";
 import { VolumeControl } from "./VolumeControl";
@@ -25,6 +33,7 @@ export function AudioTestPanel() {
       <VolumeControl value={volume} onChange={changeVolume} />
 
       <div className={divider} aria-hidden="true" />
+      <div className={dividerLower} aria-hidden="true" />
 
       <div className={controls}>
         <AudioSettings
@@ -39,6 +48,20 @@ export function AudioTestPanel() {
       <div className={statusRegion}>
         <StatusDisplay status={status} />
       </div>
+
+      <p className={brand}>
+        Beep
+        <br />
+        Engine
+      </p>
+
+      <p className={signature}>
+        Overengineered by:
+        <br />
+        &laquo; <strong>Les Productions Majeures</strong> &raquo;
+        <br />
+        Made by a <strong>real</strong> professional
+      </p>
     </div>
   );
 }

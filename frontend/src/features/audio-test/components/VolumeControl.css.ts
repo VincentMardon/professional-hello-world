@@ -75,15 +75,13 @@ export const guide = style({
     backgroundImage: `linear-gradient(
       to right,
       ${semanticColors.actionPrimaryDark} 0%,
-      ${semanticColors.actionPrimary} 20%,
-      ${semanticColors.textPrimary} 45%,
-      ${semanticColors.actionPrimaryLight} 60%,
-      ${semanticColors.actionPrimary} 85%,
-      ${semanticColors.actionPrimaryDark} 100%
+      ${semanticColors.actionPrimaryLight} 55%,
+      ${semanticColors.textPrimary} 100%
     )`,
     boxShadow: [
-      "inset 1px 0 0 rgb(245 241 232 / 45%)",
-      "0 0 5px rgb(216 181 100 / 35%)",
+      "inset 1px 0 2px rgb(0 0 0 / 85%)",
+      "inset 0 2px 3px rgb(0 0 0 / 75%)",
+      "inset -0.5px -0.5px 0 rgb(245 241 232 / 25%)",
     ].join(", "),
   },
 });
@@ -213,3 +211,10 @@ for (const pseudo of ["::-webkit-slider-thumb", "::-moz-range-thumb"]) {
     ].join(", "),
   });
 }
+
+export const volumeIcon = style({
+  display: "block",
+  flexShrink: 0,
+
+  filter: "drop-shadow(2px 1.5px 0.8px rgb(142 137 127 / 75%))",
+});

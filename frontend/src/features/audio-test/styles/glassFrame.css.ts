@@ -32,11 +32,16 @@ export const darkGlassFrame = style([
     ].join(", "),
 
     boxShadow: [
-      "inset 1px 0 1px rgb(245 241 232 / 10%)",
-      "inset -1px 0 1px rgb(245 241 232 / 7%)",
-      "inset 0 1px 1px rgb(245 241 232 / 8%)",
-      "inset 0 -2px 5px rgb(0 0 0 / 65%)",
-      "0 8px 20px rgb(0 0 0 / 55%)",
+      "inset 0 1px 0 rgb(245 241 232 / 16%)",
+      "inset 1px 0 1px rgb(245 241 232 / 8%)",
+      "inset 0 -2px 3px rgb(0 0 0 / 75%)",
+
+      "0 1px 0 #242320",
+      "0 3px 0 #171715",
+      "0 6px 0 #10100F",
+      "0 8px 0 #080808",
+
+      "0 12px 12px rgb(0 0 0 / 75%)",
     ].join(", "),
   },
 ]);

@@ -1,6 +1,11 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 import { glassFrame } from "../styles/glassFrame.css";
-import { pickerClosing, pickerOpening } from "../styles/pickerMotion.css";
+import {
+  PickerRestRelief,
+  pickerClosing,
+  pickerOpening,
+  pickerOpenRelief,
+} from "../styles/pickerMotion.css";
 import { semanticColors } from "../styles/semanticColors.css";
 
 const selectWidth = "12rem";
@@ -155,19 +160,25 @@ globalStyle(`${settings} select::picker(select)`, {
 });
 
 globalStyle(`${settings} select::picker-icon`, {
-  color: semanticColors.actionPrimaryLight,
+  content: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' viewBox='0 0 16 12'%3E%3Cdefs%3E%3ClinearGradient id='gold' x2='0' y2='1'%3E%3Cstop stop-color='%23F5F1E8'/%3E%3Cstop offset='.3' stop-color='%23FEC94D'/%3E%3Cstop offset='.7' stop-color='%23D8B564'/%3E%3Cstop offset='1' stop-color='%23A9854C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M1 1H15L8 11Z' fill='url(%23gold)'/%3E%3C/svg%3E")`,
 
-  filter: [
-    "drop-shadow(0 1px 0 rgb(169 133 76 / 80%))",
-    "drop-shadow(0 0 3px rgb(216 181 100 / 30%))",
-  ].join(" "),
+  display: "block",
+  flexShrink: 0,
+  width: "16px",
+  height: "12px",
+  lineHeight: 0,
+  alignSelf: "center",
+  marginBlock: "auto",
+  marginInlineStart: "auto",
 
+  filter: PickerRestRelief,
   transformOrigin: "center",
   rotate: "0deg",
 });
 
 globalStyle(`${settings} select:open::picker-icon`, {
   rotate: "180deg",
+  filter: pickerOpenRelief,
 
   "@media": {
     "(prefers-reduced-motion: no-preference)": {

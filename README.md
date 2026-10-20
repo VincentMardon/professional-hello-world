@@ -18,7 +18,7 @@ The project takes software rituals very seriously for someone whose principal de
 
 - The volume fader now has fixed geometry. StatusDisplay owns its dedicated stylesheet and occupies a full-width row beneath the controls at viewport widths up to 600px. Settings labels stack at that breakpoint; the page uses a 1rem gap, with top-aligned content starting at 3rem above 768px.
 
-- A decorative 2px vertical gold divider separates the volume control from the remaining audio controls, with 2rem of grid spacing on each side, reduced to 1.5rem at viewport widths up to 30rem.
+- A decorative 4px gold divider has layered relief and extends beyond the panel. At widths up to 600px, two separate segments leave space around the full-width status row. A two-line Beep Engine mark and a small italic Intel One Mono signature finish the panel footer.
 
 - Status messages use Intel One Mono in a full-column recessed display with a fading ivory perimeter and left-aligned, spaced lettering. Shared inner-housing reflections are subdued, and AudioSettings overrides its surface with an opaque #080808 base.
 
@@ -30,7 +30,7 @@ The project takes software rituals very seriously for someone whose principal de
 
 - The audio test header displays Beep Engine in Michroma and The Audio Test in Oxanium, with Space Grotesk for the remaining page text, configured through next/font/google. Gradient lettering, layered shadows, a subdued ivory backdrop halo, and a decorative gold rule give the header a logo-like treatment. The existing EmptyLine component separates it from the controls.
 
-- The audio test page now uses an ivory foreground (#F5F1E8) on an ebony background (#050505), drawn from feature-local primitive and semantic color definitions in frontend/src/features/audio-test/styles/. The Play control uses a 5rem circular surface, a gold border, and a 48px outlined ivory triangle that fills with gold on hover. Pressing darkens the triangle and border. Status messages use a compact glass-like frame with a translucent surface, reflections, and a subdued gold border, retaining an 18rem width constrained by the available space. The sound and sample-rate selectors use matching glass-like surfaces. In browsers supporting customizable selects, their menus open below the controls with translucent gold selection, gray hover/focus highlights, and spacing between options; other browsers retain native menus. The main greeting retains its existing styling.
+- The audio test page uses feature-local ivory, ebony, and gold colors. Play retains its 5rem circular button inside a separate 4px gold ring with an interior gap. Its 64px SVG uses ivory gradient lettering-like relief, fills ivory on hover, and turns dark gold when pressed. The panel has a thicker shadowed base, status has deeper inset shadows, and the volume fill is recessed. A decorative ivory volume triangle replaces the visible Vol. label below the fader; the native input retains its accessible name. Customizable selects use matching gold SVG arrows with rotation-compensated shadows, while retaining the existing supported picker behavior. The main greeting retains its existing styling.
 
 - A Next.js App Router frontend, exported as a static site, displaying **Professional "Hello, World!"** followed by *Coming soon ...*, with a component for each line, a reusable `EmptyLine` spacer, and a layout centred horizontally and vertically.
 - The former Python greeting was removed in commit #33; its implementation remains in Git history.

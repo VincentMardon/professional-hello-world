@@ -27,11 +27,13 @@ export const statusFrame = style({
   backdropFilter: "blur(8px)",
 
   boxShadow: [
-    "inset 0 3px 5px rgb(0 0 0 / 85%)",
-    "inset 2px 0 3px rgb(0 0 0 / 55%)",
-    "inset 0 -1px 0 rgb(245 241 232 / 6%)",
-    "0 1px 0 rgb(245 241 232 / 14%)",
-    "1px 0 0 rgb(245 241 232 / 5%)",
+    "inset 0 1px 1px rgb(0 0 0 / 95%)",
+    "inset 0 5px 7px rgb(0 0 0 / 90%)",
+    "inset 3px 0 5px rgb(0 0 0 / 70%)",
+    "inset -1px -1px 2px rgb(245 241 232 / 5%)",
+
+    "0 1px 0 rgb(245 241 232 / 20%)",
+    "1px 0 0 rgb(245 241 232 / 7%)",
   ].join(", "),
 
   overflowWrap: "anywhere",

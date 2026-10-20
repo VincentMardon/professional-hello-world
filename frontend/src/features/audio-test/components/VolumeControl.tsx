@@ -1,5 +1,5 @@
-import type { CSSProperties } from "react";
-
+import { type CSSProperties, useId } from "react";
+import { semanticColors } from "../styles/semanticColors.css";
 import {
   fader,
   frame,
@@ -8,6 +8,7 @@ import {
   guide,
   slider,
   volumeControl,
+  volumeIcon,
   volumeValue,
 } from "./VolumeControl.css";
 
@@ -17,10 +18,10 @@ type VolumeControlProps = {
 };
 
 export function VolumeControl({ value, onChange }: VolumeControlProps) {
+  const volumeGradientId = useId();
+
   return (
     <div className={volumeControl}>
-      <label htmlFor="volume">Vol.</label>
-
       <div
         className={frame}
         style={{ "--volume-level": `${value}%` } as CSSProperties}
@@ -55,6 +56,40 @@ export function VolumeControl({ value, onChange }: VolumeControlProps) {
           {value}%
         </span>
       </div>
+
+      <svg
+        className={volumeIcon}
+        width="40"
+        height="24"
+        viewBox="0 0 40 24"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <defs>
+          <linearGradient
+            id={volumeGradientId}
+            x1="0%"
+            y1="0%"
+            x2="5%"
+            y2="100%"
+          >
+            <stop offset="10%" stopColor={semanticColors.textPrimary} />
+            <stop offset="35%" stopColor="#FFFFFF" />
+            <stop offset="49%" stopColor="#CEC9BD" />
+            <stop offset="54%" stopColor={semanticColors.textPrimary} />
+            <stop offset="62%" stopColor="#FFFFFF" />
+            <stop offset="100%" stopColor="#CEC9BD" />
+          </linearGradient>
+        </defs>
+
+        <path
+          d="M4 18L36 5V18Z"
+          fill={`url(#${volumeGradientId})`}
+          stroke={`url(#${volumeGradientId})`}
+          strokeWidth="1"
+          strokeLinejoin="round"
+        />
+      </svg>
     </div>
   );
 }

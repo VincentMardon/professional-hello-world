@@ -9,6 +9,16 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Two-Bip Instrument Receives Its Final Relief Inspection
+
+- Separated Play's 5rem button from a decorative 4px gold ring with an interior gap, layered ring relief, and revised button lighting. Enlarged the SVG to 64px and added uniquely identified ivory and dark-gold gradients, ivory hover fill, and icon shadows.
+- Added a two-line Beep Engine footer mark and an italic Intel One Mono signature with subtle text shadows; enabled the font's italic style.
+- Doubled the vertical divider to 4px, extended it beyond the panel, and added layered gold relief. At widths up to 600px, split it into two decorative segments around the full-width status row.
+- Strengthened the outer panel's apparent thickness and the status display's inset shadows.
+- Replaced the visible Vol. label with a decorative gradient triangle below the fader while preserving the input's accessible name. Reworked the gold fill with inset shadows and a brighter gradient to suggest a recessed guide.
+- Replaced customizable-select arrows with matching 16-by-12px gold SVGs. Opening and closing keyframes compensate the shadow direction for rotation, keeping the relief directed toward the lower right.
+- Vincent approved the visual adjustments. Initial targeted Biome checks report formatting and import-order corrections; tracked-diff checks report trailing whitespace in two source files. No new automated test execution, production build, assistant browser inspection, or CI result is claimed.
+
 ### The Fader Keeps Its Dimensions and the Status Finds Its Own Row
 
 - Fixed the volume control's width at 4.6rem and the fader height at 12rem, removed growth that tied its size to adjacent content, and replaced the WebKit thumb's percentage-based margin with 0.375rem.
