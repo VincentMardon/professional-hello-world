@@ -1,6 +1,6 @@
 # 4.0.0 — The Great Apparent Standstill
 
-*Release preparation commissioned on October 20, 2026. The v4.0.0 tag and GitHub release have not yet been published. The verified implementation baseline is application commit #78, 66bb8adabfa3a967b5bf2c4177d337f9fa241ef3. This document closes the design milestone; it does not certify a release that has not occurred.*
+*Published October 20, 2026 as [v4.0.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.0.0). The annotated tag targets release-preparation commit #79, 30eb0a0e7d3b33b7dc1e351c98b2f07dd8e620f7. This release closes Part V of the wiki.*
 
 ## A Major Release of Apparently Nothing
 
@@ -48,17 +48,17 @@ Vincent chooses 4.0.0 as the next artistic and technical milestone: a dedicated 
 
 The missing intermediate releases are acknowledged rather than invented retrospectively. The commits already happened, and the site was deployed along the way. This release gathers that work into a named milestone.
 
-Future releases should be smaller and more frequent. A completed, useful change can receive a patch or minor release independently of the wiki's narrative schedule. The [release process](RELEASE-PROCESS.md) records a lightweight manual procedure using the existing CI and Pages pipeline, plus a separately identified automation proposal.
+Future releases should be smaller and more frequent. A completed, useful change can receive a patch or minor release independently of the wiki's narrative schedule. The [release process](https://github.com/VincentMardon/professional-hello-world/blob/v4.0.0/docs/RELEASE-PROCESS.md) records a lightweight manual procedure using the existing CI and Pages pipeline, plus a separately identified automation proposal.
 
 ## Verification and Open Boundaries
 
-The [CI run for application commit #78](https://github.com/VincentMardon/professional-hello-world/actions/runs/39458227527) completed dependency installation, Biome checks, TypeScript checking, Vitest, the production build, artifact packaging, and Pages deployment successfully. These results belong to commit 66bb8ad, not automatically to a later release-preparation commit.
+The [CI run for release-preparation commit #79](https://github.com/VincentMardon/professional-hello-world/actions/runs/39461228906) completed dependency installation, Biome checks, TypeScript checking, Vitest, the production build, artifact packaging, and Pages deployment successfully. The annotated v4.0.0 tag targets that exact commit, 30eb0a0e7d3b33b7dc1e351c98b2f07dd8e620f7. The preceding implementation commit #78 also passed its own CI and deployment.
 
 The repository contains the original four homepage tests and an audio-page suite covering initialization, settings, playback, and volume integration through a mocked engine. The audio-page suite also substitutes the panel for the access component. It therefore does not verify the real password gate, its cryptographic derivation, or deferred initialization through that gate. Dedicated acceptance/refusal tests remain to be added.
 
-DOM tests do not measure visual layout or real audible output. No independent Rust test execution, new assistant browser inspection, coverage measurement, or full cross-browser verification is claimed for this release preparation.
+DOM tests do not measure visual layout or real audible output. No independent Rust test execution, new assistant browser inspection, coverage measurement, or full cross-browser verification is claimed for this release.
 
-Before publication, align the private frontend package and lockfile versions to 4.0.0, commit the release preparation, verify that exact commit's CI and deployment, then create the annotated tag and GitHub release. See the runbook. Until those steps are complete, 3.0.0 remains the latest published release.
+The private frontend package and root package entries in the lockfile identify version 4.0.0. GitHub published v4.0.0 as a stable release on October 20, 2026 at 17:03:35 UTC. The tag resolves to the verified release-preparation commit; 4.0.0 is now the latest published release. No earlier tag was moved.
 
 ## Part V Is Closed
 

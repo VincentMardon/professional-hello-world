@@ -22,7 +22,7 @@ The frontend uses Next.js 16.3.5, React 19.3.0, TypeScript 6.0.3, and Biome 2.5.
 
 The separate audio-test route composes a persistent header and a client-side access gate. After acceptance, the gate mounts the audio panel. Feature-local hooks separate asynchronous engine initialization from settings, volume, and playback orchestration. PHW consumes the vendored beep-engine 0.1.2 package, containing Rust-generated WebAssembly, browser playback code, and TypeScript declarations. Web Audio plays the generated samples through a shared gain node; the main greeting is unchanged.
 
-The audio-page suite mocks the engine and substitutes the panel for the access gate. Its assertions concern audio integration behavior, not real sound output or password acceptance/refusal. The gate is client-side presentation on a static export. The [prepared 4.0.0 notes](RELEASE-4.0.0.md) summarize the design milestone; the tag and GitHub release remain pending. The [release process](RELEASE-PROCESS.md) separates ongoing Pages deployment from named version releases.
+The audio-page suite mocks the engine and substitutes the panel for the access gate. Its assertions concern audio integration behavior, not real sound output or password acceptance/refusal. The gate is client-side presentation on a static export. The [published 4.0.0 notes](RELEASE-4.0.0.md) summarize the design milestone; its annotated tag targets commit #79 (30eb0a0), whose CI and Pages deployment succeeded. The [release process](RELEASE-PROCESS.md) separates ongoing Pages deployment from named version releases.
 
 ## Testing the Greeting
 
@@ -34,7 +34,7 @@ The initial local run passed all four tests, Biome, and TypeScript with `--noEmi
 
 The absent CSS, JavaScript, and font references are retained as JSX comments in the layout. Next.js generates the metadata and viewport tags from typed exports. Open Graph metadata points to the intended Pages URL and the coding cat image included in the publication artifact. These metadata changes do not implement styling, analytics, or custom fonts.
 
-The Python example was removed in commit #33. Its historical implementation remains in Git; the latest published project release is [3.0.0 — The Great Invisible Reconstruction](RELEASE-3.0.0.md), tagged at commit #39 (`a14a2cd`) on September 19, 2026.
+The Python example was removed in commit #33. Its historical implementation remains in Git; the latest published project release is [4.0.0 — The Great Apparent Standstill](RELEASE-4.0.0.md), tagged at commit #79 (`30eb0a0`) on October 20, 2026. The previous 3.0.0 milestone remains documented in its [historical release notes](RELEASE-3.0.0.md).
 
 ## Greeting Components
 

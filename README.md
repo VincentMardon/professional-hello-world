@@ -42,9 +42,9 @@ The project takes software rituals very seriously for someone whose principal de
 - A reusable Pages workflow called by CI after successful checks on `main`, publishing the already built artifact. Its build-to-deployment path has succeeded on GitHub, including the tests introduced in commit #38.
 - Documentation, historical release notes, and an [official coding cat](docs/assets/images/coding-cat.png).
 
-The latest published release is [**3.0.0 — The Great Invisible Reconstruction**](https://github.com/VincentMardon/professional-hello-world/releases/tag/v3.0.0), released on September 19, 2026: the familiar greeting, now supported by a rebuilt frontend, real checks, and four behavioral tests. Read the [release notes](docs/RELEASE-3.0.0.md) and [changelog](CHANGELOG.md).
+The latest published release is [**4.0.0 — The Great Apparent Standstill**](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.0.0), released on October 20, 2026. The main greeting remains unchanged while Rust/WebAssembly audio integration and an elaborate separate listening room form the new milestone. Read the [release notes](docs/RELEASE-4.0.0.md) and [changelog](CHANGELOG.md).
 
-Version **4.0.0 — The Great Apparent Standstill** is being prepared as the direct successor to 3.0.0, with no intermediate 3.x release. The main greeting remains unchanged while the separate Rust/WebAssembly audio integration and its elaborate design form the new milestone. Read the [prepared release notes](docs/RELEASE-4.0.0.md) and the [release process](docs/RELEASE-PROCESS.md) for smaller future patch/minor releases. The version tag and GitHub release are not yet published.
+Version 4.0.0 directly succeeds 3.0.0, with no intermediate 3.x release. The [release process](docs/RELEASE-PROCESS.md) sets out smaller future patch/minor milestones independently of wiki-part closures; release automation remains a proposal.
 
 ## Getting Started
 
