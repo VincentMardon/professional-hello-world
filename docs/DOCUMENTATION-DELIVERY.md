@@ -45,3 +45,9 @@ The Bureau accepts small departures. It no longer requires the passenger to brin
 - Targeted Biome checks passed for the three documentation source files; the 14 existing tests passed. These tests do not cover the documentation route.
 - Vincent reports completing type checking and the production build. The assistant subsequently inspected the generated rontend/out/doc/index.html: it contains the overview heading, rendered tables, and rewritten GitHub links.
 - Inspection of the generated file does not establish browser appearance, keyboard usability, external-link availability, or public deployment success. Those checks remain pending, as does exact-commit CI verification for release preparation.
+
+## Navigation checkpoint — October 21, 2026
+
+The homepage now has a small fixed bottom-right documentation link. Source review confirms scoped focus styling and removal of the extra decorative spacer. Vincent confirms Biome checks, type checking, tests, production build, and the requested keyboard, narrow-screen, and 200% zoom checks. These are his reported manual results; no independent assistant browser audit is claimed.
+
+Release 4.1.0 notes and the changelog are prepared. Vincent subsequently aligned the package and root lockfile versions to 4.1.0 and confirms repeating the local checks. His preparation commit and exact-commit CI and deployment verification remain pending. The release remains unpublished.

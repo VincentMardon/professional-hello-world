@@ -6,7 +6,7 @@ Professional Hello World is an artistic and technical learning project that gran
 
 The Directorate exists to make that machinery understandable. Visitors are entitled to learn what the project does, contributors need to know where behavior lives, and maintainers should be able to explain a decision without excavating every preceding ceremony. The paperwork is extravagant. The underlying explanations must earn their space.
 
-**Implementation status:** this overview is readable from the repository and is now the selected Markdown source for the local `/doc` route. Vincent has added the route and its feature component using react-markdown and remark-gfm. The generated documentation HTML has been inspected locally; browser checks and public deployment verification remain pending; generated API reference and Mermaid rendering are not implemented.
+**Implementation status:** this overview is readable from the repository and is now the selected Markdown source for the local `/doc` route. Vincent has added the route and its feature component using react-markdown and remark-gfm. The generated documentation HTML has been inspected locally. Vincent confirms local checks and manual keyboard, narrow-screen, and 200% zoom checks for the new homepage entry. Final release-preparation CI and deployment verification remain pending; generated API reference and Mermaid rendering are not implemented.
 
 ## 1. Choose your counter
 
@@ -74,7 +74,7 @@ The repository contains homepage and audio-page tests. The homepage suite render
 
 The current CI installs the recorded dependencies, runs Biome, checks TypeScript, runs Vitest, and creates the static production export. Successful main-branch runs can then publish the built artifact through the reusable Pages workflow. A new implementation must be checked on its own commit; an earlier successful run is historical evidence for that earlier state.
 
-Reading the workflow establishes what it is configured to do. It does not prove that the latest remote execution passed. This overview was prepared through source inspection, without a new application test run, build, browser inspection, or deployment verification.
+Reading the workflow establishes what it is configured to do. It does not prove that the latest remote execution passed. The first overview was prepared through source inspection. For the later homepage entry, Vincent confirms the local checks, production build, and requested manual navigation checks. This is not an independent assistant browser audit; the final release-preparation commit will need its own CI and deployment verification.
 
 The Inspectorate of Evidence is particularly strict about certificates that merely look expensive.
 
@@ -94,4 +94,4 @@ A first minor release does not require every department, generated reference, se
 
 Read the [documentation delivery milestones](DOCUMENTATION-DELIVERY.md) for the proposed first boundary. Writing this page does not bump the package version, publish a tag, or certify the future route.
 
-**Reception now has an application route as well as a repository desk. The export contains this page; browser inspection and public deployment still precede its official inauguration.**
+**Reception now has an application route as well as a repository desk. The export contains this page, and Vincent has checked the new entrance locally. The release awaits its final preparation and exact-commit publication checks.**

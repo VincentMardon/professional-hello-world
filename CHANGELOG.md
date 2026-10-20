@@ -9,6 +9,18 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+No additional changes recorded beyond the prepared milestone below.
+
+## [4.1.0] — In preparation
+
+### The Greeting Opens an Information Desk
+
+- Add the Markdown-backed documentation route and its repository-readable overview, charter, and delivery plan.
+- Add a small bottom-right homepage Documentation link with scoped focus styling, preserving the greeting's in-flow spacing.
+- Vincent confirms local checks, production build, and keyboard, narrow-screen, and 200% zoom checks after the navigation corrections. Package and root lockfile versions are aligned to 4.1.0, and Vincent confirms repeating the local checks. Exact-commit CI, tag, and GitHub release publication remain pending.
+
+The entries below retain the earlier foundation and 4.0.0 follow-up records included since the previous tag; their original checkpoint wording is historical.
+
 ### The Documentation Directorate Opens Its Repository Desk
 
 - Added a documentation charter, a substantial repository-readable overview, and staged delivery checkpoints. The overview maps existing routes, audio hooks, verification boundaries, and practical reading paths.

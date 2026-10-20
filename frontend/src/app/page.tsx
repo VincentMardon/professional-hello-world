@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 import { ComingSoon } from "../components/ComingSoon";
 import { EmptyLine } from "../components/EmptyLine";
 import { ProfessionalHelloWorld } from "../components/ProfessionalHelloWorld";
-import { greeting } from "./page.css";
+import { documentationNav, greeting } from "./page.css";
 
 export default function HomePage() {
   return (
@@ -9,6 +11,9 @@ export default function HomePage() {
       <ProfessionalHelloWorld />
       <EmptyLine />
       <ComingSoon />
+      <nav className={documentationNav} aria-label="Project resources">
+        <Link href="/doc">Documentation</Link>
+      </nav>
     </div>
   );
 }
