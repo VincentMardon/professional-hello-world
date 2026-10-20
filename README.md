@@ -16,13 +16,15 @@ The project takes software rituals very seriously for someone whose principal de
 
 ## What Exists Today
 
-- The audio test now opens with a client-side password form beneath the existing header. Its recessed field reuses statusFrame, and its gold Oxanium label underlines password as a deliberate hint. Verification derives 256 bits with PBKDF2/SHA-256, a fixed feature-specific salt, and 210,000 iterations before comparing all bytes. The panel mounts only after acceptance; reloading closes access again. This static-page gate is a presentation mechanism, not server-enforced authentication. Preparation review identified test updates and an invalid-state correction before committing.
+- The audio test has an anthracite Art Deco background: a repeating inline SVG of arches, a fine vertical texture, and a dark vignette. Mirrored gold botanical ornaments frame the headings through an SVG mask. Header lettering responds to viewport width and height; reduced page padding and centered unlocked content replace the previous desktop top offset. The existing gold separator retains its styling. The outer housing and AudioSettings use 65% background opacity to reveal more of the patterned backdrop.
 
-- The volume fader now has fixed geometry. StatusDisplay owns its dedicated stylesheet and occupies a full-width row beneath the controls at viewport widths up to 600px. Settings labels stack at that breakpoint; the page uses a 1rem gap, with top-aligned content starting at 3rem above 768px.
+- The audio test now opens with a client-side password form beneath the existing header. Its recessed field reuses statusFrame, and its gold Oxanium label underlines password as a deliberate hint. Verification derives 256 bits with PBKDF2/SHA-256, a fixed feature-specific salt, and 210,000 iterations before comparing all bytes. The panel mounts only after acceptance; reloading closes access again. This static-page gate is a presentation mechanism, not server-enforced authentication. The engine-focused page tests substitute the panel for the access component; dedicated acceptance and refusal tests are not yet included.
+
+- The volume fader now has fixed geometry. StatusDisplay owns its dedicated stylesheet and occupies a full-width row beneath the controls at viewport widths up to 600px. Settings labels stack at that breakpoint; the unlocked page uses a 1rem gap, centered content, and viewport-height-dependent padding.
 
 - A decorative 4px gold divider has layered relief and extends beyond the panel. At widths up to 600px, two separate segments leave space around the full-width status row. A two-line Beep Engine mark and a small italic Intel One Mono signature finish the panel footer.
 
-- Status messages use Intel One Mono in a full-column recessed display with a fading ivory perimeter and left-aligned, spaced lettering. Shared inner-housing reflections are subdued, and AudioSettings overrides its surface with an opaque #080808 base.
+- Status messages use Intel One Mono in a full-column recessed display with a fading ivory perimeter and left-aligned, spaced lettering. Shared inner-housing reflections are subdued, and AudioSettings uses its own translucent dark base.
 
 - The audio controls sit inside a darker glass-like outer housing with a faint ivory border. This darkGlassFrame variant composes the shared glass material; panel padding and spacing decrease below 30rem.
 

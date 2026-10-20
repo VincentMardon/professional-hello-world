@@ -24,7 +24,7 @@ export const darkGlassFrame = style([
   {
     border: "1px solid rgb(245 241 232 / 12%)",
     borderRadius: "1rem",
-    backgroundColor: "rgb(8 8 8 / 85%)",
+    backgroundColor: "rgb(8 8 8 / 65%)",
 
     backgroundImage: [
       "radial-gradient(ellipse at 15% 0%, rgb(245 241 232 / 5%), transparent 65%)",

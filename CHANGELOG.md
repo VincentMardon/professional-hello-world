@@ -9,6 +9,16 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+### The Listening Room Commissions Wallpaper and Botanical Goldwork
+
+- Added artDecoBackground.css.ts with a repeating 640-by-800px inline SVG of dark arches, fine vertical texture, and a vignette; composed it into the audio page.
+- Added a decorative, accessibility-hidden ornament layer around the existing h1 and h2. An SVG mask mirrors botanical branches and leaves over the title's semantic gold-and-ivory gradient.
+- Limited header width to 46rem, prevented flex shrinking, reduced heading sizes with viewport-width and viewport-height constraints, and adjusted subtitle spacing and title padding. Preserved the existing gold separator styling.
+- Replaced the desktop-specific top alignment and 3rem upper padding with centered unlocked content and clamp-based page padding on all sides. Retained the form-dependent access layout and natural document scrolling.
+- Reduced darkGlassFrame's background opacity from 85% to 65% and replaced AudioSettings' opaque base with a 65% dark background to expose more of the backdrop through the existing glass effects.
+- Vincent approved the result for commit preparation. Targeted Biome checks pass for all six affected source files, and tracked-diff whitespace checks pass. No new automated test execution, production build, assistant browser inspection, universal scroll-free fit, or CI result is claimed.
+
+
 ### A Trivial Password Receives a Disproportionate Verification Procedure
 
 - Added AudioTestAccess and its stylesheet, preserving the header while initially replacing the audio panel with a password form centered in the remaining page space.
