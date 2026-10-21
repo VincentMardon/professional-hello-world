@@ -2,6 +2,13 @@
 
 **Planning status — October 20, 2026.** This document sets release checkpoints for the documentation work. It does not announce a published release or change package metadata.
 
+## Current planning rule — capabilities before page counts
+
+On October 21, 2026, Vincent specifies that documentation releases mark capabilities of the reader and tooling. Adding a Markdown page, registering a routine Next.js documentation route, or adding another diagram with the existing renderer is content maintenance, not a standalone release trigger. Content may be committed and deployed between capability milestones.
+
+PHW intentionally uses version increments for its lore rather than promising strict SemVer classification. The proposed 4.4.1 adds zoom controls; fitting and fullscreen are later capability slices. Previously suggested releases devoted solely to one more error-path or signal-flow diagram are withdrawn as release triggers; those diagrams remain possible content additions. This rule does not constrain artistic release decisions for the real PHW homepage in the same way.
+
+Earlier checkpoint entries below preserve decisions made before this clarification. Existing tags and release notes remain historical. See the [current release policy](RELEASE-PROCESS.md#current-phw-release-policy--october-21-2026) for the authoritative distinction.
 ## Current increment: repository foundation and first documentation route
 
 The documentation charter establishes responsibilities and scope. The new documentation overview gives readers a useful first entry into the existing project and links to current sources. Vincent has now added the `/doc` route, its feature component and stylesheet, and the Markdown dependencies. The component reads only `docs/README.md` and resolves relative document links to GitHub. The initial repository foundation remains identifiable within this increment.
@@ -107,3 +114,9 @@ Package and root lockfile versions are aligned to 4.4.0. Vincent confirms the re
 [Stable v4.4.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.4.0) was published at 05:50:45 UTC (07:50:45 in Paris). Annotated tag object `d7bfa28aedc071a55d0ee42e08ae7e7cb19a126e` resolves to preparation commit #90, `3bf2472c7b158bd2a0c396d769c5fc9932148379`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39551230411). The release is neither a draft nor a prerelease.
 
 Earlier checkpoints retain their preparation history. This documentation-only publication update does not move the tag. Dedicated renderer tests, malformed-input verification, generated interface reference, search, and persistent theme preferences remain outside the completed milestone.
+
+## Zoom checkpoint — 4.4.1 preparation
+
+The diagram reader now provides independent 25–300 percent zoom, minus/plus buttons, a slider, percentage output, and a 100 percent reset based on the SVG reference width. Zoom changes CSS sizing without regenerating Mermaid. A named fieldset and compact five-column layout organize the controls; default figure side margins are removed.
+
+Source review confirms the final compact layout and package/root lockfile versions aligned to 4.4.1. Vincent confirms the requested corrections, local checks, type checking, tests, and production build. Whitespace checks pass. Exact preparation-commit CI and deployment, tag, and release publication remain pending. Fitting and fullscreen remain separate later capabilities.

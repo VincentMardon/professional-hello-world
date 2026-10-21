@@ -1,5 +1,16 @@
 # Release Process — Milestones Without Waiting for Another Era
 
+## Current PHW Release Policy — October 21, 2026
+
+Vincent explicitly uses release numbers as part of PHW's artistic lore. The three-number form is retained, but its increments are not a promise of strict Semantic Versioning: a small new capability may advance the third number. State the actual change and compatibility facts rather than inferring them from the version number. Large eventual numbers such as 23.15.289 are an artistic direction, not a published version or a requirement to manufacture hundreds of empty releases.
+
+For the documentation project, release milestones concern capabilities of the documentation system: rendering, navigation mechanisms, diagram interaction, zoom, fitting, fullscreen presentation, search, and reference-generation tooling. A new Markdown page, a routine Next.js route using the established reader, or an additional diagram using an unchanged renderer does not by itself justify a documentation-feature release. Such content can be committed and deployed between releases and included in the next capability milestone. A reader-behavior correction may still justify a release; this rule does not prohibit fixes.
+
+This criterion applies to documentation, not automatically to PHW's principal public experience. Changes to the actual homepage may warrant their own artistic release decisions, even when technically small. Preserve historical releases as issued rather than judging or renumbering them retroactively.
+
+The remaining 4.x work is planned around documentation capabilities and diagram interaction. The next proposed slice is 4.4.1 for zoom controls; fitting and fullscreen follow as separately reviewable behavior. New error-path or signal-flow diagrams are content work unless they require a new rendering or interaction capability. Longer-term plans by major artistic generation remain to be established together.
+
+This policy supersedes generic patch/minor classification for future PHW version choices. It does not change human ownership of application commits, tags, and publication, or the requirements for truthful notes and exact-commit verification. The older cadence examples below describe the earlier policy and preparation history.
 ## What This Changes
 
 Version 3.0.0 was followed by many commits and deployments but no intermediate 3.x release. Version 4.0.0 gathers that work into an explicitly chosen milestone. Do not create retrospective releases suggesting that intermediate versions were published at the time.

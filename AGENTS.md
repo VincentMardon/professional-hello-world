@@ -62,3 +62,10 @@ The artistic return, learning process, and satire should remain coherent across 
 - Celebrate tiny changes with disproportionate imagination. Do not impose a triumphant ending, fabricate an emotional breakthrough, or turn hardship into a productivity metric. Keep fictional institutions recognizably satirical and factual claims grounded.
 - Under the existing wiki delegation, create or update the appropriate page, maintain navigation, review the changes, commit with the wiki's next sequence number, and synchronize with GitHub. Report the published page and synchronization status. No separate routine publication approval is needed once the personal context for the chronicle is settled.
 - This is a conversation-triggered workflow, not a scheduled monitor or background automation.
+
+## Documentation Release Scope and Artistic Versioning
+
+- On October 21, 2026, Vincent explicitly makes version increments part of PHW lore rather than a strict SemVer promise. A small new capability may use the third number; describe actual scope and compatibility accurately.
+- Documentation releases concern reader/tooling capabilities. New Markdown pages, routine Next.js documentation routes, and extra diagrams using unchanged rendering are content work and do not alone trigger releases. They may be committed and deployed between capability milestones. Reader-behavior fixes remain eligible.
+- This threshold does not apply automatically to the real PHW homepage, whose small changes may carry their own artistic release significance. Preserve issued releases and historical notes without retroactive renumbering.
+- Plan the remaining 4.x work around documentation and diagram functionality. Proposed 4.4.1 is zoom; fitting/fullscreen follow. Additional diagrams remain content rather than automatic per-diagram releases. Plans for later major artistic generations are not yet agreed.

@@ -9,6 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+No additional changes recorded beyond the prepared milestone below.
+
+## [4.4.1] — In preparation
+
+### The Projector Receives Its Remote Control
+
+- Add zoom controls: independent 25–300 percent scaling, slider, increment/decrement, displayed percentage, and 100 percent reset based on SVG reference width. Targeted Biome checks pass; the compact layout is restored, versions are aligned to 4.4.1, and Vincent confirms the requested local checks and build. Exact-commit CI and release publication remain pending. Fitting and fullscreen are not included.
+- Record PHW's lore-driven version increments and capability-based documentation release scope; routine pages and diagrams alone do not trigger releases.
+
 - Update publication records for stable v4.4.0, its annotated tag on commit #90, and successful exact-commit CI and Pages deployment. This documentation follow-up does not change code or move the tag.
 
 ## [4.4.0] — 2026-10-21
