@@ -1,6 +1,6 @@
 # 4.5.0 — The Registry Opens Its Source Office
 
-**Release preparation — not published.** Version 4.5.0 identifies the first source-reference generation capability within PHW's documentation era. Package and root lockfile metadata are aligned to 4.5.0. Vincent confirms lint, type checks, tests, and production build for that aligned state. No tag or GitHub release is created by this document.
+**Published October 21, 2026 at 20:35:49 UTC (22:35:49 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.5.0), neither a draft nor a prerelease. Version 4.5.0 identifies the first source-reference generation capability within PHW's documentation era. Package and root lockfile metadata are aligned to 4.5.0. Vincent confirms lint, type checks, tests, and production build for that aligned state. The annotated tag targets verified preparation commit #98.
 
 ## Scope
 
@@ -21,18 +21,14 @@ Publication records for 4.4.2 and the rule covering every published main-reposit
 
 ## Verification and boundaries
 
-Implementation commit #97, `23e51be63e4fd2306cdc049521ab4b1616c668c0`, passed [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39662104965). Vincent confirmed local lint, type checks, tests, build, the expected source-link URL, and generation order. These results cover the implementation state, not a later version-aligned release-preparation commit.
+Implementation commit #97, `23e51be63e4fd2306cdc049521ab4b1616c668c0`, passed [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39662104965). Vincent confirmed local lint, type checks, tests, build, the expected source-link URL, and generation order. These results cover the implementation state. Version-aligned preparation commit #98 subsequently passed its own [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39665481830).
 
 The pilot covers one hook. Dedicated stale-output enforcement, obsolete-file cleanup, general heading-anchor support, broader extraction, and immutable source provenance remain future work. Source links follow `main`; generated documents are not historical source snapshots. No independent assistant browser accessibility audit is claimed.
 
-## Remaining human-owned publication steps
+## Verified publication
 
-1. Completed locally: package and both root lockfile version fields are 4.5.0; unrelated dependency versions are unchanged.
-2. Vincent confirms local lint, type checks, tests, and build for the aligned state. Prior source-link checks are recorded above; no new independent browser audit is claimed.
-3. Review and commit the preparation changes with the next project sequence number, then publish the commit.
-4. Verify successful CI and Pages deployment for that exact preparation commit. Record its SHA before creating a tag.
-5. Create an annotated `v4.5.0` tag on that exact verified SHA and publish it. Do not move an existing published tag.
-6. Publish the stable GitHub release against `v4.5.0`, titled **4.5.0 — The Registry Opens Its Source Office**. Use the scope and boundary notes above, replacing preparation instructions with the verified SHA, run, and publication date.
-7. Update the release record only after the tag and GitHub release are verified.
+Annotated tag object `ec610a04d951f8bf889ca953d50a8691ba5676a3` resolves to preparation commit #98, `9505a7a806aaaeeae0734fce009f07b5d466c7a7`. Its CI and Pages deployment succeeded before the release was published. Package and both root lockfile version fields are 4.5.0; unrelated dependency versions are unchanged.
+
+The stable GitHub release was published at the time recorded above. This documentary follow-up changes no application code, package version, or tag target and claims no new test execution.
 
 The Registry has opened one source office. It has not acquired ownership of every function in the building.

@@ -144,3 +144,9 @@ Earlier pending descriptions preserve preparation history. This documentation-on
 Implementation commit #97 adds TypeDoc extraction of `useBeepEngine`, repository-readable Markdown, its shared-reader route, source-relative links, and prebuild generation. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39662104965). This is a tooling capability rather than a release justified by an extra page.
 
 [4.5.0 — The Registry Opens Its Source Office](RELEASE-4.5.0.md) is now in preparation. Package and root lockfile versions are aligned to 4.5.0, and Vincent confirms local lint, type checks, tests, and build for that state. An exact preparation-commit CI result is still required before tagging. No 4.5.0 tag or GitHub release is claimed. The single-hook pilot, moving source links, and absence of stale-output enforcement remain explicit boundaries.
+
+## Published source-reference milestone — October 21, 2026
+
+[Stable v4.5.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.5.0) was published at 20:35:49 UTC (22:35:49 in Paris), neither a draft nor a prerelease. Annotated tag object `ec610a04d951f8bf889ca953d50a8691ba5676a3` resolves to preparation commit #98, `9505a7a806aaaeeae0734fce009f07b5d466c7a7`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39665481830).
+
+The earlier preparation entry remains historical. The single-hook reference-generation capability is now released; its recorded limitations remain. This publication-record follow-up changes neither code nor tag target and claims no new runtime verification.

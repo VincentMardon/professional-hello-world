@@ -1,6 +1,6 @@
 # Registry of Callable Authorities — First Extraction Pilot
 
-**Implementation published — October 21, 2026.** The first generated-reference pilot covers `useBeepEngine`. Vincent has installed the generator, generated its Markdown, connected the reference to the documentation reader, and confirmed that a build runs generation before Next.js. Commit #97 passed CI and Pages deployment. Release 4.5.0 is in preparation; no publication of that version is claimed.
+**Implementation published — October 21, 2026.** The first generated-reference pilot covers `useBeepEngine`. Vincent has installed the generator, generated its Markdown, connected the reference to the documentation reader, and confirmed that a build runs generation before Next.js. Commit #97 passed CI and Pages deployment. Stable release 4.5.0 is published on verified preparation commit #98.
 
 ## One callable authority, several administrative obligations
 
@@ -42,6 +42,6 @@ The Registry has admitted one callable authority. It has not yet received a warr
 
 Vincent subsequently confirmed that the local Biome, TypeScript, and test commands all pass. This is a reported local verification result, not a claim of a new remote CI run.
 
-## Published implementation and release preparation
+## Published implementation and release
 
-Commit #97 (`23e51be63e4fd2306cdc049521ab4b1616c668c0`) passed [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39662104965). The next milestone is [4.5.0 release preparation](RELEASE-4.5.0.md). Vincent confirms local checks and build after alignment to 4.5.0. CI for the eventual preparation commit remains separate from the successful implementation run.
+Commit #97 (`23e51be63e4fd2306cdc049521ab4b1616c668c0`) passed [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39662104965). The pilot is included in [stable release 4.5.0](RELEASE-4.5.0.md). Vincent confirms local checks and build after alignment to 4.5.0. Preparation commit #98 (`9505a7a806aaaeeae0734fce009f07b5d466c7a7`) passed its own [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39665481830). The annotated v4.5.0 tag targets that commit; the stable release was published on October 21, 2026.

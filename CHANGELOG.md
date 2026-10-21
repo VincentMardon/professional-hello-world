@@ -9,15 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-No additional changes recorded beyond the prepared 4.5.0 scope.
+- Record stable v4.5.0 publication, its annotated tag on verified preparation commit #98, and successful exact-commit CI and Pages deployment. Documentation only; no tag movement or runtime change.
 
-## [4.5.0] — In preparation
+## [4.5.0] — 2026-10-21
 
 ### The Registry Opens Its Source Office
 
-Release preparation only; not published. Package and root lockfile metadata are aligned to 4.5.0; Vincent confirms local lint, type checks, tests, and build for that state. Implementation commit #97 passed CI and Pages deployment; that result does not cover a later preparation commit. See [release notes](docs/RELEASE-4.5.0.md).
+Stable release published October 21, 2026 at 20:35:49 UTC (22:35:49 in Paris). Package and root lockfile metadata are aligned to 4.5.0; Vincent confirms local lint, type checks, tests, and build for that state. Implementation commit #97 and version-aligned preparation commit #98 each passed their own CI and Pages deployment. The annotated v4.5.0 tag targets #98. See [release notes](docs/RELEASE-4.5.0.md).
 
-- Add a TypeDoc/Markdown reference pilot for `useBeepEngine`, a shared-reader route, source-relative link resolution, and generation before each build. Commit the generated reference for repository readers; source links follow `main`. Vincent confirms local checks, tests, build, and generation order. Implementation commit #97 passed CI and Pages deployment; release publication remains pending.
+- Add a TypeDoc/Markdown reference pilot for `useBeepEngine`, a shared-reader route, source-relative link resolution, and generation before each build. Commit the generated reference for repository readers; source links follow `main`. Vincent confirms local checks, tests, build, and generation order. Implementation commit #97 passed CI and Pages deployment; stable v4.5.0 is now published on verified preparation commit #98.
 - Extend the wiki chronicle rule to every published main-repository commit, including documentation-only commits, while excluding wiki maintenance from recursive narration.
 
 - Expand the sound-lifecycle guide with initialization rejection, a playback-method rejection example, and the sample-data versus live-audio graph. Clarify stale-state guards, retained engine readiness, shared gain, and verification limits. Content only; no reader behavior or version change.
