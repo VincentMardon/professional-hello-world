@@ -1,6 +1,6 @@
 # Registry of Callable Authorities — First Extraction Pilot
 
-**Local implementation — October 21, 2026.** The first generated-reference pilot covers `useBeepEngine`. Vincent has installed the generator, generated its Markdown, connected the reference to the documentation reader, and confirmed that a build runs generation before Next.js. Publication of this work has not yet been established.
+**Implementation published — October 21, 2026.** The first generated-reference pilot covers `useBeepEngine`. Vincent has installed the generator, generated its Markdown, connected the reference to the documentation reader, and confirmed that a build runs generation before Next.js. Commit #97 passed CI and Pages deployment. Release 4.5.0 is in preparation; no publication of that version is claimed.
 
 ## One callable authority, several administrative obligations
 
@@ -20,7 +20,7 @@ The generated entry filename is intentionally `README.md`. The `readme: none` op
 
 ## Generation and construction
 
-Run `npm run docs:reference` from `frontend` for explicit generation. The `prebuild` script invokes that command before `npm run build` reaches Next.js. Vincent confirmed this execution order locally. The existing CI build command therefore uses the same lifecycle; no workflow file was changed for this integration, and no successful remote run for these pending changes is claimed here.
+Run `npm run docs:reference` from `frontend` for explicit generation. The `prebuild` script invokes that command before `npm run build` reaches Next.js. Vincent confirmed this execution order locally. The existing CI build command therefore uses the same lifecycle; no workflow file was changed for this integration, and implementation commit #97 subsequently passed its exact remote run.
 
 Keep the generated Markdown in the repository so the reference remains readable without running the website. The build regenerates it from the checked-out source. This is not a freshness check: there is currently no dedicated CI comparison that rejects a stale committed reference.
 
@@ -34,10 +34,14 @@ TypeDoc uses `gitRevision: main` for source links. Vincent regenerated the refer
 
 ## Verification and remaining boundaries
 
-The assistant ran the read-only Biome check successfully on the initial reader integration: 59 files checked, no fixes applied. Vincent subsequently confirmed the expected source-link URL and the build lifecycle order after adding `prebuild`. These observations do not establish a successful remote deployment or replace the remaining project checks and browser review.
+The assistant ran the read-only Biome check successfully on the initial reader integration: 59 files checked, no fixes applied. Vincent subsequently confirmed the expected source-link URL and the build lifecycle order after adding `prebuild`. These local observations are distinct from the subsequently verified CI and Pages deployment for commit #97; neither establishes an independent browser accessibility audit.
 
 The pilot demonstrates a new documentation capability: source comments and inferred types become repository-readable Markdown and a page in the existing reader. Its release significance comes from this generation pipeline, not from adding another routine Next.js route. Broader API extraction, freshness enforcement, anchor handling, and immutable source references remain future work.
 
 The Registry has admitted one callable authority. It has not yet received a warrant to inventory every function in the institution.
 
 Vincent subsequently confirmed that the local Biome, TypeScript, and test commands all pass. This is a reported local verification result, not a claim of a new remote CI run.
+
+## Published implementation and release preparation
+
+Commit #97 (`23e51be63e4fd2306cdc049521ab4b1616c668c0`) passed [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39662104965). The next milestone is [4.5.0 release preparation](RELEASE-4.5.0.md). Vincent confirms local checks and build after alignment to 4.5.0. CI for the eventual preparation commit remains separate from the successful implementation run.

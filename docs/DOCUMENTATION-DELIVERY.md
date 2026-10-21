@@ -138,3 +138,9 @@ Vincent confirms the requested corrections, local checks, production build, and 
 [Stable v4.4.2](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.4.2) was published at 17:13:13 UTC (19:13:13 in Paris). Annotated tag object `a6ef609daa675a436fbd5cee3668b46413bc1ab4` resolves to preparation commit #94, `9adaf76a7dd29c939a275070671b798ee104493c`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39640802283). It is neither a draft nor a prerelease.
 
 Earlier pending descriptions preserve preparation history. This documentation-only update does not move the tag or claim new runtime verification. Automatic fitting and native fullscreen are now published capabilities; dedicated automated fullscreen and denied-request coverage remain unestablished.
+
+## Source-reference milestone — 4.5.0 in preparation
+
+Implementation commit #97 adds TypeDoc extraction of `useBeepEngine`, repository-readable Markdown, its shared-reader route, source-relative links, and prebuild generation. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39662104965). This is a tooling capability rather than a release justified by an extra page.
+
+[4.5.0 — The Registry Opens Its Source Office](RELEASE-4.5.0.md) is now in preparation. Package and root lockfile versions are aligned to 4.5.0, and Vincent confirms local lint, type checks, tests, and build for that state. An exact preparation-commit CI result is still required before tagging. No 4.5.0 tag or GitHub release is claimed. The single-hook pilot, moving source links, and absence of stale-output enforcement remain explicit boundaries.
