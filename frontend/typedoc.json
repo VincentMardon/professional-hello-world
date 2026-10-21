@@ -1,0 +1,13 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "name": "PHW — Registry of Callable Authorities",
+  "entryPoints": ["src/features/audio-test/hooks/useBeepEngine.ts"],
+  "tsconfig": "tsconfig.json",
+  "plugin": ["typedoc-plugin-markdown"],
+  "router": "module",
+  "readme": "none",
+  "excludeExternals": true,
+  "out": "../docs/generated/api-pilot",
+  "cleanOutputDir": false,
+  "gitRevision": "main"
+}

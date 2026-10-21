@@ -32,11 +32,16 @@ const documents = {
     file: "AUDIO-LIFECYCLE.md",
     route: "/doc/audio-lifecycle",
   },
+  engineReference: {
+    title: "Engine reference",
+    file: "generated/api-pilot/README.md",
+    route: "/doc/reference/use-beep-engine",
+  },
 } as const;
 
 type DocumentId = keyof typeof documents;
 
-function resolveDocumentUrl(value: string) {
+function resolveDocumentUrl(value: string, sourceFile: string) {
   const safeUrl = defaultUrlTransform(value);
 
   if (
@@ -48,7 +53,8 @@ function resolveDocumentUrl(value: string) {
     return safeUrl;
   }
 
-  const destination = new URL(safeUrl, `${repositoryRoot}blob/main/docs/`);
+  const sourceUrl = new URL(`blob/main/docs/${sourceFile}`, repositoryRoot);
+  const destination = new URL(safeUrl, sourceUrl);
 
   for (const document of Object.values(documents)) {
     const source = new URL(`blob/main/docs/${document.file}`, repositoryRoot);
@@ -107,7 +113,9 @@ export async function DocumentationPage({
 
         <Markdown
           remarkPlugins={[remarkGfm]}
-          urlTransform={resolveDocumentUrl}
+          urlTransform={(value) =>
+            resolveDocumentUrl(value, selectedDocument.file)
+          }
           components={{
             pre({ node, children, ...props }) {
               const code = node?.children[0];

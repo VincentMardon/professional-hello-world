@@ -115,3 +115,9 @@ All project documentation is written in English, in recognition of our greeting'
 ## License
 
 Released under the [MIT License](LICENSE). You may fork the absurdity, modify the overengineering, and redistribute the inefficiency, provided you retain the required copyright and permission notice.
+
+## Generated Source Reference
+
+The Registry of Callable Authorities extracts the `useBeepEngine` signature and documentation comment with TypeDoc and typedoc-plugin-markdown. Read the [generated reference](docs/generated/api-pilot/README.md) in the repository or select **Engine reference** in the documentation reader at `/doc/reference/use-beep-engine`.
+
+From `frontend`, run `npm run docs:reference` to regenerate it explicitly. `npm run build` also runs generation through `prebuild` before Next.js. Update the source comment rather than editing generated prose. Source links follow `main`; they are not immutable release snapshots. See the [pilot and verification record](docs/REFERENCE-GENERATION.md) for scope and remaining boundaries. This local implementation has not yet been verified in a remote deployment.

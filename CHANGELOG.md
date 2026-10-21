@@ -9,6 +9,9 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Add a TypeDoc/Markdown reference pilot for `useBeepEngine`, a shared-reader route, source-relative link resolution, and generation before each build. Commit the generated reference for repository readers; source links follow `main`. Vincent confirms local checks, tests, build, and generation order. No remote CI result or release publication is claimed; the package version remains 4.4.2.
+- Extend the wiki chronicle rule to every published main-repository commit, including documentation-only commits, while excluding wiki maintenance from recursive narration.
+
 - Expand the sound-lifecycle guide with initialization rejection, a playback-method rejection example, and the sample-data versus live-audio graph. Clarify stale-state guards, retained engine readiness, shared gain, and verification limits. Content only; no reader behavior or version change.
 
 - Update publication records for stable v4.4.2, its annotated tag on commit #94, and successful exact-commit CI and Pages deployment. This documentation follow-up changes no code or tag target.
@@ -437,4 +440,3 @@ These are exploratory directions, not committed release contents. The entries be
   - multi-language hellos,
   - observability of greetings,
   - and dark-mode greetings.
-

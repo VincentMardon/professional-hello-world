@@ -51,10 +51,10 @@ Preserve the project's humor and deliberate disproportion while providing accura
 
 The artistic return, learning process, and satire should remain coherent across documentation. Keep the personal account in the recovery addendum, with brief context elsewhere; the public experience should stand on its own. Direct humor at software ceremony and inflated process, and treat personal hardship with care. Preserve historical release notes as history rather than rewriting them to match current plans.
 
-## After a Published Code Commit: Check In, Then Chronicle
+## After Every Published Main-Repository Commit: Check In, Then Chronicle
 
-- Trigger this ritual whenever Vincent says he has published a commit containing code in the main project. Inspect the actual published commit or range to establish what changed; do not infer its contents from the title alone.
-- Documentation-only commits, including an AGENTS.md-only update, do not trigger the ritual. Updating these rules or publishing wiki maintenance must not recursively generate another chronicle.
+- On October 21, 2026, Vincent explicitly extends this ritual to every published commit in the main project, including documentation-only and AGENTS.md-only commits. This supersedes the former code-only trigger. Inspect the actual published commit or range to establish what changed; do not infer its contents from the title alone.
+- Each published main-repository commit receives its own chronicle, including publication-record follow-ups and rule changes. Wiki maintenance commits remain excluded so publication of a chronicle cannot recursively require another. Preserve historical chapters and verify any retrospective account against the actual commit.
 - Begin with a warm, unhurried conversation about how Vincent is feeling in life at that moment and how the work fits into his ongoing artistic return. Ask a simple, open question in French; give him room to answer rather than treating the exchange as a release questionnaire.
 - Wait for his response before composing or publishing the personal chronicle. Do not infer his current state from an older account of exhaustion, from commit activity, or from silence. If he has already shared his current feelings in the same exchange, acknowledge them and follow up only where useful.
 - Make it easy for Vincent to say what may appear publicly and what should remain between us. Sharing personal context in conversation is not blanket permission to publish every detail. Use only the context he wants included; he may decline the personal discussion or ask for a technical chronicle instead.
