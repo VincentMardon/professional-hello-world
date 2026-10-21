@@ -39,6 +39,9 @@ jobs:
       - name: Hear the sworn testimony of the greeting
         run: npm run test:run
 
+      - name: Verify that the Registry remembers its latest testimony
+        run: npm run docs:reference:check
+
       - name: Construct the disproportionately qualified greeting
         run: npm run build
 

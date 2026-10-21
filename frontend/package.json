@@ -10,6 +10,7 @@
     "check:fix": "biome check --write .",
     "dev": "next dev",
     "docs:reference": "typedoc --options typedoc.json",
+    "docs:reference:check": "npm run docs:reference && git diff --exit-code HEAD -- ../docs/generated/api-pilot/README.md",
     "format": "biome format --write .",
     "prebuild": "npm run docs:reference",
     "test": "vitest",

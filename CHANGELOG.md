@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Add a local pilot-reference freshness command and a CI step before the build. Regenerate the tracked README and compare it with HEAD, stopping on differences or generation failure. The command writes generated output; staged changes also count. Targeted to one tracked file. Vincent confirms success, deliberate stale-source rejection, and restored success after removing the probe. Biome passes; exact-commit remote execution remains to be verified. Package version remains 4.5.0.
+
 - Record stable v4.5.0 publication, its annotated tag on verified preparation commit #98, and successful exact-commit CI and Pages deployment. Documentation only; no tag movement or runtime change.
 
 ## [4.5.0] — 2026-10-21
