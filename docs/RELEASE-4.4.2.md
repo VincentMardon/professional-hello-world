@@ -1,6 +1,6 @@
 # 4.4.2 — The Projector Opens Its Auditorium
 
-**Release preparation — not published.** This documentation capability uses PHW's lore-driven third-number convention. Package and root lockfile metadata are aligned to 4.4.2. Vincent confirms the requested implementation corrections, local checks, production build, and manual behavior checks. Vincent also confirms the final local checks and build after version alignment. The preparation commit, its exact CI and deployment, tag, and publication remain pending.
+**Published October 21, 2026 at 17:13:13 UTC (19:13:13 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.4.2), neither a draft nor a prerelease. This documentation capability follows PHW lore-driven numbering; package and root lockfile versions are aligned to 4.4.2.
 
 ## Scope
 
@@ -20,10 +20,10 @@ Fit width concerns horizontal space, not fitting the complete diagram height on 
 
 Source inspection confirms the shared hook, corrected fullscreen state name, the explicit Exit fullscreen label, and foreground/background theme colors. Targeted Biome previously passed for five documentation feature files. Vincent subsequently confirms the requested final corrections, local checks, type checking, tests, production build, and manual checks for fit after resizing, both themes, and closing through the cross and Escape.
 
-These browser checks are Vincent's report, not an independent assistant audit. Dedicated automated ResizeObserver, fullscreen, and denied-request coverage is not established. Vincent confirms the checks and build for the version-aligned preparation state; exact published CI and deployment remain pending.
+These browser checks are Vincent's report, not an independent assistant audit. Dedicated automated ResizeObserver, fullscreen, and denied-request coverage is not established. Vincent confirms the checks and build for the version-aligned preparation state; preparation commit #94 passed its [exact CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39640802283).
 
-## Publication sequence
+## Verified publication
 
-Version alignment and local validation are complete without creating a tag. Vincent reviews and publishes the preparation commit. Verify CI and Pages for that exact commit before Vincent creates the annotated v4.4.2 tag and publishes a stable release. Update publication records afterward without moving the tag.
+Annotated tag object `a6ef609daa675a436fbd5cee3668b46413bc1ab4` resolves to preparation commit #94, `9adaf76a7dd29c939a275070671b798ee104493c`. This documentation-only publication follow-up does not move the tag.
 
 No new Markdown page or additional diagram is required to justify this milestone: the reader gains an adjustment mode and an auditorium. Audio generation and playback remain unchanged.

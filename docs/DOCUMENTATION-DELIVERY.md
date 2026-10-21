@@ -132,3 +132,9 @@ Earlier pending descriptions retain preparation history. This documentation-only
 The [4.4.2 draft](RELEASE-4.4.2.md) groups fit-to-width and native fullscreen as documentation-reader capabilities. The viewport hook observes available width, coordinates manual and automatic scale, and follows browser fullscreen state. A top-right close cross complements Escape and the text exit command. Zoom spans 1–300 percent; fitting concerns width and stays within those limits.
 
 Vincent confirms the requested corrections, local checks, production build, and manual fit/fullscreen checks in both themes. Source review confirms corrected state naming, close label, and fullscreen palette. Package and root lockfile metadata are aligned to 4.4.2, and Vincent confirms the final checks and build. Exact preparation-commit CI and deployment remain pending publication. No independent assistant browser audit or dedicated automated fullscreen coverage is claimed.
+
+## Published auditorium milestone — October 21, 2026
+
+[Stable v4.4.2](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.4.2) was published at 17:13:13 UTC (19:13:13 in Paris). Annotated tag object `a6ef609daa675a436fbd5cee3668b46413bc1ab4` resolves to preparation commit #94, `9adaf76a7dd29c939a275070671b798ee104493c`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39640802283). It is neither a draft nor a prerelease.
+
+Earlier pending descriptions preserve preparation history. This documentation-only update does not move the tag or claim new runtime verification. Automatic fitting and native fullscreen are now published capabilities; dedicated automated fullscreen and denied-request coverage remain unestablished.
