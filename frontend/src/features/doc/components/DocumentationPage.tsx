@@ -26,6 +26,11 @@ const documents = {
     file: "ARCHITECTURE.md",
     route: "/doc/architecture",
   },
+  audioLifecycle: {
+    title: "Sound lifecycle",
+    file: "AUDIO-LIFECYCLE.md",
+    route: "/doc/audio-lifecycle",
+  },
 } as const;
 
 type DocumentId = keyof typeof documents;

@@ -62,6 +62,8 @@ The new `frontend/src/app/doc/` and `frontend/src/features/doc/` directories fol
 
 ## 4. Follow a sound through the institution
 
+Read the [Bureau of Audible Transit — sound lifecycle](AUDIO-LIFECYCLE.md) for the detailed sequence, package boundary, completion semantics, and test limits. The Markdown is available in the repository and registered at `/doc/audio-lifecycle` in the local documentation navigation. Vincent confirms the page is displayed and the local checks and build are complete. Export inspection confirms the new page; exact-commit CI and deployment remain pending publication.
+
 The audio interaction has several distinguishable stages.
 
 1. The page presents its header and access ceremony. The panel is mounted after acceptance.

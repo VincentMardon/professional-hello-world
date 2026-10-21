@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Add the source-grounded sound-lifecycle explanation, covering access, Wasm initialization, lazy browser audio, settings, sample dispatch, start-versus-end semantics, shared volume, and test boundaries. The local route and registry entry are implemented, and Vincent confirms the page is displayed. Vincent confirms local checks and build; targeted Biome and export inspection pass. Exact-commit CI and deployment remain pending publication. Mermaid rendering is not installed, and no audio behavior changes.
+
 - Update publication records for stable v4.3.0, its annotated tag on commit #87, and successful exact-commit CI and Pages deployment. This documentation follow-up does not change application code or move the tag.
 
 ## [4.3.0] — 2026-10-21
