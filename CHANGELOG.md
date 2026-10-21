@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Expand the existing architecture document with the documentation pipeline, responsibility boundaries, and a guided source-reading exercise. Add reciprocal Markdown links with the documentation overview. Add the local architecture route, explicit two-document registry, and navigation with the current page identified. Vincent confirms local checks, build, reciprocal navigation, and direct route reload; generated HTML inspection confirms both local routes and their current-page markers. Exact-commit CI and deployment remain pending publication.
+
 - Update publication records to confirm stable v4.1.0, its annotated tag on commit #82, and successful exact-commit CI and Pages deployment. This documentation follow-up does not move the tag or change application behavior.
 
 ## [4.1.0] — 2026-10-21

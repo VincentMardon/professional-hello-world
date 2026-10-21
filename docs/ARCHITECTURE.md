@@ -1,4 +1,10 @@
-# Professional Hello World — Architecture
+# Directorate of Structural Disproportion
+
+## Architecture — How the greeting obtained several rooms
+
+[Documentation reception](README.md)
+
+The architectural inquiry begins with a warning to the procurement committee: a directory is not a microservice, a hook is not an autonomous department, and a static page does not secretly employ a permanent server. PHW's ceremony is extensive enough without inventing infrastructure that the repository does not contain.
 
 ## Purpose
 
@@ -23,6 +29,39 @@ The frontend uses Next.js 16.3.5, React 19.3.0, TypeScript 6.0.3, and Biome 2.5.
 The separate audio-test route composes a persistent header and a client-side access gate. After acceptance, the gate mounts the audio panel. Feature-local hooks separate asynchronous engine initialization from settings, volume, and playback orchestration. PHW consumes the vendored beep-engine 0.1.2 package, containing Rust-generated WebAssembly, browser playback code, and TypeScript declarations. Web Audio plays the generated samples through a shared gain node; the main greeting is unchanged.
 
 The audio-page suite mocks the engine and substitutes the panel for the access gate. Its assertions concern audio integration behavior, not real sound output or password acceptance/refusal. The gate is client-side presentation on a static export. The [published 4.0.0 notes](RELEASE-4.0.0.md) summarize the design milestone; its annotated tag targets commit #79 (30eb0a0), whose CI and Pages deployment succeeded. The [release process](RELEASE-PROCESS.md) separates ongoing Pages deployment from named version releases.
+
+## Documentation — One manuscript, more than one reading context
+
+The first documentation milestone adds `frontend/src/app/doc/page.tsx` as a thin route with metadata. It delegates to `DocumentationPage` in `frontend/src/features/doc/components/`. That asynchronous component reads the explicitly selected `docs/README.md`, then renders it using react-markdown and remark-gfm. Tables become HTML rather than a photograph of a Markdown file.
+
+The Markdown belongs to the repository; the route and its rendering belong to the frontend. Static HTML belongs to `frontend/out`. These are three responsibilities, not three competing sources of prose. The reading component uses the frontend working directory to locate the repository-level document during construction. It does not expose arbitrary filesystem paths to visitors.
+
+The original implementation resolves relative source links to GitHub, preserving the ability to inspect the code behind the account. The next increment now adds a local architecture route at `/doc/architecture` and a two-page navigation. The reader uses an explicit document registry to select the Markdown file and recognize links between these two pages; those links use Next.js Link, while other repository links still lead to GitHub. Vincent confirms formatting and application checks, type checking, tests, production build, reciprocal navigation, and direct architecture-page reload. Inspection of both generated HTML pages confirms local links with the deployment base path and the current-page marker. These browser results are reported by Vincent; exact-commit CI and deployment remain to be verified after publication.
+
+## Boundaries — Where each authority stops
+
+| Boundary | Responsibility on the first side | Responsibility on the other side |
+| --- | --- | --- |
+| Route / feature | Select the page and its metadata | Compose content, presentation, and behavior |
+| Audio panel / hooks | Connect controls to values and callbacks | Initialize the engine and coordinate interaction state |
+| PHW / BeepEngine | Select a sound and sample rate; present volume and status | Provide the packaged generator and browser playback interface |
+| Build / browser | Produce static pages and extracted styles | Run interactive client components and browser APIs |
+| Repository Markdown / rendered documentation | Preserve authored explanations with source-relative links | Present them as readable website content |
+| CI / release | Check and deploy an exact source state | Name a deliberately selected milestone through a tag and GitHub release |
+
+These boundaries help locate a change. A different label usually belongs in a component. A different initialization policy belongs near the engine hook. A new explanation belongs in a document. A new public documentation page needs both selected content and a route. The Directorate recommends locating the responsibility before founding another office.
+
+The audio panel is a client component because its hooks and interactions require browser execution. The documentation reader has no client directive: it can produce static content during the build. Both forms coexist inside the same application. “Server Component” describes its execution role in Next.js; it does not mean GitHub Pages must run a Node.js server after deployment.
+
+## Reader exercise — Follow one responsibility
+
+To understand the greeting, start with `frontend/src/app/page.tsx`, then follow its component imports and its Vanilla Extract stylesheet. The bottom-right documentation navigation is fixed outside normal flow; its presence should not be explained as another spacer in the centered greeting.
+
+To understand playback, start with `AudioTestPanel.tsx`. Identify the values and callbacks obtained from `useAudioTest`, then follow that hook to `useBeepEngine`. Observe that loading an engine, selecting a sound, and drawing a Play button are separate tasks. The separation gives each explanation a manageable subject; it does not establish separate network services.
+
+To understand publication, read `ci.yml` before `pages.yml`. Follow the artifact from the successful build to deployment. Then inspect the release process to see why successful publication of a website does not automatically create a named release.
+
+No diagram renderer is required to perform this first investigation. A later diagram should clarify a question already expressed in the text rather than substitute an impressive collection of boxes for an explanation.
 
 ## Testing the Greeting
 

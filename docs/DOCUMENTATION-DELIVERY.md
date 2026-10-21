@@ -57,3 +57,11 @@ Release 4.1.0 notes and the changelog are prepared. Vincent subsequently aligned
 [Stable v4.1.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.1.0) was published at 00:28:41 UTC (02:28:41 in Paris). Annotated tag object `8af60327d4c577b7b2a828fa005effcabdb2c745` resolves to preparation commit #82, `7d213e7b5410b0cf43fe809d135f138e0219e7a1`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39517152564). The release is neither a draft nor a prerelease.
 
 The earlier checkpoint descriptions above preserve the sequence of preparation; their pending steps are now completed for this milestone. This publication-record follow-up changes documentation only and does not move the published tag. Later documentation capabilities remain separate increments.
+
+## Second reading room — October 21, 2026
+
+The architecture document now has a proposed-to-publish implementation at `/doc/architecture`, sharing the existing documentation reader. An explicit two-document registry supplies file selection and navigation; Markdown links between the registered documents become local Next.js links. Other source links retain their GitHub destinations. Current-page markers distinguish the selected room.
+
+Vincent confirms local formatting and application checks, type checking, tests, build, reciprocal navigation through the menu and text, and direct architecture-route reload. Assistant inspection of both exported HTML pages confirms base-path-prefixed local links and the appropriate `aria-current` marker. No independent assistant browser audit is claimed. Exact-commit CI and deployment must be verified after publication.
+
+This compatible addition triggers a release-readiness checkpoint. The package remains 4.1.0; no new tag or release is prepared by this increment. Decide the next minor milestone from the completed published scope before adding another department, rather than silently accumulating an indefinite documentation overhaul.

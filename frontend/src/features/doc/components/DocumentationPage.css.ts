@@ -75,3 +75,16 @@ globalStyle(`${documentPage} pre`, {
 globalStyle(`${documentPage} pre code`, {
   padding: 0,
 });
+
+globalStyle(`${documentPage} nav ul`, {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "0.75rem 1.5rem",
+  padding: 0,
+  listStyle: "none",
+});
+
+globalStyle(`${documentPage} nav a[aria-current="page"]`, {
+  fontWeight: 700,
+  textDecorationThickness: "0.15em",
+});

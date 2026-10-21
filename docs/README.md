@@ -10,6 +10,8 @@ The Directorate exists to make that machinery understandable. Visitors are entit
 
 ## 1. Choose your counter
 
+Continue with the [Directorate of Structural Disproportion — architecture](ARCHITECTURE.md) to examine the responsibilities and boundaries behind the rooms.
+
 | Your immediate question | Read next |
 | --- | --- |
 | What is this project, and how do I run it? | [Project README](../README.md#getting-started) |

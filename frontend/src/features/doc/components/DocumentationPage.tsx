@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import Link from "next/link";
 import Markdown, { defaultUrlTransform } from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -7,6 +8,21 @@ import { documentPage } from "./DocumentationPage.css";
 
 const repositoryRoot =
   "https://github.com/VincentMardon/professional-hello-world/";
+
+const documents = {
+  overview: {
+    title: "Reception",
+    file: "README.md",
+    route: "/doc",
+  },
+  architecture: {
+    title: "Architecture",
+    file: "ARCHITECTURE.md",
+    route: "/doc/architecture",
+  },
+} as const;
+
+type DocumentId = keyof typeof documents;
 
 function resolveDocumentUrl(value: string) {
   const safeUrl = defaultUrlTransform(value);
@@ -22,6 +38,14 @@ function resolveDocumentUrl(value: string) {
 
   const destination = new URL(safeUrl, `${repositoryRoot}blob/main/docs/`);
 
+  for (const document of Object.values(documents)) {
+    const source = new URL(`blob/main/docs/${document.file}`, repositoryRoot);
+
+    if (destination.pathname === source.pathname) {
+      return `${document.route}${destination.search}${destination.hash}`;
+    }
+  }
+
   const lastSegment = destination.pathname.split("/").at(-1) ?? "";
 
   if (!lastSegment.includes(".")) {
@@ -34,13 +58,62 @@ function resolveDocumentUrl(value: string) {
   return destination.href;
 }
 
-export async function DocumentationPage() {
-  const sourcePath = path.resolve(process.cwd(), "../docs/README.md");
+export async function DocumentationPage({
+  documentId = "overview",
+}: {
+  documentId?: DocumentId;
+}) {
+  const selectedDocument = documents[documentId];
+  const sourcePath = path.resolve(
+    process.cwd(),
+    "../docs",
+    selectedDocument.file,
+  );
   const content = await readFile(sourcePath, "utf8");
 
   return (
     <main className={documentPage}>
-      <Markdown remarkPlugins={[remarkGfm]} urlTransform={resolveDocumentUrl}>
+      <nav aria-label="Documentation">
+        <ul>
+          {Object.entries(documents).map(([id, document]) => (
+            <li key={id}>
+              <Link
+                href={document.route}
+                aria-current={id === documentId ? "page" : undefined}
+              >
+                {document.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <Markdown
+        remarkPlugins={[remarkGfm]}
+        urlTransform={resolveDocumentUrl}
+        components={{
+          a({ href, children, node: _node, ...props }) {
+            if (
+              href === "/doc" ||
+              href?.startsWith("/doc/") ||
+              href?.startsWith("/doc#") ||
+              href?.startsWith("/doc?")
+            ) {
+              return (
+                <Link href={href} {...props}>
+                  {children}
+                </Link>
+              );
+            }
+
+            return (
+              <a href={href} {...props}>
+                {children}
+              </a>
+            );
+          },
+        }}
+      >
         {content}
       </Markdown>
     </main>
