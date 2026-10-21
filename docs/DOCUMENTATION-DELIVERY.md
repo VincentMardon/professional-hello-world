@@ -101,3 +101,9 @@ Targeted Biome and whitespace checks pass. Final version alignment, local checks
 ### Projector preparation validation
 
 Package and root lockfile versions are aligned to 4.4.0. Vincent confirms the requested local checks, production build, and browser checks for both diagrams, both themes, repeated switching, navigation, keyboard scrolling, and source disclosure. These are his reported results; no independent assistant browser audit or dedicated malformed-input execution is claimed. The preparation commit, its exact CI and deployment, and tag/release publication remain pending.
+
+## Published projector milestone — October 21, 2026
+
+[Stable v4.4.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.4.0) was published at 05:50:45 UTC (07:50:45 in Paris). Annotated tag object `d7bfa28aedc071a55d0ee42e08ae7e7cb19a126e` resolves to preparation commit #90, `3bf2472c7b158bd2a0c396d769c5fc9932148379`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39551230411). The release is neither a draft nor a prerelease.
+
+Earlier checkpoints retain their preparation history. This documentation-only publication update does not move the tag. Dedicated renderer tests, malformed-input verification, generated interface reference, search, and persistent theme preferences remain outside the completed milestone.

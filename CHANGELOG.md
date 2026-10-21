@@ -9,15 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-No additional changes recorded beyond the prepared milestone below.
+- Update publication records for stable v4.4.0, its annotated tag on commit #90, and successful exact-commit CI and Pages deployment. This documentation follow-up does not change code or move the tag.
 
-## [4.4.0] — In preparation
+## [4.4.0] — 2026-10-21
 
 ### The Bureau Receives Its Diagram Projector
 
-- Author two Mermaid sequence diagrams for engine initialization and a playback request, including accessible descriptions. Implement browser-side SVG rendering, theme regeneration, serialized render operations, source disclosure, and keyboard-scrollable diagram regions. Package and root lockfile versions are aligned to 4.4.0. Targeted Biome and whitespace checks pass; Vincent confirms local checks, build, and the requested browser checks. Exact-commit CI, tag, and release publication remain pending.
+- Author two Mermaid sequence diagrams for engine initialization and a playback request, including accessible descriptions. Implement browser-side SVG rendering, theme regeneration, serialized render operations, source disclosure, and keyboard-scrollable diagram regions. Package and root lockfile versions are aligned to 4.4.0. Targeted Biome and whitespace checks pass; Vincent confirms local checks, build, and the requested browser checks. Commit #90 passed CI and Pages deployment; stable v4.4.0 was published on October 21, 2026 with its annotated tag on that same commit.
 
-- Add the source-grounded sound-lifecycle explanation, covering access, Wasm initialization, lazy browser audio, settings, sample dispatch, start-versus-end semantics, shared volume, and test boundaries. The local route and registry entry are implemented, and Vincent confirms the page is displayed. Vincent confirms local checks and build; targeted Biome and export inspection pass. Foundation commit #89 passed its exact CI and Pages deployment. The subsequent Mermaid integration requires separate final validation; no audio behavior changes.
+- Add the source-grounded sound-lifecycle explanation, covering access, Wasm initialization, lazy browser audio, settings, sample dispatch, start-versus-end semantics, shared volume, and test boundaries. The local route and registry entry are implemented, and Vincent confirms the page is displayed. Vincent confirms local checks and build; targeted Biome and export inspection pass. Foundation commit #89 passed its exact CI and Pages deployment. The subsequent Mermaid integration passed its own exact-commit CI in #90; no audio behavior changes.
 
 - Update publication records for stable v4.3.0, its annotated tag on commit #87, and successful exact-commit CI and Pages deployment. This documentation follow-up does not change application code or move the tag.
 

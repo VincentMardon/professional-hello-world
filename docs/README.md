@@ -12,6 +12,8 @@ The second room and reciprocal navigation are delivered in [4.2.0 — Two Readin
 
 The documentation now opens in dark mode, with a shared sun-and-moon switch at the top-left to select light or dark. Selection survives client-side navigation; a full reload returns to dark. This capability is delivered in [4.3.0 — The Directorate Obtains a Night Shift](RELEASE-4.3.0.md), whose tag targets verified commit #87. It does not automatically recolor the greeting or audio feature.
 
+[4.4.0 — The Bureau Receives Its Diagram Projector](RELEASE-4.4.0.md) delivers the sound-lifecycle guide and its two theme-aware Mermaid diagrams. The source remains readable from the repository; SVG rendering requires browser JavaScript.
+
 ## 1. Choose your counter
 
 Continue with the [Directorate of Structural Disproportion — architecture](ARCHITECTURE.md) to examine the responsibilities and boundaries behind the rooms.
@@ -90,7 +92,7 @@ The Inspectorate of Evidence is particularly strict about certificates that mere
 
 The first objective is a readable page, first from the repository and then through the existing application. The next increments will address navigation, an explanation supported by a diagram, a small generated-reference pilot, and appropriate automated checks. The [charter](DOCUMENTATION-CHARTER.md) records the proposed sequence and editorial departments.
 
-Each increment should produce something inspectable before adding the next mechanism. Automatic reference generation will describe selected interfaces from source comments; authored prose will explain their relationships and the reasons behind them. Mermaid is an intended documentation capability, not an installed feature of the current frontend.
+Each increment should produce something inspectable before adding the next mechanism. Automatic reference generation will describe selected interfaces from source comments; authored prose will explain their relationships and the reasons behind them. Mermaid rendering is implemented in 4.4.0 for the two sound-lifecycle sequence diagrams; SVG is generated in the browser, with source disclosure retained.
 
 The wiki preserves the journey. Technical documentation explains the system sufficiently to use and change it. Historical release notes remain historical, and proposals retain their labels until implementation establishes otherwise.
 

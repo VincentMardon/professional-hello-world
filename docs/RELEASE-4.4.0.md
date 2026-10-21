@@ -1,6 +1,6 @@
 # 4.4.0 — The Bureau Receives Its Diagram Projector
 
-**Release preparation — not published.** This compatible documentation milestone follows 4.3.0. Package and root lockfile metadata are aligned to 4.4.0. Vincent confirms the requested local checks, production build, and browser verification. The preparation commit, its exact CI and deployment, tag, and release publication remain pending.
+**Published October 21, 2026 at 05:50:45 UTC (07:50:45 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.4.0), neither a draft nor a prerelease. Package and root lockfile versions are aligned to 4.4.0.
 
 ## An itinerary becomes a projection
 
@@ -34,8 +34,8 @@ Targeted Biome checks now pass for four documentation feature files, including t
 
 The source implements an error fallback, but no dedicated malformed-input execution or automated renderer coverage is claimed here. A successful static build alone does not establish working SVG rendering in the browser; the requested manual rendering checks were separately confirmed by Vincent.
 
-## Publication sequence
+## Verified publication
 
-Version alignment and local validation are complete without creating a tag. Vincent reviews and publishes the preparation commit. Verify CI and Pages for that exact commit before creating its annotated v4.4.0 tag and publishing a stable GitHub release. Replace this preparation record with verified publication details and remove preparation instructions from the public release body.
+Annotated tag object `d7bfa28aedc071a55d0ee42e08ae7e7cb19a126e` resolves to preparation commit #90, `3bf2472c7b158bd2a0c396d769c5fc9932148379`. Its [exact CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39551230411). This documentation-only follow-up does not move the published tag.
 
 The Bureau can release its first working projector without adding generated interface reference, search, persistent theme preferences, or another sound.

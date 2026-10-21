@@ -4,11 +4,11 @@
 
 [Documentation reception](README.md) · [Architecture](ARCHITECTURE.md)
 
-**Scope:** the PHW audio-test integration and the browser wrapper shipped in the installed BeepEngine 0.1.2 package. This explanation follows inspected source; it does not claim an acoustic measurement, a new test execution, or a new implementation. Its local documentation route is implemented at `/doc/audio-lifecycle`; Vincent confirms the page is displayed. Vincent confirms the requested local checks and production build. Targeted Biome checks pass, and exported HTML inspection confirms the heading and current-page marker. Exact-commit CI and deployment remain pending publication.
+**Scope:** the PHW audio-test integration and the browser wrapper shipped in the installed BeepEngine 0.1.2 package. This explanation follows inspected source; it does not claim an acoustic measurement, a new test execution, or a new implementation. Its local documentation route is implemented at `/doc/audio-lifecycle`; Vincent confirms the page is displayed. Vincent confirms the requested local checks and production build. Targeted Biome checks pass, and exported HTML inspection confirms the heading and current-page marker. Foundation commit #89 passed its exact CI and deployment; the later diagram integration is published in 4.4.0 on verified commit #90.
 
 The Bureau is responsible for the journey of exactly two sounds. Its staffing diagram is considerably longer than its repertoire. To understand the journey, follow the responsibilities in order: access, initialization, settings, command dispatch, sample generation, browser playback, and status reporting.
 
-The final section supplies two Mermaid sequence diagrams. The PHW browser renderer is implemented locally; Vincent confirms the requested local checks, production build, and browser diagram checks; exact-commit CI and release publication remain pending. The prose explains the sequence independently of diagram support.
+The final section supplies two Mermaid sequence diagrams. The PHW browser renderer is implemented locally; Vincent confirms the requested local checks, production build, and browser diagram checks; [stable 4.4.0](RELEASE-4.4.0.md) is published on commit #90, whose CI and Pages deployment succeeded. The prose explains the sequence independently of diagram support.
 
 ## 1. The reception desk precedes the engine
 
@@ -118,7 +118,7 @@ The Bureau has written the itinerary and is preparing its first diagram projecto
 
 The two diagrams below describe the successful path. Initialization failures and playback failures are explained in the preceding sections. Separate diagrams keep engine readiness distinct from an individual playback request. The prose remains the complete explanation when a diagram cannot be rendered.
 
-**Renderer status:** the PHW website now recognizes these Mermaid blocks and renders them in the browser with the selected documentation theme. Source inspection and targeted Biome checks pass. Vincent confirms the requested browser checks and production build; exact-commit CI and release publication remain pending. The source disclosure and prose remain available independently of SVG rendering.
+**Renderer status:** the PHW website now recognizes these Mermaid blocks and renders them in the browser with the selected documentation theme. Source inspection and targeted Biome checks pass. Vincent confirms the requested browser checks and production build; [stable 4.4.0](RELEASE-4.4.0.md) is published on commit #90, whose CI and Pages deployment succeeded. The source disclosure and prose remain available independently of SVG rendering.
 
 ### Engine readiness
 
@@ -173,4 +173,4 @@ sequenceDiagram
 
 The onended handler disconnects its source when playback finishes; it is not the awaited completion of the engine method. The diagram deliberately does not assign a duration to the sound or certify when the visitor hears it. The lazy initialization branch concerns this engine's first playback, not every press of Play.
 
-The Bureau now has a programme and a locally implemented projector. Local checks are confirmed; exact-commit CI verification precedes the public release.
+The Bureau now has a programme and a locally implemented projector. Local checks and exact-commit CI are confirmed, and stable 4.4.0 is published.
