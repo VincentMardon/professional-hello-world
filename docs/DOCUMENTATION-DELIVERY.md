@@ -51,3 +51,9 @@ The Bureau accepts small departures. It no longer requires the passenger to brin
 The homepage now has a small fixed bottom-right documentation link. Source review confirms scoped focus styling and removal of the extra decorative spacer. Vincent confirms Biome checks, type checking, tests, production build, and the requested keyboard, narrow-screen, and 200% zoom checks. These are his reported manual results; no independent assistant browser audit is claimed.
 
 Release 4.1.0 notes and the changelog are prepared. Vincent subsequently aligned the package and root lockfile versions to 4.1.0 and confirms repeating the local checks. His preparation commit and exact-commit CI and deployment verification remain pending. The release remains unpublished.
+
+## Published milestone — October 21, 2026
+
+[Stable v4.1.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.1.0) was published at 00:28:41 UTC (02:28:41 in Paris). Annotated tag object `8af60327d4c577b7b2a828fa005effcabdb2c745` resolves to preparation commit #82, `7d213e7b5410b0cf43fe809d135f138e0219e7a1`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39517152564). The release is neither a draft nor a prerelease.
+
+The earlier checkpoint descriptions above preserve the sequence of preparation; their pending steps are now completed for this milestone. This publication-record follow-up changes documentation only and does not move the published tag. Later documentation capabilities remain separate increments.

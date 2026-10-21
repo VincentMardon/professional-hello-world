@@ -6,7 +6,7 @@ Professional Hello World is an artistic and technical learning project that gran
 
 The Directorate exists to make that machinery understandable. Visitors are entitled to learn what the project does, contributors need to know where behavior lives, and maintainers should be able to explain a decision without excavating every preceding ceremony. The paperwork is extravagant. The underlying explanations must earn their space.
 
-**Implementation status:** this overview is readable from the repository and is now the selected Markdown source for the local `/doc` route. Vincent has added the route and its feature component using react-markdown and remark-gfm. The generated documentation HTML has been inspected locally. Vincent confirms local checks and manual keyboard, narrow-screen, and 200% zoom checks for the new homepage entry. Final release-preparation CI and deployment verification remain pending; generated API reference and Mermaid rendering are not implemented.
+**Implementation status:** this overview is readable from the repository and is now the selected Markdown source for the local `/doc` route. Vincent has added the route and its feature component using react-markdown and remark-gfm. The generated documentation HTML has been inspected locally. Vincent confirms local checks and manual keyboard, narrow-screen, and 200% zoom checks for the new homepage entry. Release 4.1.0 is published on commit #82, whose CI and Pages deployment succeeded; generated API reference and Mermaid rendering are not implemented.
 
 ## 1. Choose your counter
 
@@ -74,7 +74,7 @@ The repository contains homepage and audio-page tests. The homepage suite render
 
 The current CI installs the recorded dependencies, runs Biome, checks TypeScript, runs Vitest, and creates the static production export. Successful main-branch runs can then publish the built artifact through the reusable Pages workflow. A new implementation must be checked on its own commit; an earlier successful run is historical evidence for that earlier state.
 
-Reading the workflow establishes what it is configured to do. It does not prove that the latest remote execution passed. The first overview was prepared through source inspection. For the later homepage entry, Vincent confirms the local checks, production build, and requested manual navigation checks. This is not an independent assistant browser audit; the final release-preparation commit will need its own CI and deployment verification.
+Reading the workflow establishes what it is configured to do. It does not prove that the latest remote execution passed. The first overview was prepared through source inspection. For the later homepage entry, Vincent confirms the local checks, production build, and requested manual navigation checks. This is not an independent assistant browser audit; release-preparation commit #82 subsequently passed its own CI and Pages deployment.
 
 The Inspectorate of Evidence is particularly strict about certificates that merely look expensive.
 
@@ -88,10 +88,10 @@ The wiki preserves the journey. Technical documentation explains the system suff
 
 ## 7. Departures are now scheduled by usefulness
 
-The documentation project must not repeat the long unnamed interval between releases 3.0.0 and 4.0.0. Its first proposed application milestone is **4.1.0: a useful documentation entrance inside PHW**. This is a planning target, subject to the changes actually completed and Vincent's release decision.
+The documentation project must not repeat the long unnamed interval between releases 3.0.0 and 4.0.0. Its first application milestone is the published [**4.1.0 — The Greeting Opens an Information Desk**](RELEASE-4.1.0.md), delivering a useful documentation entrance inside PHW.
 
-A first minor release does not require every department, generated reference, search, or diagram renderer. It does require a real accessible documentation route, useful content, working navigation between the repository and website where provided, and verification appropriate to that implementation. Subsequent useful additions and corrections should receive their own release-readiness decisions.
+This first minor release delivers the documentation route, useful overview content, a homepage entry, and repository source links. Additional departments, generated reference, search, and diagram rendering remain future work. Subsequent useful additions and corrections should receive their own release-readiness decisions.
 
-Read the [documentation delivery milestones](DOCUMENTATION-DELIVERY.md) for the proposed first boundary. Writing this page does not bump the package version, publish a tag, or certify the future route.
+Read the [documentation delivery milestones](DOCUMENTATION-DELIVERY.md) for the preparation history and verified publication checkpoint. Later capabilities will receive their own release-readiness decisions.
 
-**Reception now has an application route as well as a repository desk. The export contains this page, and Vincent has checked the new entrance locally. The release awaits its final preparation and exact-commit publication checks.**
+**Reception now has an application route as well as a repository desk. The export contains this page, and Vincent has checked the new entrance locally. Release 4.1.0 has now been published after successful exact-commit CI and deployment checks.**

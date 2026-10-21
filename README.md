@@ -42,7 +42,7 @@ The project takes software rituals very seriously for someone whose principal de
 - A reusable Pages workflow called by CI after successful checks on `main`, publishing the already built artifact. Its build-to-deployment path has succeeded on GitHub, including the tests introduced in commit #38.
 - Documentation, historical release notes, and an [official coding cat](docs/assets/images/coding-cat.png).
 
-The latest published release is [**4.0.0 — The Great Apparent Standstill**](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.0.0), released on October 20, 2026. The main greeting remains unchanged while Rust/WebAssembly audio integration and an elaborate separate listening room form the new milestone. Read the [release notes](docs/RELEASE-4.0.0.md) and [changelog](CHANGELOG.md).
+The latest published release is [**4.1.0 — The Greeting Opens an Information Desk**](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.1.0), released on October 21, 2026. It adds a Markdown-backed documentation entrance and a compact homepage link. Read the [release notes](docs/RELEASE-4.1.0.md) and [changelog](CHANGELOG.md). The preceding [4.0.0 milestone](docs/RELEASE-4.0.0.md) records the audio integration and listening-room design.
 
 Version 4.0.0 directly succeeds 3.0.0, with no intermediate 3.x release. The [release process](docs/RELEASE-PROCESS.md) sets out smaller future patch/minor milestones independently of wiki-part closures; release automation remains a proposal.
 
@@ -94,11 +94,11 @@ The [architecture document](docs/ARCHITECTURE.md) records the current implementa
 
 Visual experiments, including WebGL, may become part of the learning process when their turn comes. These are directions to explore, with no promised delivery date or requirement to build everything at once.
 
-Version **4.1.0 — The Greeting Opens an Information Desk** is [in preparation](docs/RELEASE-4.1.0.md), not yet published.
+Version **4.1.0 — The Greeting Opens an Information Desk** is [published](docs/RELEASE-4.1.0.md). Its annotated tag targets commit #82 (7d213e7), with successful CI and Pages deployment.
 
 ## Documentation Directorate
 
-Start with the [documentation overview](docs/README.md) for a guided map of the current project. It is readable from the repository and supplies the new `/doc` route; the generated documentation HTML has been inspected locally, and Vincent confirms local checks and manual navigation checks for the new bottom-right homepage link. Final release-preparation CI and deployment verification remain pending. The [documentation delivery plan](docs/DOCUMENTATION-DELIVERY.md) sets small release checkpoints, with a useful in-application entrance proposed for 4.1.0.
+Start with the [documentation overview](docs/README.md) for a guided map of the current project. It is readable from the repository and supplies the new `/doc` route; the generated documentation HTML has been inspected locally, and Vincent confirms local checks and manual navigation checks for the new bottom-right homepage link. The exact release-preparation commit passed CI and Pages deployment. The [documentation delivery plan](docs/DOCUMENTATION-DELIVERY.md) sets small release checkpoints, with the first in-application entrance delivered in 4.1.0.
 
 ## Further Reading
 

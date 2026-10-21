@@ -9,15 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-No additional changes recorded beyond the prepared milestone below.
+- Update publication records to confirm stable v4.1.0, its annotated tag on commit #82, and successful exact-commit CI and Pages deployment. This documentation follow-up does not move the tag or change application behavior.
 
-## [4.1.0] — In preparation
+## [4.1.0] — 2026-10-21
 
 ### The Greeting Opens an Information Desk
 
 - Add the Markdown-backed documentation route and its repository-readable overview, charter, and delivery plan.
 - Add a small bottom-right homepage Documentation link with scoped focus styling, preserving the greeting's in-flow spacing.
-- Vincent confirms local checks, production build, and keyboard, narrow-screen, and 200% zoom checks after the navigation corrections. Package and root lockfile versions are aligned to 4.1.0, and Vincent confirms repeating the local checks. Exact-commit CI, tag, and GitHub release publication remain pending.
+- Vincent confirms local checks, production build, and keyboard, narrow-screen, and 200% zoom checks after the navigation corrections. Package and root lockfile versions are aligned to 4.1.0, and Vincent confirms repeating the local checks. The exact preparation commit passed CI and Pages deployment; the annotated tag targets commit #82 (7d213e7), and the stable GitHub release was published on October 21, 2026.
 
 The entries below retain the earlier foundation and 4.0.0 follow-up records included since the previous tag; their original checkpoint wording is historical.
 
