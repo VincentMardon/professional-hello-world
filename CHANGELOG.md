@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Expand the sound-lifecycle guide with initialization rejection, a playback-method rejection example, and the sample-data versus live-audio graph. Clarify stale-state guards, retained engine readiness, shared gain, and verification limits. Content only; no reader behavior or version change.
+
 - Update publication records for stable v4.4.2, its annotated tag on commit #94, and successful exact-commit CI and Pages deployment. This documentation follow-up changes no code or tag target.
 
 ## [4.4.2] — 2026-10-21

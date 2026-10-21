@@ -106,3 +106,7 @@ The sequence can be adjusted together. It is a teaching route, not an order to b
 Before the first rendering implementation, settle the Markdown-to-page approach, document routing, public content selection, and the expected relationship between repository links and web links. Before extraction, settle the reference tooling, authored-comment conventions, and the public API surface to document. Before Mermaid rendering, settle build-time versus browser rendering and its implications for the static export.
 
 The Directorate has opened the project. It has not mistaken this opening for the construction of its entire headquarters.
+
+## 8. Design review deferred until the essential content exists
+
+On October 21, 2026, Vincent notes that the documentation design needs further consideration but deliberately defers that work until the essential documentation is built. The broader view should inform what changes, whether it needs to change, and how. Continue content and essential capability work without treating the current presentation as a final visual approval or opening a redesign now. Concrete functional defects can still be addressed when they obstruct use.

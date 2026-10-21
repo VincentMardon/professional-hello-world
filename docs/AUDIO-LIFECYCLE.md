@@ -8,7 +8,7 @@
 
 The Bureau is responsible for the journey of exactly two sounds. Its staffing diagram is considerably longer than its repertoire. To understand the journey, follow the responsibilities in order: access, initialization, settings, command dispatch, sample generation, browser playback, and status reporting.
 
-The final section supplies two Mermaid sequence diagrams. The PHW browser renderer is implemented locally; Vincent confirms the requested local checks, production build, and browser diagram checks; [stable 4.4.0](RELEASE-4.4.0.md) is published on commit #90, whose CI and Pages deployment succeeded. The prose explains the sequence independently of diagram support.
+The diagram sections supply successful initialization and playback sequences, failure-handling sequences, and an audio signal-path view. The PHW browser renderer is implemented locally; Vincent confirms the requested local checks, production build, and browser diagram checks; [stable 4.4.0](RELEASE-4.4.0.md) is published on commit #90, whose CI and Pages deployment succeeded. The prose explains the sequence independently of diagram support.
 
 ## 1. The reception desk precedes the engine
 
@@ -116,7 +116,7 @@ The diagrams below separate initialization from playback, preserve lazy context 
 The Bureau has written the itinerary and is preparing its first diagram projector for inspection.
 ## 10. The projector's first programme
 
-The two diagrams below describe the successful path. Initialization failures and playback failures are explained in the preceding sections. Separate diagrams keep engine readiness distinct from an individual playback request. The prose remains the complete explanation when a diagram cannot be rendered.
+The first two diagrams below describe the successful path. Section 11 adds initialization rejection, playback rejection, and the signal graph. Separate diagrams keep engine readiness distinct from an individual playback request. The prose remains the complete explanation when a diagram cannot be rendered.
 
 **Renderer status:** the PHW website now recognizes these Mermaid blocks and renders them in the browser with the selected documentation theme. Source inspection and targeted Biome checks pass. Vincent confirms the requested browser checks and production build; [stable 4.4.0](RELEASE-4.4.0.md) is published on commit #90, whose CI and Pages deployment succeeded. The source disclosure and prose remain available independently of SVG rendering.
 
@@ -174,3 +174,91 @@ sequenceDiagram
 The onended handler disconnects its source when playback finishes; it is not the awaited completion of the engine method. The diagram deliberately does not assign a duration to the sound or certify when the visitor hears it. The lazy initialization branch concerns this engine's first playback, not every press of Play.
 
 The Bureau now has a programme and a locally implemented projector. Local checks and exact-commit CI are confirmed, and stable 4.4.0 is published.
+## 11. Refused departures and the signal corridor
+
+The successful sequences above show how a request reaches playback. The following views add failure handling and distinguish sample data from the live audio graph. They document the inspected BeepEngine 0.1.2 integration; they do not add retries, cancellation, stop controls, or another generator.
+
+### Initialization rejection
+
+```mermaid
+sequenceDiagram
+    accTitle: Initialization rejection and the unmounted-hook guard
+    accDescr: An initialization rejection updates the status only while the hook instance is current. Cleanup prevents a stale state update but does not cancel the initialization operation.
+    participant Hook as Initialization hook
+    participant Engine as Engine factory
+    Hook->>Engine: createBeepEngine()
+    Engine-->>Hook: Initialization promise rejects
+    alt Hook instance has not been cleaned up
+        Hook->>Hook: Convert error to readable text
+        Hook->>Hook: Set Initialization failed status
+        Note over Hook: Engine remains null and Play stays disabled
+    else Hook instance has been cleaned up
+        Note over Hook: Ignore the rejected result for React state
+    end
+```
+
+This is a failure of the pending initialization, not a later playback failure. The effect's cleanup sets its local flag, and both the success and rejection handlers check it before updating state. No automatic retry is implemented by this hook. Remounting creates another effect instance; the guide does not describe that as a user-facing retry control.
+
+The diagram does not claim that cleanup aborts a download, terminates Wasm initialization, or releases browser audio resources. It governs whether the completed operation may update this particular hook instance.
+
+### Playback-method rejection
+
+```mermaid
+sequenceDiagram
+    accTitle: A playback method rejects after volume is applied
+    accDescr: With an engine available and volume accepted, PHW awaits the selected playback method. A rejection becomes a failure message without clearing the engine or disabling future commands.
+    actor Visitor
+    participant Hook as Audio interaction hook
+    participant Engine as Browser playback interface
+    Visitor->>Hook: Press Play with engine ready
+    Hook->>Engine: setVolume(percent / 100)
+    Engine-->>Hook: Volume accepted
+    Hook->>Engine: Selected sound(sample rate)
+    Engine-->>Hook: Playback promise rejects
+    Hook->>Hook: Catch and convert error
+    Hook->>Hook: Set Playback failed status
+    Note over Hook: Engine reference is retained
+    Note over Visitor,Hook: Play remains available for another request
+```
+
+This sequence chooses the specific case in which setting volume succeeds and the selected playback method rejects. The same try/catch also handles a synchronous exception from setVolume; in that case the selected method is not called. If no engine exists, the function returns before entering the try block, without inventing a playback-failure message.
+
+Possible failures inside the real wrapper include generation or browser-audio setup errors; the diagram deliberately leaves the origin abstract rather than claiming to have triggered any particular browser failure. An operation that throws inside its asynchronous playback function rejects the promise seen by PHW. A later problem after that promise has resolved is outside this catch's completed observation window.
+
+The existing mocked test verifies failure reporting while the command remains enabled. It does not establish real device failure detection, a recovery guarantee, or a completed playback.
+
+### Samples are data; connections carry the live signal
+
+```mermaid
+flowchart LR
+    accTitle: Generated sample data and the browser audio signal path
+    accDescr: Wasm-generated sample data is copied into a mono buffer assigned to a fresh source. Audio flows from the started source through the shared gain to the context destination. Volume controls the gain rather than generating samples.
+    subgraph Preparation[Data preparation for one request]
+        Generator[Selected Wasm generator]
+        Samples[Generated sample array]
+        Buffer[Mono AudioBuffer]
+        Generator -. returns data .-> Samples
+        Samples -. copyToChannel .-> Buffer
+    end
+    subgraph Playback[Browser audio graph]
+        Source[Fresh AudioBufferSourceNode]
+        Gain[Shared GainNode]
+        Destination[AudioContext destination]
+        Source --> Gain
+        Gain --> Destination
+    end
+    Buffer -. assigned as source buffer .-> Source
+    Volume[Normalized volume setting] -. controls gain value .-> Gain
+```
+
+Dashed arrows represent returned data, buffer assignment, or parameter control. Solid arrows represent the audio-node connections established by the wrapper. The sample array is not itself a connected Web Audio node. The Rust/Wasm generator does not connect directly to the speaker, and React does not stream the samples through its status paragraph.
+
+The buffer and source are created for each request. The output gain and context are shared by requests on the same engine instance. Multiple sources can therefore feed that gain when requests overlap; this representative graph shows one source rather than claiming a one-source-only policy. The gain then affects those connected sounds together.
+
+When a source finishes, its handler disconnects that source. It does not close the shared context. The destination is the browser audio graph's output endpoint, not evidence that a particular physical speaker was selected or that the listener heard the sound.
+
+### What this addition verifies
+
+The new diagrams are authored from the current hook and installed wrapper source, alongside the existing explanations. They add no application behavior and require no new reader capability. Validation with the installed Mermaid parser accepts all five blocks: four sequence diagrams and one flowchart. This checks syntax; it does not independently prove the depicted behavior or replace visual inspection in PHW's renderer. Vincent subsequently confirms that the expanded diagrams function, while explicitly deferring design judgment until the essential documentation provides a broader view. No independent assistant browser audit or final visual approval is claimed.
+
+The Bureau has added two refusal forms and a corridor map. It has not opened a release ceremony merely because another sheet was placed on the projector.
