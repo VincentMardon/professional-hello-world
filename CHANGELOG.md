@@ -9,15 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-No additional changes recorded beyond the prepared milestone below.
+- Update the documentation publication records for stable v4.2.0, the annotated tag on commit #85, and successful exact-commit CI and Pages deployment. This follow-up does not move the tag or change application code.
 
-## [4.2.0] — In preparation
+## [4.2.0] — 2026-10-21
 
 ### Two Reading Rooms Obtain a Corridor
 
-A compatible documentation milestone selected by Vincent. Package and root lockfile versions are aligned to 4.2.0; Vincent confirms local checks and production build after alignment. Exact-commit CI, Pages verification, and tag/release publication remain pending.
+A compatible documentation milestone selected by Vincent. Package and root lockfile versions are aligned to 4.2.0; Vincent confirms local checks and production build after alignment. Preparation commit #85 passed CI and Pages deployment. Stable v4.2.0 was published on October 21, 2026; its annotated tag targets that preparation commit (0832bb7).
 
-- Expand the existing architecture document with the documentation pipeline, responsibility boundaries, and a guided source-reading exercise. Add reciprocal Markdown links with the documentation overview. Add the local architecture route, explicit two-document registry, and navigation with the current page identified. Vincent confirms local checks, build, reciprocal navigation, and direct route reload; generated HTML inspection confirms both local routes and their current-page markers. Implementation commit #84 (60b4408) passed CI and Pages deployment. The final release-preparation commit will require its own verification.
+- Expand the existing architecture document with the documentation pipeline, responsibility boundaries, and a guided source-reading exercise. Add reciprocal Markdown links with the documentation overview. Add the local architecture route, explicit two-document registry, and navigation with the current page identified. Vincent confirms local checks, build, reciprocal navigation, and direct route reload; generated HTML inspection confirms both local routes and their current-page markers. Implementation commit #84 (60b4408) passed CI and Pages deployment. Release-preparation commit #85 also passed its own CI and deployment.
 
 - Update publication records to confirm stable v4.1.0, its annotated tag on commit #82, and successful exact-commit CI and Pages deployment. This documentation follow-up does not move the tag or change application behavior.
 

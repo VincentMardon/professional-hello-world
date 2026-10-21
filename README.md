@@ -42,7 +42,7 @@ The project takes software rituals very seriously for someone whose principal de
 - A reusable Pages workflow called by CI after successful checks on `main`, publishing the already built artifact. Its build-to-deployment path has succeeded on GitHub, including the tests introduced in commit #38.
 - Documentation, historical release notes, and an [official coding cat](docs/assets/images/coding-cat.png).
 
-The latest published release is [**4.1.0 — The Greeting Opens an Information Desk**](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.1.0), released on October 21, 2026. It adds a Markdown-backed documentation entrance and a compact homepage link. Read the [release notes](docs/RELEASE-4.1.0.md) and [changelog](CHANGELOG.md). The preceding [4.0.0 milestone](docs/RELEASE-4.0.0.md) records the audio integration and listening-room design.
+The latest published release is [**4.2.0 — Two Reading Rooms Obtain a Corridor**](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.2.0), released on October 21, 2026. It adds the architecture reading room and reciprocal local documentation navigation. Read the [release notes](docs/RELEASE-4.2.0.md) and [changelog](CHANGELOG.md). [Version 4.1.0](docs/RELEASE-4.1.0.md) introduced the first documentation entrance; [4.0.0](docs/RELEASE-4.0.0.md) records the audio milestone.
 
 Version 4.0.0 directly succeeds 3.0.0, with no intermediate 3.x release. The [release process](docs/RELEASE-PROCESS.md) sets out smaller future patch/minor milestones independently of wiki-part closures; release automation remains a proposal.
 
@@ -96,7 +96,7 @@ Visual experiments, including WebGL, may become part of the learning process whe
 
 Version **4.1.0 — The Greeting Opens an Information Desk** is [published](docs/RELEASE-4.1.0.md). Its annotated tag targets commit #82 (7d213e7), with successful CI and Pages deployment.
 
-Version **4.2.0 — Two Reading Rooms Obtain a Corridor** is [in preparation](docs/RELEASE-4.2.0.md). The latest published release remains 4.1.0.
+Version **4.2.0 — Two Reading Rooms Obtain a Corridor** is [published](docs/RELEASE-4.2.0.md). Its annotated tag targets verified preparation commit #85 (0832bb7).
 
 ## Documentation Directorate
 

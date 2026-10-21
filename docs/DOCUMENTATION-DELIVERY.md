@@ -71,3 +71,9 @@ This compatible addition triggers a release-readiness checkpoint. The package re
 Vincent selects **4.2.0 — Two Reading Rooms Obtain a Corridor** for the compatible architecture-page and navigation addition. Implementation commit #84, `60b44089df7bdc5b721ae856cea97175717e5392`, passed its [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39529770689).
 
 The [4.2.0 release notes](RELEASE-4.2.0.md) are prepared. Package and root lockfile versions are now aligned to 4.2.0, and Vincent confirms the requested local checks and production build. The preparation commit still requires its own published CI and deployment verification; the new tag must point to that verified commit. The earlier 4.1.0 release remains the latest published milestone at this checkpoint. No additional department is required to complete this scope.
+
+## Published second milestone — October 21, 2026
+
+[Stable v4.2.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.2.0) was published at 02:17:25 UTC (04:17:25 in Paris). Annotated tag object `e91b3875589e003fcfa7e1091dbdf5e750fc226a` resolves to release-preparation commit #85, `0832bb7c0a25a816094f365d21a59f857cf15d23`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39531756706). The release is neither a draft nor a prerelease.
+
+Earlier pending steps above preserve preparation history and are completed for this milestone. This documentation-only publication follow-up does not move the tag. The architecture room and local navigation now have their own minor release; further departments remain separate increments.

@@ -8,6 +8,8 @@ The Directorate exists to make that machinery understandable. Visitors are entit
 
 **Implementation status:** this overview is readable from the repository and is now the selected Markdown source for the local `/doc` route. Vincent has added the route and its feature component using react-markdown and remark-gfm. The generated documentation HTML has been inspected locally. Vincent confirms local checks and manual keyboard, narrow-screen, and 200% zoom checks for the new homepage entry. Release 4.1.0 is published on commit #82, whose CI and Pages deployment succeeded; generated API reference and Mermaid rendering are not implemented.
 
+The second room and reciprocal navigation are delivered in [4.2.0 — Two Reading Rooms Obtain a Corridor](RELEASE-4.2.0.md), published on October 21, 2026. Its annotated tag targets preparation commit #85, with successful exact-commit CI and Pages deployment.
+
 ## 1. Choose your counter
 
 Continue with the [Directorate of Structural Disproportion — architecture](ARCHITECTURE.md) to examine the responsibilities and boundaries behind the rooms.
