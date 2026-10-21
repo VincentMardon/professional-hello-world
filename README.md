@@ -96,6 +96,8 @@ Visual experiments, including WebGL, may become part of the learning process whe
 
 Version **4.1.0 — The Greeting Opens an Information Desk** is [published](docs/RELEASE-4.1.0.md). Its annotated tag targets commit #82 (7d213e7), with successful CI and Pages deployment.
 
+Version **4.2.0 — Two Reading Rooms Obtain a Corridor** is [in preparation](docs/RELEASE-4.2.0.md). The latest published release remains 4.1.0.
+
 ## Documentation Directorate
 
 Start with the [documentation overview](docs/README.md) for a guided map of the current project. It is readable from the repository and supplies the new `/doc` route; the generated documentation HTML has been inspected locally, and Vincent confirms local checks and manual navigation checks for the new bottom-right homepage link. The exact release-preparation commit passed CI and Pages deployment. The [documentation delivery plan](docs/DOCUMENTATION-DELIVERY.md) sets small release checkpoints, with the first in-application entrance delivered in 4.1.0.

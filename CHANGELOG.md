@@ -9,7 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-- Expand the existing architecture document with the documentation pipeline, responsibility boundaries, and a guided source-reading exercise. Add reciprocal Markdown links with the documentation overview. Add the local architecture route, explicit two-document registry, and navigation with the current page identified. Vincent confirms local checks, build, reciprocal navigation, and direct route reload; generated HTML inspection confirms both local routes and their current-page markers. Exact-commit CI and deployment remain pending publication.
+No additional changes recorded beyond the prepared milestone below.
+
+## [4.2.0] — In preparation
+
+### Two Reading Rooms Obtain a Corridor
+
+A compatible documentation milestone selected by Vincent. Package and root lockfile versions are aligned to 4.2.0; Vincent confirms local checks and production build after alignment. Exact-commit CI, Pages verification, and tag/release publication remain pending.
+
+- Expand the existing architecture document with the documentation pipeline, responsibility boundaries, and a guided source-reading exercise. Add reciprocal Markdown links with the documentation overview. Add the local architecture route, explicit two-document registry, and navigation with the current page identified. Vincent confirms local checks, build, reciprocal navigation, and direct route reload; generated HTML inspection confirms both local routes and their current-page markers. Implementation commit #84 (60b4408) passed CI and Pages deployment. The final release-preparation commit will require its own verification.
 
 - Update publication records to confirm stable v4.1.0, its annotated tag on commit #82, and successful exact-commit CI and Pages deployment. This documentation follow-up does not move the tag or change application behavior.
 

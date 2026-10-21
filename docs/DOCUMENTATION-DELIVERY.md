@@ -65,3 +65,9 @@ The architecture document now has a proposed-to-publish implementation at `/doc/
 Vincent confirms local formatting and application checks, type checking, tests, build, reciprocal navigation through the menu and text, and direct architecture-route reload. Assistant inspection of both exported HTML pages confirms base-path-prefixed local links and the appropriate `aria-current` marker. No independent assistant browser audit is claimed. Exact-commit CI and deployment must be verified after publication.
 
 This compatible addition triggers a release-readiness checkpoint. The package remains 4.1.0; no new tag or release is prepared by this increment. Decide the next minor milestone from the completed published scope before adding another department, rather than silently accumulating an indefinite documentation overhaul.
+
+## Selected next milestone — 4.2.0
+
+Vincent selects **4.2.0 — Two Reading Rooms Obtain a Corridor** for the compatible architecture-page and navigation addition. Implementation commit #84, `60b44089df7bdc5b721ae856cea97175717e5392`, passed its [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39529770689).
+
+The [4.2.0 release notes](RELEASE-4.2.0.md) are prepared. Package and root lockfile versions are now aligned to 4.2.0, and Vincent confirms the requested local checks and production build. The preparation commit still requires its own published CI and deployment verification; the new tag must point to that verified commit. The earlier 4.1.0 release remains the latest published milestone at this checkpoint. No additional department is required to complete this scope.
