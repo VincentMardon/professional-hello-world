@@ -11,6 +11,7 @@ import {
   documentPage,
   themeSwitchPosition,
 } from "./DocumentationPage.css";
+import { MermaidDiagram } from "./MermaidDiagram";
 
 const repositoryRoot =
   "https://github.com/VincentMardon/professional-hello-world/";
@@ -108,6 +109,24 @@ export async function DocumentationPage({
           remarkPlugins={[remarkGfm]}
           urlTransform={resolveDocumentUrl}
           components={{
+            pre({ node, children, ...props }) {
+              const code = node?.children[0];
+
+              if (
+                code?.type === "element" &&
+                code.tagName === "code" &&
+                Array.isArray(code.properties.className) &&
+                code.properties.className.includes("language-mermaid")
+              ) {
+                const source = code.children
+                  .map((child) => (child.type === "text" ? child.value : ""))
+                  .join("");
+
+                return <MermaidDiagram source={source} />;
+              }
+
+              return <pre {...props}>{children}</pre>;
+            },
             a({ href, children, node: _node, ...props }) {
               if (
                 href === "/doc" ||

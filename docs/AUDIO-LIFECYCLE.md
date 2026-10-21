@@ -8,7 +8,7 @@
 
 The Bureau is responsible for the journey of exactly two sounds. Its staffing diagram is considerably longer than its repertoire. To understand the journey, follow the responsibilities in order: access, initialization, settings, command dispatch, sample generation, browser playback, and status reporting.
 
-No Mermaid renderer is installed by this page. The prose establishes the sequence that a later diagram will summarize.
+The final section supplies two Mermaid sequence diagrams. The PHW browser renderer is implemented locally; Vincent confirms the requested local checks, production build, and browser diagram checks; exact-commit CI and release publication remain pending. The prose explains the sequence independently of diagram support.
 
 ## 1. The reception desk precedes the engine
 
@@ -111,6 +111,66 @@ Start with the panel and identify which hook supplies its values and callbacks. 
 
 Next, follow a volume change before initialization and after the first playback. Finally, read the test mocks before their assertions. This order separates what PHW coordinates, what the package supplies, what the browser executes, and what the test suite substitutes.
 
-The forthcoming diagram should show initialization separately from a playback request, preserve the lazy context creation, and avoid drawing the Started status after sound completion. Those are the questions the diagram must answer.
+The diagrams below separate initialization from playback, preserve lazy context creation, and avoid placing Started after sound completion. These are the questions their rendering must continue to answer.
 
-The Bureau has now written the itinerary. It has not yet purchased a diagram projector.
+The Bureau has written the itinerary and is preparing its first diagram projector for inspection.
+## 10. The projector's first programme
+
+The two diagrams below describe the successful path. Initialization failures and playback failures are explained in the preceding sections. Separate diagrams keep engine readiness distinct from an individual playback request. The prose remains the complete explanation when a diagram cannot be rendered.
+
+**Renderer status:** the PHW website now recognizes these Mermaid blocks and renders them in the browser with the selected documentation theme. Source inspection and targeted Biome checks pass. Vincent confirms the requested browser checks and production build; exact-commit CI and release publication remain pending. The source disclosure and prose remain available independently of SVG rendering.
+
+### Engine readiness
+
+```mermaid
+sequenceDiagram
+    accTitle: Engine readiness before playback
+    accDescr: Mounting the panel starts Wasm initialization. Obtaining the playback interface marks PHW ready without creating an AudioContext yet.
+    participant Panel as Audio panel
+    participant Hook as Initialization hook
+    participant Engine as Browser wrapper
+    participant Wasm as Wasm module
+    Panel->>Hook: Mount and run effect
+    Hook->>Engine: createBeepEngine()
+    Engine->>Wasm: Initialize module
+    Wasm-->>Engine: Initialization completes
+    Engine-->>Hook: Playback interface
+    Hook->>Hook: Store engine and report Ready
+    Note over Engine: AudioContext is still uncreated
+```
+
+### One playback request
+
+```mermaid
+sequenceDiagram
+    accTitle: One playback request through the browser wrapper
+    accDescr: PHW applies volume and invokes the selected sound. Samples are generated, browser audio is prepared, and the promise resolves after the source is started rather than after sound completion.
+    actor Visitor
+    participant PHW as Audio interaction hook
+    participant Engine as Browser wrapper
+    participant Wasm as Sound generator
+    participant Audio as Web Audio
+    Visitor->>PHW: Press Play
+    PHW->>Engine: setVolume(percent / 100)
+    PHW->>Engine: Selected sound(sample rate)
+    Engine->>Wasm: Generate samples(sample rate)
+    Wasm-->>Engine: Samples
+    opt First playback on this engine
+        Engine->>Audio: Create context and shared gain
+        Engine->>Audio: Connect gain to destination
+    end
+    Engine->>Audio: Resume context
+    Audio-->>Engine: Resume completes
+    Engine->>Audio: Apply shared volume
+    Engine->>Audio: Create mono buffer and copy samples
+    Engine->>Audio: Create source and connect to shared gain
+    Engine->>Audio: Register onended disconnect handler
+    Engine->>Audio: Start source
+    Engine-->>PHW: Playback promise resolves
+    PHW->>PHW: Report Started
+    Note over Engine,Audio: Sound completion is independent of the promise
+```
+
+The onended handler disconnects its source when playback finishes; it is not the awaited completion of the engine method. The diagram deliberately does not assign a duration to the sound or certify when the visitor hears it. The lazy initialization branch concerns this engine's first playback, not every press of Play.
+
+The Bureau now has a programme and a locally implemented projector. Local checks are confirmed; exact-commit CI verification precedes the public release.

@@ -91,3 +91,13 @@ Vincent confirms completing the requested corrections, local application checks,
 [Stable v4.3.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.3.0) was published at 04:04:41 UTC (06:04:41 in Paris). Annotated tag object `08967d51fd1d47a98cd8457dcdc9eaf14b2d3f46` resolves to commit #87, `96be7ab18c375b489a01ddafe43a9c911e040ae3`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39540840023). It is neither a draft nor a prerelease.
 
 Earlier pending descriptions preserve preparation history. This documentation-only update does not move the published tag. Resume the sound-lifecycle explanation and then its Mermaid rendering as separate steps; the lighting milestone includes neither capability.
+
+## Diagram projector — 4.4.0 in preparation
+
+The [4.4.0 release draft](RELEASE-4.4.0.md) groups the sound-lifecycle guide and route from published commit #89 with the locally implemented Mermaid renderer and its two sequence diagrams. The browser renderer follows the shared theme and retains source disclosures. Attribute-level suppression documents the keyboard-focus exception for a horizontally scrollable region.
+
+Targeted Biome and whitespace checks pass. Final version alignment, local checks, production build, browser rendering checks, and exact preparation-commit CI remain pending. A production export does not itself execute the browser's diagram renderer. Publish this bounded capability before expanding into another documentation subsystem.
+
+### Projector preparation validation
+
+Package and root lockfile versions are aligned to 4.4.0. Vincent confirms the requested local checks, production build, and browser checks for both diagrams, both themes, repeated switching, navigation, keyboard scrolling, and source disclosure. These are his reported results; no independent assistant browser audit or dedicated malformed-input execution is claimed. The preparation commit, its exact CI and deployment, and tag/release publication remain pending.
