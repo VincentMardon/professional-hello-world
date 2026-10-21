@@ -10,6 +10,8 @@ The Directorate exists to make that machinery understandable. Visitors are entit
 
 The second room and reciprocal navigation are delivered in [4.2.0 — Two Reading Rooms Obtain a Corridor](RELEASE-4.2.0.md), published on October 21, 2026. Its annotated tag targets preparation commit #85, with successful exact-commit CI and Pages deployment.
 
+The documentation now opens in dark mode, with a shared sun-and-moon switch at the top-left to select light or dark. Selection survives client-side navigation; a full reload returns to dark. This capability is delivered in [4.3.0 — The Directorate Obtains a Night Shift](RELEASE-4.3.0.md), whose tag targets verified commit #87. It does not automatically recolor the greeting or audio feature.
+
 ## 1. Choose your counter
 
 Continue with the [Directorate of Structural Disproportion — architecture](ARCHITECTURE.md) to examine the responsibilities and boundaries behind the rooms.

@@ -42,7 +42,7 @@ The project takes software rituals very seriously for someone whose principal de
 - A reusable Pages workflow called by CI after successful checks on `main`, publishing the already built artifact. Its build-to-deployment path has succeeded on GitHub, including the tests introduced in commit #38.
 - Documentation, historical release notes, and an [official coding cat](docs/assets/images/coding-cat.png).
 
-The latest published release is [**4.2.0 — Two Reading Rooms Obtain a Corridor**](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.2.0), released on October 21, 2026. It adds the architecture reading room and reciprocal local documentation navigation. Read the [release notes](docs/RELEASE-4.2.0.md) and [changelog](CHANGELOG.md). [Version 4.1.0](docs/RELEASE-4.1.0.md) introduced the first documentation entrance; [4.0.0](docs/RELEASE-4.0.0.md) records the audio milestone.
+The latest published release is [**4.3.0 — The Directorate Obtains a Night Shift**](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.3.0), released on October 21, 2026. It adds a shared sun-and-moon theme switch, dark-by-default documentation palettes, and the root-level margin reset. Read the [release notes](docs/RELEASE-4.3.0.md) and [changelog](CHANGELOG.md). [Version 4.2.0](docs/RELEASE-4.2.0.md) introduced the architecture room and local navigation.
 
 Version 4.0.0 directly succeeds 3.0.0, with no intermediate 3.x release. The [release process](docs/RELEASE-PROCESS.md) sets out smaller future patch/minor milestones independently of wiki-part closures; release automation remains a proposal.
 

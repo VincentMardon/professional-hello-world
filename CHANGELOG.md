@@ -9,14 +9,14 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-No additional changes recorded beyond the prepared milestone below.
+- Update publication records for stable v4.3.0, its annotated tag on commit #87, and successful exact-commit CI and Pages deployment. This documentation follow-up does not change application code or move the tag.
 
-## [4.3.0] — In preparation
+## [4.3.0] — 2026-10-21
 
 ### The Directorate Obtains a Night Shift
 
 - Add a shared theme provider, reusable sun-and-moon switch, and light/dark documentation palettes, defaulting to dark. Selection survives client navigation but not a full reload.
-- Move the body margin reset to the root layout to remove the white frame on direct documentation access. Package and root lockfile versions are aligned to 4.3.0. Targeted Biome and diff whitespace checks pass; Vincent confirms local application checks, build, and manual theme checks. Exact-commit CI, deployment, tag, and release publication remain pending.
+- Move the body margin reset to the root layout to remove the white frame on direct documentation access. Package and root lockfile versions are aligned to 4.3.0. Targeted Biome and diff whitespace checks pass; Vincent confirms local application checks, build, and manual theme checks. Commit #87 passed CI and Pages deployment; stable v4.3.0 was published on October 21, 2026 with its annotated tag on that same commit.
 
 - Update the documentation publication records for stable v4.2.0, the annotated tag on commit #85, and successful exact-commit CI and Pages deployment. This follow-up does not move the tag or change application code.
 

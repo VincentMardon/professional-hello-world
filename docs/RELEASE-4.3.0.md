@@ -1,6 +1,6 @@
 # 4.3.0 — The Directorate Obtains a Night Shift
 
-**Release preparation — not published.** This compatible theme capability follows 4.2.0. Package and root lockfile metadata are aligned to 4.3.0. Vincent confirms the requested local checks, production build, and manual theme checks. The preparation commit, its exact CI and deployment, tag, and release publication remain pending.
+**Published October 21, 2026 at 04:04:41 UTC (06:04:41 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.3.0), neither a draft nor a prerelease. Package and root lockfile versions are aligned to 4.3.0.
 
 ## The Committee Grants Permission to Lower the Lights
 
@@ -23,13 +23,13 @@ Theme state is held in React memory. A full reload returns to dark; there is no 
 
 ## Verification checkpoint
 
-Vincent reports the visual result works and confirms the white-frame correction. Source inspection confirms the provider, switch, theme variables, and documentation integration. The root stylesheet is correctly named layout.css.ts, and targeted Biome checks pass for all nine inspected source files. Vincent confirms successful application checks, type checking, tests, production build, and the requested manual behavior checks. Exact-commit CI and deployment remain pending publication.
+Vincent reports the visual result works and confirms the white-frame correction. Source inspection confirms the provider, switch, theme variables, and documentation integration. The root stylesheet is correctly named layout.css.ts, and targeted Biome checks pass for all nine inspected source files. Vincent confirms successful application checks, type checking, tests, production build, and the requested manual behavior checks. Commit #87, `96be7ab18c375b489a01ddafe43a9c911e040ae3`, passed its [exact CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39540840023).
 
 Vincent confirms both palettes, keyboard switch operation, navigation between documentation pages, dark default after reload, direct architecture access without the white frame, and the requested narrow-screen, zoom, and reduced-motion checks. These are his reported results, not an independent assistant browser audit. Existing suites alone do not establish dedicated theme behavior coverage or an accessibility audit.
 
-## Publication sequence
+## Published tag
 
-Corrections and version alignment are complete without creating a tag. Vincent reviews and publishes the preparation commit after local validation. Verify CI and Pages for that exact commit before Vincent creates its annotated v4.3.0 tag and publishes a stable release. Remove preparation instructions from the public release body and update this record only after verification.
+Annotated tag object `08967d51fd1d47a98cd8457dcdc9eaf14b2d3f46` resolves to commit #87, `96be7ab18c375b489a01ddafe43a9c911e040ae3`. The publication-record follow-up does not move this tag.
 
 ## Return to the interrupted work
 

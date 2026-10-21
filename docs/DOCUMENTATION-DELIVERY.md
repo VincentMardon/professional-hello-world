@@ -85,3 +85,9 @@ Vincent requests a dark-mode switch before the sound-lifecycle and Mermaid work.
 ### Lighting preparation validation
 
 Vincent confirms completing the requested corrections, local application checks, type checking, tests, build, and manual theme verification. Package and root lockfile versions are aligned to 4.3.0. The root stylesheet is named `layout.css.ts`; targeted Biome checks pass for nine source files. Diff whitespace checks pass. The preparation commit still needs its exact published CI and Pages verification before tagging; no release is announced as published here.
+
+## Published lighting milestone — October 21, 2026
+
+[Stable v4.3.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.3.0) was published at 04:04:41 UTC (06:04:41 in Paris). Annotated tag object `08967d51fd1d47a98cd8457dcdc9eaf14b2d3f46` resolves to commit #87, `96be7ab18c375b489a01ddafe43a9c911e040ae3`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39540840023). It is neither a draft nor a prerelease.
+
+Earlier pending descriptions preserve preparation history. This documentation-only update does not move the published tag. Resume the sound-lifecycle explanation and then its Mermaid rendering as separate steps; the lighting milestone includes neither capability.
