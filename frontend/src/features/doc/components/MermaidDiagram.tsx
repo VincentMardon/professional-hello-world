@@ -1,11 +1,13 @@
 "use client";
 
-import { type CSSProperties, useEffect, useId, useRef, useState } from "react";
-
+import { type CSSProperties, useEffect, useId } from "react";
 import { useTheme } from "../../../shared/theme/ThemeProvider";
+import { useDiagramViewport } from "../hooks/useDiagramViewport";
 import {
+  closeFullscreen,
   diagramFigure,
   diagramViewport,
+  viewerActions,
   zoomControls,
 } from "./MermaidDiagram.css";
 
@@ -14,13 +16,20 @@ let nextDiagramId = 0;
 
 export function MermaidDiagram({ source }: { source: string }) {
   const { theme } = useTheme();
-  const containerRef = useRef<HTMLElement>(null);
-  const [zoom, setZoom] = useState(100);
-  const zoomId = useId();
+  const {
+    figureRef,
+    containerRef,
+    zoom,
+    fitToWidth,
+    isFullscreen,
+    fullscreenError,
+    setNaturalWidth,
+    changeZoom,
+    fitWidth,
+    toggleFullscreen,
+  } = useDiagramViewport();
 
-  function changeZoom(value: number) {
-    setZoom(Math.min(300, Math.max(25, value)));
-  }
+  const zoomId = useId();
 
   useEffect(() => {
     const container = containerRef.current;
@@ -82,6 +91,7 @@ export function MermaidDiagram({ source }: { source: string }) {
         );
 
         container.replaceChildren(svgElement);
+        setNaturalWidth(naturalWidth);
       } catch {
         if (active) {
           container.textContent =
@@ -93,26 +103,36 @@ export function MermaidDiagram({ source }: { source: string }) {
     return () => {
       active = false;
     };
-  }, [source, theme]);
+  }, [source, theme, containerRef, setNaturalWidth]);
 
   return (
-    <figure className={diagramFigure}>
+    <figure ref={figureRef} className={diagramFigure}>
+      {isFullscreen ? (
+        <button
+          type="button"
+          className={closeFullscreen}
+          aria-label="Exit fullscreen"
+          onClick={() => void toggleFullscreen()}
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      ) : null}
       <fieldset className={zoomControls} aria-label="Diagram zoom">
         <button
           type="button"
           aria-label="Zoom out"
-          disabled={zoom === 25}
+          disabled={zoom === 1}
           onClick={() => changeZoom(zoom - 25)}
         >
-          −
+          -
         </button>
 
         <input
           id={zoomId}
           type="range"
-          min={25}
+          min={1}
           max={300}
-          step={5}
+          step={1}
           value={zoom}
           aria-label="Diagram zoom"
           aria-valuetext={`${zoom}%`}
@@ -134,6 +154,22 @@ export function MermaidDiagram({ source }: { source: string }) {
           100%
         </button>
       </fieldset>
+
+      <div className={viewerActions}>
+        <button type="button" aria-pressed={fitToWidth} onClick={fitWidth}>
+          Fit width
+        </button>
+
+        <button
+          type="button"
+          aria-pressed={isFullscreen}
+          onClick={() => void toggleFullscreen()}
+        >
+          {isFullscreen ? "Exit fullscreen" : "Fullscreen"}
+        </button>
+      </div>
+
+      {fullscreenError ? <p role="status">{fullscreenError}</p> : null}
 
       <section
         ref={containerRef}

@@ -9,6 +9,16 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+No additional changes recorded beyond the prepared milestone below.
+
+## [4.4.2] — In preparation
+
+### The Projector Opens Its Auditorium
+
+- Add automatic fit-to-width using ResizeObserver and extract viewport behavior into a dedicated hook. Manual zoom exits fitting; zoom now spans 1–300 percent.
+- Add native fullscreen with browser-state tracking, a visible close cross, text exit command, themed layout, and unavailable/request-failure messages.
+- Vincent confirms requested corrections, local checks, build, and manual behavior checks. Package and root lockfile versions are aligned to 4.4.2; Vincent confirms checks and build after alignment. Exact preparation-commit CI and deployment remain pending; no tag or release is published.
+
 - Update publication records for stable v4.4.1, its annotated tag on commit #92, and successful exact-commit CI and Pages deployment. No code or tag movement is introduced by this documentation follow-up.
 
 ## [4.4.1] — 2026-10-21

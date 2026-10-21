@@ -126,3 +126,9 @@ Source review confirms the final compact layout and package/root lockfile versio
 [Stable v4.4.1](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.4.1) was published at 10:41:58 UTC (12:41:58 in Paris). Annotated tag object `89425db77e10c19fd6d0b9acbdd67095ddb4e747` resolves to preparation commit #92, `65357a731bfac26b26d82957feeb66be20f29af0`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39585783752). It is neither a draft nor a prerelease.
 
 Earlier pending descriptions retain preparation history. This documentation-only follow-up does not move the tag. Fitting and fullscreen remain later tooling capabilities; new pages or diagrams alone remain content work under the clarified PHW policy.
+
+## Auditorium checkpoint — 4.4.2 preparation
+
+The [4.4.2 draft](RELEASE-4.4.2.md) groups fit-to-width and native fullscreen as documentation-reader capabilities. The viewport hook observes available width, coordinates manual and automatic scale, and follows browser fullscreen state. A top-right close cross complements Escape and the text exit command. Zoom spans 1–300 percent; fitting concerns width and stays within those limits.
+
+Vincent confirms the requested corrections, local checks, production build, and manual fit/fullscreen checks in both themes. Source review confirms corrected state naming, close label, and fullscreen palette. Package and root lockfile metadata are aligned to 4.4.2, and Vincent confirms the final checks and build. Exact preparation-commit CI and deployment remain pending publication. No independent assistant browser audit or dedicated automated fullscreen coverage is claimed.
