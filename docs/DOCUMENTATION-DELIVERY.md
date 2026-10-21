@@ -120,3 +120,9 @@ Earlier checkpoints retain their preparation history. This documentation-only pu
 The diagram reader now provides independent 25–300 percent zoom, minus/plus buttons, a slider, percentage output, and a 100 percent reset based on the SVG reference width. Zoom changes CSS sizing without regenerating Mermaid. A named fieldset and compact five-column layout organize the controls; default figure side margins are removed.
 
 Source review confirms the final compact layout and package/root lockfile versions aligned to 4.4.1. Vincent confirms the requested corrections, local checks, type checking, tests, and production build. Whitespace checks pass. Exact preparation-commit CI and deployment, tag, and release publication remain pending. Fitting and fullscreen remain separate later capabilities.
+
+## Published zoom milestone — October 21, 2026
+
+[Stable v4.4.1](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.4.1) was published at 10:41:58 UTC (12:41:58 in Paris). Annotated tag object `89425db77e10c19fd6d0b9acbdd67095ddb4e747` resolves to preparation commit #92, `65357a731bfac26b26d82957feeb66be20f29af0`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39585783752). It is neither a draft nor a prerelease.
+
+Earlier pending descriptions retain preparation history. This documentation-only follow-up does not move the tag. Fitting and fullscreen remain later tooling capabilities; new pages or diagrams alone remain content work under the clarified PHW policy.

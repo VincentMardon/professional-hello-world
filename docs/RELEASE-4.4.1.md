@@ -1,6 +1,6 @@
 # 4.4.1 — The Projector Receives Its Remote Control
 
-**Release preparation — not published.** This capability uses the third version number under Vincent's explicit PHW lore convention, rather than a strict SemVer classification. Package and root lockfile metadata are aligned to 4.4.1. Vincent confirms the final local checks and production build. The preparation commit, its exact CI and deployment, tag, and release publication remain pending.
+**Published October 21, 2026 at 10:41:58 UTC (12:41:58 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.4.1), neither a draft nor a prerelease. This capability intentionally uses the third version number under PHW lore rather than strict SemVer. Package and root lockfile versions are aligned to 4.4.1.
 
 ## Scope
 
@@ -18,8 +18,8 @@ Fit-to-width and fullscreen remain later capability slices. Additional diagrams 
 
 Vincent reports the zoom works. Targeted Biome checks pass for the two diagram files. Source review confirms the corrected CSS zoom formula and fieldset. The compact five-column grid, smaller buttons, and shrinkable slider are restored in the inspected stylesheet. Vincent confirms the requested correction and checks.
 
-Vincent confirms type checking, tests, and production build after version alignment. Exact preparation-commit CI and deployment remain pending publication. No dedicated automated zoom coverage or independent assistant browser inspection is claimed.
+Vincent confirms type checking, tests, and production build after version alignment. Preparation commit #92 passed its [exact CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39585783752). No dedicated automated zoom coverage or independent assistant browser inspection is claimed.
 
-## Publication sequence
+## Verified publication
 
-Layout correction, version alignment, and local validation are complete. Vincent reviews and publishes the preparation commit. Verify CI and Pages for that exact commit before Vincent creates the annotated v4.4.1 tag and publishes the release. Replace preparation notices with verified publication records afterward without moving the tag.
+Annotated tag object `89425db77e10c19fd6d0b9acbdd67095ddb4e747` resolves to preparation commit #92, `65357a731bfac26b26d82957feeb66be20f29af0`. This documentation-only publication follow-up does not move the tag.
