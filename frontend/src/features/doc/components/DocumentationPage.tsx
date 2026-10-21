@@ -4,7 +4,13 @@ import Link from "next/link";
 import Markdown, { defaultUrlTransform } from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-import { documentPage } from "./DocumentationPage.css";
+import { ThemeSwitch } from "../../../components/ThemeSwitch";
+
+import {
+  documentationSurface,
+  documentPage,
+  themeSwitchPosition,
+} from "./DocumentationPage.css";
 
 const repositoryRoot =
   "https://github.com/VincentMardon/professional-hello-world/";
@@ -72,50 +78,56 @@ export async function DocumentationPage({
   const content = await readFile(sourcePath, "utf8");
 
   return (
-    <main className={documentPage}>
-      <nav aria-label="Documentation">
-        <ul>
-          {Object.entries(documents).map(([id, document]) => (
-            <li key={id}>
-              <Link
-                href={document.route}
-                aria-current={id === documentId ? "page" : undefined}
-              >
-                {document.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+    <div className={documentationSurface}>
+      <div className={themeSwitchPosition}>
+        <ThemeSwitch />
+      </div>
 
-      <Markdown
-        remarkPlugins={[remarkGfm]}
-        urlTransform={resolveDocumentUrl}
-        components={{
-          a({ href, children, node: _node, ...props }) {
-            if (
-              href === "/doc" ||
-              href?.startsWith("/doc/") ||
-              href?.startsWith("/doc#") ||
-              href?.startsWith("/doc?")
-            ) {
-              return (
-                <Link href={href} {...props}>
-                  {children}
+      <main className={documentPage}>
+        <nav aria-label="Documentation">
+          <ul>
+            {Object.entries(documents).map(([id, document]) => (
+              <li key={id}>
+                <Link
+                  href={document.route}
+                  aria-current={id === documentId ? "page" : undefined}
+                >
+                  {document.title}
                 </Link>
-              );
-            }
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-            return (
-              <a href={href} {...props}>
-                {children}
-              </a>
-            );
-          },
-        }}
-      >
-        {content}
-      </Markdown>
-    </main>
+        <Markdown
+          remarkPlugins={[remarkGfm]}
+          urlTransform={resolveDocumentUrl}
+          components={{
+            a({ href, children, node: _node, ...props }) {
+              if (
+                href === "/doc" ||
+                href?.startsWith("/doc/") ||
+                href?.startsWith("/doc#") ||
+                href?.startsWith("/doc?")
+              ) {
+                return (
+                  <Link href={href} {...props}>
+                    {children}
+                  </Link>
+                );
+              }
+
+              return (
+                <a href={href} {...props}>
+                  {children}
+                </a>
+              );
+            },
+          }}
+        >
+          {content}
+        </Markdown>
+      </main>
+    </div>
   );
 }

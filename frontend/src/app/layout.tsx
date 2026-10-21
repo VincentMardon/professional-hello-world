@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
+import { ThemeProvider } from "../shared/theme/ThemeProvider";
+
+import "./layout.css";
+
 const siteUrl = "https://vincentmardon.github.io/professional-hello-world/";
 
 export const metadata: Metadata = {
@@ -66,7 +70,9 @@ export default function RootLayout({
         <script src*"/static/js/feature-flags.js" defer />
         */}
       </head>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

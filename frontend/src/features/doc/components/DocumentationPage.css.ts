@@ -1,15 +1,18 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 
+import { themeColors } from "../../../shared/theme/theme.css";
+
 export const documentPage = style({
   boxSizing: "border-box",
   maxWidth: "76rem",
   minHeight: "100dvh",
   margin: "0 auto",
   padding: "clamp(1rem, 4vw, 4rem)",
+  paddingTop: "5rem",
   fontFamily: "system-ui, sans-serif",
   lineHeight: 1.75,
-  color: "#24211c",
-  backgroundColor: "#fffaf0",
+  color: themeColors.foreground,
+  backgroundColor: themeColors.background,
   overflowWrap: "anywhere",
 });
 
@@ -22,7 +25,7 @@ globalStyle(`${documentPage} h1`, {
 globalStyle(`${documentPage} h2`, {
   marginTop: "3rem",
   lineHeight: 1.3,
-  borderBottom: "1px solid #9b7939",
+  borderBottom: `1px solid ${themeColors.border}`,
   paddingBottom: "0.5rem",
 });
 
@@ -32,12 +35,12 @@ globalStyle(`${documentPage} h3`, {
 });
 
 globalStyle(`${documentPage} a`, {
-  color: "#684a10",
+  color: themeColors.link,
   textUnderlineOffset: "0.2em",
 });
 
 globalStyle(`${documentPage} a:focus-visible`, {
-  outline: "3px solid #684a10",
+  outline: `3px solid ${themeColors.link}`,
   outlineOffset: "4px",
 });
 
@@ -50,26 +53,26 @@ globalStyle(`${documentPage} table`, {
 });
 
 globalStyle(`${documentPage} th, ${documentPage} td`, {
-  border: "1px solid #b9aa8d",
+  border: `1px solid ${themeColors.tableBorder}`,
   padding: "0.75rem",
   textAlign: "left",
   verticalAlign: "top",
 });
 
 globalStyle(`${documentPage} th`, {
-  backgroundColor: "#eee3cb",
+  backgroundColor: themeColors.surface,
 });
 
 globalStyle(`${documentPage} code`, {
   fontFamily: "monospace",
-  backgroundColor: "#eee3cb",
+  backgroundColor: themeColors.surface,
   padding: "0.1em 0.3em",
 });
 
 globalStyle(`${documentPage} pre`, {
   overflowX: "auto",
   padding: "1rem",
-  backgroundColor: "#eee3cb",
+  backgroundColor: themeColors.surface,
 });
 
 globalStyle(`${documentPage} pre code`, {
@@ -87,4 +90,26 @@ globalStyle(`${documentPage} nav ul`, {
 globalStyle(`${documentPage} nav a[aria-current="page"]`, {
   fontWeight: 700,
   textDecorationThickness: "0.15em",
+});
+
+export const documentationSurface = style({
+  minHeight: "100dvh",
+  color: themeColors.foreground,
+  backgroundColor: themeColors.background,
+  colorScheme: "light dark",
+  selectors: {
+    "&:has(button[role='switch'][aria-checked='true'])": {
+      colorScheme: "dark",
+    },
+    "&:has(button[role='switch'][aria-checked='false'])": {
+      colorScheme: "light",
+    },
+  },
+});
+
+export const themeSwitchPosition = style({
+  position: "fixed",
+  top: "1rem",
+  left: "1rem",
+  zIndex: 10,
 });

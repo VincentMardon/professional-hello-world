@@ -1,9 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 
-globalStyle("body", {
-  margin: 0,
-});
-
 export const greeting = style({
   boxSizing: "border-box",
   minHeight: "100dvh",

@@ -77,3 +77,11 @@ The [4.2.0 release notes](RELEASE-4.2.0.md) are prepared. Package and root lockf
 [Stable v4.2.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.2.0) was published at 02:17:25 UTC (04:17:25 in Paris). Annotated tag object `e91b3875589e003fcfa7e1091dbdf5e750fc226a` resolves to release-preparation commit #85, `0832bb7c0a25a816094f365d21a59f857cf15d23`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39531756706). The release is neither a draft nor a prerelease.
 
 Earlier pending steps above preserve preparation history and are completed for this milestone. This documentation-only publication follow-up does not move the tag. The architecture room and local navigation now have their own minor release; further departments remain separate increments.
+
+## Lighting detour — 4.3.0 in preparation
+
+Vincent requests a dark-mode switch before the sound-lifecycle and Mermaid work. The [4.3.0 release draft](RELEASE-4.3.0.md) bounds this compatible addition: shared provider and reusable switch, documentation palettes, and a root-level body margin reset. Final corrections and validation remain pending. After publication, resume the sound explanation before adding its diagram renderer.
+
+### Lighting preparation validation
+
+Vincent confirms completing the requested corrections, local application checks, type checking, tests, build, and manual theme verification. Package and root lockfile versions are aligned to 4.3.0. The root stylesheet is named `layout.css.ts`; targeted Biome checks pass for nine source files. Diff whitespace checks pass. The preparation commit still needs its exact published CI and Pages verification before tagging; no release is announced as published here.
