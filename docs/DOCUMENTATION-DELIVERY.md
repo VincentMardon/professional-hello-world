@@ -150,3 +150,9 @@ Implementation commit #97 adds TypeDoc extraction of `useBeepEngine`, repository
 [Stable v4.5.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.5.0) was published at 20:35:49 UTC (22:35:49 in Paris), neither a draft nor a prerelease. Annotated tag object `ec610a04d951f8bf889ca953d50a8691ba5676a3` resolves to preparation commit #98, `9505a7a806aaaeeae0734fce009f07b5d466c7a7`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39665481830).
 
 The earlier preparation entry remains historical. The single-hook reference-generation capability is now released; its recorded limitations remain. This publication-record follow-up changes neither code nor tag target and claims no new runtime verification.
+
+## Reference freshness — 4.5.1 in preparation
+
+Commit #100 adds generation followed by a comparison of the tracked pilot README with HEAD. Vincent confirms the local success/rejection/restored-success probe. Its [exact CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39675056415), including the new step before the build.
+
+[4.5.1 — The Registry Checks Its Own Memory](RELEASE-4.5.1.md) is prepared for this narrow tooling capability. Package and root lockfile metadata are aligned to 4.5.1, and Vincent confirms the freshness check, lint, type checks, tests, and build after alignment. Exact preparation-commit CI remains pending; no new tag or release is claimed. The gate does not yet cover arbitrary new output or obsolete-file cleanup.

@@ -22,7 +22,7 @@ The generated entry filename is intentionally `README.md`. The `readme: none` op
 
 Run `npm run docs:reference` from `frontend` for explicit generation. The `prebuild` script invokes that command before `npm run build` reaches Next.js. Vincent confirmed this execution order locally. The existing CI build command therefore uses the same lifecycle; no workflow file was changed for this integration, and implementation commit #97 subsequently passed its exact remote run.
 
-Keep the generated Markdown in the repository so the reference remains readable without running the website. The build regenerates it from the checked-out source. Build-time regeneration alone is not a freshness check. The local follow-up described below adds a dedicated comparison before the CI build; its remote execution remains to be verified.
+Keep the generated Markdown in the repository so the reference remains readable without running the website. The build regenerates it from the checked-out source. Build-time regeneration alone is not a freshness check. Commit #100 adds a dedicated comparison before the CI build; its exact remote run succeeded.
 
 The output directory uses `cleanOutputDir: false`. This pilot does not erase that directory before generation or guarantee removal of obsolete generated files. Keep authored documents outside it, and revisit output cleanup when the extraction scope grows.
 
@@ -36,7 +36,7 @@ TypeDoc uses `gitRevision: main` for source links. Vincent regenerated the refer
 
 The assistant ran the read-only Biome check successfully on the initial reader integration: 59 files checked, no fixes applied. Vincent subsequently confirmed the expected source-link URL and the build lifecycle order after adding `prebuild`. These local observations are distinct from the subsequently verified CI and Pages deployment for commit #97; neither establishes an independent browser accessibility audit.
 
-The pilot demonstrates a new documentation capability: source comments and inferred types become repository-readable Markdown and a page in the existing reader. Its release significance comes from this generation pipeline, not from adding another routine Next.js route. Broader API extraction, anchor handling, and immutable source references remain future work. A local freshness-control follow-up is described below; it is not part of the published 4.5.0 tag.
+The pilot demonstrates a new documentation capability: source comments and inferred types become repository-readable Markdown and a page in the existing reader. Its release significance comes from this generation pipeline, not from adding another routine Next.js route. Broader API extraction, anchor handling, and immutable source references remain future work. A published freshness-control follow-up is described below; it is not part of the published 4.5.0 tag.
 
 The Registry has admitted one callable authority. It has not yet received a warrant to inventory every function in the institution.
 
@@ -46,12 +46,14 @@ Vincent subsequently confirmed that the local Biome, TypeScript, and test comman
 
 Commit #97 (`23e51be63e4fd2306cdc049521ab4b1616c668c0`) passed [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39662104965). The pilot is included in [stable release 4.5.0](RELEASE-4.5.0.md). Vincent confirms local checks and build after alignment to 4.5.0. Preparation commit #98 (`9505a7a806aaaeeae0734fce009f07b5d466c7a7`) passed its own [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39665481830). The annotated v4.5.0 tag targets that commit; the stable release was published on October 21, 2026.
 
-## Freshness control — local follow-up
+## Freshness control — published follow-up
 
 Vincent has added `npm run docs:reference:check`. It first regenerates the pilot Markdown, then runs `git diff --exit-code HEAD -- ../docs/generated/api-pilot/README.md` from `frontend`. The comparison is against the latest commit, including staged and unstaged changes to the tracked reference. A difference produces a nonzero exit code and displays the diff; generation errors also stop the command.
 
 The command writes the generated file as part of checking it. It does not reset, stage, or commit changes. After an intentional source-comment change, regenerate and commit the source and reference together. Until that commit exists, a difference from HEAD is expected even if the working reference is up to date with the working source.
 
-The workflow invokes the command after tests and before the production build. If it fails, the subsequent build and artifact publication cannot proceed through that job. The workflow's configured order is inspected locally; successful remote execution remains to be verified after publication.
+The workflow invokes the command after tests and before the production build. If it fails, the subsequent build and artifact publication cannot proceed through that job. Implementation commit #100 passed its exact [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39675056415), with the freshness step succeeding before the build. The deliberate failure probe remains a local test, not a remote failure injection.
 
 This check targets the single tracked pilot README. It is not a general detector for new untracked output, obsolete files, or the factual correctness of a source comment. Expanding extraction requires revisiting this boundary. The assistant's read-only Biome check passes on the current local files; Vincent confirms the deliberate local probe: the initial check succeeds, a temporary source-comment change causes regeneration to display a difference and fail, and removing that change restores success. Source inspection confirms that neither the hook nor generated README retains the temporary probe.
+
+The gate is selected for [4.5.1 release preparation](RELEASE-4.5.1.md). Package and root lockfile metadata are aligned to 4.5.1. Vincent confirms the freshness check, lint, type checks, tests, and build after alignment. Exact preparation-commit CI remains pending; the published 4.5.0 tag is unchanged.
