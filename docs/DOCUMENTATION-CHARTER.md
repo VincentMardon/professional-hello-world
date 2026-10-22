@@ -124,3 +124,7 @@ Vincent chooses one content commit and its wiki account for the three-guide expa
 ## Proposed 4.6 roadmap — October 22, 2026
 
 The [4.6 roadmap proposal](DOCUMENTATION-4.6-ROADMAP.md) separates catalogue-driven static routing, systematic declaration validation, and local link inspection into potential capability milestones. It remains a discussion document; no implementation or release is announced. Design remains deferred.
+
+## Part VII release planning — October 22, 2026
+
+The [Part VII release roadmap](DOCUMENTATION-PART-VII-ROADMAP.md) sets potential capability checkpoints from the remaining 4.6 work through source contracts and reference, section addressing, structured orientation, and search. It includes a completion review based on usable and maintainable architecture rather than page count. Visual design is reserved for the following part. The roadmap records plans, not completed implementation or published versions.

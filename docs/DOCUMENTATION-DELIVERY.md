@@ -162,3 +162,13 @@ Commit #100 adds generation followed by a comparison of the tracked pilot README
 [Stable v4.5.1](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.5.1) was published at 03:28:24 UTC (05:28:24 in Paris), neither a draft nor a prerelease. Annotated tag object `3eace1695e16ada802211affad67f974ab0b6696` resolves to preparation commit #101, `669c94f0e11a5d56f03205cde93466606d750e21`. Its [CI, freshness gate, and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39682375280).
 
 The earlier preparation entry remains historical. The single-file freshness gate is now released with its recorded limitations. This documentary follow-up changes neither application code nor tag target and claims no new runtime verification.
+
+## Catalogue milestone — 4.6.0 in preparation
+
+Commit #104 centralizes nine documents and their metadata, derives paths from slugs, and replaces six wrappers with one generic static route. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39745092346). On October 22, HTTP inspection confirms all nine public documentation paths return 200 with their expected titles. Browser interaction remains a separate verification boundary.
+
+[4.6.0 release notes](RELEASE-4.6.0.md) are prepared. Package alignment, local preparation-state checks, and exact preparation-commit CI remain pending. No tag or stable release is claimed. The Part VII roadmap is included as a plan, not implemented later capabilities.
+
+### Catalogue preparation validation
+
+Package and root lockfile metadata are aligned to 4.6.0 without unrelated dependency changes. Vincent confirms lint, type checks, reference freshness, tests, build, navigation, nested-route reload, theme changes, and diagram controls. Browser evidence is his report; no independent assistant audit is claimed. Preparation commit #105 is proposed and still requires its own published CI and Pages verification before tagging.

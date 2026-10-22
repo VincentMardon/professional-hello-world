@@ -9,6 +9,14 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+No additional capability changes recorded beyond the prepared 4.6.0 scope.
+
+## [4.6.0] — In preparation
+
+### The Catalogue Allocates the Rooms
+
+Prepared, not published. Package and root lockfile metadata are aligned to 4.6.0. Vincent confirms local lint, type checks, reference freshness, tests, build, and the requested navigation, nested reload, theme, and diagram controls. Exact preparation-commit CI remains pending. Implementation commit #104 passed CI and Pages deployment. HTTP inspection on October 22, 2026 confirms all nine documentation destinations return 200 with their expected titles; this does not establish browser interaction or accessibility. See [release notes](docs/RELEASE-4.6.0.md).
+
 - Author grouped trust-boundary and dependency guides for the 4.6 work. Record their source-based limits and the planned follow-up on code comments. Apply the typed catalogue, shared catch-all static route, central metadata, and derived URLs; remove six wrappers while retaining explicit reception. Export inspection finds nine destinations. Biome passes on 58 files; Vincent confirms checks after refreshing route types. Metadata wording is corrected; manual browser confirmation remains pending. Package version remains 4.5.1; no 4.6 release is claimed.
 
 - Author operations, frontend reading, and documentation workshop guides. Refresh the reception to reflect installed capabilities and link the broader subject coverage. Add a current charter checkpoint prioritizing representative content for the deferred design review. Add their three route wrappers and registry entries using the existing reader. Correct route formatting and metadata spelling. Biome passes on 62 files, and Vincent confirms the integrated guides work locally. Exact-commit remote verification remains pending. Package version remains 4.5.1; this grouped content addition creates no release.

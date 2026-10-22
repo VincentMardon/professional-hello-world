@@ -57,3 +57,11 @@ Vincent authorizes starting the 4.6 work and completing the authored pages judge
 ## 4.6.0 local implementation checkpoint
 
 The catalogue and generic static route are applied. Six repetitive wrappers are removed; reception reads its metadata from the catalogue. Trust-boundary and dependency guides bring the selected documents to nine. Export inspection finds all nine paths, including the nested hook reference. Biome passes on 58 files. Vincent confirms the requested checks pass after running route-type generation before TypeDoc; stale Next validators had referenced deleted wrappers. Metadata wording is corrected; manual browser confirmation remains to be settled before release preparation. Package version remains 4.5.1; no 4.6 tag or release is claimed.
+
+## Release preparation checkpoint — October 22, 2026
+
+Implementation #104 passed exact-commit CI and Pages deployment. HTTP inspection finds all nine public documentation destinations with status 200 and expected titles, including the nested reference. [4.6.0 notes](RELEASE-4.6.0.md) are prepared; version alignment and final preparation-state verification remain pending. Manual browser interaction is not inferred from response inspection.
+
+## Version-aligned checkpoint — October 22, 2026
+
+Package and both root lockfile version fields are 4.6.0. Vincent confirms lint, type checks, reference freshness, tests, build, and the requested browser navigation, nested-route reload, theme, and diagram-control checks. Metadata wording is corrected. These local results supersede earlier pending checkpoints without changing their historical context. Exact preparation-commit CI and Pages deployment remain required before tagging.
