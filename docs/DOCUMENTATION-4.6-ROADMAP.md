@@ -91,3 +91,7 @@ Both sanity and Pages deployment in run 39798059142 for #107 are verified succes
 ### 4.6.1 version-aligned checkpoint
 
 Vincent aligns the package and both root lockfile version fields to 4.6.1 and confirms all requested local checks and build. Preparation #108 remains to be reviewed, committed, and verified in its own remote run before tagging. The 4.6.2 specification is included as proposed follow-up only; no related parser dependencies or code have been applied.
+
+## Published catalogue validation — October 22, 2026
+
+[Stable v4.6.1](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.6.1) was published at 15:18:46 UTC (17:18:46 in Paris), neither draft nor prerelease. Annotated tag object `dff459275fd963d99623ad1a816f05f276bca8be` resolves to preparation #108, `2e65229dc7f25ab3afbd3081c18178f3485dd010`, whose [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39802888752). Earlier pending checkpoints remain historical. The next capability is local-link inspection; no extractor or parser dependency is applied yet.

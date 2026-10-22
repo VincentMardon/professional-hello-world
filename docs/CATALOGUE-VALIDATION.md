@@ -1,6 +1,6 @@
 # Catalogue Validation — The Registrar's Inspection Rules
 
-**Local implementation — October 22, 2026.** Vincent has applied the validation command, tests, TypeScript import configuration, and CI step planned for 4.6.1. Package version remains 4.6.0. Implementation commit #107 passed its exact CI and Pages deployment. No new tag or stable 4.6.1 release is claimed.
+**Local implementation — October 22, 2026.** Vincent has applied the validation command, tests, TypeScript import configuration, and CI step planned for 4.6.1. Package version remains 4.6.0. Implementation commit #107 passed its exact CI and Pages deployment. Stable 4.6.1 is now published on preparation commit #108.
 
 ## Purpose and invocation
 
@@ -49,4 +49,4 @@ Commit #107, `43f7b1362dd6c16102151d53621df95e1b8df1fc`, passed [CI and Pages de
 
 ## Version-aligned release preparation
 
-Package and root lockfile metadata are now 4.6.1. Vincent confirms lint, catalogue inspection, type checks, the full test suite, reference freshness, and production build after alignment. Preparation commit #108 is proposed; its exact remote run must be verified before tagging. No stable 4.6.1 publication is claimed.
+Package and root lockfile metadata are now 4.6.1. Vincent confirms lint, catalogue inspection, type checks, the full test suite, reference freshness, and production build after alignment. Preparation commit #108 passed [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39802888752). The annotated v4.6.1 tag targets that commit, and the stable release was published on October 22, 2026.

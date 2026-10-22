@@ -9,13 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Record stable v4.6.1 publication on October 22, 2026, its annotated tag on preparation commit #108, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
+
 - Specify the proposed 4.6.2 Markdown-aware local-link inspector. The document installs no parser dependency, extractor, command, or gate; implementation remains deferred.
 
-## [4.6.1] — In preparation
+## [4.6.1] — 2026-10-22
 
 ### The Registrar Rejects Invalid Applications
 
-Prepared, not published. Package and both root lockfile version fields are aligned to 4.6.1. Vincent confirms lint, catalogue inspection, type checks, the full test suite, reference freshness, and build after alignment. Implementation #107 passed its exact CI and Pages deployment; the preparation commit requires its own remote verification. See [release notes](docs/RELEASE-4.6.1.md).
+Stable release published October 22, 2026 at 15:18:46 UTC (17:18:46 in Paris). Package and both root lockfile version fields are aligned to 4.6.1. Vincent confirms lint, catalogue inspection, type checks, the full test suite, reference freshness, and build after alignment. Implementation #107 passed its exact CI and Pages deployment; preparation commit #108 passed its own CI and Pages deployment, and the annotated v4.6.1 tag targets it. See [release notes](docs/RELEASE-4.6.1.md).
 
 - Add a read-only catalogue command and CI gate before type checking. Inspect root selection, nonempty metadata, slug syntax, duplicate public paths, lexical and real-path containment, and regular Markdown sources.
 - Enable explicit TypeScript runtime imports for the Node runner. Add isolated refusal tests, including the relocated-overview regression. The assistant verifies Biome on 61 files and all 11 targeted validator tests after correction.

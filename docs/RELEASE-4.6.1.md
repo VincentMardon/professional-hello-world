@@ -1,6 +1,6 @@
 # 4.6.1 — The Registrar Rejects Invalid Applications
 
-**Draft release preparation — not published.** Implementation commit #107 is published. Its exact CI run, including catalogue validation, and Pages deployment have succeeded. Package and both root lockfile version fields are aligned to 4.6.1. Vincent confirms lint, catalogue inspection, type checks, the full test suite, reference freshness, and production build after alignment. Exact preparation-commit verification remains pending. No new tag or release is claimed.
+**Published October 22, 2026 at 15:18:46 UTC (17:18:46 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.6.1), neither a draft nor a prerelease. Implementation commit #107 is published. Its exact CI run, including catalogue validation, and Pages deployment have succeeded. Package and both root lockfile version fields are aligned to 4.6.1. Vincent confirms lint, catalogue inspection, type checks, the full test suite, reference freshness, and production build after alignment. Preparation commit #108 passed its own CI and Pages deployment before publication.
 
 ## Scope
 
@@ -28,10 +28,10 @@ The input is a typed maintained catalogue, not arbitrary external JSON. The gate
 
 Existing reader and audio behavior are unchanged. No dependency is installed for the validator. Local-link inspection remains the separate 4.6.2 capability; visual design remains outside this part.
 
-## Release gate still open
+## Verified publication
 
-Implementation verification is complete. Version alignment and local preparation-state checks are complete. Vincent next reviews and publishes the preparation commit, then verifies that exact commit's CI and deployment before tagging its SHA and publishing a stable release.
+Annotated tag object `dff459275fd963d99623ad1a816f05f276bca8be` resolves to preparation commit #108, `2e65229dc7f25ab3afbd3081c18178f3485dd010`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39802888752) before the stable release was published at the time above.
 
-The accompanying link-check specification remains a proposal for 4.6.2, with no parser dependencies or extractor code applied. They do not authorize a release tag or assert that the remaining gates have passed.
+The accompanying link-inspection contract remains proposed 4.6.2 work. No extractor code or parser dependency is installed by this publication-record follow-up. Application code, package versions, and tag targets remain unchanged; no new test or browser inspection is claimed.
 
-The Registrar has learned to refuse an impossible room. Its implementation has passed remote inspection; its version-aligned release application now awaits exact-commit remote verification.
+The Registrar has learned to refuse an impossible room. Its implementation has passed remote inspection; its versioned appointment is now published.
