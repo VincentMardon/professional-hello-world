@@ -156,3 +156,9 @@ The earlier preparation entry remains historical. The single-hook reference-gene
 Commit #100 adds generation followed by a comparison of the tracked pilot README with HEAD. Vincent confirms the local success/rejection/restored-success probe. Its [exact CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39675056415), including the new step before the build.
 
 [4.5.1 — The Registry Checks Its Own Memory](RELEASE-4.5.1.md) is prepared for this narrow tooling capability. Package and root lockfile metadata are aligned to 4.5.1, and Vincent confirms the freshness check, lint, type checks, tests, and build after alignment. Exact preparation-commit CI remains pending; no new tag or release is claimed. The gate does not yet cover arbitrary new output or obsolete-file cleanup.
+
+## Published freshness milestone — October 22, 2026
+
+[Stable v4.5.1](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.5.1) was published at 03:28:24 UTC (05:28:24 in Paris), neither a draft nor a prerelease. Annotated tag object `3eace1695e16ada802211affad67f974ab0b6696` resolves to preparation commit #101, `669c94f0e11a5d56f03205cde93466606d750e21`. Its [CI, freshness gate, and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39682375280).
+
+The earlier preparation entry remains historical. The single-file freshness gate is now released with its recorded limitations. This documentary follow-up changes neither application code nor tag target and claims no new runtime verification.

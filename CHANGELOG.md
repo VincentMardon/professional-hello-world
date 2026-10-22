@@ -9,13 +9,13 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-No additional changes recorded beyond the prepared 4.5.1 scope.
+- Record stable v4.5.1 publication on October 22, 2026, its annotated tag on preparation commit #101, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
-## [4.5.1] — In preparation
+## [4.5.1] — 2026-10-22
 
 ### The Registry Checks Its Own Memory
 
-Prepared, not published. Package and root lockfile metadata are aligned to 4.5.1. Vincent confirms the freshness check, lint, type checks, tests, and build after alignment; exact preparation-commit CI remains pending. Implementation commit #100 passed its exact CI, including the freshness step, and Pages deployment. See [release notes](docs/RELEASE-4.5.1.md).
+Stable release published October 22, 2026 at 03:28:24 UTC (05:28:24 in Paris). Package and root lockfile metadata are aligned to 4.5.1. Vincent confirms the freshness check, lint, type checks, tests, and build after alignment. Preparation commit #101 passed its own CI and Pages deployment, including the freshness step; the annotated v4.5.1 tag targets that commit. Implementation commit #100 passed its exact CI, including the freshness step, and Pages deployment. See [release notes](docs/RELEASE-4.5.1.md).
 
 - Add a local pilot-reference freshness command and a CI step before the build. Regenerate the tracked README and compare it with HEAD, stopping on differences or generation failure. The command writes generated output; staged changes also count. Targeted to one tracked file. Vincent confirms success, deliberate stale-source rejection, and restored success after removing the probe. Biome passes; implementation commit #100 passed exact-commit CI and Pages deployment. Package and root lockfile metadata are now aligned to 4.5.1, with local checks and build confirmed by Vincent.
 
