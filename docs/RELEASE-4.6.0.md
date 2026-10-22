@@ -1,6 +1,6 @@
 # 4.6.0 — The Catalogue Allocates the Rooms
 
-**Release preparation — not published.** The catalogue foundation is deployed, and package and both root lockfile version fields are aligned to 4.6.0. Vincent confirms the requested local checks, build, and manual reading checks. Exact preparation-commit CI remains pending. No new tag or GitHub release is created by this document.
+**Published October 22, 2026 at 09:11:19 UTC (11:11:19 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.6.0), neither a draft nor a prerelease. The catalogue foundation is deployed, and package and both root lockfile version fields are aligned to 4.6.0. Vincent confirms the requested local checks, build, and manual reading checks. Preparation commit #105 passed its own CI and Pages deployment before publication.
 
 ## Scope
 
@@ -20,7 +20,7 @@ Implementation commit #104, `670b98326aa657570ce443229c9e10af49c2bd35`, passed [
 
 On October 22, 2026, HTTP inspection of the deployed reception, architecture, sound lifecycle, operations, frontend, workshop, trust boundaries, dependencies, and nested hook reference returned 200 for each with the expected page title. This is response and HTML evidence, not an independent browser interaction or accessibility audit. Vincent subsequently confirms the requested navigation, nested-route reload, theme, and diagram-control checks. These are his reported browser results, not an independent assistant accessibility audit.
 
-These results cover the implementation state. Vincent confirms lint, type checks, reference freshness, tests, and build after version alignment. The preparation commit still requires its own exact-commit CI and deployment before tagging.
+These results cover the implementation state. Vincent confirms lint, type checks, reference freshness, tests, and build after version alignment. Preparation commit #105 passed its own [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39753005557).
 
 ## Boundaries and follow-up
 
@@ -28,8 +28,10 @@ Systematic catalogue validation and Markdown-aware local-link checking remain pl
 
 Existing reader presentation, theme behavior, Mermaid interaction, audio behavior, and the single-hook extraction boundary are preserved. This release does not redesign the documentation or broaden TypeDoc coverage. Meaningful code comments and generated-reference expansion follow the remaining 4.6 work under the [Part VII roadmap](DOCUMENTATION-PART-VII-ROADMAP.md).
 
-## Remaining publication steps
+## Verified publication
 
-Version alignment and the requested local and manual checks are complete. Vincent reviews and publishes the preparation commit. After that exact commit passes CI and Pages deployment, create an annotated v4.6.0 tag on its explicit SHA and publish the stable GitHub release with the verified scope and limitations. Do not move existing published tags.
+Annotated tag object `9d5029df88e81fb8f15e5c9c5d562253f0e2c9cd` resolves to preparation commit #105, `ac488d4f16332b826b2a2ed85d7cb5a7ff3ad314`. Its exact CI and Pages deployment succeeded before the stable release was published at the time recorded above.
+
+This documentary follow-up changes no application code, package version, or tag target and claims no new tests, build, or browser inspection.
 
 The reading rooms retain their addresses. Their catalogue now carries the paperwork formerly copied into every doorway.

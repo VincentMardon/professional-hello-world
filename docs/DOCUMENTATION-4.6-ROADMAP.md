@@ -65,3 +65,9 @@ Implementation #104 passed exact-commit CI and Pages deployment. HTTP inspection
 ## Version-aligned checkpoint — October 22, 2026
 
 Package and both root lockfile version fields are 4.6.0. Vincent confirms lint, type checks, reference freshness, tests, build, and the requested browser navigation, nested-route reload, theme, and diagram-control checks. Metadata wording is corrected. These local results supersede earlier pending checkpoints without changing their historical context. Exact preparation-commit CI and Pages deployment remain required before tagging.
+
+## Published catalogue milestone — October 22, 2026
+
+[Stable v4.6.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.6.0) was published at 09:11:19 UTC (11:11:19 in Paris), neither a draft nor a prerelease. Annotated tag object `9d5029df88e81fb8f15e5c9c5d562253f0e2c9cd` resolves to preparation commit #105, `ac488d4f16332b826b2a2ed85d7cb5a7ff3ad314`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39753005557).
+
+Earlier pending checkpoints remain historical. The catalogue-driven routing capability is now released; systematic catalogue validation and local-link inspection remain planned. This publication-record follow-up changes neither code nor tag target and claims no new runtime verification.

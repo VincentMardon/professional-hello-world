@@ -4,7 +4,7 @@
 
 ## Starting point
 
-Stable 4.5.1 is the latest verified release in this record. Published application commit #104 (`670b98326aa657570ce443229c9e10af49c2bd35`) implements the 4.6.0 catalogue foundation and passed its exact CI and Pages deployment. Nine documents are selected. No 4.6 tag or release is claimed. Manual navigation and direct-reload confirmation remain outstanding in the recorded evidence before release preparation.
+Stable 4.6.0 is now published, as recorded in the current checkpoint below. The remainder of this starting-point paragraph preserves the pre-release planning state. Published application commit #104 (`670b98326aa657570ce443229c9e10af49c2bd35`) implements the 4.6.0 catalogue foundation and passed its exact CI and Pages deployment. Nine documents are selected. No 4.6 tag or release is claimed. Manual navigation and direct-reload confirmation remain outstanding in the recorded evidence before release preparation.
 
 ## Planned sequence
 
@@ -58,3 +58,7 @@ The intended architecture lets a maintainer add a selected document without copy
 A reader can locate a subject, move through the document structure, link to a section, and search the published material. The important current contracts are documented, and instructions state what the automated checks do and do not establish.
 
 Review those outcomes with Vincent rather than using page count or the last proposed version as proof of completion. Part VII hopes to complete at least the department's architecture; this remains an aim rather than a guaranteed deadline. Broader extensions remain separate planning material. The following part can then address design using the actual functioning department.
+
+## Current checkpoint — October 22, 2026
+
+4.6.0 is published on verified preparation commit #105. Its manual checks, version alignment, exact-commit CI, annotated tag, and stable release are recorded in [the release notes](RELEASE-4.6.0.md). The next capability is 4.6.1 catalogue validation. Subsequent milestones in the table remain plans rather than installed gates.

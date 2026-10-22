@@ -172,3 +172,9 @@ Commit #104 centralizes nine documents and their metadata, derives paths from sl
 ### Catalogue preparation validation
 
 Package and root lockfile metadata are aligned to 4.6.0 without unrelated dependency changes. Vincent confirms lint, type checks, reference freshness, tests, build, navigation, nested-route reload, theme changes, and diagram controls. Browser evidence is his report; no independent assistant audit is claimed. Preparation commit #105 is proposed and still requires its own published CI and Pages verification before tagging.
+
+## Published catalogue milestone — October 22, 2026
+
+[Stable v4.6.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.6.0) was published at 09:11:19 UTC (11:11:19 in Paris), neither a draft nor a prerelease. Annotated tag object `9d5029df88e81fb8f15e5c9c5d562253f0e2c9cd` resolves to preparation commit #105, `ac488d4f16332b826b2a2ed85d7cb5a7ff3ad314`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39753005557).
+
+Earlier pending checkpoints remain historical. The catalogue-driven routing capability is now released; systematic catalogue validation and local-link inspection remain planned. This publication-record follow-up changes neither code nor tag target and claims no new runtime verification.
