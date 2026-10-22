@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Add a read-only catalogue validation command and CI gate before type checking. Validate root selection, nonempty metadata, slug syntax, duplicate public routes, source paths, real-path containment, and existing regular Markdown files. Add fixture-based refusal tests and the relocated-overview regression; enable explicit TypeScript runtime imports. Biome passes on 61 files and all 11 targeted validator tests pass after the correction. Package version remains 4.6.0; remote execution and 4.6.1 publication remain pending.
+
 - Record stable v4.6.0 publication on October 22, 2026, its annotated tag on preparation commit #105, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
 ## [4.6.0] — 2026-10-22

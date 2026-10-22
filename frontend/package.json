@@ -9,6 +9,7 @@
     "check": "biome check .",
     "check:fix": "biome check --write .",
     "dev": "next dev",
+    "docs:catalogue:check": "node scripts/check-document-catalogue.ts",
     "docs:reference": "typedoc --options typedoc.json",
     "docs:reference:check": "npm run docs:reference && git diff --exit-code HEAD -- ../docs/generated/api-pilot/README.md",
     "format": "biome format --write .",

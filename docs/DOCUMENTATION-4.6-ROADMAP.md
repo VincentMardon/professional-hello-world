@@ -71,3 +71,7 @@ Package and both root lockfile version fields are 4.6.0. Vincent confirms lint, 
 [Stable v4.6.0](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.6.0) was published at 09:11:19 UTC (11:11:19 in Paris), neither a draft nor a prerelease. Annotated tag object `9d5029df88e81fb8f15e5c9c5d562253f0e2c9cd` resolves to preparation commit #105, `ac488d4f16332b826b2a2ed85d7cb5a7ff3ad314`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39753005557).
 
 Earlier pending checkpoints remain historical. The catalogue-driven routing capability is now released; systematic catalogue validation and local-link inspection remain planned. This publication-record follow-up changes neither code nor tag target and claims no new runtime verification.
+
+## 4.6.1 local implementation checkpoint
+
+Vincent has applied the validator, Node runner, script, CI placement, and fixture tests. Runtime imports explicitly use .ts extensions; allowImportingTsExtensions accompanies the existing noEmit setting. Source review identified and corrected an overview-rule spelling error, with a regression test added. Biome passes on 61 files. See [validation details](CATALOGUE-VALIDATION.md); the targeted post-correction suite passes all 11 tests, while exact-commit remote execution remains pending. No version alignment or 4.6.1 release is claimed yet.

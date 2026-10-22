@@ -33,6 +33,9 @@ jobs:
       - name: Inspect spelling-adjacent matters
         run: npm run check
 
+      - name: Inspect applications for documentary accomodation
+        run: npm run docs:catalogue:check
+
       - name: Verify the types of our intentions
         run: npm run typecheck
 
