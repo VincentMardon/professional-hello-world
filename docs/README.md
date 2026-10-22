@@ -6,14 +6,9 @@ Professional Hello World is an artistic and technical learning project that gran
 
 The Directorate exists to make that machinery understandable. Visitors are entitled to learn what the project does, contributors need to know where behavior lives, and maintainers should be able to explain a decision without excavating every preceding ceremony. The paperwork is extravagant. The underlying explanations must earn their space.
 
-**Implementation status:** this overview is readable from the repository and is now the selected Markdown source for the local `/doc` route. Vincent has added the route and its feature component using react-markdown and remark-gfm. The generated documentation HTML has been inspected locally. Vincent confirms local checks and manual keyboard, narrow-screen, and 200% zoom checks for the new homepage entry. Release 4.1.0 is published on commit #82, whose CI and Pages deployment succeeded; generated API reference and Mermaid rendering are not implemented.
+**Current implementation:** the shared Markdown reader, document navigation, dark/light switch, Mermaid rendering, diagram zoom/fitting/fullscreen, and one generated hook reference are implemented. [4.5.1](RELEASE-4.5.1.md) is the latest verified stable release in this record and adds the reference freshness gate. Historical release notes preserve their own publication evidence.
 
-The second room and reciprocal navigation are delivered in [4.2.0 — Two Reading Rooms Obtain a Corridor](RELEASE-4.2.0.md), published on October 21, 2026. Its annotated tag targets preparation commit #85, with successful exact-commit CI and Pages deployment.
-
-The documentation now opens in dark mode, with a shared sun-and-moon switch at the top-left to select light or dark. Selection survives client-side navigation; a full reload returns to dark. This capability is delivered in [4.3.0 — The Directorate Obtains a Night Shift](RELEASE-4.3.0.md), whose tag targets verified commit #87. It does not automatically recolor the greeting or audio feature.
-
-[4.4.0 — The Bureau Receives Its Diagram Projector](RELEASE-4.4.0.md) delivers the sound-lifecycle guide and its two theme-aware Mermaid diagrams. The source remains readable from the repository; SVG rendering requires browser JavaScript.
-
+**Content expansion:** the operations, frontend field guide, and documentation workshop below are now authored and readable from the repository. Vincent has added their registry entries and route wrappers at `/doc/operations`, `/doc/frontend`, and `/doc/workshop`. Vincent confirms the integrated guides work locally. Biome passes on 62 files; exact-commit remote verification remains pending. Design review will use this broader content rather than an almost empty reading room.
 ## 1. Choose your counter
 
 Continue with the [Directorate of Structural Disproportion — architecture](ARCHITECTURE.md) to examine the responsibilities and boundaries behind the rooms.
@@ -22,8 +17,13 @@ Continue with the [Directorate of Structural Disproportion — architecture](ARC
 | --- | --- |
 | What is this project, and how do I run it? | [Project README](../README.md#getting-started) |
 | How is the application organized? | [Architecture](ARCHITECTURE.md) and the repository map below |
+| How do I run, check, diagnose, and publish the application? | [Operations](OPERATIONS.md) |
+| How do I find a responsibility in the frontend? | [Frontend field guide](FRONTEND-GUIDE.md) |
+| How do I write, generate, and publish documentation? | [Documentation workshop](DOCUMENTATION-WORKSHOP.md) |
+| What happens between pressing Play and browser output? | [Sound lifecycle](AUDIO-LIFECYCLE.md) |
+| What does the initialization hook expose? | [Generated hook reference](generated/api-pilot/README.md) |
 | How should I contribute? | [Contribution process](../CONTRIBUTING.md) |
-| What changed in the latest named milestone? | [4.0.0 release notes](RELEASE-4.0.0.md) and [changelog](../CHANGELOG.md) |
+| What changed in the latest verified milestone? | [4.5.1 release notes](RELEASE-4.5.1.md) and [changelog](../CHANGELOG.md) |
 | How does work become a release? | [Release process](RELEASE-PROCESS.md) |
 | What documentation are we building? | [Documentation charter](DOCUMENTATION-CHARTER.md) |
 | Where is the historical institutional spectacle? | [The separate project wiki](https://github.com/VincentMardon/professional-hello-world/wiki) |
@@ -74,7 +74,7 @@ The audio interaction has several distinguishable stages.
 4. A volume change updates React state and, when an engine is present, converts the percentage to the engine's normalized volume scale.
 5. Playback applies the current volume and calls the selected generator through the engine interface. Success updates the status to report that playback started; failure produces a readable error message. This status is not a measurement proving that a listener heard the output.
 
-The relevant starting points are [useBeepEngine](../frontend/src/features/audio-test/hooks/useBeepEngine.ts), [useAudioTest](../frontend/src/features/audio-test/hooks/useAudioTest.ts), and [errorMessage](../frontend/src/shared/errors/errorMessage.ts). A later dedicated explanation can add a sequence diagram and investigate the integration in greater detail.
+The relevant starting points are [useBeepEngine](../frontend/src/features/audio-test/hooks/useBeepEngine.ts), [useAudioTest](../frontend/src/features/audio-test/hooks/useAudioTest.ts), and [errorMessage](../frontend/src/shared/errors/errorMessage.ts). The [sound-lifecycle guide](AUDIO-LIFECYCLE.md) supplies the detailed explanation and diagrams, including rejection paths and the distinction between data and audio connections.
 
 The distinction between these responsibilities matters more than the number of files. It lets us ask separate questions about loading, state, playback, rendering, and styling instead of granting one component permanent custody of every possible concern.
 
@@ -82,26 +82,24 @@ The distinction between these responsibilities matters more than the number of f
 
 The repository contains homepage and audio-page tests. The homepage suite renders the real greeting composition. The audio suite mocks the engine and replaces the access component with the panel, concentrating on integration behavior. Those boundaries matter: they do not independently verify audible sound or password acceptance and refusal.
 
-The current CI installs the recorded dependencies, runs Biome, checks TypeScript, runs Vitest, and creates the static production export. Successful main-branch runs can then publish the built artifact through the reusable Pages workflow. A new implementation must be checked on its own commit; an earlier successful run is historical evidence for that earlier state.
+The current CI installs the recorded dependencies, runs Biome, checks TypeScript, runs Vitest, verifies the tracked generated reference, and creates the static production export. Successful main-branch runs can then publish the built artifact through the reusable Pages workflow. A new implementation must be checked on its own commit; an earlier successful run is historical evidence for that earlier state.
 
 Reading the workflow establishes what it is configured to do. It does not prove that the latest remote execution passed. The first overview was prepared through source inspection. For the later homepage entry, Vincent confirms the local checks, production build, and requested manual navigation checks. This is not an independent assistant browser audit; release-preparation commit #82 subsequently passed its own CI and Pages deployment.
 
 The Inspectorate of Evidence is particularly strict about certificates that merely look expensive.
 
-## 6. How the documentation will grow
+## 6. Read across the departments
 
-The first objective is a readable page, first from the repository and then through the existing application. The next increments will address navigation, an explanation supported by a diagram, a small generated-reference pilot, and appropriate automated checks. The [charter](DOCUMENTATION-CHARTER.md) records the proposed sequence and editorial departments.
+Architecture explains responsibility boundaries. The frontend guide follows those boundaries through actual files. The lifecycle guide examines asynchronous audio behavior. Operations explains what the commands and workflows establish. The documentation workshop explains how to maintain these accounts and the generated reference.
 
-Each increment should produce something inspectable before adding the next mechanism. Automatic reference generation will describe selected interfaces from source comments; authored prose will explain their relationships and the reasons behind them. Mermaid rendering is implemented in 4.4.0 for the two sound-lifecycle sequence diagrams; SVG is generated in the browser, with source disclosure retained.
+These guides are deliberately different shapes: explanatory prose, route and responsibility tables, diagnostic procedures, diagrams, generated signatures, and source links. Their combined volume provides material for a useful design review. Content breadth is not evidence that every future documentation capability has already been built.
 
-The wiki preserves the journey. Technical documentation explains the system sufficiently to use and change it. Historical release notes remain historical, and proposals retain their labels until implementation establishes otherwise.
+The [charter](DOCUMENTATION-CHARTER.md) retains the original mandate with an updated current checkpoint. The [delivery history](DOCUMENTATION-DELIVERY.md) records the implementation and release journey. The wiki preserves the artistic narrative; these manuals should stand on their own for readers who simply want to understand the system.
 
-## 7. Departures are now scheduled by usefulness
+## 7. What remains outside the current rooms
 
-The documentation project must not repeat the long unnamed interval between releases 3.0.0 and 4.0.0. Its first application milestone is the published [**4.1.0 — The Greeting Opens an Information Desk**](RELEASE-4.1.0.md), delivering a useful documentation entrance inside PHW.
+General search, multi-version documentation, broader generated API coverage, a complete anchor system, and additional automated documentation checks are not installed merely because this reception mentions them. Expand them when they answer a concrete need.
 
-This first minor release delivers the documentation route, useful overview content, a homepage entry, and repository source links. Additional departments, generated reference, search, and diagram rendering remain future work. Subsequent useful additions and corrections should receive their own release-readiness decisions.
+Vincent confirms the combined content works locally. The next discussion concerns the nature of version 4.6; design remains deferred until later. This is grouped content work, not a reason to release once per page.
 
-Read the [documentation delivery milestones](DOCUMENTATION-DELIVERY.md) for the preparation history and verified publication checkpoint. Later capabilities will receive their own release-readiness decisions.
-
-**Reception now has an application route as well as a repository desk. The export contains this page, and Vincent has checked the new entrance locally. Release 4.1.0 has now been published after successful exact-commit CI and deployment checks.**
+**The Directorate has enough material to begin looking like a documentation system. Its furniture may now be judged in the presence of actual books.**

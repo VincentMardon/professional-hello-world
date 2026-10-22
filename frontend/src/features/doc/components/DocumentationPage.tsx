@@ -32,6 +32,21 @@ const documents = {
     file: "AUDIO-LIFECYCLE.md",
     route: "/doc/audio-lifecycle",
   },
+  operations: {
+    title: "Operations",
+    file: "OPERATIONS.md",
+    route: "/doc/operations",
+  },
+  frontendGuide: {
+    title: "Frontend guide",
+    file: "FRONTEND-GUIDE.md",
+    route: "/doc/frontend",
+  },
+  documentationWorkshop: {
+    title: "Documentation workshop",
+    file: "DOCUMENTATION-WORKSHOP.md",
+    route: "/doc/workshop",
+  },
   engineReference: {
     title: "Engine reference",
     file: "generated/api-pilot/README.md",

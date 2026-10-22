@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Author operations, frontend reading, and documentation workshop guides. Refresh the reception to reflect installed capabilities and link the broader subject coverage. Add a current charter checkpoint prioritizing representative content for the deferred design review. Add their three route wrappers and registry entries using the existing reader. Correct route formatting and metadata spelling. Biome passes on 62 files, and Vincent confirms the integrated guides work locally. Exact-commit remote verification remains pending. Package version remains 4.5.1; this grouped content addition creates no release.
+
 - Record stable v4.5.1 publication on October 22, 2026, its annotated tag on preparation commit #101, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
 ## [4.5.1] — 2026-10-22

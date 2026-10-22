@@ -6,6 +6,12 @@
 
 The Directorate has been commissioned to explain an institution whose principal entrance still says hello, while its audio annex dresses two noises for an international state reception. The explanation must be technically dependable and ceremonially excessive. The reader should leave understanding the machinery, even if the machinery has acquired a ministry during the explanation.
 
+## Current checkpoint — October 22, 2026
+
+The dated founding proposal above and its teaching sequence below preserve the starting mandate. Since then, the reader, navigation, shared theme switch, Mermaid diagram controls, TypeDoc pilot, and tracked-reference freshness gate have been implemented through stable 4.5.1. Statements below about selecting those initial mechanisms describe the planning stage rather than the present installation.
+
+Vincent now prioritizes growing a representative body of content so the overall documentation design can be assessed. Group coherent content additions instead of stopping for a release decision after each routine page. Operations, frontend reading, and documentation authoring guides are authored in Markdown; their registry entries and route wrappers have been applied, and Vincent confirms the integrated guides work locally. Biome passes on 62 files; exact-commit remote verification remains pending. Existing code ownership, commit review, and wiki publication responsibilities are unchanged.
+
 ## 1. The mandate
 
 Cover the current Professional Hello World repository: the greeting, the audio-test feature, shared utilities, styling, tests, static export, publication, dependencies, contribution practices, and release process. Explain the external BeepEngine package at its integration boundary; do not present its separately maintained Rust source as application source in this repository.
@@ -110,3 +116,7 @@ The Directorate has opened the project. It has not mistaken this opening for the
 ## 8. Design review deferred until the essential content exists
 
 On October 21, 2026, Vincent notes that the documentation design needs further consideration but deliberately defers that work until the essential documentation is built. The broader view should inform what changes, whether it needs to change, and how. Continue content and essential capability work without treating the current presentation as a final visual approval or opening a redesign now. Concrete functional defects can still be addressed when they obstruct use.
+
+## Next discussion — the nature of 4.6
+
+Vincent chooses one content commit and its wiki account for the three-guide expansion, without a new release. The next conversation will define the nature and scope of version 4.6. No 4.6 capability is agreed or implemented by this statement. Design remains deferred until later; growing representative content does not itself open a redesign.
