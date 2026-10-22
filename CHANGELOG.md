@@ -9,9 +9,17 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-- Add a read-only catalogue validation command and CI gate before type checking. Validate root selection, nonempty metadata, slug syntax, duplicate public routes, source paths, real-path containment, and existing regular Markdown files. Add fixture-based refusal tests and the relocated-overview regression; enable explicit TypeScript runtime imports. Biome passes on 61 files and all 11 targeted validator tests pass after the correction. Package version remains 4.6.0; remote execution and 4.6.1 publication remain pending.
+- Specify the proposed 4.6.2 Markdown-aware local-link inspector. The document installs no parser dependency, extractor, command, or gate; implementation remains deferred.
 
-- Record stable v4.6.0 publication on October 22, 2026, its annotated tag on preparation commit #105, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
+## [4.6.1] — In preparation
+
+### The Registrar Rejects Invalid Applications
+
+Prepared, not published. Package and both root lockfile version fields are aligned to 4.6.1. Vincent confirms lint, catalogue inspection, type checks, the full test suite, reference freshness, and build after alignment. Implementation #107 passed its exact CI and Pages deployment; the preparation commit requires its own remote verification. See [release notes](docs/RELEASE-4.6.1.md).
+
+- Add a read-only catalogue command and CI gate before type checking. Inspect root selection, nonempty metadata, slug syntax, duplicate public paths, lexical and real-path containment, and regular Markdown sources.
+- Enable explicit TypeScript runtime imports for the Node runner. Add isolated refusal tests, including the relocated-overview regression. The assistant verifies Biome on 61 files and all 11 targeted validator tests after correction.
+- Record stable v4.6.0 publication on preparation commit #105. The documentary follow-up changes no published tag target.
 
 ## [4.6.0] — 2026-10-22
 

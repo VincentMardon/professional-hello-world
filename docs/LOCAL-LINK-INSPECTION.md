@@ -1,0 +1,73 @@
+# Local Link Inspection — Proposed 4.6.2 Contract
+
+**Specification for discussion — October 22, 2026.** No link-inspection code, dependency, command, CI gate, or 4.6.2 release is installed by this document. Catalogue validation is the preceding capability; its implementation run is still queued at this checkpoint.
+
+## Inputs and ownership
+
+Inspect the Markdown sources explicitly selected by the document catalogue, including the selected generated reference. Use the repository root, documentation root, catalogue slugs, and configured deployment base path as explicit resolution inputs. Do not scan reserved or unrelated documents merely because they have a Markdown extension.
+
+The first version checks destinations that can be verified from local files and declared reader routes. It performs no network requests. A successful result does not claim that external sites are available, that fragments exist, or that a browser renders the content correctly.
+
+## Parse Markdown rather than matching punctuation
+
+Use a Markdown syntax tree to inspect inline links, image destinations, reference-style links, image references, and their definitions. Resolve reference identifiers using the parser's Markdown rules. A reference with a definition resolves through the parser's identifier rules. Undefined reference-like text is normally parsed as ordinary text, not a link; this initial checker does not promise to diagnose it. Detecting author intent in that plain text would need a separately designed lint rule.
+
+Do not interpret apparent links inside fenced code, inline code, or examples of link syntax as actual destinations. Raw HTML links are outside the current reader's authored-content contract; do not announce raw-HTML support as a side effect of adding this check. Select parser dependencies and declare direct imports explicitly during implementation rather than relying on incidental transitive packages.
+
+## Destination rules
+
+| Destination | Proposed treatment |
+| --- | --- |
+| Relative file, such as `ARCHITECTURE.md` or `../frontend/src/app/page.tsx` | Resolve from the referring source file. Decode URL path escapes, separate query and fragment, and require the target to exist within the repository. |
+| Relative directory | Accept an existing directory as a repository destination, matching the reader's source-browser fallback. |
+| Relative Markdown source selected in the catalogue | Verify its source and catalogue-derived reader destination. |
+| Relative Markdown source not selected in the catalogue | Accept an existing repository file; it remains a repository link rather than a reader page. |
+| Reader path `/doc` or `/doc/...` | Compare its canonical path with the catalogue, allowing the configured trailing-slash convention. Reject undeclared destinations. |
+| Base-path-prefixed reader path | Remove the configured `/professional-hello-world` prefix for comparison; do not prepend it twice. |
+| Other root-relative application destination | Check against an explicit application-route allowlist established from the current app. Report an unknown route rather than guessing it is a filesystem path. |
+| Absolute URL under this site's own documentation prefix | Check the local reader path when origin and configured site prefix match; do not mistake a different host for the local site. |
+| External HTTP(S) URL or protocol-relative URL | Classify as external and skip availability checking. Report it as skipped in the summary rather than implying it was verified. |
+| `mailto:` or another deliberately supported non-file destination | Classify separately under an explicit scheme policy consistent with the reader. Unsupported schemes must not silently receive local-file interpretation. |
+| Fragment-only link | Record as deferred fragment validation. No heading-existence claim is made. |
+| File or route with a fragment | Check the file or route and explicitly defer the fragment. |
+
+Normalize destinations according to the reader's URL behavior. Percent-encoded paths, nested generated files, query strings, slash conventions, and malformed URL escapes need explicit tests. Resolve real filesystem destinations to avoid accepting repository links that actually leave the intended root through a symlink. File existence is not proof that an anchor exists.
+
+Application-route validation here concerns the hyperlink target. It does not change how the reader renders an existing root-relative link or fix base-path behavior automatically. If checking exposes a mismatch between valid source links and actual rendered hrefs, scope and verify that reader correction explicitly.
+
+## Diagnostics and command behavior
+
+Propose a read-only command such as `npm run docs:links:check`, with its final name chosen at implementation. Report the source document ID, source path, line and column where available, original destination, resolved target, and the failed rule.
+
+Aggregate independent failures so one run gives a usable repair list. Invalid configuration, an unreadable selected source, or malformed destinations should produce an error rather than an unexplained crash. A nonzero exit code blocks subsequent build and publication when connected to CI.
+
+Summarize checked local targets and deliberately skipped external or fragment checks. A green badge must not imply the skipped categories passed an inspection that never happened.
+
+## Acceptance cases
+
+Use isolated fixtures for both valid and invalid inputs:
+
+- Relative links between root-level authored guides and from nested generated documents.
+- Existing source-code files and unregistered repository documents.
+- Registered reader routes, prefixed routes, and permitted trailing slashes.
+- Missing files, missing reader routes, and lexical or real-path repository escapes.
+- Inline links, images, reference definitions, repeated references, and the explicit plain-text boundary for undefined reference-like syntax.
+- Encoded filenames, queries, fragments, invalid encodings, and nested directories.
+- External destinations skipped without fetching; apparent links in code ignored.
+
+Test the resolver and parser integration with real fixtures; avoid a suite that merely repeats one regular expression. Keep the true catalogue valid while exercising failures.
+
+## Integration sequence
+
+1. Agree the classification rules and the current non-documentation route allowlist.
+2. Implement the parser and resolver as reusable logic, then add the command and refusal tests.
+3. Run against all selected documents and inspect actual findings. Repair inaccurate links without rewriting historical claims.
+4. Place the gate after catalogue validation and before production construction. Run the existing checks and verify the exact published CI before preparing 4.6.2.
+
+Stable heading IDs and fragment checking belong to the later section-addressing milestone. External crawling, rendered-browser crawling, public-content autodiscovery, and broader TypeDoc extraction are not included.
+
+The Inspectorate of Corridors may verify that a door leads somewhere declared. It is not yet authorized to certify every plaque inside the room.
+
+## First implementation slice proposed
+
+Begin with a reusable Markdown extractor using the same CommonMark/GFM parsing family as the reader. Return actual link/image destinations with source positions and resolve defined references; ignore code and raw HTML. Test extraction before adding filesystem or route validation. This slice is proposed code for Vincent to apply, not an installed command or CI gate. No version change or 4.6.2 release is claimed.

@@ -75,3 +75,19 @@ Earlier pending checkpoints remain historical. The catalogue-driven routing capa
 ## 4.6.1 local implementation checkpoint
 
 Vincent has applied the validator, Node runner, script, CI placement, and fixture tests. Runtime imports explicitly use .ts extensions; allowImportingTsExtensions accompanies the existing noEmit setting. Source review identified and corrected an overview-rule spelling error, with a regression test added. Biome passes on 61 files. See [validation details](CATALOGUE-VALIDATION.md); the targeted post-correction suite passes all 11 tests, while exact-commit remote execution remains pending. No version alignment or 4.6.1 release is claimed yet.
+
+## Work while implementation CI is queued
+
+Implementation commit #107 has an Actions run, but run 39798059142 remains queued at the October 22 inspection. [Draft 4.6.1 notes](RELEASE-4.6.1.md) preserve that pending state. [The proposed 4.6.2 contract](LOCAL-LINK-INSPECTION.md) specifies Markdown-aware local destination checks without adding a checker or claiming fragment and external-site validation. Review can continue without creating a version tag or treating the queue as a validator failure.
+
+### Implementation run progress
+
+The sanity job of run 39798059142 for #107 has now succeeded. Pages deployment remains queued, so no completed deployment or overall successful run is claimed. The 4.6.2 extractor remains proposed; Vincent has applied none of that proposed code or its new dependencies.
+
+### Implementation run complete
+
+Both sanity and Pages deployment in run 39798059142 for #107 are verified successful on October 22, 2026. Earlier queue observations remain historical. Version alignment and exact preparation-commit verification for 4.6.1 are next; no 4.6.2 extractor code or dependencies have been applied.
+
+### 4.6.1 version-aligned checkpoint
+
+Vincent aligns the package and both root lockfile version fields to 4.6.1 and confirms all requested local checks and build. Preparation #108 remains to be reviewed, committed, and verified in its own remote run before tagging. The 4.6.2 specification is included as proposed follow-up only; no related parser dependencies or code have been applied.

@@ -1,6 +1,6 @@
 # Catalogue Validation — The Registrar's Inspection Rules
 
-**Local implementation — October 22, 2026.** Vincent has applied the validation command, tests, TypeScript import configuration, and CI step planned for 4.6.1. Package version remains 4.6.0. No remote execution of this new step, new tag, or stable 4.6.1 release is claimed.
+**Local implementation — October 22, 2026.** Vincent has applied the validation command, tests, TypeScript import configuration, and CI step planned for 4.6.1. Package version remains 4.6.0. Implementation commit #107 passed its exact CI and Pages deployment. No new tag or stable 4.6.1 release is claimed.
 
 ## Purpose and invocation
 
@@ -25,7 +25,7 @@ The validator collects entry-level errors rather than stopping at the first inva
 
 The runner uses Node.js 24's support for erasable TypeScript syntax. Its runtime imports include `.ts` extensions. `allowImportingTsExtensions` is enabled alongside the existing `noEmit` configuration so TypeScript can check those imports. Next's module resolution is not a substitute for Node's explicit runtime paths.
 
-The CI step is placed after Biome and before route-type generation and TypeScript checking. A catalogue failure therefore stops the job before subsequent type checks, tests, construction, and publication. This describes the configured order; the exact published run still needs verification.
+The CI step is placed after Biome and before route-type generation and TypeScript checking. A catalogue failure therefore stops the job before subsequent type checks, tests, construction, and publication. This describes the configured order; the exact run for #107 subsequently completed successfully, including Pages deployment.
 
 ## Verification record
 
@@ -42,3 +42,11 @@ The catalogue is a typed maintained project input, not arbitrary untrusted JSON.
 Local-link inspection remains the 4.6.2 checkpoint. A catalogue can correctly identify a document whose prose still contains a broken link. Likewise, valid nonempty metadata can still describe the wrong subject; editorial review remains necessary.
 
 The Registrar rejects defective accommodation applications. It does not certify the quality of every book placed in an accepted room.
+
+## Verified implementation publication
+
+Commit #107, `43f7b1362dd6c16102151d53621df95e1b8df1fc`, passed [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39798059142), verified on October 22, 2026 after the queued jobs completed. This result covers the implementation, not a later version-aligned preparation commit. See [draft 4.6.1 notes](RELEASE-4.6.1.md) for the remaining release gate.
+
+## Version-aligned release preparation
+
+Package and root lockfile metadata are now 4.6.1. Vincent confirms lint, catalogue inspection, type checks, the full test suite, reference freshness, and production build after alignment. Preparation commit #108 is proposed; its exact remote run must be verified before tagging. No stable 4.6.1 publication is claimed.
