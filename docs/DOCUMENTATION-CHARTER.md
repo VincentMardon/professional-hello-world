@@ -120,3 +120,7 @@ On October 21, 2026, Vincent notes that the documentation design needs further c
 ## Next discussion — the nature of 4.6
 
 Vincent chooses one content commit and its wiki account for the three-guide expansion, without a new release. The next conversation will define the nature and scope of version 4.6. No 4.6 capability is agreed or implemented by this statement. Design remains deferred until later; growing representative content does not itself open a redesign.
+
+## Proposed 4.6 roadmap — October 22, 2026
+
+The [4.6 roadmap proposal](DOCUMENTATION-4.6-ROADMAP.md) separates catalogue-driven static routing, systematic declaration validation, and local link inspection into potential capability milestones. It remains a discussion document; no implementation or release is announced. Design remains deferred.

@@ -131,3 +131,9 @@ Version **4.5.1 — The Registry Checks Its Own Memory** is [published](docs/REL
 ## Practical Documentation Guides
 
 The [operations manual](docs/OPERATIONS.md) explains local commands, test boundaries, CI, and publication. The [frontend field guide](docs/FRONTEND-GUIDE.md) follows routes, components, hooks, and shared responsibilities. The [documentation workshop](docs/DOCUMENTATION-WORKSHOP.md) explains authored prose, generated reference, diagrams, and review. These guides are repository-readable and registered in the application at `/doc/operations`, `/doc/frontend`, and `/doc/workshop`. Vincent confirms this content expansion works locally; Biome passes on 62 files. Exact-commit remote verification remains pending. This content lot creates no release; the nature of 4.6 will be discussed next, with design deferred.
+
+## Catalogue-Driven Documentation — Local 4.6 Work
+
+The typed [document catalogue](frontend/src/features/doc/data/documents.ts) now supplies selected source files, navigation labels, metadata, and slug segments. One generic route statically enumerates document paths while reception remains explicit. Six repetitive route wrappers are removed, preserving the existing URLs. Adding an eligible Markdown document requires a catalogue entry rather than another route component.
+
+The new [trust-boundary](docs/TRUST-BOUNDARIES.md) and [dependency](docs/DEPENDENCIES.md) guides bring the selection to nine documents. Vincent confirms local checks after refreshing Next route types; export inspection finds all nine destinations. Biome and diff whitespace checks pass. Metadata wording is corrected; manual browser confirmation and exact-commit remote verification remain pending. Package version remains 4.5.1; the [4.6 roadmap](docs/DOCUMENTATION-4.6-ROADMAP.md) distinguishes the local 4.6.0 foundation from later validation gates. No 4.6 release is claimed here.

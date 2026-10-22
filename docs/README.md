@@ -22,6 +22,8 @@ Continue with the [Directorate of Structural Disproportion — architecture](ARC
 | How do I write, generate, and publish documentation? | [Documentation workshop](DOCUMENTATION-WORKSHOP.md) |
 | What happens between pressing Play and browser output? | [Sound lifecycle](AUDIO-LIFECYCLE.md) |
 | What does the initialization hook expose? | [Generated hook reference](generated/api-pilot/README.md) |
+| What does the access form actually protect? | [Trust boundaries](TRUST-BOUNDARIES.md) |
+| Which machinery belongs to PHW and which comes from packages? | [Dependencies](DEPENDENCIES.md) |
 | How should I contribute? | [Contribution process](../CONTRIBUTING.md) |
 | What changed in the latest verified milestone? | [4.5.1 release notes](RELEASE-4.5.1.md) and [changelog](../CHANGELOG.md) |
 | How does work become a release? | [Release process](RELEASE-PROCESS.md) |
@@ -103,3 +105,7 @@ General search, multi-version documentation, broader generated API coverage, a c
 Vincent confirms the combined content works locally. The next discussion concerns the nature of version 4.6; design remains deferred until later. This is grouped content work, not a reason to release once per page.
 
 **The Directorate has enough material to begin looking like a documentation system. Its furniture may now be judged in the presence of actual books.**
+
+## 4.6 work in progress
+
+The trust-boundary and dependency guides are authored and repository-readable. Their catalogue entries and generic routes are applied. All nine destinations are present in the inspected local export. Vincent confirms the checks pass after refreshing stale Next route types; exact-commit remote verification remains pending. This section does not announce a published 4.6 release. Source comment completion follows this release work; design remains deferred.

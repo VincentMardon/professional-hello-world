@@ -29,11 +29,11 @@ Explain the real behavior first, then let an imaginary department overreact to i
 
 Create prose under `docs`, link it from the reception or a relevant guide, and keep its source links relative to that file's location. This immediately makes the material available from the repository.
 
-For application presentation, add a document registry entry and a thin route wrapper selecting its ID. Reuse the shared reader, navigation, theme, and diagram handling. These are application-code changes for Vincent to apply, not permission for the assistant to edit the program.
+For application presentation, add an entry to `frontend/src/features/doc/data/documents.ts`. The shared generic route selects the ID, supplies metadata, and enumerates static paths. Do not create another page wrapper. Reuse the shared reader, navigation, theme, and diagram handling. These are application-code changes for Vincent to apply, not permission for the assistant to edit the program.
 
-Keep the registry and route in agreement. A registry entry with no route produces a destination that readers cannot visit; a route with an unknown ID does not select a valid document. Readability from GitHub and readability from the application are separate checks.
+Keep the catalogue entry coherent: the source must exist, its slug must identify the intended public path, and its metadata must describe that document. Systematic declaration checks remain the proposed 4.6.1 work. Readability from GitHub and readability from the application are separate checks.
 
-This workshop and the operations and frontend guides now have authored Markdown, registry entries, and route wrappers. Source inspection confirms the integration; Vincent confirms the integrated content works locally, while exact-commit remote verification remains pending. No new renderer is required just to publish another guide.
+This workshop and the other selected guides use the same catalogue-driven route. The reception remains explicit. Local checks pass after regenerating stale Next route types; export inspection finds the nine destinations. Exact-commit remote verification remains pending. No new renderer is required just to publish another guide.
 
 ## 4. Use diagrams to answer a question
 

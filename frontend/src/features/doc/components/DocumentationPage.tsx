@@ -5,6 +5,11 @@ import Markdown, { defaultUrlTransform } from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 import { ThemeSwitch } from "../../../components/ThemeSwitch";
+import {
+  type DocumentId,
+  documents,
+  getDocumentRoute,
+} from "../data/documents";
 
 import {
   documentationSurface,
@@ -15,46 +20,6 @@ import { MermaidDiagram } from "./MermaidDiagram";
 
 const repositoryRoot =
   "https://github.com/VincentMardon/professional-hello-world/";
-
-const documents = {
-  overview: {
-    title: "Reception",
-    file: "README.md",
-    route: "/doc",
-  },
-  architecture: {
-    title: "Architecture",
-    file: "ARCHITECTURE.md",
-    route: "/doc/architecture",
-  },
-  audioLifecycle: {
-    title: "Sound lifecycle",
-    file: "AUDIO-LIFECYCLE.md",
-    route: "/doc/audio-lifecycle",
-  },
-  operations: {
-    title: "Operations",
-    file: "OPERATIONS.md",
-    route: "/doc/operations",
-  },
-  frontendGuide: {
-    title: "Frontend guide",
-    file: "FRONTEND-GUIDE.md",
-    route: "/doc/frontend",
-  },
-  documentationWorkshop: {
-    title: "Documentation workshop",
-    file: "DOCUMENTATION-WORKSHOP.md",
-    route: "/doc/workshop",
-  },
-  engineReference: {
-    title: "Engine reference",
-    file: "generated/api-pilot/README.md",
-    route: "/doc/reference/use-beep-engine",
-  },
-} as const;
-
-type DocumentId = keyof typeof documents;
 
 function resolveDocumentUrl(value: string, sourceFile: string) {
   const safeUrl = defaultUrlTransform(value);
@@ -75,7 +40,7 @@ function resolveDocumentUrl(value: string, sourceFile: string) {
     const source = new URL(`blob/main/docs/${document.file}`, repositoryRoot);
 
     if (destination.pathname === source.pathname) {
-      return `${document.route}${destination.search}${destination.hash}`;
+      return `${getDocumentRoute(document)}${destination.search}${destination.hash}`;
     }
   }
 
@@ -116,7 +81,7 @@ export async function DocumentationPage({
             {Object.entries(documents).map(([id, document]) => (
               <li key={id}>
                 <Link
-                  href={document.route}
+                  href={getDocumentRoute(document)}
                   aria-current={id === documentId ? "page" : undefined}
                 >
                   {document.title}

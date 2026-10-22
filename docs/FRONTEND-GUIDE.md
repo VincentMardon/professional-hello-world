@@ -15,11 +15,11 @@ Begin with the URL you are investigating. Then follow composition into the relev
 | `/` | [Homepage](../frontend/src/app/page.tsx) | Compose the greeting and documentation entrance |
 | `/audio-test/` | [Audio route](../frontend/src/app/audio-test/page.tsx) | Compose the audio annex header and access experience |
 | `/doc/` | [Documentation route](../frontend/src/app/doc/page.tsx) | Select the reception document |
-| `/doc/architecture/` | [Architecture route](../frontend/src/app/doc/architecture/page.tsx) | Select the architecture document |
-| `/doc/audio-lifecycle/` | [Lifecycle route](../frontend/src/app/doc/audio-lifecycle/page.tsx) | Select the authored sound explanation |
-| `/doc/reference/use-beep-engine/` | [Reference route](../frontend/src/app/doc/reference/use-beep-engine/page.tsx) | Select generated hook documentation |
+| `/doc/architecture/` | [Architecture route](../frontend/src/app/doc/%5B...slug%5D/page.tsx) | Select the architecture document |
+| `/doc/audio-lifecycle/` | [Lifecycle route](../frontend/src/app/doc/%5B...slug%5D/page.tsx) | Select the authored sound explanation |
+| `/doc/reference/use-beep-engine/` | [Reference route](../frontend/src/app/doc/%5B...slug%5D/page.tsx) | Select generated hook documentation |
 
-The base path comes from [Next configuration](../frontend/next.config.ts). The table omits that prefix for readability. The operations, frontend, and workshop guides also have installed registry entries and route wrappers at `/doc/operations/`, `/doc/frontend/`, and `/doc/workshop/`. Source inspection establishes those mappings; Vincent confirms the integrated guides work locally; exact-commit remote verification remains pending.
+The base path comes from [Next configuration](../frontend/next.config.ts). The table omits that prefix for readability. All documentation destinations except reception now use one generic catch-all route. The [catalogue](../frontend/src/features/doc/data/documents.ts) supplies nine selected documents, their metadata, and slug segments. Static parameter generation exports those paths; no additional wrapper is needed for an entry. Vincent confirms local checks pass after route-type regeneration. Export inspection finds all nine destinations; exact-commit remote verification remains pending.
 
 ## 3. The shared envelope
 
@@ -43,7 +43,7 @@ Read the [sound lifecycle](AUDIO-LIFECYCLE.md) for promises, failure paths, samp
 
 ## 5. Walk through the documentation feature
 
-[DocumentationPage](../frontend/src/features/doc/components/DocumentationPage.tsx) is an asynchronous server-side reader. Its explicit registry maps a document ID to a title, source file, and route. It reads the selected Markdown during rendering and passes it to react-markdown with GFM support.
+[DocumentationPage](../frontend/src/features/doc/components/DocumentationPage.tsx) is an asynchronous server-side reader. Its imported catalogue maps document IDs to navigation titles, metadata, source files, and slug segments. Routes are derived from those segments. It reads the selected Markdown during rendering and passes it to react-markdown with GFM support.
 
 Registered document destinations become application links. Other relative destinations use the repository fallback, resolved from the current source document. A file placed in `docs` does not automatically become a public application route. This boundary keeps release records and planning documents from being exposed merely because they share a directory.
 
@@ -56,7 +56,7 @@ Keeping reader, renderer, and viewport distinct lets a content change remain con
 | Desired change | First place to inspect |
 | --- | --- |
 | Explain an existing concept more clearly | Its authored Markdown or source documentation comment |
-| Add a web-readable document | Source Markdown, reader registry, then a thin route wrapper |
+| Add a web-readable document | Source Markdown and the shared catalogue entry |
 | Change the meaning of Ready | Hook implementation and consumers, then reference and lifecycle explanation |
 | Change a control's arrangement | Component composition and its feature stylesheet |
 | Change zoom behavior | Diagram viewport hook and controls |

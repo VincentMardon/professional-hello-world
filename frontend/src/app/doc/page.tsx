@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 import { DocumentationPage } from "../../features/doc/components/DocumentationPage";
+import { documents } from "../../features/doc/data/documents";
 
 export const metadata: Metadata = {
-  title: "Documentation — Professional Hello World",
-  description:
-    "The Directorate of Disproportionate Documentation: architecture, explanations, and technical ceremony.",
+  title: documents.overview.metadataTitle,
+  description: documents.overview.description,
 };
 
 export default function DocPage() {
-  return <DocumentationPage />;
+  return <DocumentationPage documentId="overview" />;
 }
