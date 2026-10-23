@@ -1,6 +1,6 @@
 # 4.7.0 — The Contracts Acquire a Public Register
 
-**Release preparation — October 23, 2026. Not published.** Implementation #113 is published and has passed its own CI and Pages deployment. Package and both root lockfile version fields are aligned to 4.7.0. Vincent confirms lint, type checking, the full test suite, catalogue inspection, reference freshness, link inspection, and production build pass after alignment. Exact preparation-commit CI and Pages deployment remain required before tagging.
+**Published October 23, 2026 at 15:25:37 UTC (17:25:37 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.7.0), neither a draft nor a prerelease. Package and both root lockfile version fields are aligned to 4.7.0. Vincent confirms all requested aligned-state checks and production build. Implementation #113 and preparation #114 each passed their own CI and Pages deployment.
 
 ## Scope
 
@@ -33,6 +33,6 @@ TypeDoc owns docs/generated/reference and cleans it before generation. Hand-auth
 
 No audio or diagram runtime behavior is changed by the source comments. Exported supporting types expand the importable type surface. Navigation organization, design, and the planned 4.7.1 required-documentation gate remain separate work.
 
-## Remaining publication steps
+## Verified publication
 
-Version alignment and the requested local checks are complete. Review and publish the preparation commit, then verify its exact CI and Pages deployment. Create the annotated tag on that verified SHA and publish a stable GitHub release. Record the actual publication time and tag afterward without moving earlier tags.
+Stable v4.7.0 was published on October 23, 2026 at 15:25:37 UTC (17:25:37 in Paris). Annotated tag object `c5c1135d1bcc51517def3a120c06aa82ebf49c6e` resolves to preparation #114, `23a11d14f22516bfb6b352c9a2a7f412bbe6b2f2`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39977265227) before publication. This documentary follow-up changes no application code, package version, generated output, or tag target and claims no new test or browser run.

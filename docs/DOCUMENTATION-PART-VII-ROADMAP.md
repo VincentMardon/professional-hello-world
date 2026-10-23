@@ -72,3 +72,7 @@ Stable 4.6.1 is published. Implementation #110 adds the 4.6.2 local-link inspect
 Implementation #113 publishes the selected-contract reference and passes exact-commit CI and Pages deployment. Vincent confirms freshness success on committed output, changed-output refusal, obsolete-output refusal, and restored success with a clean tree. [4.7.0 preparation](RELEASE-4.7.0.md) is open; version alignment, aligned-state checks, and preparation-commit CI remain required. The next proposed capability is the 4.7.1 selected-contract documentation gate, not a design milestone.
 
 Version alignment to 4.7.0 and requested aligned-state local checks are now confirmed. The preparation commit still requires its own successful CI and Pages deployment before tagging and stable publication.
+
+## Stable 4.7.0 checkpoint — October 23, 2026
+
+[4.7.0 is published](RELEASE-4.7.0.md) on verified preparation #114. Its annotated tag retains that exact source state; implementation #113 and preparation #114 each passed CI and Pages deployment. The next proposed capability is 4.7.1 enforcement of documentation and reference validity over the selected surface. Design remains deferred.

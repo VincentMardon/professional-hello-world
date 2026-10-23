@@ -1,6 +1,6 @@
 # Expanded Technical Reference — The Contracts Acquire a Public Register
 
-**Implementation verified; release preparation — October 23, 2026.** Implementation #113 is published and its exact CI and Pages deployment succeeded. Eleven selected modules generate twelve registered Markdown pages. Package and both root lockfile version fields are aligned to 4.7.0, with all requested aligned-state checks confirmed by Vincent. [4.7.0 preparation](RELEASE-4.7.0.md) awaits its exact-commit CI and deployment before tagging. Earlier checkpoints below preserve their then-current evidence boundaries.
+**Published in stable 4.7.0 — October 23, 2026.** Eleven selected modules generate twelve registered Markdown pages. Package and both root lockfile version fields are aligned to 4.7.0. Implementation #113 and preparation #114 passed their own CI and Pages deployment. The annotated release tag targets #114. See [release notes](RELEASE-4.7.0.md). Earlier checkpoints below retain their historical evidence boundaries.
 
 ## Selected contracts
 
@@ -41,3 +41,7 @@ Vincent confirms the requested lint, type checking, full test suite, catalogue i
 ## Published implementation and refusal exercises
 
 Implementation #113, `af270528bca350c3c107b0ea207782cc2b7e9e5c`, passed [CI run 39971765002 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39971765002). Vincent confirms committed-state freshness success. He also confirms the direct script rejects a deliberately modified tracked README, regeneration restores success, and removing the errorMessage entry point makes regeneration delete its tracked page and the gate refuse that output. Restoring the point of entry returns the full command to success and the working tree to clean. The assistant confirms the clean tree. These results supersede the pending statuses above; no separate staged-output probe or automated CLI fixture suite is claimed.
+
+## Stable publication — October 23, 2026
+
+Stable v4.7.0 was published on October 23, 2026 at 15:25:37 UTC (17:25:37 in Paris). Annotated tag object `c5c1135d1bcc51517def3a120c06aa82ebf49c6e` resolves to preparation #114, `23a11d14f22516bfb6b352c9a2a7f412bbe6b2f2`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39977265227) before publication. This documentary follow-up changes no application code, package version, generated output, or tag target and claims no new test or browser run.
