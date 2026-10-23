@@ -1,6 +1,6 @@
 # Local Link Inspection — Contract and Implementation Record
 
-**Implementation verified — October 23, 2026.** Commit #110 implements the extractor, destination resolver, aggregate command, and CI gate. Its exact CI and Pages deployment succeeded. Stable 4.6.1 remains published; [4.6.2 preparation](RELEASE-4.6.2.md) now has package and root lockfile versions aligned to 4.6.2 and all requested local checks confirmed by Vincent, without a tag or release yet. Earlier checkpoints below retain their historical verification boundaries.
+**Published in stable 4.6.2 — October 23, 2026.** Implementation #110 and preparation #111 each passed their own CI and Pages deployment. Package and root lockfile versions are aligned to 4.6.2; its annotated tag targets #111. See [release notes](RELEASE-4.6.2.md). Earlier checkpoints below retain their historical verification boundaries.
 
 ## Inputs and ownership
 
@@ -93,3 +93,7 @@ The assistant reran all three documentation-validation test files after integrat
 ## Remote checkpoint — October 23, 2026
 
 Implementation commit #110, `6a994486120d9e3ce2c4216faf5235a7219aeea4`, passed [CI run 39924728591 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39924728591), including the local-link gate. This supersedes the earlier remote-pending status. Package and root lockfile versions are now aligned to 4.6.2. Vincent confirms lint, catalogue inspection, type checking, the full test suite, reference freshness, link inspection, and production build pass after alignment. Exact preparation-commit CI and deployment remain required before publishing 4.6.2.
+
+## Stable publication — October 23, 2026
+
+Stable v4.6.2 was published at 09:04:20 UTC (11:04:20 in Paris). Annotated tag object `f8ce06f091c63dd32ffe2fe93f4311d329cc679d` resolves to preparation #111, `353b3e874814ef5109c8c2c1e5f83318ba2ec318`, whose [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39927269722). This supersedes the preparation-pending status above. The publication-record follow-up changes no implementation or tag target and claims no new verification run.

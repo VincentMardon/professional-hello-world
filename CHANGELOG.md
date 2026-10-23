@@ -9,15 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-No additional changes recorded.
+- Record stable v4.6.2 publication, its annotated tag on preparation #111, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
-## [4.6.2] — Prepared, not published
+## [4.6.2] — 2026-10-23
 
 ### The Corridors Undergo Inspection
 
-Package and both root lockfile version fields are aligned to 4.6.2. Vincent confirms all requested release checks and production build pass after alignment. The preparation commit still requires its own successful CI and Pages deployment before tagging.
+Package and both root lockfile version fields are aligned to 4.6.2. Vincent confirms all requested release checks and production build pass after alignment. Preparation #111 passed its own CI and Pages deployment. The annotated v4.6.2 tag targets it; stable publication occurred at 09:04:20 UTC (11:04:20 in Paris).
 
-- Implement Markdown link/image extraction, repository and reader-route destination inspection, and the docs:links:check command. Add direct parser dependencies, local-path and malformed-encoding tests, and a CI gate after reference freshness. Fix an unintentional sampleRate hyperlink by marking its source expression as inline code. Real inspection passes across nine documents with 117 local destinations, nine external skips, two deferred fragments, and zero errors. Vincent reports successful static build with an Intel One Mono fallback warning. Implementation #110 passed its exact CI and Pages deployment. Version alignment and local release checks are complete; preparation-commit verification remains pending. See [prepared 4.6.2 notes](docs/RELEASE-4.6.2.md); no stable release is claimed.
+- Implement Markdown link/image extraction, repository and reader-route destination inspection, and the docs:links:check command. Add direct parser dependencies, local-path and malformed-encoding tests, and a CI gate after reference freshness. Fix an unintentional sampleRate hyperlink by marking its source expression as inline code. Real inspection passes across nine documents with 117 local destinations, nine external skips, two deferred fragments, and zero errors. Vincent reports successful static build with an Intel One Mono fallback warning. Implementation #110 passed its exact CI and Pages deployment. Version alignment, local release checks, exact preparation-commit verification, and stable publication are complete. See [release notes](docs/RELEASE-4.6.2.md).
 
 - Record stable v4.6.1 publication on October 22, 2026, its annotated tag on preparation commit #108, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 

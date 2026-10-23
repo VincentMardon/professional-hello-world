@@ -1,6 +1,6 @@
 # 4.6.2 — The Corridors Undergo Inspection
 
-**Release preparation — October 23, 2026. Not published.** The implementation is published in commit #110. Package and both root lockfile version fields are aligned to 4.6.2. Vincent confirms lint, catalogue inspection, type checking, the full test suite, reference freshness, link inspection, and production build pass after alignment. The preparation commit must pass its own CI and Pages deployment before tagging; no v4.6.2 tag or stable release is claimed here.
+**Published October 23, 2026 at 09:04:20 UTC (11:04:20 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.6.2), neither a draft nor a prerelease. Package and both root lockfile version fields are aligned to 4.6.2. Vincent confirms all requested local release checks and production build pass after alignment. Implementation #110 and preparation #111 each passed their own CI and Pages deployment.
 
 ## Scope
 
@@ -31,6 +31,6 @@ External sites are not fetched. Fragment existence, raw HTML links, undefined re
 
 This capability changes documentation tooling. It adds no new reader controls or audio behavior. Visual design remains deferred. See [the inspection record](LOCAL-LINK-INSPECTION.md) for its detailed contract and evidence.
 
-## Remaining publication steps
+## Verified publication
 
-Version alignment and local release checks are complete. After Vincent reviews and publishes the preparation commit, verify that exact commit's CI and Pages deployment. Only then create its annotated tag and publish a stable GitHub release. Record the actual tag target and publication time afterward without moving earlier tags.
+Annotated tag object `f8ce06f091c63dd32ffe2fe93f4311d329cc679d` resolves to preparation commit #111, `353b3e874814ef5109c8c2c1e5f83318ba2ec318`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39927269722) before stable publication at the time above. This documentary follow-up changes no application code, package version, or tag target and claims no new test or browser run.
