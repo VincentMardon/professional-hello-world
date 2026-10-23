@@ -1,6 +1,6 @@
 # Selected Contract Validation — The Registrar Demands an Explanation
 
-**Local implementation — October 23, 2026. Not released.** The proposed 4.7.1 capability adds TypeDoc validation over the existing eleven selected modules. Package remains 4.7.0. Exact-commit remote validation and release preparation are pending.
+**Implementation verified; release preparation — October 23, 2026.** Implementation #116 passed exact-commit CI and Pages deployment, including strict generation and reference freshness. Package and both root lockfile version fields are aligned to 4.7.1, with all requested local release checks confirmed by Vincent. [4.7.1 preparation](RELEASE-4.7.1.md) awaits exact preparation-commit verification. Earlier local checkpoints retain their historical verification boundaries.
 
 ## Rules and scope
 
@@ -25,3 +25,7 @@ Vincent confirms two temporary refusal exercises: removing errorMessage's commen
 Source inspection finds the expected configuration and five public command comments, with no leftover symbolic-link probe. Diff whitespace checks pass. Freshness against the committed output must be checked after committing these intentional generated changes. Exact implementation-commit CI and Pages deployment remain pending.
 
 These are manual refusal exercises rather than newly installed automated fixtures. A separate notExported failure exercise is not claimed. Stable 4.7.0 publication records remain historical; no 4.7.1 tag or release is created by this implementation.
+
+## Published implementation checkpoint
+
+Implementation #116, `f6620e7628c4a82cfc96cd13b3286d1404d5bce2`, passed [CI run 39981505679 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39981505679). This establishes remote strict generation and committed-reference freshness, superseding their pending status above. Version alignment, aligned-state local checks, and exact preparation-commit verification remain required before stable 4.7.1 publication.

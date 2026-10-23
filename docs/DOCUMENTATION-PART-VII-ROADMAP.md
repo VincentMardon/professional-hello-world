@@ -76,3 +76,9 @@ Version alignment to 4.7.0 and requested aligned-state local checks are now conf
 ## Stable 4.7.0 checkpoint — October 23, 2026
 
 [4.7.0 is published](RELEASE-4.7.0.md) on verified preparation #114. Its annotated tag retains that exact source state; implementation #113 and preparation #114 each passed CI and Pages deployment. The next proposed capability is 4.7.1 enforcement of documentation and reference validity over the selected surface. Design remains deferred.
+
+## Selected-contract gate preparation — October 23, 2026
+
+Implementation #116 enables TypeDoc validation over the selected extraction surface and passes exact-commit CI and Pages deployment. Missing-comment and invalid-symbolic-reference refusal are confirmed manually. [4.7.1 preparation](RELEASE-4.7.1.md) is open, with version alignment and preparation-commit verification pending. The next planned capability is 4.8.0 stable heading addressing, section navigation, and fragment inspection. Design remains deferred.
+
+Version alignment to 4.7.1 and requested aligned-state checks are confirmed. The preparation commit still requires successful exact-commit CI and Pages deployment before tagging and stable publication.
