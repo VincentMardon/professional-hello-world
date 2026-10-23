@@ -1,0 +1,19 @@
+{
+  "extends": ["./typedoc.json"],
+  "name": "PHW — Public Register of Technical Contracts",
+  "entryPoints": [
+    "src/features/audio-test/hooks/useBeepEngine.ts",
+    "src/features/audio-test/hooks/useAudioTest.ts",
+    "src/features/audio-test/types/Sound.ts",
+    "src/features/doc/data/documents.ts",
+    "src/features/doc/hooks/useDiagramViewport.ts",
+    "src/features/doc/components/MermaidDiagram.tsx",
+    "src/features/doc/validation/validateDocumentCatalogue.ts",
+    "src/features/doc/validation/extractDocumentLinks.ts",
+    "src/features/doc/validation/inspectDocumentDestination.ts",
+    "src/shared/errors/errorMessage.ts",
+    "src/shared/theme/ThemeProvider.tsx"
+  ],
+  "out": "../docs/generated/reference",
+  "cleanOutputDir": true
+}

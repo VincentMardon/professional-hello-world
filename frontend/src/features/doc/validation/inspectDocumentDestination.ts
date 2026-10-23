@@ -4,19 +4,37 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 import type { DocumentLink } from "./extractDocumentLinks.ts";
 
+/**
+ * Explicit filesystem and routing inputs for destination inspection.
+ *
+ * @remarks
+ * The caller supplies the selected documentation routes and permitted
+ * application routes. Inspection does not discover Next.js routes.
+ */
 export type DestinationContext = {
+  /** Repository directory containing permitted filesystem destinations. */
   repositoryRoot: string;
+  /** Absolute path of the referring Markdown source. */
   sourcePath: string;
+  /** Absolute deployed site URL, including its application base path. */
   siteUrl: string;
+  /** Reader paths without the deployment prefix. */
   documentRoutes: readonly string[];
+  /** Permitted non-documentation path without the deployment prefix. */
   applicationRoutes: readonly string[];
 };
 
+/** Classification and diagnostic information for one destination occurrence. */
 export type DestinationInspection = {
+  /** Whether the destination passed, was intentionally skipped, or failed. */
   status: "checked" | "skipped" | "error";
+  /** Resolution category; this does not imply successful verification. */
   category: "file" | "route" | "external" | "fragment" | "scheme";
+  /** Resolved filesystem path, canonical route, or reported destination. */
   target: string;
+  /** Whether the original destination contains a deferred fragment marker. */
   fragmentDeferred: boolean;
+  /** Additional diagnostic text, when supplied. */
   message?: string;
 };
 
@@ -34,6 +52,29 @@ function canonicalRoute(value: string): string {
   return value.replace(/\/+$/, "") || "/";
 }
 
+/**
+ * Classifies and inspects one extracted Markdown destination.
+ *
+ * @param link - Link or image occurrence to inspect.
+ * @param context - Explicit repository, source, deployment, and route inputs.
+ * @returns A checked, skipped, or error result for the destination.
+ *
+ * @remarks
+ * Relative destinations resolve from the referring source file.
+ * Root-relative paths and matching absolute site URLs use local route rules.
+ * Local images resolve beneath frontend/public.
+ *
+ * Repository destinations receive lexical and real-path containment checks.
+ * Links may target files or directories; images mus target files.
+ * Route checks compare declarations rather than making HTTP requests.
+ *
+ * External HTTP(S) and protocol-relative destinations are skipped.
+ * Supported non-file schemes are skipped; unsupported schemes are errors.
+ * Fragment existence is deferred even when the containing target passes.
+ *
+ * Filesystem inspection is read-only. A passing result establishes neither
+ * browser rendering nor external availability, image validity, or prose truth.
+ */
 export async function inspectDocumentDestination(
   link: DocumentLink,
   context: DestinationContext,

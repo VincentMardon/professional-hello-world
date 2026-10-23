@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Expand source-contract comments across audio, documentation, diagrams, and shared behavior. Generate eleven selected modules plus their index, register twelve reference pages, and configure whole-directory freshness inspection including untracked and staged output. Preserve the initialization-hook route and retain the pilot as an archive. The initial gate refuses all twelve untracked pages as expected; Vincent confirms local checks, build, and requested reader navigation. Committed-state freshness success and broader refusal checks remain pending. Package remains 4.6.2; no 4.7.0 release or successful remote integration run is claimed. See [implementation record](docs/EXPANDED-REFERENCE.md).
+
 - Record stable v4.6.2 publication, its annotated tag on preparation #111, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
 ## [4.6.2] — 2026-10-23

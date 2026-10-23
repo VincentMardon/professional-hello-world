@@ -3,7 +3,14 @@ import path from "node:path";
 
 import type { DocumentDefinition } from "../data/documents.ts";
 
-type CatalogueEntry = readonly [string, DocumentDefinition];
+/**
+ * A document identifier paired with its declaration for catalogue inspection.
+ *
+ * @remarks
+ * The identifier accepts any string so validation can inspect candidate
+ * catalogues independently of the currently registered DocumentId union.
+ */
+export type CatalogueEntry = readonly [string, DocumentDefinition];
 
 function isOutside(root: string, destination: string): boolean {
   const relative = path.relative(root, destination);
@@ -15,6 +22,25 @@ function isOutside(root: string, destination: string): boolean {
   );
 }
 
+/**
+ * Checks catalogue declarations against routing and source-file rules.
+ *
+ * @param entries - Typed document identifiers and declarations to inspect.
+ * @param documentationRoot - Existing documentation directory to resolve.
+ * @returns Collected diagnostics, or an empty array when all check pass.
+ * @throws When the documentation root cannot be resolved.
+ *
+ * @remarks
+ * Requires overview at the root, nonempty metadata, valid slug segments,
+ * unique routes, and existing regular Markdown sources.
+ *
+ * Source containment is checked both lexically and after resolving symlinks.
+ * Individual source inspection failures become diagnostics.
+ *
+ * This Node.js function reads filesystem metadata without changing files.
+ * It expects typed declarations rather than arbitrary untrusted JSON.
+ * It does not inspect Markdown contents, links, or factual accuracy.
+ */
 export async function validateDocumentCatalogue(
   entries: readonly CatalogueEntry[],
   documentationRoot: string,

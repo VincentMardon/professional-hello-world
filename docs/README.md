@@ -21,7 +21,7 @@ Continue with the [Directorate of Structural Disproportion — architecture](ARC
 | How do I find a responsibility in the frontend? | [Frontend field guide](FRONTEND-GUIDE.md) |
 | How do I write, generate, and publish documentation? | [Documentation workshop](DOCUMENTATION-WORKSHOP.md) |
 | What happens between pressing Play and browser output? | [Sound lifecycle](AUDIO-LIFECYCLE.md) |
-| What does the initialization hook expose? | [Generated hook reference](generated/api-pilot/README.md) |
+| What does the initialization hook expose? | [Generated hook reference](generated/reference/features/audio-test/hooks/useBeepEngine.md) |
 | What does the access form actually protect? | [Trust boundaries](TRUST-BOUNDARIES.md) |
 | Which machinery belongs to PHW and which comes from packages? | [Dependencies](DEPENDENCIES.md) |
 | How should I contribute? | [Contribution process](../CONTRIBUTING.md) |
@@ -109,3 +109,7 @@ Vincent confirms the combined content works locally. The next discussion concern
 ## 4.6 work in progress
 
 The trust-boundary and dependency guides are authored and repository-readable. Their catalogue entries and generic routes are applied. All nine destinations are present in the inspected local export. Vincent confirms the checks pass after refreshing stale Next route types; exact-commit remote verification remains pending. This section does not announce a published 4.6 release. Source comment completion follows this release work; design remains deferred.
+
+## Expanded reference checkpoint — October 23, 2026
+
+The local 4.7.0 work adds an [index of selected technical contracts](generated/reference/README.md), covering audio, documentation tooling, diagrams, and shared behavior. Twelve generated pages are registered alongside eight guides. Generation and whole-directory freshness inspection are configured; stable publication and exact-commit remote verification remain pending. See the [implementation record](EXPANDED-REFERENCE.md). Stable 4.6.2 remains the latest issued release.

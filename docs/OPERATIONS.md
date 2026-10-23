@@ -27,7 +27,7 @@ The Bureau does not require a new dependency installation merely because a headi
 | `npm run typecheck` | Generate Next route types and run TypeScript without emitting application JavaScript | Audible output or correct visual design |
 | `npm run test:run` | Execute the Vitest suite once | A complete browser journey |
 | `npm run docs:reference` | Regenerate the selected TypeDoc Markdown | Agreement with the committed reference |
-| `npm run docs:reference:check` | Regenerate the pilot README and compare it with HEAD | Truth of comments or completeness of the output inventory |
+| `npm run docs:reference:check` | Regenerate the expanded reference and inspect whole-directory Git status | Truth of comments, ignored output, or fragment existence |
 | `npm run build` | Regenerate reference through prebuild, then construct the static export | Successful deployment to Pages |
 
 Formatting, route-type generation, and reference extraction can write local files. Review the diff before committing. A green command is evidence for its scope, not a diplomatic passport for every other concern.

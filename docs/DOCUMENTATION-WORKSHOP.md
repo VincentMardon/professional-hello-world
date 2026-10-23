@@ -10,7 +10,7 @@ PHW keeps explanation, reference, operational instructions, historical records, 
 | --- | --- | --- |
 | Understand relationships and decisions | Authored explanatory Markdown | [Architecture](ARCHITECTURE.md) |
 | Follow a mechanism | Prose with diagrams and source links | [Sound lifecycle](AUDIO-LIFECYCLE.md) |
-| Inspect an interface contract | Source comment and generated reference | [useBeepEngine](generated/api-pilot/README.md) |
+| Inspect an interface contract | Source comment and generated reference | [useBeepEngine](generated/reference/features/audio-test/hooks/useBeepEngine.md) |
 | Run and diagnose the project | Authored operating guide | [Operations](OPERATIONS.md) |
 | Establish what a released version contained | Historical release record | [4.5.1](RELEASE-4.5.1.md) |
 | Read the artistic and personal journey | Authorized narrative in the separate wiki | [Wiki reading guide](https://github.com/VincentMardon/professional-hello-world/wiki/Home) |
@@ -47,13 +47,11 @@ Do not add a diagram merely to fill whitespace in the future design. The Directo
 
 ## 5. Maintain generated reference at its source
 
-The TypeDoc pilot selects one hook and writes its Markdown into `docs/generated/api-pilot`. Change the source comment or generator configuration, then regenerate. Do not repair generated prose by hand and leave the generator ready to overwrite the correction.
+The expanded TypeDoc configuration selects eleven modules and produces twelve Markdown pages under docs/generated/reference. Change the source comment or generator configuration, then regenerate; never repair generated prose by hand.
 
-From `frontend`, `npm run docs:reference` generates the reference. `npm run docs:reference:check` generates it and compares the tracked README with HEAD. A difference is expected while an intentional source-and-reference change is waiting for a commit. CI checks the committed state before building.
+From frontend, npm run docs:reference generates the selected reference. npm run docs:reference:check regenerates it and inspects Git status for the whole output directory, including staged changes, deletions, and untracked files. Intentional changes fail until committed. TypeDoc cleans this exclusively generated directory before writing it.
 
-That check does not cover arbitrary new output. Expanding the TypeDoc entry points or changing the output layout therefore requires reviewing reference routing, relative links, and freshness coverage together. Do not mistake a larger generator configuration for a completed publication strategy.
-
-Read the [pilot record](REFERENCE-GENERATION.md) for the precise installed boundary, including moving `main` source links and the absence of obsolete-file cleanup.
+All generated pages are explicitly registered in the catalogue so relative module links can use reader routes. The old initialization-hook address is preserved. Source links follow main, and heading fragments remain outside current verification. Read the [expanded reference record](EXPANDED-REFERENCE.md) for ownership, the archived pilot, and actual verification boundaries.
 
 ## 6. Review by content type
 

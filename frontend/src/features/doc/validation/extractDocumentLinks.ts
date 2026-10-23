@@ -4,6 +4,14 @@ import remarkParse from "remark-parse";
 import { unified } from "unified";
 import { visit } from "unist-util-visit";
 
+/**
+ * One parsed Markdown link or image occurrence.
+ *
+ * @remarks
+ * Positions are one-based when available. Reference-style occurrences use
+ * the reference's position and the definition's destination.
+ * Repeated destinations remain separate occurrences.
+ */
 export type DocumentLink = {
   kind: "link" | "image";
   destination: string;
@@ -13,6 +21,20 @@ export type DocumentLink = {
 
 const parser = unified().use(remarkParse).use(remarkGfm);
 
+/**
+ * Extracts link and image occurrences using CommonMark and GFM parsing.
+ *
+ * @param source - Markdown source text.
+ * @returns Occurrences in syntax-tree traversal order, without deduplication.
+ *
+ * @remarks
+ * Defined references are resolved through Markdown identifier matching.
+ * Inline and fenced code, raw HTML links, unused definitions, are undefined
+ * reference-like text do not produce inspected destinations.
+ *
+ * Extraction performs no filesystem or network access. It does not validate
+ * destination existence, URL schemes, or heading fragments.
+ */
 export function extractDocumentLinks(source: string): DocumentLink[] {
   const tree = parser.parse(source);
   const findDefinition = definitions(tree);

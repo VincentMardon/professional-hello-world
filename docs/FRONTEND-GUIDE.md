@@ -39,7 +39,7 @@ The [panel](../frontend/src/features/audio-test/components/AudioTestPanel.tsx) c
 
 [usePickerMotion](../frontend/src/features/audio-test/hooks/usePickerMotion.ts) concerns picker interaction and animation tracking. It does not generate audio. The [Sound type](../frontend/src/features/audio-test/types/Sound.ts) constrains sound selection, while shared [errorMessage](../frontend/src/shared/errors/errorMessage.ts) converts unknown error values for display.
 
-Read the [sound lifecycle](AUDIO-LIFECYCLE.md) for promises, failure paths, sample data, and browser audio connections. Read the [generated hook reference](generated/api-pilot/README.md) for the extracted initialization contract. These are complementary explanations rather than competing copies of one enormous API document.
+Read the [sound lifecycle](AUDIO-LIFECYCLE.md) for promises, failure paths, sample data, and browser audio connections. Read the [generated hook reference](generated/reference/features/audio-test/hooks/useBeepEngine.md) for the extracted initialization contract. These are complementary explanations rather than competing copies of one enormous API document.
 
 ## 5. Walk through the documentation feature
 

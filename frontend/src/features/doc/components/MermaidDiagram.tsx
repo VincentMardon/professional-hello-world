@@ -11,9 +11,31 @@ import {
   zoomControls,
 } from "./MermaidDiagram.css";
 
+// Serialize initialization and rendering because Mermaid configuration is shared
+// across diagram instances. Each queued render supplies its own theme.
 let renderQueue: Promise<void> = Promise.resolve();
 let nextDiagramId = 0;
 
+/**
+ * Renders Mermaid source with theme-aware SVG output and viewer controls.
+ *
+ * @param props - Component properties containing the Mermaid source.
+ *
+ * @remarks
+ * Must be rendered beneath ThemeProvider in a React client tree.
+ * Rendering is queued across instances and repeated when source or theme changes.
+ * Mermaid is configured with strict security and loaded in the browser.
+ *
+ * A usable SVG viewBox width supplies reference for CSS-driven zoom.
+ * Rendering failures produce fallback text; the source remains available
+ * in a disclosure element.
+ *
+ * Effect cleanup prevents abandoned renders from replacing the current DOM.
+ * It does not cancel Mermaid work that has already started.
+ *
+ * Diagram explanations and accessible Mermaid labels belong in the authored
+ * document and source. Rendering alone does not establish accessibility.
+ */
 export function MermaidDiagram({ source }: { source: string }) {
   const { theme } = useTheme();
   const {
