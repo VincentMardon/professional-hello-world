@@ -85,7 +85,9 @@ export function useAudioTest() {
     selectedSound,
     setSelectedSound,
     volume,
+    /** Updates the volume percentage and forwards it to the ready engine. */
     changeVolume,
+    /** Requests playback; handled failures are reported through status. */
     play,
   };
 }

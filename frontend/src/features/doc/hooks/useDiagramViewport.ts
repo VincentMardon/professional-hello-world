@@ -151,8 +151,11 @@ export function useDiagramViewport() {
     isFullscreen,
     fullscreenError,
     setNaturalWidth,
+    /** Disables fitting and applies a manual zoom constrained to 1-300 percent. */
     changeZoom,
+    /** Enables responsive width fitting and resets horizontal scroll. */
     fitWidth,
+    /** Toggles native fullscreen and reports request failures as error text. */
     toggleFullscreen,
   };
 }

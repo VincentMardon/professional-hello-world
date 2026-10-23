@@ -25,6 +25,8 @@ the reference-width setter, and commands for the viewer controls.
 
 > **changeZoom**: (`value`) => `void`
 
+Disables fitting and applies a manual zoom constrained to 1-300 percent.
+
 Leaves fit mode and stores a manual zoom percentage.
 
 ###### Parameters
@@ -61,6 +63,8 @@ Values are not rounded. Non-finite input is outside this command's contract.
 
 Enables responsive width fitting and resets horizontal scroll.
 
+Enables responsive width fitting and resets horizontal scroll.
+
 ###### Returns
 
 `void`
@@ -85,6 +89,8 @@ Until both measurements are positive, the effective zoom is 100 percent.
 ##### toggleFullscreen
 
 > **toggleFullscreen**: () => `Promise`\<`void`\>
+
+Toggles native fullscreen and reports request failures as error text.
 
 Requests fullscreen for this figure, or exits when it already owns it.
 

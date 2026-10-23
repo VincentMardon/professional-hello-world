@@ -15,5 +15,12 @@
     "src/shared/theme/ThemeProvider.tsx"
   ],
   "out": "../docs/generated/reference",
-  "cleanOutputDir": true
+  "cleanOutputDir": true,
+  "validation": {
+    "notDocumented": true,
+    "notExported": true,
+    "invalidLink": true
+  },
+  "requiredToBeDocumented": ["Function", "TypeAlias", "Interface", "Variable"],
+  "treatValidationWarningsAsErrors": true
 }

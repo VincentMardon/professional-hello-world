@@ -25,6 +25,8 @@ volume with its change handler, and the asynchronous playback command.
 
 > **changeVolume**: (`value`) => `void`
 
+Updates the volume percentage and forwards it to the ready engine.
+
 Stores a percentage and forwards its normalized value to the ready engine.
 
 ###### Parameters
@@ -52,6 +54,8 @@ Before readiness, only local state changes; play reapplies the stored value.
 ##### play
 
 > **play**: () => `Promise`\<`void`\>
+
+Requests playback; handled failures are reported through status.
 
 Requests the selected sound using this invocation's settings.
 
