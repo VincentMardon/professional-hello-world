@@ -1,6 +1,6 @@
 # Local Link Inspection — Proposed 4.6.2 Contract
 
-**Specification for discussion — October 22, 2026.** No link-inspection code, dependency, command, CI gate, or 4.6.2 release is installed by this document. Catalogue validation is the preceding capability; its implementation run is still queued at this checkpoint.
+**Implementation in progress — October 22, 2026.** Vincent has installed the parser dependencies and applied the Markdown link extractor and its tests. He confirms the requested extraction checks pass. The destination resolver, aggregate command, and CI step have now been applied locally; 4.6.2 is not yet released. Stable 4.6.1 is published.
 
 ## Inputs and ownership
 
@@ -68,6 +68,24 @@ Stable heading IDs and fragment checking belong to the later section-addressing 
 
 The Inspectorate of Corridors may verify that a door leads somewhere declared. It is not yet authorized to certify every plaque inside the room.
 
-## First implementation slice proposed
+## Original extraction slice
 
-Begin with a reusable Markdown extractor using the same CommonMark/GFM parsing family as the reader. Return actual link/image destinations with source positions and resolve defined references; ignore code and raw HTML. Test extraction before adding filesystem or route validation. This slice is proposed code for Vincent to apply, not an installed command or CI gate. No version change or 4.6.2 release is claimed.
+Begin with a reusable Markdown extractor using the same CommonMark/GFM parsing family as the reader. Return actual link/image destinations with source positions and resolve defined references; ignore code and raw HTML. Test extraction before adding filesystem or route validation. This paragraph records the initial proposed slice; the implementation checkpoint below supersedes its pending status. No version change or 4.6.2 release is claimed.
+
+## Extraction checkpoint
+
+Source inspection confirms the unified / remark-parse / remark-gfm tree and definition lookup. The extractor records actual link and image destinations with their usage positions, including defined references, while leaving code examples, raw HTML, unused definitions, and undefined reference-like text outside the inspected set. Vincent confirms the seven tests and requested checks pass. Destination resolution and the aggregate runner are now applied locally, as recorded below; remote execution remains pending.
+
+## Integrated local checkpoint — October 23, 2026
+
+The command `npm run docs:links:check` validates the catalogue, reads its nine selected sources, extracts actual Markdown links/images, and inspects destinations with per-document positions. It checks repository file and directory targets, declared reader/application routes, the deployment prefix, and matching absolute site URLs. Root-relative image sources are checked against frontend/public. External destinations and supported non-file schemes are skipped without network requests; fragments are reported as deferred.
+
+The runner reports failures and sets a nonzero exit code. CI now invokes it after generated-reference freshness and before construction. Application routes outside the reader are explicitly limited to the homepage and audio-test route. The configured site URL matches the actual github.io origin; the earlier transcription error was corrected before this checkpoint.
+
+The first real run found engine[selectedSound](sampleRate) in prose being parsed as a link to a file called sampleRate. Enclosing that expression in inline code fixed its Markdown meaning rather than weakening the checker. The assistant reran inspection: nine documents, 117 local destinations checked, nine external destinations not fetched, zero non-file destinations skipped, two fragments deferred, and zero errors.
+
+Malformed local-route encoding is awaited inside the resolver's try/catch so it becomes a diagnostic instead of an escaped rejected promise. Tests cover both relative-file encoding and root-relative/absolute local-route encoding. Source review confirms the updated awaits and regression cases. This checkpoint does not establish dedicated symlink fixtures, a CLI process-level failure test, or a browser audit.
+
+Vincent supplies a successful production build with all static routes generated. It reports a warning that fallback-font override values were unavailable for Intel One Mono; compilation, TypeScript, and export complete. The displayed Next.js upgrade prompt is not evidence of an installed upgrade. Package version remains 4.6.1 and exact-commit CI for this link gate remains pending.
+
+The assistant reran all three documentation-validation test files after integration: 32 tests passed across catalogue validation, extraction, and destination inspection. This targeted run is distinct from the earlier full-suite output. The locked Next.js package remains 16.4.0. Biome passed on 66 files before this documentary update.

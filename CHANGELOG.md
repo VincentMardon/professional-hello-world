@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Implement Markdown link/image extraction, repository and reader-route destination inspection, and the docs:links:check command. Add direct parser dependencies, local-path and malformed-encoding tests, and a CI gate after reference freshness. Fix an unintentional sampleRate hyperlink by marking its source expression as inline code. Real inspection passes across nine documents with 117 local destinations, nine external skips, two deferred fragments, and zero errors. Vincent reports successful static build with an Intel One Mono fallback warning. Package remains 4.6.1; remote validation and 4.6.2 release remain pending.
+
 - Record stable v4.6.1 publication on October 22, 2026, its annotated tag on preparation commit #108, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
 - Specify the proposed 4.6.2 Markdown-aware local-link inspector. The document installs no parser dependency, extractor, command, or gate; implementation remains deferred.

@@ -53,7 +53,7 @@ Percent is a UI convention. The package accepts finite values between zero and o
 Once ready, the command does the following inside its try block:
 
 1. Apply the current volume, converting the percentage to a normalized value.
-2. Invoke engine[selectedSound](sampleRate).
+2. Invoke `engine[selectedSound](sampleRate)`.
 3. Await the returned playback promise.
 4. Report Started followed by the selected sound and sample rate.
 
