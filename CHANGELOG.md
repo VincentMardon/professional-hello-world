@@ -9,7 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-- Expand source-contract comments across audio, documentation, diagrams, and shared behavior. Generate eleven selected modules plus their index, register twelve reference pages, and configure whole-directory freshness inspection including untracked and staged output. Preserve the initialization-hook route and retain the pilot as an archive. The initial gate refuses all twelve untracked pages as expected; Vincent confirms local checks, build, and requested reader navigation. Committed-state freshness success and broader refusal checks remain pending. Package remains 4.6.2; no 4.7.0 release or successful remote integration run is claimed. See [implementation record](docs/EXPANDED-REFERENCE.md).
+No additional changes recorded.
+
+## [4.7.0] — Prepared, not published
+
+### The Contracts Acquire a Public Register
+
+Package and both root lockfile version fields are aligned to 4.7.0. Vincent confirms all requested local release checks and production build pass after alignment. Exact preparation-commit CI and Pages deployment remain pending.
+
+- Expand source-contract comments across audio, documentation, diagrams, and shared behavior. Generate eleven selected modules plus their index, register twelve reference pages, and configure whole-directory freshness inspection including untracked and staged output. Preserve the initialization-hook route and retain the pilot as an archive. The initial gate refuses all twelve untracked pages as expected; Vincent confirms local checks, build, and requested reader navigation. Committed-state freshness succeeds; Vincent confirms changed-output and obsolete-output refusal followed by restored success and a clean tree. Package is aligned to 4.7.0; implementation #113 passed its exact CI and Pages deployment. The [4.7.0 release notes](docs/RELEASE-4.7.0.md) are prepared, with aligned-state local checks confirmed and preparation-commit verification pending; no stable release is claimed. See [implementation record](docs/EXPANDED-REFERENCE.md).
 
 - Record stable v4.6.2 publication, its annotated tag on preparation #111, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 

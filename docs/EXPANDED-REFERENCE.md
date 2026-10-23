@@ -1,6 +1,6 @@
 # Expanded Technical Reference — The Contracts Acquire a Public Register
 
-**Local implementation checkpoint — October 23, 2026. Not released.** Package version remains 4.6.2. The proposed 4.7.0 work expands the source-reference pilot to eleven selected modules and twelve generated Markdown pages. Remote verification and release preparation are pending.
+**Implementation verified; release preparation — October 23, 2026.** Implementation #113 is published and its exact CI and Pages deployment succeeded. Eleven selected modules generate twelve registered Markdown pages. Package and both root lockfile version fields are aligned to 4.7.0, with all requested aligned-state checks confirmed by Vincent. [4.7.0 preparation](RELEASE-4.7.0.md) awaits its exact-commit CI and deployment before tagging. Earlier checkpoints below preserve their then-current evidence boundaries.
 
 ## Selected contracts
 
@@ -37,3 +37,7 @@ The current CI command name is unchanged, so its existing freshness step invokes
 ## Integrated local confirmation
 
 Vincent confirms the requested lint, type checking, full test suite, catalogue inspection, link inspection, and production build, together with reader checks for the reference index, module navigation, and preserved initialization-hook address. The assistant inspects twelve generated Markdown files and the twenty-entry catalogue. These confirmations do not replace committed-state freshness success or exact-commit remote verification, which remain pending.
+
+## Published implementation and refusal exercises
+
+Implementation #113, `af270528bca350c3c107b0ea207782cc2b7e9e5c`, passed [CI run 39971765002 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39971765002). Vincent confirms committed-state freshness success. He also confirms the direct script rejects a deliberately modified tracked README, regeneration restores success, and removing the errorMessage entry point makes regeneration delete its tracked page and the gate refuse that output. Restoring the point of entry returns the full command to success and the working tree to clean. The assistant confirms the clean tree. These results supersede the pending statuses above; no separate staged-output probe or automated CLI fixture suite is claimed.

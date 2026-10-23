@@ -66,3 +66,9 @@ Review those outcomes with Vincent rather than using page count or the last prop
 ## Current checkpoint — October 23, 2026
 
 Stable 4.6.1 is published. Implementation #110 adds the 4.6.2 local-link inspector and has passed its exact CI and Pages deployment. Stable [4.6.2 is published](RELEASE-4.6.2.md) on October 23, 2026. Package and root lockfile versions are aligned, Vincent confirms all requested local release checks, and preparation #111 passed its own CI and Pages deployment before its annotated tag and stable publication. The next capability after this release is the planned 4.7.0 expansion of useful source comments and generated reference. Design remains deferred to the following part.
+
+## Expanded reference preparation — October 23, 2026
+
+Implementation #113 publishes the selected-contract reference and passes exact-commit CI and Pages deployment. Vincent confirms freshness success on committed output, changed-output refusal, obsolete-output refusal, and restored success with a clean tree. [4.7.0 preparation](RELEASE-4.7.0.md) is open; version alignment, aligned-state checks, and preparation-commit CI remain required. The next proposed capability is the 4.7.1 selected-contract documentation gate, not a design milestone.
+
+Version alignment to 4.7.0 and requested aligned-state local checks are now confirmed. The preparation commit still requires its own successful CI and Pages deployment before tagging and stable publication.
