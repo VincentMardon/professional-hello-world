@@ -1,6 +1,6 @@
 # 4.7.1 — The Registrar Demands an Explanation
 
-**Release preparation — October 23, 2026. Not published.** Implementation #116 is published and has passed its exact CI and Pages deployment. Package and both root lockfile version fields are aligned to 4.7.1. Vincent confirms lint, type checking, the full test suite, catalogue inspection, reference freshness, link inspection, and production build pass after alignment. Exact preparation-commit CI and Pages deployment remain required before tagging.
+**Published October 23, 2026 at 16:04:31 UTC (18:04:31 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.7.1), neither a draft nor a prerelease. Package and both root lockfile version fields are aligned to 4.7.1. Vincent confirms all requested aligned-state checks and production build. Implementation #116 and preparation #117 each passed their own CI and Pages deployment.
 
 ## Scope
 
@@ -30,6 +30,6 @@ Validation occurs before generation: old output may remain after failure. A read
 
 Package metadata is the only intended version-alignment change. No application runtime behavior or dependency version changes are introduced by this preparation. See [the validation record](SELECTED-CONTRACT-VALIDATION.md) for details.
 
-## Remaining publication steps
+## Verified publication
 
-Version alignment and requested local checks are complete. Publish the reviewed preparation commit. Verify its exact CI and Pages deployment before creating an annotated tag on that SHA and publishing a stable release. Record the actual publication time afterward without moving the tag.
+Stable v4.7.1 was published on October 23, 2026 at 16:04:31 UTC (18:04:31 in Paris). Annotated tag object `48ad7cb9634ce9b8e89aa91c722d2e90e2644201` resolves to preparation #117, `ea0ce3e628bd45a56582384a6385c486ea30b0bb`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39982954319) before publication. This documentary follow-up changes no application code, package version, generated output, or tag target and claims no new test or browser run.

@@ -9,15 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-No additional changes recorded.
+- Record stable v4.7.1 publication, its annotated tag on preparation #117, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
-## [4.7.1] — Prepared, not published
+## [4.7.1] — 2026-10-23
 
 ### The Registrar Demands an Explanation
 
-Package and both root lockfile version fields are aligned to 4.7.1. Vincent confirms all requested aligned-state release checks and production build. Exact preparation-commit CI and Pages deployment remain pending.
+Package and both root lockfile version fields are aligned to 4.7.1. Vincent confirms all requested aligned-state release checks and production build. Preparation #117 passed its own CI and Pages deployment. Its annotated tag identifies stable v4.7.1, published at 16:04:31 UTC (18:04:31 in Paris).
 
-- Enable TypeDoc validation of required comments, omitted referenced types, and invalid symbolic references on the selected extraction surface. Treat validation warnings as failures. Document five callable return properties and regenerate their two module pages. Vincent confirms missing-comment and invalid-reference refusal with nonzero exits, restored generation, local checks, and build. Implementation #116 passed exact-commit CI and Pages deployment, including committed-output freshness. Package is aligned to 4.7.1; [release notes](docs/RELEASE-4.7.1.md) are prepared, with local checks confirmed and preparation-commit verification pending. See [validation record](docs/SELECTED-CONTRACT-VALIDATION.md).
+- Enable TypeDoc validation of required comments, omitted referenced types, and invalid symbolic references on the selected extraction surface. Treat validation warnings as failures. Document five callable return properties and regenerate their two module pages. Vincent confirms missing-comment and invalid-reference refusal with nonzero exits, restored generation, local checks, and build. Implementation #116 passed exact-commit CI and Pages deployment, including committed-output freshness. Package is aligned to 4.7.1; [release notes](docs/RELEASE-4.7.1.md) record stable publication on verified preparation #117. See [validation record](docs/SELECTED-CONTRACT-VALIDATION.md).
 
 - Record stable v4.7.0 publication, its annotated tag on preparation #114, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 

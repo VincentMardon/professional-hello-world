@@ -1,6 +1,6 @@
 # Selected Contract Validation — The Registrar Demands an Explanation
 
-**Implementation verified; release preparation — October 23, 2026.** Implementation #116 passed exact-commit CI and Pages deployment, including strict generation and reference freshness. Package and both root lockfile version fields are aligned to 4.7.1, with all requested local release checks confirmed by Vincent. [4.7.1 preparation](RELEASE-4.7.1.md) awaits exact preparation-commit verification. Earlier local checkpoints retain their historical verification boundaries.
+**Published in stable 4.7.1 — October 23, 2026.** Implementation #116 and preparation #117 each passed exact-commit CI and Pages deployment. Package and both root lockfile version fields are aligned to 4.7.1. The annotated release tag targets #117. See [release notes](RELEASE-4.7.1.md). Earlier checkpoints retain their historical verification boundaries.
 
 ## Rules and scope
 
@@ -29,3 +29,7 @@ These are manual refusal exercises rather than newly installed automated fixture
 ## Published implementation checkpoint
 
 Implementation #116, `f6620e7628c4a82cfc96cd13b3286d1404d5bce2`, passed [CI run 39981505679 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39981505679). This establishes remote strict generation and committed-reference freshness, superseding their pending status above. Version alignment, aligned-state local checks, and exact preparation-commit verification remain required before stable 4.7.1 publication.
+
+## Stable publication — October 23, 2026
+
+Stable v4.7.1 was published on October 23, 2026 at 16:04:31 UTC (18:04:31 in Paris). Annotated tag object `48ad7cb9634ce9b8e89aa91c722d2e90e2644201` resolves to preparation #117, `ea0ce3e628bd45a56582384a6385c486ea30b0bb`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39982954319) before publication. This documentary follow-up changes no application code, package version, generated output, or tag target and claims no new test or browser run.
