@@ -62,3 +62,7 @@ Review those outcomes with Vincent rather than using page count or the last prop
 ## Current checkpoint — October 22, 2026
 
 4.6.0 is published on verified preparation commit #105. Its manual checks, version alignment, exact-commit CI, annotated tag, and stable release are recorded in [the release notes](RELEASE-4.6.0.md). The next capability is 4.6.1 catalogue validation. Subsequent milestones in the table remain plans rather than installed gates.
+
+## Current checkpoint — October 23, 2026
+
+Stable 4.6.1 is published. Implementation #110 adds the 4.6.2 local-link inspector and has passed its exact CI and Pages deployment. The [4.6.2 release notes](RELEASE-4.6.2.md) are prepared; package and root lockfile versions are aligned to 4.6.2, and Vincent confirms all requested release checks pass; preparation-commit verification remains pending. The next capability after this release is the planned 4.7.0 expansion of useful source comments and generated reference. Design remains deferred to the following part.

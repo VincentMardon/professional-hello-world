@@ -1,6 +1,6 @@
-# Local Link Inspection — Proposed 4.6.2 Contract
+# Local Link Inspection — Contract and Implementation Record
 
-**Implementation in progress — October 22, 2026.** Vincent has installed the parser dependencies and applied the Markdown link extractor and its tests. He confirms the requested extraction checks pass. The destination resolver, aggregate command, and CI step have now been applied locally; 4.6.2 is not yet released. Stable 4.6.1 is published.
+**Implementation verified — October 23, 2026.** Commit #110 implements the extractor, destination resolver, aggregate command, and CI gate. Its exact CI and Pages deployment succeeded. Stable 4.6.1 remains published; [4.6.2 preparation](RELEASE-4.6.2.md) now has package and root lockfile versions aligned to 4.6.2 and all requested local checks confirmed by Vincent, without a tag or release yet. Earlier checkpoints below retain their historical verification boundaries.
 
 ## Inputs and ownership
 
@@ -89,3 +89,7 @@ Malformed local-route encoding is awaited inside the resolver's try/catch so it 
 Vincent supplies a successful production build with all static routes generated. It reports a warning that fallback-font override values were unavailable for Intel One Mono; compilation, TypeScript, and export complete. The displayed Next.js upgrade prompt is not evidence of an installed upgrade. Package version remains 4.6.1 and exact-commit CI for this link gate remains pending.
 
 The assistant reran all three documentation-validation test files after integration: 32 tests passed across catalogue validation, extraction, and destination inspection. This targeted run is distinct from the earlier full-suite output. The locked Next.js package remains 16.4.0. Biome passed on 66 files before this documentary update.
+
+## Remote checkpoint — October 23, 2026
+
+Implementation commit #110, `6a994486120d9e3ce2c4216faf5235a7219aeea4`, passed [CI run 39924728591 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39924728591), including the local-link gate. This supersedes the earlier remote-pending status. Package and root lockfile versions are now aligned to 4.6.2. Vincent confirms lint, catalogue inspection, type checking, the full test suite, reference freshness, link inspection, and production build pass after alignment. Exact preparation-commit CI and deployment remain required before publishing 4.6.2.
