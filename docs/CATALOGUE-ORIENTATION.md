@@ -1,6 +1,6 @@
 # Catalogue Orientation — The Reading Rooms Acquire a Directory
 
-**Implementation verified; release preparation — October 24, 2026.** Implementation #122 passed exact-commit CI and Pages deployment, including committed-reference freshness. Grouped navigation, breadcrumbs, and bounded reading sequences are deployed. Package and both root lockfile version fields are aligned to 4.8.1, with all requested local release checks confirmed by Vincent. [4.8.1 preparation](RELEASE-4.8.1.md) awaits exact preparation-commit verification. Earlier checkpoints retain their historical verification boundaries.
+**Published in stable 4.8.1 — October 24, 2026.** Grouped navigation, breadcrumbs, and bounded reading sequences are issued. Implementation #122 and preparation #123 each passed exact-commit CI and Pages deployment. Package and both root lockfile version fields are aligned to 4.8.1. The annotated release tag targets #123. See [release notes](RELEASE-4.8.1.md). Earlier checkpoints retain their historical verification boundaries.
 
 ## Editorial structure and source identity
 
@@ -41,3 +41,7 @@ Vincent confirms the requested checks pass after correcting a misspelled accessi
 ## Published implementation checkpoint
 
 Implementation #122, `566c9a0ee47b2ef10b2d3c210196f2551ac1a799`, passed [CI run 40099617090 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/40099617090). This establishes committed-reference freshness and supersedes earlier remote-pending status. Version alignment, aligned-state checks, and exact preparation-commit verification remain required before stable 4.8.1 publication.
+
+## Stable publication — October 24, 2026
+
+Stable v4.8.1 was published on October 24, 2026 at 14:27:11 UTC (16:27:11 in Paris). Annotated tag object `e125b82cbeebeb7597d756be1f7115a499a04821` resolves to preparation #123, `34d067371980ab73f23f435463a6d5a1c44eed89`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/40101393199) before publication. This documentary follow-up changes no application code, package version, generated output, or tag target and claims no new test or browser run.

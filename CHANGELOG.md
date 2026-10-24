@@ -9,15 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-No additional changes recorded.
+- Record stable v4.8.1 publication, its annotated tag on preparation #123, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
-## [4.8.1] — Prepared, not published
+## [4.8.1] — 2026-10-24
 
 ### The Reading Rooms Acquire a Directory
 
-Package and both root lockfile version fields are aligned to 4.8.1. Vincent confirms all requested aligned-state release checks and production build. Exact preparation-commit CI and Pages deployment remain pending.
+Package and both root lockfile version fields are aligned to 4.8.1. Vincent confirms all requested aligned-state release checks and production build. Preparation #123 passed its own CI and Pages deployment. Its annotated tag identifies stable v4.8.1, published at 14:27:11 UTC (16:27:11 in Paris).
 
-- Add explicit guide/reference groups, reading order, breadcrumbs, and within-group previous/next links without changing URLs. Extend catalogue inspection to navigation coverage and group rules; add validator and component tests. Update catalogue comments and their generated reference. Enable Vitest's filesystem module cache, with a reported local improvement from approximately sixteen to ten seconds. Vincent confirms local checks, build, and browser group, breadcrumb, sequence-boundary, and direct-reload behavior. Implementation #122 passed its exact CI and Pages deployment, including committed-reference freshness. Package is aligned to 4.8.1; [release notes](docs/RELEASE-4.8.1.md) are prepared, with local checks confirmed and preparation-commit verification pending. No stable release is claimed. See [orientation record](docs/CATALOGUE-ORIENTATION.md).
+- Add explicit guide/reference groups, reading order, breadcrumbs, and within-group previous/next links without changing URLs. Extend catalogue inspection to navigation coverage and group rules; add validator and component tests. Update catalogue comments and their generated reference. Enable Vitest's filesystem module cache, with a reported local improvement from approximately sixteen to ten seconds. Vincent confirms local checks, build, and browser group, breadcrumb, sequence-boundary, and direct-reload behavior. Implementation #122 passed its exact CI and Pages deployment, including committed-reference freshness. Package is aligned to 4.8.1; [release notes](docs/RELEASE-4.8.1.md) record stable publication on verified preparation #123. See [orientation record](docs/CATALOGUE-ORIENTATION.md).
 
 - Record stable v4.8.0 publication, its annotated tag on preparation #120, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 

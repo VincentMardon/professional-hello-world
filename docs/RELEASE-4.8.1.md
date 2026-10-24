@@ -1,6 +1,6 @@
 # 4.8.1 — The Reading Rooms Acquire a Directory
 
-**Release preparation — October 24, 2026. Not published.** Implementation #122 is published and has passed its own CI and Pages deployment. Package and both root lockfile version fields are aligned to 4.8.1. Vincent confirms lint, type checking, the full test suite, catalogue inspection, reference freshness, link inspection, and production build pass after alignment. Exact preparation-commit CI and Pages deployment remain required before tagging.
+**Published October 24, 2026 at 14:27:11 UTC (16:27:11 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.8.1), neither a draft nor a prerelease. Package and both root lockfile version fields are aligned to 4.8.1. Vincent confirms all requested aligned-state checks and production build. Implementation #122 and preparation #123 each passed their own CI and Pages deployment.
 
 ## Scope
 
@@ -32,6 +32,6 @@ The selected TypeDoc surface remains explicit; the new navigation modules are no
 
 See [the orientation record](CATALOGUE-ORIENTATION.md) for details.
 
-## Remaining publication steps
+## Verified publication
 
-Version alignment and requested local checks are complete. Publish the reviewed preparation commit. Verify its exact CI and Pages deployment before creating an annotated tag on that SHA and publishing a stable release. Record the actual publication time afterward without moving the tag.
+Stable v4.8.1 was published on October 24, 2026 at 14:27:11 UTC (16:27:11 in Paris). Annotated tag object `e125b82cbeebeb7597d756be1f7115a499a04821` resolves to preparation #123, `34d067371980ab73f23f435463a6d5a1c44eed89`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/40101393199) before publication. This documentary follow-up changes no application code, package version, generated output, or tag target and claims no new test or browser run.
