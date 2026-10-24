@@ -113,3 +113,9 @@ export const themeSwitchPosition = style({
   left: "1rem",
   zIndex: 10,
 });
+
+export const headingPermalink = style({
+  marginInlineStart: "0.5rem",
+  fontSize: "0.7rem",
+  fontWeight: 400,
+});

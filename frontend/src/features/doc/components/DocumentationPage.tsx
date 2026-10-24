@@ -10,12 +10,17 @@ import {
   documents,
   getDocumentRoute,
 } from "../data/documents";
-
+import {
+  extractDocumentHeadings,
+  remarkDocumentHeadings,
+} from "../markdown/documentHeadings";
 import {
   documentationSurface,
   documentPage,
   themeSwitchPosition,
 } from "./DocumentationPage.css";
+import { DocumentContents } from "./DocumentContents";
+import { markdownHeadingComponents } from "./MarkdownHeadings";
 import { MermaidDiagram } from "./MermaidDiagram";
 
 const repositoryRoot =
@@ -68,6 +73,7 @@ export async function DocumentationPage({
     selectedDocument.file,
   );
   const content = await readFile(sourcePath, "utf8");
+  const headings = extractDocumentHeadings(content);
 
   return (
     <div className={documentationSurface}>
@@ -91,12 +97,15 @@ export async function DocumentationPage({
           </ul>
         </nav>
 
+        <DocumentContents headings={headings} />
+
         <Markdown
-          remarkPlugins={[remarkGfm]}
+          remarkPlugins={[remarkGfm, remarkDocumentHeadings]}
           urlTransform={(value) =>
             resolveDocumentUrl(value, selectedDocument.file)
           }
           components={{
+            ...markdownHeadingComponents,
             pre({ node, children, ...props }) {
               const code = node?.children[0];
 

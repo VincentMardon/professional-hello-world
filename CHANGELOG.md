@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Add shared Markdown heading IDs, visible permalinks, and collapsible h2/h3 contents. Extend local-link inspection to selected-document heading fragments using the same index. Correct punctuation-only fallback numbering and add heading, rendering, and fragment tests. Update Next.js to 16.4.1 and Vitest to 5.0.3 after audit findings on existing dependencies; the subsequent audit reports zero vulnerabilities. Reader navigation and a positioned missing-fragment refusal followed by restored success are confirmed. Package remains 4.7.1; no 4.8.0 release or successful remote integration run is claimed. See [section-addressing record](docs/SECTION-ADDRESSING.md).
+
 - Record stable v4.7.1 publication, its annotated tag on preparation #117, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
 ## [4.7.1] — 2026-10-23
