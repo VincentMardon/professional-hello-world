@@ -1,6 +1,6 @@
 # Section Addressing — Every Paragraph Receives an Address
 
-**Implementation verified; release preparation — October 24, 2026.** Implementation #119 passed its exact CI and Pages deployment. Shared heading IDs, section navigation, and selected-fragment inspection are deployed. Package and both root lockfile version fields are aligned to 4.8.0, with all requested local release checks confirmed by Vincent. [4.8.0 preparation](RELEASE-4.8.0.md) awaits exact preparation-commit verification. Earlier checkpoints retain their historical verification boundaries.
+**Published in stable 4.8.0 — October 24, 2026.** Shared heading IDs, section navigation, and selected-fragment inspection are issued. Implementation #119 and preparation #120 each passed exact-commit CI and Pages deployment. Package and both root lockfile version fields are aligned to 4.8.0. The annotated release tag targets #120. See [release notes](RELEASE-4.8.0.md). Earlier checkpoints retain their historical verification boundaries.
 
 ## One heading policy
 
@@ -43,3 +43,7 @@ The newly added heading and fragment modules are not yet additional TypeDoc entr
 ## Published implementation checkpoint
 
 Implementation #119, `c490105791b4434cfc09b5af40bbcf5bdaa3c271`, passed [CI run 40042864211 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/40042864211). This supersedes earlier remote-pending status. Version alignment, aligned-state checks, and preparation-commit verification remain required before stable 4.8.0 publication.
+
+## Stable publication — October 24, 2026
+
+Stable v4.8.0 was published on October 24, 2026 at 00:58:53 UTC (02:58:53 in Paris). Annotated tag object `d154741f89adcb76332765a5c27b9061b628280f` resolves to preparation #120, `4b869122c993c6a1aac876d2ff3c8c434bccf272`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/40046572809) before publication. This documentary follow-up changes no application code, package version, generated output, or tag target and claims no new test or browser run.

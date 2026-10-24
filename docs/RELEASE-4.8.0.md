@@ -1,6 +1,6 @@
 # 4.8.0 — Every Paragraph Receives an Address
 
-**Release preparation — October 24, 2026. Not published.** Implementation #119 is published and has passed its own CI and Pages deployment. Package and both root lockfile version fields are aligned to 4.8.0. Vincent confirms lint, type checking, the full test suite, catalogue inspection, reference freshness, link inspection, and production build pass after alignment. Exact preparation-commit CI and Pages deployment remain required before tagging.
+**Published October 24, 2026 at 00:58:53 UTC (02:58:53 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.8.0), neither a draft nor a prerelease. Package and both root lockfile version fields are aligned to 4.8.0. Vincent confirms all requested aligned-state checks and production build. Implementation #119 and preparation #120 each passed their own CI and Pages deployment.
 
 ## Scope
 
@@ -35,6 +35,6 @@ The established selected TypeDoc surface remains unchanged. No individual route 
 
 See [the section-addressing record](SECTION-ADDRESSING.md) for implementation details and verification limits.
 
-## Remaining publication steps
+## Verified publication
 
-Version alignment and requested local checks are complete. Publish the reviewed preparation commit. Verify its exact CI and Pages deployment before creating an annotated tag on that SHA and publishing a stable release. Record the actual publication time afterward without moving the tag.
+Stable v4.8.0 was published on October 24, 2026 at 00:58:53 UTC (02:58:53 in Paris). Annotated tag object `d154741f89adcb76332765a5c27b9061b628280f` resolves to preparation #120, `4b869122c993c6a1aac876d2ff3c8c434bccf272`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/40046572809) before publication. This documentary follow-up changes no application code, package version, generated output, or tag target and claims no new test or browser run.

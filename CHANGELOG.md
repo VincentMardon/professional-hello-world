@@ -9,15 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-No additional changes recorded.
+- Record stable v4.8.0 publication, its annotated tag on preparation #120, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
-## [4.8.0] — Prepared, not published
+## [4.8.0] — 2026-10-24
 
 ### Every Paragraph Receives an Address
 
-Package and both root lockfile version fields are aligned to 4.8.0. Vincent confirms all requested aligned-state release checks and production build. Exact preparation-commit CI and Pages deployment remain pending.
+Package and both root lockfile version fields are aligned to 4.8.0. Vincent confirms all requested aligned-state release checks and production build. Preparation #120 passed its own CI and Pages deployment. Its annotated tag identifies stable v4.8.0, published at 00:58:53 UTC (02:58:53 in Paris).
 
-- Add shared Markdown heading IDs, visible permalinks, and collapsible h2/h3 contents. Extend local-link inspection to selected-document heading fragments using the same index. Correct punctuation-only fallback numbering and add heading, rendering, and fragment tests. Update Next.js to 16.4.1 and Vitest to 5.0.3 after audit findings on existing dependencies; the subsequent audit reports zero vulnerabilities. Reader navigation and a positioned missing-fragment refusal followed by restored success are confirmed. Implementation #119 passed its exact CI and Pages deployment. Package is aligned to 4.8.0; [release notes](docs/RELEASE-4.8.0.md) are prepared, with local checks confirmed and preparation-commit verification pending. No stable release is claimed. See [section-addressing record](docs/SECTION-ADDRESSING.md).
+- Add shared Markdown heading IDs, visible permalinks, and collapsible h2/h3 contents. Extend local-link inspection to selected-document heading fragments using the same index. Correct punctuation-only fallback numbering and add heading, rendering, and fragment tests. Update Next.js to 16.4.1 and Vitest to 5.0.3 after audit findings on existing dependencies; the subsequent audit reports zero vulnerabilities. Reader navigation and a positioned missing-fragment refusal followed by restored success are confirmed. Implementation #119 passed its exact CI and Pages deployment. Package is aligned to 4.8.0; [release notes](docs/RELEASE-4.8.0.md) record stable publication on verified preparation #120. See [section-addressing record](docs/SECTION-ADDRESSING.md).
 
 - Record stable v4.7.1 publication, its annotated tag on preparation #117, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
