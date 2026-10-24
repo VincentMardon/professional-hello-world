@@ -85,7 +85,7 @@ Internal identifiers derived from the maintained document catalogue.
 
 Defined in: [features/doc/data/documents.ts:197](https://github.com/VincentMardon/professional-hello-world/blob/main/frontend/src/features/doc/data/documents.ts#L197)
 
-Exposes catalogue entries in declaration order for routing and navigation.
+Exposes catalogue entries in declaration order for routing and inspection.
 
 #### Remarks
 
@@ -589,7 +589,7 @@ Selects the documents published by the documentation reader.
 Object keys are internal document identifiers. Source paths and public
 slugs are separate declarations and need not match those identifiers.
 
-Declaration order currently determines navigation order.
+Reader groups and reading order are declared separately in documentNavigation.
 Adding a Markdown file to the repository does not register it here.
 
 The const assertion preserves literal types; it does not freeze the

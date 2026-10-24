@@ -29,7 +29,7 @@ export type DocumentDefinition = {
  * Object keys are internal document identifiers. Source paths and public
  * slugs are separate declarations and need not match those identifiers.
  *
- * Declaration order currently determines navigation order.
+ * Reader groups and reading order are declared separately in documentNavigation.
  * Adding a Markdown file to the repository does not register it here.
  *
  * The const assertion preserves literal types; it does not freeze the
@@ -188,7 +188,7 @@ export const documents = {
 export type DocumentId = keyof typeof documents;
 
 /**
- * Exposes catalogue entries in declaration order for routing and navigation.
+ * Exposes catalogue entries in declaration order for routing and inspection.
  *
  * @remarks
  * The assertion preserves the known key type lost by Object.entries.

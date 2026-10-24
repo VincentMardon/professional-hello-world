@@ -3,7 +3,6 @@ import path from "node:path";
 import Link from "next/link";
 import Markdown, { defaultUrlTransform } from "react-markdown";
 import remarkGfm from "remark-gfm";
-
 import { ThemeSwitch } from "../../../components/ThemeSwitch";
 import {
   type DocumentId,
@@ -20,6 +19,7 @@ import {
   themeSwitchPosition,
 } from "./DocumentationPage.css";
 import { DocumentContents } from "./DocumentContents";
+import { DocumentNavigation, DocumentPagination } from "./DocumentNavigation";
 import { markdownHeadingComponents } from "./MarkdownHeadings";
 import { MermaidDiagram } from "./MermaidDiagram";
 
@@ -82,20 +82,7 @@ export async function DocumentationPage({
       </div>
 
       <main className={documentPage}>
-        <nav aria-label="Documentation">
-          <ul>
-            {Object.entries(documents).map(([id, document]) => (
-              <li key={id}>
-                <Link
-                  href={getDocumentRoute(document)}
-                  aria-current={id === documentId ? "page" : undefined}
-                >
-                  {document.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <DocumentNavigation documentId={documentId} />
 
         <DocumentContents headings={headings} />
 
@@ -148,6 +135,8 @@ export async function DocumentationPage({
         >
           {content}
         </Markdown>
+
+        <DocumentPagination documentId={documentId} />
       </main>
     </div>
   );
