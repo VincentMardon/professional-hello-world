@@ -86,3 +86,9 @@ Version alignment to 4.7.1 and requested aligned-state checks are confirmed. The
 ## Stable 4.7.1 checkpoint — October 23, 2026
 
 [4.7.1 is published](RELEASE-4.7.1.md) on verified preparation #117. Its annotated tag retains that exact source state; implementation #116 and preparation #117 each passed CI and Pages deployment. The next planned capability is 4.8.0 heading addressing, section navigation, and fragment inspection. Design remains deferred.
+
+## Section-addressing preparation — October 24, 2026
+
+Implementation #119 publishes shared heading IDs, section links, h2/h3 contents, and selected-document fragment inspection. Exact-commit CI and Pages deployment succeed. [4.8.0 preparation](RELEASE-4.8.0.md) is open, with version alignment and preparation-commit verification pending. The next planned capability is 4.8.1 catalogue groups, reading order, breadcrumbs, and contextual previous/next navigation. Design remains deferred.
+
+Version alignment to 4.8.0 and requested aligned-state checks are confirmed. The preparation commit still requires successful exact-commit CI and Pages deployment before tagging and stable publication.

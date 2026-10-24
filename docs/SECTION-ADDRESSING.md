@@ -1,6 +1,6 @@
 # Section Addressing — Every Paragraph Receives an Address
 
-**Local 4.8.0 implementation checkpoint — October 24, 2026. Not released.** Package version remains 4.7.1. The reader now assigns Markdown heading identifiers, exposes section links, and offers per-page contents. The local-link command validates heading fragments on selected reader documents. Exact-commit remote verification and release preparation remain pending.
+**Implementation verified; release preparation — October 24, 2026.** Implementation #119 passed its exact CI and Pages deployment. Shared heading IDs, section navigation, and selected-fragment inspection are deployed. Package and both root lockfile version fields are aligned to 4.8.0, with all requested local release checks confirmed by Vincent. [4.8.0 preparation](RELEASE-4.8.0.md) awaits exact preparation-commit verification. Earlier checkpoints retain their historical verification boundaries.
 
 ## One heading policy
 
@@ -39,3 +39,7 @@ On October 24, the assistant temporarily adds a missing current-document fragmen
 The implementation declares github-slugger, mdast-util-to-string, and the mdast development types. Next.js moves from 16.4.0 to 16.4.1 and Vitest from 5.0.1 to 5.0.3 after audit warnings on existing dependencies. A subsequent assistant audit reports zero vulnerabilities at that inspection time. This is a point-in-time registry result, not a guarantee about future advisories or complete application security.
 
 The newly added heading and fragment modules are not yet additional TypeDoc entry points. The established selected reference surface remains unchanged. Vincent confirms reference freshness and production build for the integrated source. Review intended file additions before committing and verify the actual published implementation commit in CI. Later version alignment and stable 4.8.0 publication require their own preparation record.
+
+## Published implementation checkpoint
+
+Implementation #119, `c490105791b4434cfc09b5af40bbcf5bdaa3c271`, passed [CI run 40042864211 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/40042864211). This supersedes earlier remote-pending status. Version alignment, aligned-state checks, and preparation-commit verification remain required before stable 4.8.0 publication.
