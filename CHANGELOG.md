@@ -9,7 +9,15 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-- Add explicit guide/reference groups, reading order, breadcrumbs, and within-group previous/next links without changing URLs. Extend catalogue inspection to navigation coverage and group rules; add validator and component tests. Update catalogue comments and their generated reference. Enable Vitest's filesystem module cache, with a reported local improvement from approximately sixteen to ten seconds. Vincent confirms local checks, build, and browser group, breadcrumb, sequence-boundary, and direct-reload behavior. Generated freshness remains intentionally pending until the updated reference is committed. Package remains 4.8.0; no stable 4.8.1 release or successful remote run is claimed. See [orientation record](docs/CATALOGUE-ORIENTATION.md).
+No additional changes recorded.
+
+## [4.8.1] — Prepared, not published
+
+### The Reading Rooms Acquire a Directory
+
+Package and both root lockfile version fields are aligned to 4.8.1. Vincent confirms all requested aligned-state release checks and production build. Exact preparation-commit CI and Pages deployment remain pending.
+
+- Add explicit guide/reference groups, reading order, breadcrumbs, and within-group previous/next links without changing URLs. Extend catalogue inspection to navigation coverage and group rules; add validator and component tests. Update catalogue comments and their generated reference. Enable Vitest's filesystem module cache, with a reported local improvement from approximately sixteen to ten seconds. Vincent confirms local checks, build, and browser group, breadcrumb, sequence-boundary, and direct-reload behavior. Implementation #122 passed its exact CI and Pages deployment, including committed-reference freshness. Package is aligned to 4.8.1; [release notes](docs/RELEASE-4.8.1.md) are prepared, with local checks confirmed and preparation-commit verification pending. No stable release is claimed. See [orientation record](docs/CATALOGUE-ORIENTATION.md).
 
 - Record stable v4.8.0 publication, its annotated tag on preparation #120, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 

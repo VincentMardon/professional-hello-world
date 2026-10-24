@@ -1,6 +1,6 @@
 # Catalogue Orientation — The Reading Rooms Acquire a Directory
 
-**Local 4.8.1 implementation checkpoint — October 24, 2026. Not released.** Package remains 4.8.0. Navigation now uses explicit groups and reading order, breadcrumb trails, and bounded previous/next links. Exact-commit remote verification and release preparation remain pending.
+**Implementation verified; release preparation — October 24, 2026.** Implementation #122 passed exact-commit CI and Pages deployment, including committed-reference freshness. Grouped navigation, breadcrumbs, and bounded reading sequences are deployed. Package and both root lockfile version fields are aligned to 4.8.1, with all requested local release checks confirmed by Vincent. [4.8.1 preparation](RELEASE-4.8.1.md) awaits exact preparation-commit verification. Earlier checkpoints retain their historical verification boundaries.
 
 ## Editorial structure and source identity
 
@@ -37,3 +37,7 @@ Vitest's filesystem module cache is enabled explicitly. Vincent reports local ex
 ## Verification status
 
 Vincent confirms the requested checks pass after correcting a misspelled accessible-name expectation in the navigation test. The assistant inspects the intended group assignments and the two generated comment changes. The source-comment spelling is corrected and the reference is regenerated. Production build confirmation is reported as part of the requested checks; exact published-commit CI and Pages deployment are not yet established.
+
+## Published implementation checkpoint
+
+Implementation #122, `566c9a0ee47b2ef10b2d3c210196f2551ac1a799`, passed [CI run 40099617090 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/40099617090). This establishes committed-reference freshness and supersedes earlier remote-pending status. Version alignment, aligned-state checks, and exact preparation-commit verification remain required before stable 4.8.1 publication.
