@@ -49,3 +49,9 @@ Full pre-release checks, committed-reference freshness, exact-commit CI, Pages d
 ## Consolidated local verification
 
 Vincent subsequently confirms Biome checking, TypeScript checking, the full test run, catalogue/navigation validation, generated-reference freshness, and local-link checks all pass. The production build and requested browser checks were confirmed earlier. These reports establish the local checkpoint; no new remote CI or publication result is inferred. Generated-reference freshness must also pass against the eventual committed state.
+
+## Published implementation and release preparation
+
+Implementation #125, `0762c63182fad62f0a688d8e137b1967ba8bf482`, passed [CI run 40195077047 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/40195077047). This supersedes the remote-pending implementation status above. The [4.9.0 release notes](RELEASE-4.9.0.md) are prepared; version alignment, aligned-state checks, and exact preparation-commit verification remain outstanding. No stable 4.9.0 release is claimed.
+
+Package and both root lockfile version fields are subsequently aligned to 4.9.0. Vincent confirms all requested aligned-state checks and the production build. This supersedes the version-alignment notices above; verification of the eventual preparation commit, tagging, and stable release publication remain outstanding.

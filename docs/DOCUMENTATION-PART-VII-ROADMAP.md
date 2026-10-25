@@ -110,3 +110,7 @@ Version alignment to 4.8.1 and requested aligned-state checks are confirmed. The
 ## Local search checkpoint — October 25, 2026
 
 The 4.9.0 search capability is implemented locally across the selected catalogue, with per-section destinations, deterministic ranking, introductory excerpts, empty states, and progressively revealed results. Vincent confirms focused tests, the requested production build, and browser checks. The assistant measures the current index at 20 documents, 393 entries, and 222,302 serialized JSON bytes (43,124 with local gzip). See the [search implementation record](STATIC-SEARCH.md) for extraction boundaries, behavior, evidence, and repeated per-page payload costs. Package version remains 4.8.1; full release checks and publication are not yet claimed. Design remains deferred.
+
+Implementation #125 has now passed its exact CI and Pages deployment. The [4.9.0 dossier](RELEASE-4.9.0.md) is prepared, with version alignment and exact preparation-commit checks still pending. Publishing this capability will not by itself close Part VII: review the exit conditions and remaining authored guidance before moving to design.
+
+Version alignment to 4.9.0 and requested aligned-state checks are confirmed. The preparation commit still requires successful exact-commit CI and Pages deployment before tagging and stable publication.
