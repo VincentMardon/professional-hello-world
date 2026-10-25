@@ -114,3 +114,7 @@ The 4.9.0 search capability is implemented locally across the selected catalogue
 Implementation #125 has now passed its exact CI and Pages deployment. The [4.9.0 dossier](RELEASE-4.9.0.md) is prepared, with version alignment and exact preparation-commit checks still pending. Publishing this capability will not by itself close Part VII: review the exit conditions and remaining authored guidance before moving to design.
 
 Version alignment to 4.9.0 and requested aligned-state checks are confirmed. The preparation commit still requires successful exact-commit CI and Pages deployment before tagging and stable publication.
+
+## Stable 4.9.0 checkpoint — October 25, 2026
+
+[4.9.0 is published](RELEASE-4.9.0.md) on verified preparation #126. Its annotated tag retains that exact source state; implementation #125 and preparation #126 each passed CI and Pages deployment. The eight planned capability milestones are issued. Review Part VII's exit conditions and remaining authored guidance before deciding its closure; visual design remains deferred to the following part.

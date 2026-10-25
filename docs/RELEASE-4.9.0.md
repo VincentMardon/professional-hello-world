@@ -1,6 +1,6 @@
 # 4.9.0 — The Bureau Answers Questions
 
-**Prepared October 25, 2026; not yet published.** Implementation #125 passed its exact CI and Pages deployment. Package and both root lockfile version fields are aligned to 4.9.0. Vincent confirms all requested aligned-state checks and production build. The preparation commit and its own workflow, an annotated tag, and stable release publication remain outstanding.
+**Published October 25, 2026 at 13:27:04 UTC (14:27:04 in Paris).** [Stable GitHub release](https://github.com/VincentMardon/professional-hello-world/releases/tag/v4.9.0), neither a draft nor a prerelease. Package and both root lockfile version fields are aligned to 4.9.0. Vincent confirms all requested aligned-state checks and production build. Implementation #125 and preparation #126 each passed their own CI and Pages deployment.
 
 ## Scope
 
@@ -18,7 +18,7 @@ The Bureau of Searchable Explanations can now answer a question with a destinati
 
 Implementation #125 is `0762c63182fad62f0a688d8e137b1967ba8bf482`. Its [CI run 40195077047](https://github.com/VincentMardon/professional-hello-world/actions/runs/40195077047) completed successfully, including sanity and publish / deploy.
 
-Vincent confirms local Biome, TypeScript, the full test run, catalogue/navigation inspection, generated-reference freshness, local-link inspection, and production build. He confirms the requested browser checks for cross-document search destinations, the deployment base path, heading positioning, clearing, further results, and keyboard operation. These checks describe implementation readiness, not the unverified future preparation commit.
+Vincent confirms local Biome, TypeScript, the full test run, catalogue/navigation inspection, generated-reference freshness, local-link inspection, and production build. He confirms the requested browser checks for cross-document search destinations, the deployment base path, heading positioning, clearing, further results, and keyboard operation. Aligned-state checks and the production build were also confirmed for release preparation; its remote verification is recorded below.
 
 A read-only measurement finds 393 entries, occupying 222,302 serialized JSON bytes or 43,124 bytes with local gzip. These are index measurements, not observed network transfer sizes or a performance guarantee.
 
@@ -32,6 +32,6 @@ The installed jsdom warns about the search HTML element during component tests; 
 
 See the [search implementation record](STATIC-SEARCH.md) for responsibilities, extraction rules, ranking, evidence, and payload costs. PHW's artistic versioning identifies a reader capability milestone rather than promising strict SemVer interpretation.
 
-## Publication checkpoint
+## Verified publication
 
-No stable 4.9.0 tag or GitHub release is claimed. The eventual annotated tag must target the exact preparation commit after its own CI and Pages deployment succeed. Keep the issued source fixed when later publication records are committed.
+Stable v4.9.0 was published on October 25, 2026 at 13:27:04 UTC (14:27:04 in Paris). Annotated tag object `d7e807cc70290275a83b02dd76538457355b17c8` resolves to preparation #126, `fe562daaf69abf2509ea5bdac5787a1ff786ce28`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/40196926829) before publication. This documentary follow-up changes no application code, package version, generated output, or tag target and claims no new test or browser run.

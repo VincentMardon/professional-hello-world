@@ -9,11 +9,13 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-## [4.9.0] — Prepared 2026-10-25, not yet published
+- Record stable v4.9.0 publication, its annotated tag on preparation #126, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
+
+## [4.9.0] — 2026-10-25
 
 ### The Bureau Answers Questions
 
-Implementation #125 passed its [exact CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/40195077047). Package and both root lockfile version fields are aligned to 4.9.0. Vincent confirms all requested aligned-state checks and production build. Exact preparation-commit verification and stable publication remain pending. See the [prepared release notes](docs/RELEASE-4.9.0.md).
+Implementation #125 passed its [exact CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/40195077047). Package and both root lockfile version fields are aligned to 4.9.0. Vincent confirms all requested aligned-state checks and production build. Preparation #126 passed its own CI and Pages deployment. Its annotated tag identifies stable v4.9.0, published at 13:27:04 UTC (14:27:04 in Paris). See the [release notes](docs/RELEASE-4.9.0.md).
 
 - Add static search across twenty selected documents with shared heading destinations, weighted literal matching, introductory excerpts, empty states, clearing, and additional result batches. Add twenty-two focused test cases. Vincent confirms local checks, tests, production build, and requested browser interactions. The measured 393-entry index occupies 222,302 JSON bytes and is embedded in every documentation page. See the [search record](docs/STATIC-SEARCH.md) for behavior and limits.
 

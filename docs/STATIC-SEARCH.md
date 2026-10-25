@@ -55,3 +55,7 @@ Vincent subsequently confirms Biome checking, TypeScript checking, the full test
 Implementation #125, `0762c63182fad62f0a688d8e137b1967ba8bf482`, passed [CI run 40195077047 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/40195077047). This supersedes the remote-pending implementation status above. The [4.9.0 release notes](RELEASE-4.9.0.md) are prepared; version alignment, aligned-state checks, and exact preparation-commit verification remain outstanding. No stable 4.9.0 release is claimed.
 
 Package and both root lockfile version fields are subsequently aligned to 4.9.0. Vincent confirms all requested aligned-state checks and the production build. This supersedes the version-alignment notices above; verification of the eventual preparation commit, tagging, and stable release publication remain outstanding.
+
+## Stable publication — October 25, 2026
+
+Stable v4.9.0 was published on October 25, 2026 at 13:27:04 UTC (14:27:04 in Paris). Annotated tag object `d7e807cc70290275a83b02dd76538457355b17c8` resolves to preparation #126, `fe562daaf69abf2509ea5bdac5787a1ff786ce28`. Its [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/40196926829) before publication. This supersedes the preparation-pending notices above. This documentary follow-up changes no application code, package version, generated output, or tag target and claims no new test or browser run.
