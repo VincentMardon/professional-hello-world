@@ -106,3 +106,7 @@ Version alignment to 4.8.1 and requested aligned-state checks are confirmed. The
 ## Stable 4.8.1 checkpoint — October 24, 2026
 
 [4.8.1 is published](RELEASE-4.8.1.md) on verified preparation #123. Its annotated tag retains that exact source state; implementation #122 and preparation #123 each passed CI and Pages deployment. Static search across selected documentation remains the next planned capability for 4.9.0. Design remains deferred.
+
+## Local search checkpoint — October 25, 2026
+
+The 4.9.0 search capability is implemented locally across the selected catalogue, with per-section destinations, deterministic ranking, introductory excerpts, empty states, and progressively revealed results. Vincent confirms focused tests, the requested production build, and browser checks. The assistant measures the current index at 20 documents, 393 entries, and 222,302 serialized JSON bytes (43,124 with local gzip). See the [search implementation record](STATIC-SEARCH.md) for extraction boundaries, behavior, evidence, and repeated per-page payload costs. Package version remains 4.8.1; full release checks and publication are not yet claimed. Design remains deferred.

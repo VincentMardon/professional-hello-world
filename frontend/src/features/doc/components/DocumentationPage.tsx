@@ -13,6 +13,7 @@ import {
   extractDocumentHeadings,
   remarkDocumentHeadings,
 } from "../markdown/documentHeadings";
+import { loadSearchIndex } from "../search/loadSearchIndex";
 import {
   documentationSurface,
   documentPage,
@@ -20,6 +21,7 @@ import {
 } from "./DocumentationPage.css";
 import { DocumentContents } from "./DocumentContents";
 import { DocumentNavigation, DocumentPagination } from "./DocumentNavigation";
+import { DocumentSearch } from "./DocumentSearch";
 import { markdownHeadingComponents } from "./MarkdownHeadings";
 import { MermaidDiagram } from "./MermaidDiagram";
 
@@ -72,7 +74,10 @@ export async function DocumentationPage({
     "../docs",
     selectedDocument.file,
   );
-  const content = await readFile(sourcePath, "utf8");
+  const [content, searchEntries] = await Promise.all([
+    readFile(sourcePath, "utf8"),
+    loadSearchIndex(),
+  ]);
   const headings = extractDocumentHeadings(content);
 
   return (
@@ -83,6 +88,8 @@ export async function DocumentationPage({
 
       <main className={documentPage}>
         <DocumentNavigation documentId={documentId} />
+
+        <DocumentSearch entries={searchEntries} />
 
         <DocumentContents headings={headings} />
 

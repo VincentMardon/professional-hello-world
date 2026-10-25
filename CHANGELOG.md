@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Implement local static search over selected documentation, with shared section anchors, weighted literal matching, excerpts, empty states, clearing, and result batches. Focused tests and build/browser checks are confirmed by Vincent; version alignment and remote verification remain pending. See the [search record](docs/STATIC-SEARCH.md).
+
 - Record stable v4.8.1 publication, its annotated tag on preparation #123, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
 ## [4.8.1] — 2026-10-24
