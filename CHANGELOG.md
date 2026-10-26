@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Document the existing audio access form and seven panel components: state ownership, controlled settings, playback callbacks, volume units, status reporting, and implementation limits. Add the Part VIII roadmap with candidate tooling milestones 4.9.1 and 4.9.2. Comments and planning only; no reader capability or version change.
+
 - Record stable v4.9.0 publication, its annotated tag on preparation #126, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
 
 ## [4.9.0] — 2026-10-25

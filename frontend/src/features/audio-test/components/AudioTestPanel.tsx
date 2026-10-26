@@ -15,6 +15,22 @@ import { PlaybackControls } from "./PlaybackControls";
 import { StatusDisplay } from "./StatusDisplay";
 import { VolumeControl } from "./VolumeControl";
 
+/**
+ * Connects the audio hook to the listening panel's controls and status display.
+ *
+ * @remarks
+ * Each mounted panel calls useAudioTest for its settings, readiness, playback
+ * command, and status. Child controls receive values and callbacks rather
+ * than maintaining separate copies of those settings.
+ *
+ * Playback availability follows the hook's readiness flag. Settings and
+ * volume controls remain available while initialization is pending.
+ *
+ * The hook handles engine interaction and playback errors. This component
+ * composes the interface; it does not create audio resources directly.
+ *
+ * Decorative dividers are excluded from the accessibility tree.
+ */
 export function AudioTestPanel() {
   const {
     isReady,

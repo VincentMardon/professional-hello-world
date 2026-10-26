@@ -2,11 +2,31 @@ import { type CSSProperties, useId } from "react";
 import { semanticColors } from "../styles/semanticColors.css";
 import { playButton, playIcon, playRing } from "./PlaybackControls.css";
 
+/** Playback availability and the parent's asynchronous command. */
 type PlaybackControlsProps = {
+  /** Whether the parent currently permits playback requests. */
   isReady: boolean;
+  /** Playback command responsible for handling its own failures. */
   onPlay: () => Promise<void>;
 };
 
+/**
+ * Presents a playback button enabled by the parent's readiness flag.
+ *
+ * @param props - Playback availability and the command to invoke.
+ *
+ * @remarks
+ * Invokes onPlay without awaiting its promise or catching its rejection.
+ * The caller must handle playback failures: discarding a promise with
+ * void does not handle rejection.
+ *
+ * The control does not track pending playback or prevent repeated clicks.
+ * Readiness alone determines whether the button is disabled.
+ *
+ * Instance-specific SVG gradient references are passed to styling through
+ * CSS custom properties. The button supplies the accessible name; its
+ * icon is decorative.
+ */
 export function PlaybackControls({ isReady, onPlay }: PlaybackControlsProps) {
   const gradientId = useId();
   const ivoryId = `${gradientId}-ivory`;

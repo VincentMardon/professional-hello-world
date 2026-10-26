@@ -12,11 +12,32 @@ import {
   volumeValue,
 } from "./VolumeControl.css";
 
+/** Parent-owned volume percentage and its change callback. */
 type VolumeControlProps = {
+  /** Expected volume percentage from 0 to 100 */
   value: number;
+  /** Receives the percentage requested through the range input. */
   onChange: (volume: number) => void;
 };
 
+/**
+ * Presents a controlled volume fader and its decorative scale.
+ *
+ * @param props - Current percentage and the parent's change callback.
+ *
+ * @remarks
+ * The native range offers integer values from 0 to 100. This component
+ * does not separately clamp or validate the supplied value.
+ *
+ * The percentage drives the range, visible readout, and --volume-level
+ * CSS property. Conversion to engine gain belongs to the parent hook.
+ *
+ * The range exposes its percentage through aria-valuetext. The repeated
+ * visual readout, graduations, and icon are decorative.
+ *
+ * The SVG gradient uses an instance-specific identifier. The range input
+ * retains the fixed ID "volume"; this is not a fully instance-safe control.
+ */
 export function VolumeControl({ value, onChange }: VolumeControlProps) {
   const volumeGradientId = useId();
 
