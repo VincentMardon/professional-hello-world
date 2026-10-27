@@ -1,5 +1,11 @@
 import { style } from "@vanilla-extract/css";
 
+/**
+ * Decorative 640-by-800 SVG tile containing filled arches and outlines.
+ *
+ * Kept as source text and encoded into a CSS data URL below.
+ * Its colors are literal artwork values, independent of semanticColors.
+ */
 const pattern = `
 <svg xmlns="http://www.w3.org/2000/svg"
      width="640" height="800" viewBox="0 0 640 800">
@@ -43,6 +49,21 @@ const pattern = `
 </svg>
 `;
 
+/**
+ * Layers lighting, fine vertical texture, and repeating Art Deco artwork.
+ *
+ * @remarks
+ * CSS paints the first background image closest to the viewer:
+ * a page-sized radial vignette, then a subtle striped texture,
+ * then the repeating SVG tile.
+ *
+ * Size, position, and repeat lists correspond to that same layer order.
+ * Keep them aligned when adding, removing, or reordering images.
+ *
+ * The SVG is embedded in the generated CSS rather than loaded through
+ * a separate image URL. This background adds no content to the DOM.
+ * Page layout belongs to the consuming class.
+ */
 export const artDecoBackground = style({
   backgroundColor: "#0B1011",
   backgroundImage: [

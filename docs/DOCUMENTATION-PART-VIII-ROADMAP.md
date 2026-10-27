@@ -63,3 +63,9 @@ Review these outcomes with Vincent before closing Part VIII. Part IX is reserved
 ## Local first-batch checkpoint — October 26, 2026
 
 Vincent has applied explanatory comments to AudioTestAccess, AudioTestPanel, AudioSettings, SoundSelector, SampleRateSelector, VolumeControl, PlaybackControls, and StatusDisplay. The inspected diff contains comment additions without executable changes. The assistant's read-only Biome check passes before the final editorial spelling corrections; diff whitespace inspection also passes. No new test, build, browser run, generated reference expansion, or capability release is claimed. This batch and the roadmap await Vincent's main-repository commit and subsequent remote verification.
+
+## Published first batch and local visual-mechanism checkpoint — October 27, 2026
+
+First-batch commit #128, `c0b2d4fd7688b64a198217472a300bf888242cd7`, passed [CI run 40354855097 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/40354855097). This supersedes its remote-pending notice above.
+
+The second batch adds comments across nine hook and style files. It explains the existing picker event/CSS boundary, sampled shadow compensation, range-fill inheritance and thumb alignment, palette roles, frame composition, background layer order, and access-form layout. The inspected source diff contains comment additions only. The assistant's read-only Biome check passes before the final spelling corrections; no new local test, build, browser review, or generated-reference expansion is claimed. The standing technical chronicle direction is also recorded in AGENTS.md. These local changes await Vincent's commit and remote verification. Version remains 4.9.0; candidate tooling milestones remain proposed.

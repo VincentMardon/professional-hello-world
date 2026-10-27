@@ -7,6 +7,11 @@ globalStyle("body", {
   margin: 0,
 });
 
+/**
+ * Composes the decorative background with the audio page's layout.
+ * Typography, spacing, and content alignment remain separate from the
+ * reusable artwork class.
+ */
 export const audioTestPage = style([
   artDecoBackground,
   {
@@ -25,6 +30,8 @@ export const audioTestPage = style([
   },
 ]);
 
+// Use top alignment while the access form is present. Once the panel
+// replaces the form, the base centered layout applies again.
 globalStyle(`${audioTestPage}:has(form)`, {
   justifyContent: "flex-start",
   gap: 0,

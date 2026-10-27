@@ -26,6 +26,10 @@ export const frame = style([
   },
 ]);
 
+/**
+ * Shared positioning area for the native range and decorative guide.
+ * Their dimensions must remain coordinated for visual alignment.
+ */
 export const fader = style({
   position: "relative",
   width: "100%",
@@ -40,6 +44,19 @@ export const volumeValue = style({
   fontVariantNumeric: "tabular-nums",
 });
 
+/**
+ * Decorative track and fill behind the native range.
+ *
+ * @remarks
+ * The parent frame receives --volume-level from React as a percentage.
+ * The inherited value sets the fill height from the bottom.
+ *
+ * Vertical insets account for half the thumb's current height, aligning
+ * the guide endpoints with the intended thumb-center travel.
+ * Revisit this relationship when changing thumb dimensions.
+ *
+ * Pointer events pass through this decoration to the range input.
+ */
 export const guide = style({
   position: "absolute",
   inset: "0.625rem 0.375rem",
@@ -109,6 +126,16 @@ export const graduationMajor = style([
   },
 ]);
 
+/**
+ * Native interactive range overlaid on the decorative guide.
+ *
+ * @remarks
+ * Vertical writing mode and right-to-left direction configure upward
+ * progression. Native range behavior supplies value changes.
+ *
+ * Transparent styling exposes the custom guide beneath the control.
+ * The --volume-level property affects the decoration, not the input value.
+ */
 export const slider = style({
   position: "absolute",
   inset: 0,
@@ -133,6 +160,8 @@ export const slider = style({
   },
 });
 
+// Keep engine-specific native tracks transparent so the shared guide
+// remains visible. Firefox's progress decoration is hidden as well.
 globalStyle(`${slider}::-webkit-slider-runnable-track`, {
   width: "100%",
   height: "100%",
@@ -151,6 +180,10 @@ globalStyle(`${slider}::-moz-range-progress`, {
   background: "transparent",
 });
 
+/**
+ * Shared decorative thumb appearance for the engine-specific selectors.
+ * Its 1.25rem height is coordinated with the guide's vertical insets.
+ */
 const thumb = {
   boxSizing: "border-box" as const,
   width: "2.25rem",

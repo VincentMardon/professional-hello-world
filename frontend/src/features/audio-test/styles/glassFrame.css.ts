@@ -1,5 +1,15 @@
 import { style } from "@vanilla-extract/css";
 
+/**
+ * Shared translucent surface treatment for audio controls.
+ *
+ * @remarks
+ * Combines a tinted background, layered highlights, backdrop blur,
+ * and shadows. It supplies visual treatment rather than layout.
+ *
+ * Consumers compose this class with their own dimensions and positioning.
+ * The rendered effect depends on the backdrop and browser capabilities.
+ */
 export const glassFrame = style({
   borderRadius: "0.65rem",
 
@@ -19,6 +29,16 @@ export const glassFrame = style({
   ].join(", "),
 });
 
+/**
+ * Darker framed variant composed from glassFrame.
+ *
+ * @remarks
+ * Adds a border and replaces the radius, tint, gradients, and shadows.
+ * Retains the base backdrop blur.
+ *
+ * Stacked outer shadows suggest a thick frame without additional
+ * decorative DOM elements.
+ */
 export const darkGlassFrame = style([
   glassFrame,
   {

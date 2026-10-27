@@ -63,6 +63,12 @@ The artistic return, learning process, and satire should remain coherent across 
 - Under the existing wiki delegation, create or update the appropriate page, maintain navigation, review the changes, commit with the wiki's next sequence number, and synchronize with GitHub. Report the published page and synchronization status. No separate routine publication approval is needed once the personal context for the chronicle is settled.
 - This is a conversation-triggered workflow, not a scheduled monitor or background automation.
 
+## Standing Technical Chronicle Direction — October 26, 2026
+
+- Vincent now requests technical chronicles as the standing default in all circumstances. This supersedes the mandatory personal check-in before each published-commit chronicle: inspect the published change and proceed without asking about his feelings or requesting the same editorial choice again.
+- Preserve inventive technical satire and proportionate celebrations when requested. Do not infer or publish personal context from ordinary conversation. A personal account or a different narrative register requires Vincent's explicit direction.
+- A future discussion of fictional escaped-agent storylines is deferred. Do not develop or revive such a plot merely because Vincent mentions revisiting it later.
+
 ## Documentation Release Scope and Artistic Versioning
 
 - On October 21, 2026, Vincent explicitly makes version increments part of PHW lore rather than a strict SemVer promise. A small new capability may use the third number; describe actual scope and compatibility accurately.

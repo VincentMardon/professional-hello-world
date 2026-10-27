@@ -1,3 +1,11 @@
+/**
+ * Literal color palette for the audio feature.
+ *
+ * @remarks
+ * Names describe color families and shade identifiers, not interface roles.
+ * Numeric suffixes are palette labels, not computed lightness values.
+ * Values are plain strings rather than runtime theme variables.
+ */
 export const primitiveColors = {
   ivory: "#F5F1E8",
 

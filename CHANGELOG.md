@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Explain existing audio visual mechanisms in source comments: picker animation history, compensated shadows, range decoration, color roles, shared glass frames, layered SVG backgrounds, and access-form layout. Record the standing technical-only chronicle direction. No executable, appearance, dependency, or version change.
+
 - Document the existing audio access form and seven panel components: state ownership, controlled settings, playback callbacks, volume units, status reporting, and implementation limits. Add the Part VIII roadmap with candidate tooling milestones 4.9.1 and 4.9.2. Comments and planning only; no reader capability or version change.
 
 - Record stable v4.9.0 publication, its annotated tag on preparation #126, and successful exact-commit CI and Pages deployment. Documentation only; no runtime change or tag movement.
