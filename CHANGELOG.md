@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Clarify documentation navigation context, breadcrumbs, reading sequences, contents and heading links, shared reader assembly, URL transformation, and catalogue-driven static routes through source comments. Replace obsolete planned-indexing wording. No runtime, route, generated-reference, or version change.
+
 - Explain shared theme-switch responsibilities, homepage content and spacing, root metadata, viewport declarations, and layout scope through source comments. Clarify inactive head placeholders and separate provider state from fixed browser theme color. No runtime, styling, generated-reference, or version change.
 
 - Explain existing audio visual mechanisms in source comments: picker animation history, compensated shadows, range decoration, color roles, shared glass frames, layered SVG backgrounds, and access-form layout. Record the standing technical-only chronicle direction. No executable, appearance, dependency, or version change.

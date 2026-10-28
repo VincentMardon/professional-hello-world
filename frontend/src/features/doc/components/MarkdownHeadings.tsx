@@ -3,8 +3,23 @@ import type { Components, ExtraProps } from "react-markdown";
 
 import { headingPermalink } from "./DocumentationPage.css";
 
+/** Markdown heading levels supported by the reader. */
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
+/**
+ * Creates a Markdown heading renderer for one semantic level.
+ *
+ * @param level - Heading level to preserve in the rendered HTML.
+ * @returns A renderer retaining the supplied ID and adding a section link.
+ *
+ * @remarks
+ * Identifier generation belongs to the shared Markdown indexing plugin.
+ * This renderer does not derive an address from the heading's children.
+ *
+ * Preserves formatted children and forwards HTML attributes, while removing
+ * react-markdown's source node from the props passed to the DOM.
+ * Adds the permalink only when a nonempty ID is supplied.
+ */
 function createHeading(level: HeadingLevel) {
   return function SectionHeading({
     node: _node,
@@ -29,7 +44,16 @@ function createHeading(level: HeadingLevel) {
   };
 }
 
-/**Markdown heading renderers preserving indexed IDs and exposing section links. */
+/**
+ * Supplies heading renderers for all six Markdown levels.
+ *
+ * @remarks
+ * Each renderer preserves the indexed ID and exposes an encoded
+ * fragment-only link labelled "Link to this section".
+ *
+ * Rendering and the section directory must use the same indexing rules
+ * so their destinations agree.
+ */
 export const markdownHeadingComponents = {
   h1: createHeading(1),
   h2: createHeading(2),

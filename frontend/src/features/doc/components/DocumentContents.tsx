@@ -5,6 +5,14 @@ import type { DocumentHeading } from "../markdown/documentHeadings";
  *
  * @param props - Headings indexed from the displayed document.
  * @returns A section directory, or null when no selected headings exist.
+ *
+ * @remarks
+ * Preserves input order in a flat list rather than rebuilding nesting.
+ * Uses supplied heading IDs without generating or deduplicating them.
+ * Empty heading labels fall back to "Untitled section".
+ *
+ * Fragment-only links target the current page and encode the identifier.
+ * The component does not track scroll position or mark an active section.
  */
 export function DocumentContents({
   headings,

@@ -14,9 +14,21 @@ import {
  * Presents catalogue groups and the current document's breadcrumb trail.
  *
  * @param props - Current catalogue document identifier.
+ * @throws When no usable navigation context exists for the document.
+ *
  * @remarks
- * The current group starts expanded. Other groups remain available
- * through native disclosures. Breadcrumbs use existing landing pages.
+ * The current group starts expanded. Native disclosures provide access
+ * to the other groups. The current document is marked with aria-current.
+ *
+ * Breadcrumbs express editorial location, not browser history or a
+ * hierarchy inferred from URL segments.
+ *
+ * Reception is followed by the group's landing page when appropriate,
+ * then the current document. Redundant landing entries are omitted,
+ * and the current breadcrumb is text rather than a link to itself.
+ *
+ * Public paths come from the catalogue; Next Link handles the deployment
+ * prefix. Navigation declarations must be validated separately.
  */
 export function DocumentNavigation({ documentId }: { documentId: DocumentId }) {
   const current = documents[documentId];
@@ -84,9 +96,19 @@ export function DocumentNavigation({ documentId }: { documentId: DocumentId }) {
  * Offers adjacent documents within the current reading group.
  *
  * @param props - Current catalogue document identifier.
+ * @returns Neighbor links, or null when neither neighbor exists.
+ * @throws When no usable navigation context exists for the document.
+ *
  * @remarks
+ * Follows the group's explicit reading order, not catalogue declaration
+ * order, URL sorting, or browser history.
+ *
  * Navigation never wraps or crosses group boundaries.
  * Missing neighbors are omitted rather than shown as disabled links.
+ * Links expose their sequence relationship through rel="prev" or "next".
+ *
+ * Public paths come from the catalogue; Next Link handles the deployment
+ * prefix.
  */
 export function DocumentPagination({ documentId }: { documentId: DocumentId }) {
   const navigation = getDocumentNavigation(documentId);

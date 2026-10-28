@@ -58,7 +58,7 @@ export function indexDocumentHeadings(tree: Root): DocumentHeading[] {
 }
 
 /**
- * Extracts heading addresses using the reader's planned indexing rule.
+ * Extracts heading addresses using the reader's shared indexing rule.
  *
  * @param source - CommonMark/GFM source.
  * @returns Headings in document order, including levels one through six.

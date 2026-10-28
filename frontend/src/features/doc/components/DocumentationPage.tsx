@@ -25,9 +25,30 @@ import { DocumentSearch } from "./DocumentSearch";
 import { markdownHeadingComponents } from "./MarkdownHeadings";
 import { MermaidDiagram } from "./MermaidDiagram";
 
+/** Repository base used to resolve links outside registered reader pages. */
 const repositoryRoot =
   "https://github.com/VincentMardon/professional-hello-world/";
 
+/**
+ * Resolves a Markdown URL relative to its selected source document.
+ *
+ * @param value - URL supplied by the Markdown renderer.
+ * @param sourceFile - Source path relative to the documentation directory.
+ * @returns A filtered URL, registered reader path, or repository destination.
+ *
+ * @remarks
+ * Applies react-markdown's default URL filtering first.
+ * Fragment-only, root-relative, and explicit-scheme URLs then pass through.
+ *
+ * Relative destinations matching a registered source become reader paths,
+ * preserving the query and fragment.
+ *
+ * Other relative destinations point to the repository on main. A final
+ * segment without a dot selects a tree URL by convention; this is a
+ * heuristic, not a filesystem inspection.
+ *
+ * This helper performs no existence or fragment validation.
+ */
 function resolveDocumentUrl(value: string, sourceFile: string) {
   const safeUrl = defaultUrlTransform(value);
 
@@ -63,6 +84,30 @@ function resolveDocumentUrl(value: string, sourceFile: string) {
   return destination.href;
 }
 
+/**
+ * Builds the shared reader for a selected catalogue document.
+ *
+ * @param props - Catalogue document identifier; defaults to reception.
+ * @returns The document reader with navigation, search, contents, and controls.
+ * @throws When loading the selected source or search inventory fails.
+ *
+ * @remarks
+ * Reads maintained Markdown on the server during static page generation.
+ * Source paths assume the application runs from the frontend directory.
+ *
+ * Loads the current source and complete search inventory in parallel.
+ * The serialized inventory is passed to the browser search component.
+ *
+ * Contents extraction and Markdown rendering use the same heading rules.
+ * Mermaid code blocks are delegated to the client diagram component;
+ * other code blocks retain ordinary preformatted rendering.
+ *
+ * Registered reader links use Next Link for deployment-prefix handling.
+ * Other links remain ordinary anchors after URL transformation.
+ *
+ * Catalogue validation and route selection occur outside this component.
+ * It does not accept an arbitrary source path from the visitor.
+ */
 export async function DocumentationPage({
   documentId = "overview",
 }: {
@@ -78,6 +123,9 @@ export async function DocumentationPage({
     readFile(sourcePath, "utf8"),
     loadSearchIndex(),
   ]);
+
+  // Build the contents index separately; the rendering plugin applies
+  // the same identifier rules to the tree used for HTML output.
   const headings = extractDocumentHeadings(content);
 
   return (
