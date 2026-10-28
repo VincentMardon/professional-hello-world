@@ -2,6 +2,11 @@ import { style } from "@vanilla-extract/css";
 
 import { themeColors } from "../shared/theme/theme.css";
 
+/**
+ * Switch track using the shared theme colors.
+ * Provides the positioning container for the decorative thumb.
+ * Screen placement remains the consuming layout's responsibility.
+ */
 export const themeSwitch = style({
   position: "relative",
   display: "inline-flex",
@@ -25,6 +30,14 @@ export const themeSwitch = style({
   },
 });
 
+/**
+ * Decorative indicator positioned from the button's checked state.
+ *
+ * @remarks
+ * CSS reads aria-checked rather than maintaining a separate visual flag.
+ * The translation is coordinated with the track and thumb dimensions.
+ * Reduced-motion preference removes the transition, not the state change.
+ */
 export const thumb = style({
   position: "absolute",
   top: "0.25rem",
@@ -49,6 +62,7 @@ export const thumb = style({
   },
 });
 
+/** Decorative icon sizing; pointer events remain with enclosing button. */
 export const icon = style({
   position: "relative",
   width: "1.5rem",

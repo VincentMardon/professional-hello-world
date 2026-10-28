@@ -1,5 +1,9 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 
+/**
+ * Centers the homepage's content within at least one dynamic viewport height.
+ * Supplies layout and typography without owning the greeting's wording.
+ */
 export const greeting = style({
   boxSizing: "border-box",
   minHeight: "100dvh",
@@ -14,6 +18,10 @@ export const greeting = style({
   textAlign: "center",
 });
 
+/**
+ * Keeps the documentation entry point at the viewport's lower-right corner,
+ * independently of the centered greeting's flex layout.
+ */
 export const documentationNav = style({
   position: "fixed",
   right: "1rem",

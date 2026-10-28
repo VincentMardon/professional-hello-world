@@ -5,8 +5,17 @@ import { ThemeProvider } from "../shared/theme/ThemeProvider";
 
 import "./layout.css";
 
+/** Published site base, including the GitHub Pages deployment path. */
 const siteUrl = "https://vincentmardon.github.io/professional-hello-world/";
 
+/**
+ * Root metadata defaults and social-sharing declarations.
+ *
+ * @remarks
+ * Individual routes may declare their own metadata.
+ * The generator value is a ceremonial label, not the package version.
+ * Robots directives express indexing preferences, not access control.
+ */
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Professional Hello World",
@@ -30,6 +39,10 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Shared viewport declarations with a fixed black browser theme color.
+ * The theme color does not follow the in-memory light/dark selection.
+ */
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -37,6 +50,19 @@ export const viewport: Viewport = {
   themeColor: "#000000",
 };
 
+/**
+ * Wraps every route in the shared English document and theme provider.
+ *
+ * @param props - Page content supplied by the active route.
+ *
+ * @remarks
+ * Imports the global body reset and places page content inside one
+ * shared ThemeProvider. Theme classes apply to the provider's wrapper.
+ *
+ * Retains legacy head declarations and connection hints for ceremonial
+ * continuity. Commented resource and script examples are inactive.
+ * Their presence does not install analytics or feature flags.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -65,7 +91,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/static/css/animations.css" />
         */}
 
-        {/* Hypotetical analytics: reserved, not implemented.
+        {/* Hypothetical analytics: reserved, not implemented.
         <script src="/static/js/telemetry.js" defer />
         <script src*"/static/js/feature-flags.js" defer />
         */}

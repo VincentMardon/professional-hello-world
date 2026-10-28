@@ -4,6 +4,22 @@ import { useTheme } from "../shared/theme/ThemeProvider";
 
 import { icon, themeSwitch, thumb } from "./ThemeSwitch.css";
 
+/**
+ * Toggles the nearest theme provider through a labelled switch.
+ *
+ * @throws When rendered outside ThemeProvider.
+ *
+ * @remarks
+ * Reads the current selection from context and delegates changes to
+ * the provider. Owns no independent theme state or persistence.
+ *
+ * The accessible label remains "Dark theme"; aria-checked indicates
+ * whether that option is enabled. The sun, moon and thumb are decorative.
+ *
+ * Uses a native button for activation. Placement belongs to the caller.
+ * Only styles consuming the shared theme variables follow the selection;
+ * this control does not recolor every element in the application.
+ */
 export function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
 
