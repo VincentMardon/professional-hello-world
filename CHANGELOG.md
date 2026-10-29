@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Explain static-search extraction, section identities, metadata repetition, concurrent source loading, literal ranking, result batches, and excerpt limits in source comments. No search algorithm, payload, generated-reference, or version change.
+
 - Clarify documentation navigation context, breadcrumbs, reading sequences, contents and heading links, shared reader assembly, URL transformation, and catalogue-driven static routes through source comments. Replace obsolete planned-indexing wording. No runtime, route, generated-reference, or version change.
 
 - Explain shared theme-switch responsibilities, homepage content and spacing, root metadata, viewport declarations, and layout scope through source comments. Clarify inactive head placeholders and separate provider state from fixed browser theme color. No runtime, styling, generated-reference, or version change.

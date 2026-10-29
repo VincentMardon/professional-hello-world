@@ -6,8 +6,20 @@ import { useId, useState } from "react";
 import type { SearchEntry } from "../search/buildSearchIndex.ts";
 import { searchDocuments } from "../search/searchDocuments.ts";
 
+/** Number of additional ranked results revealed by each display request. */
 const resultBatchSize = 20;
 
+/**
+ * Builds an introductory excerpt from section text or document description.
+ *
+ * @param entry - Search entry whose text should be previewed.
+ * @returns Up to 180 UTF-16 code units, followed by "..." when truncated.
+ *
+ * @remarks
+ * Does not center the excerpt on query terms or highlight matches.
+ * Truncation does not preserve word or grapheme boundaries.
+ *
+ */
 function excerpt(entry: SearchEntry): string {
   const text = entry.text || entry.description;
 
@@ -17,12 +29,23 @@ function excerpt(entry: SearchEntry): string {
 /**
  * Searches the selected documentation index in the browser.
  *
- * @param props - Serializable entries prepared during page generation.
+ * @param props - Complete serializable entries prepared during page generation.
  *
  * @remarks
- * Queries remain in component memory and are not submitted to a server.
- * Results use ordinary links and preserve the reader's section anchors.
- * Additional matches are revealed in batches without changing their ranking.
+ * Queries and the visible-result allowance live in this component instance.
+ * They are not submitted to a server, stored in the URL, or persisted
+ * across a full reload. Closing the disclosure does not clear them.
+ *
+ * Recomputes matching synchronously on each render.
+ * Shows an initial batch of twenty matches; further requests reveal
+ * more entries from the ranked result list.
+ *
+ * Editing or clearing the query resets the display allowance.
+ * Empty queries show instructions; unmatched queries show an empty state.
+ * The status output declares polite announcements of result counts.
+ *
+ * Result links retain section anchors and use Next Link for deployment
+ * prefix handling. Excerpts introduce sections rather than locating matches.
  */
 export function DocumentSearch({
   entries,
@@ -36,6 +59,8 @@ export function DocumentSearch({
 
   const results = searchDocuments(entries, query);
   const hasQuery = query.trim().length > 0;
+
+  // Limit presentation after ranking; the matcher still returns every match.
   const visibleResults = results.slice(0, visibleCount);
 
   return (
