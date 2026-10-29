@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Document the catalogue/navigation runner, generated-reference Git-status inspection, and two-pass local-link inspector. Clarify failure reporting, generation prerequisites, occurrence counters, and deferred checks. Comments only; no new validation capability or version change.
+
 - Explain static-search extraction, section identities, metadata repetition, concurrent source loading, literal ranking, result batches, and excerpt limits in source comments. No search algorithm, payload, generated-reference, or version change.
 
 - Clarify documentation navigation context, breadcrumbs, reading sequences, contents and heading links, shared reader assembly, URL transformation, and catalogue-driven static routes through source comments. Replace obsolete planned-indexing wording. No runtime, route, generated-reference, or version change.

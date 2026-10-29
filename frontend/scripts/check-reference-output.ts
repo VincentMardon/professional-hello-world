@@ -1,8 +1,26 @@
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
+/**
+ * Checks Git status for the owned generated-reference directory.
+ *
+ * @remarks
+ * The npm freshness command runs TypeDoc before invoking this script.
+ * Running this script alone does not regenerate or validate source comments.
+ *
+ * Refuses reported staged, unstaged, deleted, or untracked output.
+ * Intentional generated changes must be reviewed and committed before
+ * the freshness command can pass.
+ *
+ * Requires Git and a working repository checkout. Does not stage files,
+ * create commits, or modify generated content.
+ */
+
+// Resolve the checkout root from this script's location.
 const repositoryRoot = fileURLToPath(new URL("../../", import.meta.url));
 
+// Use stable porcelain output and include individual untracked files.
+// Restrict inspection to the generated-reference directory.
 const inspection = spawnSync(
   "git",
   [
@@ -18,6 +36,7 @@ const inspection = spawnSync(
   },
 );
 
+// Distinguish failure to start Git, a failed Git command, and changed output.
 if (inspection.error) {
   console.error(
     "The Registry could not start its output inspection:",

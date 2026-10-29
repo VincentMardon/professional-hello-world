@@ -12,11 +12,32 @@ import { inspectDocumentDestination } from "../src/features/doc/validation/inspe
 import { inspectDocumentFragment } from "../src/features/doc/validation/inspectDocumentFragment.ts";
 import { validateDocumentCatalogue } from "../src/features/doc/validation/validateDocumentCatalogue.ts";
 
+// Resolve repository paths from this script rather than the working directory.
 const repositoryRoot = fileURLToPath(new URL("../../", import.meta.url));
 const documentationRoot = path.join(repositoryRoot, "docs");
 
+/** Published base used to recognize local site URLs during inspection. */
 const siteUrl = "https://vincentmardon.github.io/professional-hello-world/";
 
+/**
+ * Inspects Markdown links from the selected documentation sources.
+ *
+ * @returns A promise settling after the inspection summary is reported.
+ *
+ * @remarks
+ * Requires a valid catalogue before indexing sources and heading IDs.
+ * Navigation-group validation belongs to the separate catalogue command.
+ *
+ * Indexes all selected heading inventories before inspecting links so
+ * cross-document fragments do not depend on catalogue traversal order.
+ *
+ * Delegates destination checks and fragment checks to separate inspectors.
+ * External destinations are not fetched. Deferred fragment checks remain
+ * outside the acceptance claim.
+ *
+ * Collects source and link diagnostics and sets exit code one on failure.
+ * Does not generate documentation, modify files, or render the site.
+ */
 async function main() {
   const catalogueErrors = await validateDocumentCatalogue(
     documentEntries,
@@ -51,6 +72,8 @@ async function main() {
   let fragmentsDeferred = 0;
   let fragmentsRejected = 0;
 
+  // Prepare source text and shared heading IDs for every selected document.
+  // File inventories use resolved paths; route inventories use reader paths.
   for (const [id, document] of documentEntries) {
     const sourcePath = path.resolve(documentationRoot, document.file);
 
@@ -74,6 +97,8 @@ async function main() {
     }
   }
 
+  // Inspect occurrences only after the cross-document inventories are ready.
+  // Sources that failed indexing already have diagnostics and are skipped.
   for (const [id, document] of documentEntries) {
     const sourcePath = path.resolve(documentationRoot, document.file);
 
@@ -147,6 +172,9 @@ async function main() {
     }
   }
 
+  // Destination and fragment counters describe separate checks of occurences,
+  // not unique URLs. The document count reports selected declarations,
+  // including documents whose inspection may have produced an error.
   console.info(
     [
       `Documents inspected: ${documentEntries.length}.`,
