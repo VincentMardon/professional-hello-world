@@ -19,7 +19,7 @@ Begin with the URL you are investigating. Then follow composition into the relev
 | `/doc/audio-lifecycle/` | [Lifecycle route](../frontend/src/app/doc/%5B...slug%5D/page.tsx) | Select the authored sound explanation |
 | `/doc/reference/use-beep-engine/` | [Reference route](../frontend/src/app/doc/%5B...slug%5D/page.tsx) | Select generated hook documentation |
 
-The base path comes from [Next configuration](../frontend/next.config.ts). The table omits that prefix for readability. All documentation destinations except reception now use one generic catch-all route. The [catalogue](../frontend/src/features/doc/data/documents.ts) supplies nine selected documents, their metadata, and slug segments. Static parameter generation exports those paths; no additional wrapper is needed for an entry. Vincent confirms local checks pass after route-type regeneration. Export inspection finds all nine destinations; exact-commit remote verification remains pending.
+The base path comes from [Next configuration](../frontend/next.config.ts). The table omits that prefix for readability. All documentation destinations except reception now use one generic catch-all route. The [catalogue](../frontend/src/features/doc/data/documents.ts) supplies twenty selected documents: eight guides and twelve generated reference pages, with metadata and slug segments. Static parameter generation exports those paths; no additional wrapper is needed for an entry. The table gives representative destinations rather than the full inventory.
 
 ## 3. The shared envelope
 
@@ -51,6 +51,26 @@ Mermaid code fences receive special handling. The [diagram component](../fronten
 
 Keeping reader, renderer, and viewport distinct lets a content change remain content, a layout change remain presentation, and a diagram-control change receive focused behavioral review. A static export still needs browser JavaScript for interactive diagrams.
 
+### Navigation and heading addresses
+
+[documentNavigation](../frontend/src/features/doc/data/documentNavigation.ts) declares Guides and Technical reference as separate ordered groups. Each selected document appears exactly once. Breadcrumbs express that editorial context rather than reconstructing URL directories; previous/next links stop at group boundaries. The first document is the group's existing landing page, not an extra generated route.
+
+[documentHeadings](../frontend/src/features/doc/markdown/documentHeadings.ts) supplies the shared heading-ID rule for rendering, contents, search destinations, and fragment inspection. Duplicate tracking resets for each document. Repeated headings receive distinct addresses; punctuation-only headings use a unique section fallback. Renaming headings or reordering duplicates can change public fragments.
+
+The **On this page** disclosure lists heading levels two and three in a flat list. Heading permalinks address individual headings; the contents component does not track the active section while scrolling.
+
+### Search: source to browser
+
+The pipeline has five steps:
+
+1. [loadSearchIndex](../frontend/src/features/doc/search/loadSearchIndex.ts) reads the selected sources during page generation. A failed read rejects the operation instead of returning a partial index.
+2. [extractSearchSections](../frontend/src/features/doc/search/extractSearchSections.ts) separates introductions and heading sections using the shared heading addresses. Prose, tables, lists, image alternative text, and ordinary code contribute text; Mermaid source, raw HTML markup, and link destinations do not.
+3. [buildSearchIndex](../frontend/src/features/doc/search/buildSearchIndex.ts) combines section text with document metadata and reader URLs. The full index is passed to the browser in each documentation page. Each loader invocation rebuilds it; no loader cache is installed.
+4. [searchDocuments](../frontend/src/features/doc/search/searchDocuments.ts) compares literal substrings after case and combining-accent normalization. Every distinct whitespace-separated query term must match the same entry, potentially in different fields. Title, heading, description, and body matches receive weights of eight, four, two, and one respectively; ties preserve index order.
+5. [DocumentSearch](../frontend/src/features/doc/components/DocumentSearch.tsx) owns the query and batches of twenty visible results. Excerpts use the beginning of the section text, falling back to its description; they are not centered on the match. Full reloads reset component state.
+
+There is no runtime search API, fuzzy matching, or query persistence in the URL. The separation lets maintainers inspect extraction, ranking, and interaction without treating them as one opaque search engine. More selected content increases the index embedded in every reader page.
+
 ## 6. Change the layer that owns the problem
 
 | Desired change | First place to inspect |
@@ -61,6 +81,9 @@ Keeping reader, renderer, and viewport distinct lets a content change remain con
 | Change a control's arrangement | Component composition and its feature stylesheet |
 | Change zoom behavior | Diagram viewport hook and controls |
 | Change publication conditions | CI and reusable deployment workflows |
+| Change document order or group membership | Navigation declarations and their validator |
+| Change search matches or ranking | Search extraction, index building, and matcher |
+| Diagnose an unregistered generated page | Reference-coverage runner and catalogue |
 | Change a shared error message policy | Shared utility and the callers relying on it |
 
 A cross-cutting change may legitimately touch several layers. The table identifies starting points, not a rule that a feature may only touch one file.

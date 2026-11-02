@@ -20,6 +20,7 @@ The root project has an [MIT license](../LICENSE). That file is not a substitute
 | Vanilla Extract | Typed style source integrated with the frontend toolchain | Selectors and theme consumers still need deliberate ownership |
 | BeepEngine | Audio interface backed by its packaged generation and browser integration | Upstream engine source is maintained outside this application repository |
 | react-markdown and remark-gfm | Markdown-to-reader presentation and GFM constructs | They are not a complete documentation platform or automatic publication policy |
+| Markdown AST utilities and github-slugger | Extract headings, link occurrences, and search sections with shared reader addresses | Parsing and deterministic IDs do not establish factual correctness |
 | Mermaid | Browser-rendered diagrams | Syntax, truth of the diagram, and browser interaction require different checks |
 | TypeDoc and its Markdown plugin | Extracted source reference | Comments supply semantics that inferred signatures cannot |
 | Biome | Lint and format checks | Formatting does not establish behavior |
@@ -33,7 +34,7 @@ The application consumes `beep-engine` through a local archive reference to `fro
 
 The engine is independently developed. Its Rust and WebAssembly work must not be described as source files located in PHW merely because the resulting package is vendored here. The frontend imports its interface, initializes it through a hook, and dispatches sound requests through the returned methods.
 
-The [sound-lifecycle guide](AUDIO-LIFECYCLE.md) explains that integration in detail. The generated reference currently covers PHW's initialization hook, not the complete upstream engine API.
+The [sound-lifecycle guide](AUDIO-LIFECYCLE.md) explains that integration in detail. The selected generated reference covers PHW's audio hooks and other application contracts, not the complete upstream engine API.
 
 Vendoring makes the selected archive available with the checkout. It does not automatically establish authenticity, reproduce the archive from upstream sources, or test all exported behavior. No additional provenance attestation is claimed by this guide.
 
@@ -57,6 +58,6 @@ If a source-reference generator changes output, regenerate and review the refere
 
 This guide does not announce automated dependency updates, a software bill of materials, vulnerability triage automation, a reproducible upstream engine build, or comprehensive license verification. Those would be separate capabilities with their own implementation and evidence.
 
-The next comment-completion work should document the actual application contracts beside their code. It should not copy this entire dependency map into every import statement. The manual explains the relationships; source comments explain the contracts that need local context.
+Source comments document actual application contracts beside their code; selected TypeDoc entry points determine which contracts also receive generated pages. Avoid copying this entire dependency map into every import statement. The manual explains the relationships; source comments explain the contracts that need local context.
 
 Borrowed machinery is allowed. Unclear ownership is what this office is meant to prevent.

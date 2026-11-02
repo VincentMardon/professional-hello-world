@@ -6,9 +6,10 @@ Professional Hello World is an artistic and technical learning project that gran
 
 The Directorate exists to make that machinery understandable. Visitors are entitled to learn what the project does, contributors need to know where behavior lives, and maintainers should be able to explain a decision without excavating every preceding ceremony. The paperwork is extravagant. The underlying explanations must earn their space.
 
-**Current implementation:** the shared Markdown reader, document navigation, dark/light switch, Mermaid rendering, diagram zoom/fitting/fullscreen, and one generated hook reference are implemented. [4.5.1](RELEASE-4.5.1.md) is the latest verified stable release in this record and adds the reference freshness gate. Historical release notes preserve their own publication evidence.
+**Current implementation — November 2, 2026:** twenty selected documents share the reader: eight authored guides and twelve generated reference pages. Catalogue-driven static routes, grouped navigation, breadcrumbs, group-local previous/next links, heading permalinks, an on-page contents list, static section search, the theme switch, and Mermaid zoom/fitting/fullscreen are implemented. [4.9.1](RELEASE-4.9.1.md) is the latest verified stable release and adds generated-reference coverage inspection. Historical release notes preserve their own publication evidence.
 
-**Content expansion:** the operations, frontend field guide, and documentation workshop below are now authored and readable from the repository. Vincent has added their registry entries and route wrappers at `/doc/operations`, `/doc/frontend`, and `/doc/workshop`. Vincent confirms the integrated guides work locally. Biome passes on 62 files; exact-commit remote verification remains pending. Design review will use this broader content rather than an almost empty reading room.
+**Reading model:** the catalogue selects sources and metadata; a separate navigation declaration assigns every selected document to one reading group. Reception uses its explicit route, while the remaining selected paths use one static catch-all route. Adding a guide does not require another page wrapper. The visual redesign remains reserved for Part IX.
+
 ## 1. Choose your counter
 
 Continue with the [Directorate of Structural Disproportion — architecture](ARCHITECTURE.md) to examine the responsibilities and boundaries behind the rooms.
@@ -21,11 +22,11 @@ Continue with the [Directorate of Structural Disproportion — architecture](ARC
 | How do I find a responsibility in the frontend? | [Frontend field guide](FRONTEND-GUIDE.md) |
 | How do I write, generate, and publish documentation? | [Documentation workshop](DOCUMENTATION-WORKSHOP.md) |
 | What happens between pressing Play and browser output? | [Sound lifecycle](AUDIO-LIFECYCLE.md) |
-| What does the initialization hook expose? | [Generated hook reference](generated/reference/features/audio-test/hooks/useBeepEngine.md) |
+| Which technical contracts are extracted from source? | [Generated reference index](generated/reference/README.md) and [initialization hook](generated/reference/features/audio-test/hooks/useBeepEngine.md) |
 | What does the access form actually protect? | [Trust boundaries](TRUST-BOUNDARIES.md) |
 | Which machinery belongs to PHW and which comes from packages? | [Dependencies](DEPENDENCIES.md) |
 | How should I contribute? | [Contribution process](../CONTRIBUTING.md) |
-| What changed in the latest verified milestone? | [4.5.1 release notes](RELEASE-4.5.1.md) and [changelog](../CHANGELOG.md) |
+| What changed in the latest verified milestone? | [4.9.1 release notes](RELEASE-4.9.1.md) and [changelog](../CHANGELOG.md) |
 | How does work become a release? | [Release process](RELEASE-PROCESS.md) |
 | What documentation are we building? | [Documentation charter](DOCUMENTATION-CHARTER.md) |
 | Where is the historical institutional spectacle? | [The separate project wiki](https://github.com/VincentMardon/professional-hello-world/wiki) |
@@ -55,18 +56,18 @@ PHW consumes a vendored BeepEngine 0.1.2 package. The independently developed en
 | [`frontend/src/app/`](../frontend/src/app) | Application routes and page composition | How a URL reaches a composed view |
 | [`frontend/src/components/`](../frontend/src/components) | Greeting and spacer components | Small semantic building blocks |
 | [`frontend/src/features/audio-test/`](../frontend/src/features/audio-test) | Audio-test behavior and presentation | Components, hooks, feature styles, and sound types |
-| [`frontend/src/shared/`](../frontend/src/shared) | Shared application utilities | Error-message conversion currently used by the audio hooks |
+| [`frontend/src/shared/`](../frontend/src/shared) | Shared application behavior | Theme context and error-message conversion |
 | [`frontend/vendor/`](../frontend/vendor) | Vendored dependency archives | The package consumed by the frontend, distinct from its upstream source |
 | [`frontend/public/`](../frontend/public) | Static public assets | Material copied into the site export |
 | [`.github/workflows/`](../.github/workflows) | Verification and deployment automation | CI followed by publication of its built artifact |
 | [`docs/`](.) | Technical explanations, plans, and historical documents | Status notices distinguishing implemented behavior from proposals |
 | [`records/`](../records/README.md) | Issued administrative correspondence | Preserved satirical records with their own presentation rules |
 
-The new `frontend/src/app/doc/` and `frontend/src/features/doc/` directories follow the route/feature separation already used by the audio annex. The route delegates to an asynchronous documentation component that reads this file; relative source links are adapted to GitHub destinations. Generated website output belongs in `frontend/out/` under the current export configuration.
+The `frontend/src/app/doc/` and `frontend/src/features/doc/` directories follow the route/feature separation already used by the audio annex. Routes delegate to the shared asynchronous reader. Relative links to selected documents become reader destinations; other relative source links use GitHub fallbacks. Generated website output belongs in `frontend/out/` under the current export configuration.
 
 ## 4. Follow a sound through the institution
 
-Read the [Bureau of Audible Transit — sound lifecycle](AUDIO-LIFECYCLE.md) for the detailed sequence, package boundary, completion semantics, and test limits. The Markdown is available in the repository and registered at `/doc/audio-lifecycle` in the local documentation navigation. Vincent confirms the page is displayed and the local checks and build are complete. Export inspection confirms the new page; exact-commit CI and deployment remain pending publication.
+Read the [Bureau of Audible Transit — sound lifecycle](AUDIO-LIFECYCLE.md) for the detailed sequence, package boundary, completion semantics, and test limits. The Markdown is available in the repository and registered at `/doc/audio-lifecycle` in the documentation navigation.
 
 The audio interaction has several distinguishable stages.
 
@@ -82,11 +83,11 @@ The distinction between these responsibilities matters more than the number of f
 
 ## 5. What the inspections can establish
 
-The repository contains homepage and audio-page tests. The homepage suite renders the real greeting composition. The audio suite mocks the engine and replaces the access component with the panel, concentrating on integration behavior. Those boundaries matter: they do not independently verify audible sound or password acceptance and refusal.
+The repository contains homepage, audio-page, documentation navigation, search, heading, and validation tests. The homepage suite renders the real greeting composition. The audio suite mocks the engine and replaces the access component with the panel, concentrating on integration behavior. Those boundaries matter: they do not independently verify audible sound or password acceptance and refusal.
 
-The current CI installs the recorded dependencies, runs Biome, checks TypeScript, runs Vitest, verifies the tracked generated reference, and creates the static production export. Successful main-branch runs can then publish the built artifact through the reusable Pages workflow. A new implementation must be checked on its own commit; an earlier successful run is historical evidence for that earlier state.
+The current CI installs the recorded dependencies, runs Biome, checks catalogue/navigation declarations and TypeScript, runs Vitest, regenerates and checks reference freshness, checks reference coverage and local links/fragments, and creates the static production export. Successful main-branch runs can then publish the built artifact through the reusable Pages workflow. A new implementation must be checked on its own commit; an earlier successful run is historical evidence for that earlier state.
 
-Reading the workflow establishes what it is configured to do. It does not prove that the latest remote execution passed. The first overview was prepared through source inspection. For the later homepage entry, Vincent confirms the local checks, production build, and requested manual navigation checks. This is not an independent assistant browser audit; release-preparation commit #82 subsequently passed its own CI and Pages deployment.
+Reading the workflow establishes its configuration rather than the outcome of a future run. The [4.9.1 record](RELEASE-4.9.1.md) identifies its exact verified preparation commit and deployment. These living-guide corrections are a separate content change and claim no new browser audit.
 
 The Inspectorate of Evidence is particularly strict about certificates that merely look expensive.
 
@@ -98,18 +99,14 @@ These guides are deliberately different shapes: explanatory prose, route and res
 
 The [charter](DOCUMENTATION-CHARTER.md) retains the original mandate with an updated current checkpoint. The [delivery history](DOCUMENTATION-DELIVERY.md) records the implementation and release journey. The wiki preserves the artistic narrative; these manuals should stand on their own for readers who simply want to understand the system.
 
-## 7. What remains outside the current rooms
+## 7. Search the selected rooms
 
-General search, multi-version documentation, broader generated API coverage, a complete anchor system, and additional automated documentation checks are not installed merely because this reception mentions them. Expand them when they answer a concrete need.
+Open **Search documentation**, enter words, and follow a result to its document or heading. Matching ignores case and combining accents and requires every distinct query term within the same indexed entry. Results initially appear in batches of twenty; **Show more results** reveals another batch. Clearing the query clears the results. Search state is held in the mounted component, not saved in the URL.
 
-Vincent confirms the combined content works locally. The next discussion concerns the nature of version 4.6; design remains deferred until later. This is grouped content work, not a reason to release once per page.
+The index is built from selected sources during page generation and embedded in each reader page. Queries run in the browser without a search service. Repository-only documents and the separate wiki are outside this index. A newly edited guide becomes searchable in the deployed site after a new export and deployment, not merely after saving its Markdown in GitHub.
 
-**The Directorate has enough material to begin looking like a documentation system. Its furniture may now be judged in the presence of actual books.**
+## 8. What remains outside the current rooms
 
-## 4.6 work in progress
+Multi-version documentation, fuzzy search, result highlighting, and indiscriminate API extraction are not implemented. Existing source comments do not automatically expand the selected TypeDoc surface. The [Part VIII roadmap](DOCUMENTATION-PART-VIII-ROADMAP.md) distinguishes the remaining contribution material and proposed consolidated check command from the issued 4.9.1 capability.
 
-The trust-boundary and dependency guides are authored and repository-readable. Their catalogue entries and generic routes are applied. All nine destinations are present in the inspected local export. Vincent confirms the checks pass after refreshing stale Next route types; exact-commit remote verification remains pending. This section does not announce a published 4.6 release. Source comment completion follows this release work; design remains deferred.
-
-## Expanded reference checkpoint — October 23, 2026
-
-The local 4.7.0 work adds an [index of selected technical contracts](generated/reference/README.md), covering audio, documentation tooling, diagrams, and shared behavior. Twelve generated pages are registered alongside eight guides. Generation and whole-directory freshness inspection are configured; stable publication and exact-commit remote verification remain pending. See the [implementation record](EXPANDED-REFERENCE.md). Stable 4.6.2 remains the latest issued release.
+The Directorate now has routes, books, an index, and inspectors. Its visual redesign remains a later undertaking; the manuals must already be useful before the furniture committee returns.

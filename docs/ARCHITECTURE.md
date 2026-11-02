@@ -22,7 +22,7 @@ This document separates the implementation from the architectural ambitions. The
 | CI | `.github/workflows/ci.yml` | Installs dependencies, checks with Biome and TypeScript, runs Vitest, and builds on pushes, pull requests, and manual runs |
 | Publication | `.github/workflows/pages.yml` | Reusable workflow called by CI to deploy the verified Pages artifact on main; no second build |
 
-The frontend uses Next.js 16.3.5, React 19.3.0, TypeScript 6.0.3, and Biome 2.5.13. There is no API, database, container setup, or active Python greeting. The CI workflow runs lint, format, type, application-test, and build checks; it does not measure coverage.
+The frontend uses Next.js, React, TypeScript, and Biome; package declarations and the lockfile are the authority for selected versions. There is no API, database, container setup, or active Python greeting. CI runs Biome, catalogue/navigation validation, type checks, tests, generated-reference freshness and coverage, local-link/fragment inspection, and the production build. Reference coverage is inventory coverage, not measured test coverage.
 
 ## Audio Annex and the 4.0.0 Milestone
 
@@ -32,11 +32,17 @@ The audio-page suite mocks the engine and substitutes the panel for the access g
 
 ## Documentation — One manuscript, more than one reading context
 
-The first documentation milestone adds `frontend/src/app/doc/page.tsx` as a thin route with metadata. It delegates to `DocumentationPage` in `frontend/src/features/doc/components/`. That asynchronous component reads the explicitly selected `docs/README.md`, then renders it using react-markdown and remark-gfm. Tables become HTML rather than a photograph of a Markdown file.
+The explicit `/doc` reception and a shared `/doc/[...slug]` route select documents from the catalogue in `frontend/src/features/doc/data/documents.ts`. It currently registers eight authored guides and twelve generated reference pages. Static parameter generation exports the selected paths; a new catalogue entry does not require a new route wrapper.
 
-The Markdown belongs to the repository; the route and its rendering belong to the frontend. Static HTML belongs to `frontend/out`. These are three responsibilities, not three competing sources of prose. The reading component uses the frontend working directory to locate the repository-level document during construction. It does not expose arbitrary filesystem paths to visitors.
+The shared asynchronous reader loads the chosen Markdown and the complete selected-source search index during rendering. Markdown belongs to the repository, route selection belongs to the application, and exported HTML belongs in `frontend/out`. No persistent application server or arbitrary filesystem-reading endpoint is deployed.
 
-The original implementation resolves relative source links to GitHub, preserving the ability to inspect the code behind the account. The next increment now adds a local architecture route at `/doc/architecture` and a two-page navigation. The reader uses an explicit document registry to select the Markdown file and recognize links between these two pages; those links use Next.js Link, while other repository links still lead to GitHub. Vincent confirms formatting and application checks, type checking, tests, production build, reciprocal navigation, and direct architecture-page reload. Inspection of both generated HTML pages confirms local links with the deployment base path and the current-page marker. These browser results are reported by Vincent; implementation commit #84 subsequently passed its own [CI and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/39529770689). [Release 4.2.0](RELEASE-4.2.0.md) is now published on preparation commit #85, whose separate [CI and Pages deployment succeeded](https://github.com/VincentMardon/professional-hello-world/actions/runs/39531756706).
+Registered relative document links become reader links. Other relative source destinations use GitHub fallbacks on main. Catalogue selection establishes the public reading surface, while the separate navigation declarations establish group order, breadcrumbs, and bounded previous/next reading paths.
+
+One shared heading-ID rule serves rendering, heading permalinks, the on-page contents list, search destinations, and supported fragment inspection. The static search index contains document metadata and section text and is embedded in every reader page. Matching runs locally in the browser; there is no runtime search service. The [frontend guide](FRONTEND-GUIDE.md) traces this pipeline by module.
+
+Mermaid rendering and diagram viewport controls execute in the browser. Shared theme context connects the switch to its consumers. Static export therefore coexists with client interaction rather than implying that every page is JavaScript-free.
+
+TypeDoc extracts selected source contracts into the exclusively generated `docs/generated/reference` tree. Generation/freshness, reference coverage, catalogue/navigation validation, and local-link inspection have separate responsibilities. The [workshop](DOCUMENTATION-WORKSHOP.md) describes how to maintain them; the [operations guide](OPERATIONS.md) explains execution and diagnosis. Stable [4.9.1](RELEASE-4.9.1.md) adds the reference-coverage gate. Historical release notes retain their original verification records.
 
 ## Boundaries — Where each authority stops
 
@@ -49,7 +55,7 @@ The original implementation resolves relative source links to GitHub, preserving
 | Repository Markdown / rendered documentation | Preserve authored explanations with source-relative links | Present them as readable website content |
 | CI / release | Check and deploy an exact source state | Name a deliberately selected milestone through a tag and GitHub release |
 
-These boundaries help locate a change. A different label usually belongs in a component. A different initialization policy belongs near the engine hook. A new explanation belongs in a document. A new public documentation page needs both selected content and a route. The Directorate recommends locating the responsibility before founding another office.
+These boundaries help locate a change. A different label usually belongs in a component. A different initialization policy belongs near the engine hook. A new explanation belongs in a document. A new reader document needs selected content, catalogue metadata and slug segments, and navigation-group membership; the shared route handles its path. The Directorate recommends locating the responsibility before founding another office.
 
 The audio panel is a client component because its hooks and interactions require browser execution. The documentation reader has no client directive: it can produce static content during the build. Both forms coexist inside the same application. “Server Component” describes its execution role in Next.js; it does not mean GitHub Pages must run a Node.js server after deployment.
 
@@ -101,7 +107,7 @@ The terminal script was removed in commit #33, so its old command no longer work
 
 `next.config.ts` sets `output: "export"`, `basePath: "/professional-hello-world"`, and `trailingSlash: true`. Next.js builds the public site in `frontend/out`. The coding cat is copied from `frontend/public/docs/assets/images/coding-cat.png`. These build settings are explicit and do not depend on outputs from `configure-pages`.
 
-`.github/workflows/ci.yml` runs on pushes, pull requests, and manual dispatch. The `sanity` job checks out the source, sets up Node.js 24 with npm caching keyed from `frontend/package-lock.json`, installs with `npm ci`, runs Biome and TypeScript checks, executes the Vitest suite with `npm run test:run`, and builds the static export. Both workflows use `ubuntu-24.04`; checkout and Node setup use major version 7, whose action runtime is Node 24. The action runtime and the application's selected Node.js version are separate settings.
+`.github/workflows/ci.yml` runs on pushes, pull requests, and manual dispatch. The `sanity` job checks out the source, sets up Node.js 24 with npm caching keyed from `frontend/package-lock.json`, installs with `npm ci`, runs Biome, catalogue/navigation validation, TypeScript checks, the Vitest suite, reference generation/freshness, reference coverage, local-link/fragment inspection, and the static export build. Both workflows use `ubuntu-24.04`; checkout and Node setup use major version 7, whose action runtime is Node 24. The action runtime and the application's selected Node.js version are separate settings.
 
 Only executions on `refs/heads/main` whose event is not `pull_request` upload the Pages artifact and enter the `publish` job. `needs: sanity` prevents publication after a failed prerequisite. The job calls the repository-local `pages.yml` at the same commit via `workflow_call`.
 

@@ -22,7 +22,7 @@ The code clears the candidate byte array after comparison. That does not establi
 
 The documentation reader selects source files through an explicit catalogue. It does not publish every file in the repository merely because the file is Markdown. Release notes, planning documents, and source-code links can remain repository material without automatically becoming reader pages.
 
-The proposed 4.6 catalogue migration preserves this selection boundary while removing repetitive route wrappers. It does not introduce private documents or a server for reading arbitrary paths. Systematic declaration validation is a later roadmap checkpoint; do not describe it as installed before its implementation and verification.
+The catalogue-driven catch-all route preserves this selection boundary without repetitive page wrappers. Catalogue validation checks source containment and declaration rules; navigation validation checks group coverage. Neither introduces private documents or a server for reading arbitrary paths.
 
 Nothing in a public Git repository should be assumed private because it lacks a navigation link. Navigation selection determines the reading experience, not repository confidentiality.
 
@@ -36,11 +36,13 @@ Fullscreen depends on browser support and permission. A failed request is report
 
 ## 5. Verification has limited authority too
 
-The audio suite replaces the access component with the listening panel and mocks BeepEngine. Its passing result does not certify the password ceremony, real cryptography in each browser, or audible output. The documentation freshness gate establishes agreement between one regenerated file and HEAD, not that every sentence is factually correct.
+The audio suite replaces the access component with the listening panel and mocks BeepEngine. Its passing result does not certify the password ceremony, real cryptography in each browser, or audible output. The documentation freshness gate regenerates the selected reference and inspects Git status across its whole owned output directory, including staged changes and untracked files. It does not establish factual accuracy. The separate reference-coverage gate compares generated Markdown with catalogue reference sources; link inspection checks local destinations and supported selected-document heading fragments. External availability and deferred fragments remain outside that acceptance.
 
 The repository includes commented ceremonial analytics placeholders in the root layout. Comments do not install telemetry. Conversely, this observation is not a network audit proving that every dependency makes no requests; source inspection must not be inflated into a result that was never measured.
 
 Use the [operations guide](OPERATIONS.md) to distinguish local checks, browser checks, CI, and publication. If a future change introduces a real server, accounts, user content, or sensitive data, update this guide from the changed implementation rather than reusing the static-site assumptions.
+
+The search index is constructed from all selected sources and embedded in reader pages. Collapsing search or omitting a result from the first visible batch does not withhold that text from the browser. Queries are matched locally; no runtime search service is installed. This architectural observation does not replace an independent audit of every dependency's network behavior.
 
 ## 6. Questions before crossing a new boundary
 

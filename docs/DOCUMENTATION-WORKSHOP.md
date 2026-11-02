@@ -29,11 +29,11 @@ Explain the real behavior first, then let an imaginary department overreact to i
 
 Create prose under `docs`, link it from the reception or a relevant guide, and keep its source links relative to that file's location. This immediately makes the material available from the repository.
 
-For application presentation, add an entry to `frontend/src/features/doc/data/documents.ts`. The shared generic route selects the ID, supplies metadata, and enumerates static paths. Do not create another page wrapper. Reuse the shared reader, navigation, theme, and diagram handling. These are application-code changes for Vincent to apply, not permission for the assistant to edit the program.
+For application presentation, add an entry to `frontend/src/features/doc/data/documents.ts`, then place its identifier once in the appropriate group in `frontend/src/features/doc/data/documentNavigation.ts`. The shared generic route selects the ID, supplies metadata, and enumerates static paths. Do not create another page wrapper. Reuse the shared reader, navigation, theme, and diagram handling. These are application-code changes for Vincent to apply, not permission for the assistant to edit the program.
 
-Keep the catalogue entry coherent: the source must exist, its slug must identify the intended public path, and its metadata must describe that document. Systematic declaration checks remain the proposed 4.6.1 work. Readability from GitHub and readability from the application are separate checks.
+Keep the catalogue entry coherent: the source must exist, its slug must identify the intended public path, and its metadata must describe that document. Run `npm run docs:catalogue:check` to inspect catalogue declarations and complete, unique group membership. Readability from GitHub and readability from the application are separate checks.
 
-This workshop and the other selected guides use the same catalogue-driven route. The reception remains explicit. Local checks pass after regenerating stale Next route types; export inspection finds the nine destinations. Exact-commit remote verification remains pending. No new renderer is required just to publish another guide.
+The catalogue currently selects eight authored guides and twelve generated reference pages. The reception remains explicit; the remaining paths share the catch-all route. No new renderer is required just to publish another guide. A registered source also enters the static search inventory when pages are generated.
 
 ## 4. Use diagrams to answer a question
 
@@ -51,15 +51,25 @@ The expanded TypeDoc configuration selects eleven modules and produces twelve Ma
 
 From frontend, npm run docs:reference generates the selected reference. npm run docs:reference:check regenerates it and inspects Git status for the whole output directory, including staged changes, deletions, and untracked files. Intentional changes fail until committed. TypeDoc cleans this exclusively generated directory before writing it.
 
-All generated pages are explicitly registered in the catalogue so relative module links can use reader routes. The old initialization-hook address is preserved. Source links follow main, and heading fragments remain outside current verification. Read the [expanded reference record](EXPANDED-REFERENCE.md) for ownership, the archived pilot, and actual verification boundaries.
+All generated pages are explicitly registered in the catalogue so relative module links can use reader routes. The old initialization-hook address is preserved. Source links follow main. `npm run docs:links:check` inspects local destinations and heading fragments targeting selected reader documents, using the same heading-ID rule as rendering. External targets are not fetched; image fragments, unselected targets, and browser fragment directives can be deferred. Read the [expanded reference record](EXPANDED-REFERENCE.md) for ownership, the archived pilot, and actual verification boundaries.
+
+Run `npm run docs:reference:coverage` after generation to compare the twelve-page output with registered reference sources. It rejects an unregistered generated page, a registered source missing from output, and an empty inventory. It does not replace freshness, catalogue/navigation validation, or link inspection. Adding a TypeDoc entry point may produce several pages: review the actual output and register its intended reader destinations deliberately.
+
+For an authored edit, the current individual checks are catalogue/navigation, reference generation/freshness, reference coverage, and local links/fragments. See [Operations](OPERATIONS.md) for their boundaries. The consolidated `docs:check` command is still proposed, not installed.
+
+### Maintain heading destinations
+
+Markdown headings receive deterministic reader IDs and permalink links. The contents disclosure exposes levels two and three. Use the rendered heading permalink when checking an address rather than guessing punctuation or duplicate numbering. Renaming a heading can break incoming links; update maintained references and run local-link inspection. Its success covers selected targets, not arbitrary anchors throughout GitHub.
+
+The search index is rebuilt from registered Markdown during page generation, so authored prose changes can change search results without changing search code. Check a representative query and its destination when the text or heading structure changes.
 
 ## 6. Review by content type
 
 | Content changed | Minimum useful review |
 | --- | --- |
 | Explanatory prose | Check factual claims, source links, terminology, and current-versus-proposed status |
-| New web route | Check registry ID, import, metadata, navigation, direct access, and export |
-| Source reference | Regenerate, review extracted contract and source link, then check committed freshness |
+| Newly selected reader document | Check source, catalogue identity, slug, metadata, group membership, search destination, direct reload, and export |
+| Source reference | Regenerate, review extracted contracts, register generated pages, check coverage and links, then check freshness after committing intentional output |
 | Diagram | Parse, compare with implementation, read fallback prose, inspect interaction in a browser |
 | Release record | Verify exact tag target, release status and date, and the relevant CI run |
 | Personal chronicle | Obtain the current authorized account and preserve its limits |
@@ -70,7 +80,7 @@ Tests and build checks remain useful for application changes. They do not replac
 
 Before reviewing the overall documentation design, assemble enough real content to expose its pressures: long paragraphs, tables, numbered procedures, code, diagrams, generated headings, and navigation among several subjects. Judge hierarchy, width, density, and movement using those real pages.
 
-The new guides deliberately provide that breadth. This breadth supplies material for a later global design review. Vincent explicitly keeps design deferred and chooses to discuss the nature of version 4.6 after committing this content lot and its wiki account. Functional obstacles can still be fixed immediately.
+The new guides deliberately provide that breadth. This breadth supplies material for a later global design review. The Part VIII roadmap keeps the visual redesign reserved for Part IX. Functional obstacles can still be fixed immediately.
 
 A routine guide or route alone does not trigger a documentation release under the current policy. Group coherent content work and reserve capability releases for actual reader or tooling behavior. Commit reviews and the authorized wiki ritual remain in place; reducing ceremony between edits does not silently transfer ownership of application commits.
 

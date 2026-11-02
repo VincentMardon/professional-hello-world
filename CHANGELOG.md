@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Refresh seven living guides against the current twenty-document reader, grouped navigation, shared heading addresses, static search, expanded reference, and separate documentation gates. Explain the search pipeline by responsibility and remove superseded current-state notices. Prose only; no new reader capability or version increment.
+
 ## [4.9.1] — 2026-11-02
 
 ### The Register Refuses an Unassigned Contract

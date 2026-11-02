@@ -26,11 +26,22 @@ The Bureau does not require a new dependency installation merely because a headi
 | `npm run check:fix` | Apply Biome's configured safe fixes | That every suggested change was applied or is appropriate |
 | `npm run typecheck` | Generate Next route types and run TypeScript without emitting application JavaScript | Audible output or correct visual design |
 | `npm run test:run` | Execute the Vitest suite once | A complete browser journey |
+| `npm run docs:catalogue:check` | Validate catalogue declarations and navigation-group coverage | Truth of the prose or generated-output completeness |
+| `npm run docs:links:check` | Inspect local destinations and supported selected-document heading fragments | External availability or deferred fragment targets |
+| `npm run docs:reference:coverage` | Compare generated Markdown with catalogue reference sources | Generation, freshness, route validity, or test coverage |
 | `npm run docs:reference` | Regenerate the selected TypeDoc Markdown | Agreement with the committed reference |
 | `npm run docs:reference:check` | Regenerate the expanded reference and inspect whole-directory Git status | Truth of comments, ignored output, or fragment existence |
 | `npm run build` | Regenerate reference through prebuild, then construct the static export | Successful deployment to Pages |
 
 Formatting, route-type generation, and reference extraction can write local files. Review the diff before committing. A green command is evidence for its scope, not a diplomatic passport for every other concern.
+
+### Run documentation checks in dependency order
+
+From `frontend`, run reference generation/freshness before inventory-dependent checks when output might be stale, then catalogue/navigation, reference coverage, and local-link inspection. CI currently checks catalogue/navigation earlier, before generation, against the committed reference files; it then generates and checks freshness before coverage and links. Both sequences assume the owned reference directory is present.
+
+Freshness intentionally fails for reviewed generated changes that have not yet been committed, including staged changes and untracked output. Inspect the diff, commit intentional output with its source, and run freshness again. Do not stage files merely to satisfy the checker: staging alone does not satisfy it.
+
+The coverage command does not generate output. The link command does not fetch external destinations or certify every deferred fragment. There is no installed consolidated `docs:check` command yet; its proposed 4.9.2 workflow remains separate work.
 
 ## 4. What the existing tests actually test
 
@@ -38,11 +49,11 @@ The homepage suite renders the real page composition and checks its greeting, em
 
 That substitution means the suite does not test password acceptance or refusal. Mocking BeepEngine means it does not execute the real Wasm generator, verify browser audio permissions, or prove that a speaker produced sound. jsdom is not a visual layout engine. DOM assertions cannot approve mobile spacing, fullscreen rendering, or the aesthetic suitability of the institutional brasswork.
 
-The test configuration uses React and Vanilla Extract Vite plugins, a jsdom environment, and cleanup after each test. Inspect the [configuration](../frontend/vitest.config.ts), [setup](../frontend/vitest.setup.ts), [homepage suite](../frontend/src/app/page.test.tsx), and [audio suite](../frontend/src/app/audio-test/page.test.tsx). Coverage measurement and end-to-end browser testing are not configured.
+Documentation tests additionally exercise navigation rendering, search extraction/indexing/ranking and interaction, shared heading IDs, catalogue/navigation validation, local destinations, fragment inspection, and reference coverage. The test configuration uses React and Vanilla Extract Vite plugins, a jsdom environment, filesystem module caching, and cleanup after each test. Inspect the [configuration](../frontend/vitest.config.ts), [setup](../frontend/vitest.setup.ts), [homepage suite](../frontend/src/app/page.test.tsx), and [audio suite](../frontend/src/app/audio-test/page.test.tsx). Coverage measurement and end-to-end browser testing are not configured.
 
 ## 5. Follow one change through CI
 
-The [CI workflow](../.github/workflows/ci.yml) runs on pushes, pull requests, and manual dispatch. Its sanity job checks out the source, prepares Node.js 24, installs dependencies, checks formatting rules and types, runs tests, checks reference freshness, and builds. A failing command prevents later normal steps from proceeding.
+The [CI workflow](../.github/workflows/ci.yml) runs on pushes, pull requests, and manual dispatch. Its sanity job checks out source, prepares Node.js 24, installs dependencies, runs Biome, checks catalogue/navigation, checks types, runs tests, regenerates and checks reference freshness, checks reference coverage, checks local links/fragments, and builds. The build runs reference generation again through prebuild; this is not a second Next production build. A failing command prevents later normal steps from proceeding.
 
 For `main` outside pull-request events, it uploads `frontend/out` as the Pages artifact. The dependent publication job calls the [reusable Pages workflow](../.github/workflows/pages.yml), which deploys that artifact rather than installing and building the application again. Pull-request verification does not publish the site.
 
@@ -53,7 +64,9 @@ This arrangement gives one production build per CI execution. A branch with an o
 | Observation | Inspect first | Appropriate next action |
 | --- | --- | --- |
 | Biome rejects a selector or semantic role | The reported source location | Correct the actual rule violation; review any fixes |
-| Reference check shows a Markdown diff | Source comment, TypeDoc configuration, generated README | Review generation and commit intentional source/reference changes together |
+| Reference freshness rejects output | Source comments, TypeDoc selection, Git status across generated reference | Review additions, modifications, and deletions; commit intentional source/reference changes together |
+| Reference coverage rejects a page | Generated inventory and catalogue source paths | Register intended generated pages or correct the extraction selection; do not silence the gate |
+| Link inspection rejects a fragment | Selected target headings and the reported occurrence | Use its actual rendered ID; update maintained links when headings change |
 | Types fail after a route addition | Import path, document ID, generated route types | Correct the source; do not treat a rendered dev page as proof of type correctness |
 | Tests fail while the page looks right | Assertion, setup, mocks, current behavior | Determine whether the contract or implementation changed |
 | Build fails | First failing build stage, including prebuild | Separate extraction failure from Next compilation or export failure |
