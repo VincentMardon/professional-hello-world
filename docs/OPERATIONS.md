@@ -26,6 +26,7 @@ The Bureau does not require a new dependency installation merely because a headi
 | `npm run check:fix` | Apply Biome's configured safe fixes | That every suggested change was applied or is appropriate |
 | `npm run typecheck` | Generate Next route types and run TypeScript without emitting application JavaScript | Audible output or correct visual design |
 | `npm run test:run` | Execute the Vitest suite once | A complete browser journey |
+| `npm run docs:check` | Generate/check reference freshness, then catalogue/navigation, coverage, and local links/fragments; stop at the first failure | Lint, application type checks, tests, build, browser review, or deployment |
 | `npm run docs:catalogue:check` | Validate catalogue declarations and navigation-group coverage | Truth of the prose or generated-output completeness |
 | `npm run docs:links:check` | Inspect local destinations and supported selected-document heading fragments | External availability or deferred fragment targets |
 | `npm run docs:reference:coverage` | Compare generated Markdown with catalogue reference sources | Generation, freshness, route validity, or test coverage |
@@ -37,11 +38,11 @@ Formatting, route-type generation, and reference extraction can write local file
 
 ### Run documentation checks in dependency order
 
-From `frontend`, run reference generation/freshness before inventory-dependent checks when output might be stale, then catalogue/navigation, reference coverage, and local-link inspection. CI currently checks catalogue/navigation earlier, before generation, against the committed reference files; it then generates and checks freshness before coverage and links. Both sequences assume the owned reference directory is present.
+From `frontend`, run `npm run docs:check`. The chain first regenerates reference and checks freshness, then validates catalogue/navigation, compares reference coverage, and inspects local links/fragments. Each command starts only after the previous command succeeds. A failure returns a nonzero status and prevents the remaining commands from starting; correct the reported boundary and rerun the chain. Individual commands remain available for focused diagnosis. CI uses this same chain after type checks and tests, before the production build.
 
 Freshness intentionally fails for reviewed generated changes that have not yet been committed, including staged changes and untracked output. Inspect the diff, commit intentional output with its source, and run freshness again. Do not stage files merely to satisfy the checker: staging alone does not satisfy it.
 
-The coverage command does not generate output. The link command does not fetch external destinations or certify every deferred fragment. There is no installed consolidated `docs:check` command yet; its proposed 4.9.2 workflow remains separate work.
+The coverage command does not generate output. The link command does not fetch external destinations or certify every deferred fragment. The consolidated command preserves these individual scopes rather than broadening what acceptance proves. It generates files through its first step and requires a working Git checkout for freshness.
 
 ## 4. What the existing tests actually test
 
@@ -53,7 +54,7 @@ Documentation tests additionally exercise navigation rendering, search extractio
 
 ## 5. Follow one change through CI
 
-The [CI workflow](../.github/workflows/ci.yml) runs on pushes, pull requests, and manual dispatch. Its sanity job checks out source, prepares Node.js 24, installs dependencies, runs Biome, checks catalogue/navigation, checks types, runs tests, regenerates and checks reference freshness, checks reference coverage, checks local links/fragments, and builds. The build runs reference generation again through prebuild; this is not a second Next production build. A failing command prevents later normal steps from proceeding.
+The [CI workflow](../.github/workflows/ci.yml) runs on pushes, pull requests, and manual dispatch. Its sanity job checks out source, prepares Node.js 24, installs dependencies, runs Biome, checks types, runs tests, executes the consolidated `docs:check` chain, and builds. The build runs reference generation again through prebuild; this is not a second Next production build. A failing command prevents later normal steps from proceeding.
 
 For `main` outside pull-request events, it uploads `frontend/out` as the Pages artifact. The dependent publication job calls the [reusable Pages workflow](../.github/workflows/pages.yml), which deploys that artifact rather than installing and building the application again. Pull-request verification does not publish the site.
 

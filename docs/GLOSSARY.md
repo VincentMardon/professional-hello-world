@@ -38,7 +38,7 @@ These definitions describe PHW's current implementation and working vocabulary. 
 | Deferred fragment | Fragment whose target or kind is outside supported inspection | Deferred does not mean verified or rejected |
 | Diagnostic | A reported defect with its relevant identity or occurrence | One green command does not certify another command's jurisdiction |
 
-The practical command map is in [Operations](OPERATIONS.md). The proposed consolidated documentation command remains future work until implemented and verified.
+The practical command map is in [Operations](OPERATIONS.md). The consolidated `npm run docs:check` command runs those documentation inspections in order and stops at the first failure; it does not replace application checks or browser review.
 
 ## 4. Search and rendering
 

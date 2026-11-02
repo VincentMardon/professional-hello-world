@@ -130,3 +130,15 @@ Vincent applies the three catalogue entries and their Guides membership. Catalog
 ## Contribution material verification checkpoint — November 2, 2026
 
 Vincent confirms the requested formatting, reference generation, reference coverage, local-link inspection, type checking, test run, and production build pass. Inspection finds the expected generated catalogue-reference additions and source-line shifts, with no expanded TypeDoc entry-point selection. The navigation fixture now checks architecture decisions as the last Guides document with Glossary as its predecessor. These observations supersede the pending local command checks above. Vincent also confirms direct access and reload for all three new pages, the Workshop-to-decisions reading sequence with no next link at its end, and the integrated ADR-005 search destination. Browser observations are attributed to him. Committed-state reference freshness and exact-commit remote verification remain pending; no new release is claimed.
+
+
+## Consolidated inspection locally exercised — November 3, 2026
+
+Contribution-material commit #137, `ce12d72982c0ea8e04a29cd918a3b8e609791134`, passed [CI run 41539029384 and Pages deployment](https://github.com/VincentMardon/professional-hello-world/actions/runs/41539029384). Vincent also confirms committed-reference freshness before publication.
+
+The working tree now implements `npm run docs:check` as the ordered reference-generation/freshness, catalogue/navigation, reference-coverage, and link/fragment chain. CI invokes it in place of the four separate documentation steps. Individual commands remain available; the production build retains its existing prebuild generation. Vincent supplies a complete successful run, a temporary missing-glossary refusal after freshness with no subsequent coverage/link invocation, and complete success after restoration. The restored run accepts twenty-three declarations, twelve reference pages, and 204 local destinations with zero errors; fifty external targets are not fetched, eighteen fragments are checked, and 45 deferred. The transcript does not include a separately printed numeric exit code. Release 4.9.2 preparation, aligned-version checks, and exact-commit remote execution remain pending. No new inspection algorithm, dependency, browser behavior, or design is introduced.
+
+
+## Aligned 4.9.2 local verification — November 3, 2026
+
+Package and both root lockfile version fields are inspected at 4.9.2. Vincent confirms final Biome, TypeScript, full test run, `docs:check`, and production build success. This supersedes the pending aligned-state local checks above. The inspected configuration preserves individual commands and replaces four CI documentation invocations with the shared chain. No dependency, inspection algorithm, reader behavior, or browser review is added by this workflow change. The preparation commit, exact-commit remote verification, tag, and stable release publication remain pending.

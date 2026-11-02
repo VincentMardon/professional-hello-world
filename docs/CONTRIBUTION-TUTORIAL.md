@@ -77,7 +77,7 @@ These commands write generated reference or Next route types where stated; revie
 | Missing heading fragment | The target's rendered heading identifier and the maintained link |
 | Type error after changing routes | The declaration, consumers, and refreshed Next route types |
 
-The commands have separate jurisdictions. Link inspection does not fetch external pages; deferred fragments are not verified fragments. Coverage compares inventories, not test execution. The consolidated `npm run docs:check` workflow is still proposed and is not required as an installed command by this tutorial.
+The commands have separate jurisdictions. Link inspection does not fetch external pages; deferred fragments are not verified fragments. Coverage compares inventories, not test execution. Use `npm run docs:check` for the consolidated workflow once intentional generated changes have been committed. It regenerates/checks freshness before catalogue/navigation, coverage, and links, so it deliberately stops early while reviewed generated changes remain uncommitted. The individual sequence above lets contributors inspect those changes before that boundary is satisfied.
 
 ## 7. Read the page and follow its search result
 

@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "4.9.1",
+  "version": "4.9.2",
   "description": "",
   "main": "index.js",
   "private": true,
@@ -9,6 +9,7 @@
     "check": "biome check .",
     "check:fix": "biome check --write .",
     "dev": "next dev",
+    "docs:check": "npm run docs:reference:check && npm run docs:catalogue:check && npm run docs:reference:coverage && npm run docs:links:check",
     "docs:catalogue:check": "node scripts/check-document-catalogue.ts",
     "docs:links:check": "node scripts/check-document-links.ts",
     "docs:reference": "typedoc --options typedoc.reference.json",

@@ -56,7 +56,7 @@ The Office has permission to explain a decision. It has not acquired permission 
 
 **Alternative considered analytically:** broad automatic extraction reduces selection effort but can overwhelm the reader and expose poorly explained internal contracts. Untracked generated output would avoid committed freshness review but remove the current repository-readable reference record.
 
-**Revisit when:** the selected API surface or output volume changes enough to justify another publication model. The proposed consolidated command is workflow work, not an installed replacement for these checks.
+**Revisit when:** the selected API surface or output volume changes enough to justify another publication model. The consolidated `docs:check` command orchestrates these existing inspections; it does not replace their algorithms or weaken freshness.
 
 ## 5. ADR-004 — Share heading addresses across reader mechanisms
 

@@ -57,7 +57,7 @@ All generated pages are explicitly registered in the catalogue so relative modul
 
 Run `npm run docs:reference:coverage` after generation to compare the twelve-page output with registered reference sources. It rejects an unregistered generated page, a registered source missing from output, and an empty inventory. It does not replace freshness, catalogue/navigation validation, or link inspection. Adding a TypeDoc entry point may produce several pages: review the actual output and register its intended reader destinations deliberately.
 
-For an authored edit, the current individual checks are catalogue/navigation, reference generation/freshness, reference coverage, and local links/fragments. See [Operations](OPERATIONS.md) for their boundaries. The consolidated `docs:check` command is still proposed, not installed.
+For an authored edit, the current individual checks are catalogue/navigation, reference generation/freshness, reference coverage, and local links/fragments. See [Operations](OPERATIONS.md) for their boundaries. Use `npm run docs:check` for the complete ordered documentation chain; it generates/checks freshness first, then catalogue/navigation, coverage, and links, stopping at the first failure. Individual commands remain available. Intentional generated changes still need review and committing before freshness can pass.
 
 ### Maintain heading destinations
 

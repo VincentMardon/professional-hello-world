@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Add `npm run docs:check` to run reference generation/freshness, catalogue/navigation, reference coverage, and local-link/fragment inspection in order, stopping on failure. Replace separate documentation CI invocations with the same chain and update contributor guidance. Vincent demonstrates success, a missing-source refusal that prevents later checks, and restored success. Candidate 4.9.2 is locally prepared with aligned versions and confirmed lint, type, test, documentation-chain, and production-build success; remote verification and publication remain pending.
+
 - Author a source-to-publication contribution tutorial, a project glossary, and five retrospective architecture decision records. Link the repository-readable material from reception and the workshop. Register all three documents in the reader catalogue and Guides sequence, bringing the selected inventory to twenty-three documents. No new tooling capability or version increment is claimed.
 
 - Refresh seven living guides against the current twenty-document reader, grouped navigation, shared heading addresses, static search, expanded reference, and separate documentation gates. Explain the search pipeline by responsibility and remove superseded current-state notices. Prose only; no new reader capability or version increment.

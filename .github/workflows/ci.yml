@@ -33,23 +33,14 @@ jobs:
       - name: Inspect spelling-adjacent matters
         run: npm run check
 
-      - name: Inspect applications for documentary accomodation
-        run: npm run docs:catalogue:check
-
       - name: Verify the types of our intentions
         run: npm run typecheck
 
       - name: Hear the sworn testimony of the greeting
         run: npm run test:run
 
-      - name: Verify that the Registry remembers its latest testimony
-        run: npm run docs:reference:check
-
-      - name: Refuse reference pages without documentary accomodation
-        run: npm run docs:reference:coverage
-
-      - name: Inspect the corridors between documentary departments
-        run: npm run docs:links:check
+      - name: Submit one application to inspect the Documentation Directories
+        run: npm run docs:check
 
       - name: Construct the disproportionately qualified greeting
         run: npm run build

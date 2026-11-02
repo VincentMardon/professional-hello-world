@@ -110,6 +110,6 @@ The index is built from selected sources during page generation and embedded in 
 
 ## 8. What remains outside the current rooms
 
-Multi-version documentation, fuzzy search, result highlighting, and indiscriminate API extraction are not implemented. Existing source comments do not automatically expand the selected TypeDoc surface. The [Part VIII roadmap](DOCUMENTATION-PART-VIII-ROADMAP.md) distinguishes the remaining contribution material and proposed consolidated check command from the issued 4.9.1 capability.
+Multi-version documentation, fuzzy search, result highlighting, and indiscriminate API extraction are not implemented. Existing source comments do not automatically expand the selected TypeDoc surface. The [Part VIII roadmap](DOCUMENTATION-PART-VIII-ROADMAP.md) records completed contribution material and the locally implemented consolidated check command, with release preparation and remote verification tracked separately from issued 4.9.1.
 
 The Directorate now has routes, books, an index, and inspectors. Its visual redesign remains a later undertaking; the manuals must already be useful before the furniture committee returns.
