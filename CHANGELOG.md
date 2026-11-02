@@ -9,7 +9,13 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-- Add `npm run docs:check` to run reference generation/freshness, catalogue/navigation, reference coverage, and local-link/fragment inspection in order, stopping on failure. Replace separate documentation CI invocations with the same chain and update contributor guidance. Vincent demonstrates success, a missing-source refusal that prevents later checks, and restored success. Candidate 4.9.2 is locally prepared with aligned versions and confirmed lint, type, test, documentation-chain, and production-build success; remote verification and publication remain pending.
+## [4.9.2] — 2026-11-03
+
+### One Application to Inspect the Department
+
+Stable v4.9.2 was published on November 2 at 23:50:21 UTC (November 3 at 00:50:21 in Paris; this heading uses the project-local date). Its annotated tag targets preparation #138, with successful exact-commit CI and Pages deployment. See the [release notes](docs/RELEASE-4.9.2.md).
+
+- Add `npm run docs:check` to run reference generation/freshness, catalogue/navigation, reference coverage, and local-link/fragment inspection in order, stopping on failure. Replace separate documentation CI invocations with the same chain and update contributor guidance. Vincent demonstrates success, a missing-source refusal that prevents later checks, and restored success. Version 4.9.2 has aligned versions, confirmed local checks and build, successful exact-commit CI and deployment, and verified stable publication.
 
 - Author a source-to-publication contribution tutorial, a project glossary, and five retrospective architecture decision records. Link the repository-readable material from reception and the workshop. Register all three documents in the reader catalogue and Guides sequence, bringing the selected inventory to twenty-three documents. No new tooling capability or version increment is claimed.
 

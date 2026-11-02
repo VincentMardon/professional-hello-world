@@ -6,7 +6,7 @@ Professional Hello World is an artistic and technical learning project that gran
 
 The Directorate exists to make that machinery understandable. Visitors are entitled to learn what the project does, contributors need to know where behavior lives, and maintainers should be able to explain a decision without excavating every preceding ceremony. The paperwork is extravagant. The underlying explanations must earn their space.
 
-**Current implementation — November 2, 2026:** twenty-three selected documents share the reader: eleven authored guides and twelve generated reference pages. Catalogue-driven static routes, grouped navigation, breadcrumbs, group-local previous/next links, heading permalinks, an on-page contents list, static section search, the theme switch, and Mermaid zoom/fitting/fullscreen are implemented. [4.9.1](RELEASE-4.9.1.md) is the latest verified stable release and adds generated-reference coverage inspection. Historical release notes preserve their own publication evidence.
+**Current implementation — November 3, 2026:** twenty-three selected documents share the reader: eleven authored guides and twelve generated reference pages. Catalogue-driven static routes, grouped navigation, breadcrumbs, group-local previous/next links, heading permalinks, an on-page contents list, static section search, the theme switch, and Mermaid zoom/fitting/fullscreen are implemented. [4.9.2](RELEASE-4.9.2.md) is the latest verified stable release and adds the shared `npm run docs:check` workflow. Historical release notes preserve their own publication evidence.
 
 **Reading model:** the catalogue selects sources and metadata; a separate navigation declaration assigns every selected document to one reading group. Reception uses its explicit route, while the remaining selected paths use one static catch-all route. Adding a guide does not require another page wrapper. The visual redesign remains reserved for Part IX.
 
@@ -29,7 +29,7 @@ Continue with the [Directorate of Structural Disproportion — architecture](ARC
 | What do catalogue, freshness, coverage, and static search mean here? | [Glossary](GLOSSARY.md) |
 | Why were the current documentation boundaries chosen? | [Architecture decisions](ARCHITECTURE-DECISIONS.md) |
 | How should I contribute? | [Contribution process](../CONTRIBUTING.md) |
-| What changed in the latest verified milestone? | [4.9.1 release notes](RELEASE-4.9.1.md) and [changelog](../CHANGELOG.md) |
+| What changed in the latest verified milestone? | [4.9.2 release notes](RELEASE-4.9.2.md) and [changelog](../CHANGELOG.md) |
 | How does work become a release? | [Release process](RELEASE-PROCESS.md) |
 | What documentation are we building? | [Documentation charter](DOCUMENTATION-CHARTER.md) |
 | Where is the historical institutional spectacle? | [The separate project wiki](https://github.com/VincentMardon/professional-hello-world/wiki) |
@@ -90,7 +90,7 @@ The repository contains homepage, audio-page, documentation navigation, search, 
 
 The current CI installs the recorded dependencies, runs Biome, checks catalogue/navigation declarations and TypeScript, runs Vitest, regenerates and checks reference freshness, checks reference coverage and local links/fragments, and creates the static production export. Successful main-branch runs can then publish the built artifact through the reusable Pages workflow. A new implementation must be checked on its own commit; an earlier successful run is historical evidence for that earlier state.
 
-Reading the workflow establishes its configuration rather than the outcome of a future run. The [4.9.1 record](RELEASE-4.9.1.md) identifies its exact verified preparation commit and deployment. These living-guide corrections are a separate content change and claim no new browser audit.
+Reading the workflow establishes its configuration rather than the outcome of a future run. The [4.9.2 record](RELEASE-4.9.2.md) identifies its exact verified preparation commit and deployment. These living-guide corrections are a separate content change and claim no new browser audit.
 
 The Inspectorate of Evidence is particularly strict about certificates that merely look expensive.
 
@@ -110,6 +110,6 @@ The index is built from selected sources during page generation and embedded in 
 
 ## 8. What remains outside the current rooms
 
-Multi-version documentation, fuzzy search, result highlighting, and indiscriminate API extraction are not implemented. Existing source comments do not automatically expand the selected TypeDoc surface. The [Part VIII roadmap](DOCUMENTATION-PART-VIII-ROADMAP.md) records completed contribution material and the locally implemented consolidated check command, with release preparation and remote verification tracked separately from issued 4.9.1.
+Multi-version documentation, fuzzy search, result highlighting, and indiscriminate API extraction are not implemented. Existing source comments do not automatically expand the selected TypeDoc surface. The [Part VIII roadmap](DOCUMENTATION-PART-VIII-ROADMAP.md) records completed contribution material and the issued 4.9.2 consolidated checking workflow. The Part VIII exit review remains separate from release publication.
 
 The Directorate now has routes, books, an index, and inspectors. Its visual redesign remains a later undertaking; the manuals must already be useful before the furniture committee returns.

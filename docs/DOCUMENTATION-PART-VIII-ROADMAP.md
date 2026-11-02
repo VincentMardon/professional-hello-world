@@ -142,3 +142,8 @@ The working tree now implements `npm run docs:check` as the ordered reference-ge
 ## Aligned 4.9.2 local verification — November 3, 2026
 
 Package and both root lockfile version fields are inspected at 4.9.2. Vincent confirms final Biome, TypeScript, full test run, `docs:check`, and production build success. This supersedes the pending aligned-state local checks above. The inspected configuration preserves individual commands and replaces four CI documentation invocations with the shared chain. No dependency, inspection algorithm, reader behavior, or browser review is added by this workflow change. The preparation commit, exact-commit remote verification, tag, and stable release publication remain pending.
+
+
+## Stable 4.9.2 publication — November 3, 2026
+
+Stable v4.9.2 was published on November 2 at 23:50:21 UTC, corresponding to November 3 at 00:50:21 in Paris. It is neither draft nor prerelease. Annotated tag object `824941f9e9ba1678783a660c6a7063c203d9d9ad` resolves to preparation #138, `764e6307a840ab07ae95ecab490623694c1ff665`. [CI run 41546766055](https://github.com/VincentMardon/professional-hello-world/actions/runs/41546766055) succeeded, including the unified documentation step and Pages deployment. This supersedes preparation-pending notices above; the prose follow-up claims no additional local tests, browser review, or implementation change. The Part VIII exit review remains to be performed before deciding its closure and opening Part IX.
