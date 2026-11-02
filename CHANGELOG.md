@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Add reference-output coverage inspection, six focused validator tests, and a CI step after reference generation/freshness. The runner accepts the twelve-page inventory and rejects an unregistered generated page in Vincent's local exercise. Candidate 4.9.1 is locally prepared with aligned versions, 104 passing tests, successful documentation checks, and a successful production build; remote CI and publication remain pending. See [preparation notes](docs/RELEASE-4.9.1.md).
+
 - Document the catalogue/navigation runner, generated-reference Git-status inspection, and two-pass local-link inspector. Clarify failure reporting, generation prerequisites, occurrence counters, and deferred checks. Comments only; no new validation capability or version change.
 
 - Explain static-search extraction, section identities, metadata repetition, concurrent source loading, literal ranking, result batches, and excerpt limits in source comments. No search algorithm, payload, generated-reference, or version change.

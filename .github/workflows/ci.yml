@@ -45,6 +45,9 @@ jobs:
       - name: Verify that the Registry remembers its latest testimony
         run: npm run docs:reference:check
 
+      - name: Refuse reference pages without documentary accomodation
+        run: npm run docs:reference:coverage
+
       - name: Inspect the corridors between documentary departments
         run: npm run docs:links:check
 
