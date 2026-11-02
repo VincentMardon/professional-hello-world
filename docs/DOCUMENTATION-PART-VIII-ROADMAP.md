@@ -103,3 +103,7 @@ Vincent demonstrates acceptance of twelve generated reference pages, refusal of 
 ## Aligned 4.9.1 local verification — November 2, 2026
 
 Vincent supplies successful Biome, TypeScript, full-suite (104 tests across fifteen files), catalogue, generated-reference freshness, twelve-page coverage, local-link, and production-build results. All three package/root lockfile version fields are inspected at 4.9.1. The existing search-element test warning and Intel One Mono fallback warning accompany successful commands. This supersedes the pending local verification and alignment notices above; the main preparation commit, exact-commit remote CI, tag, and release publication remain pending.
+
+## Stable 4.9.1 publication — November 2, 2026
+
+Stable v4.9.1 was published at 20:47:55 UTC (21:47:55 in Paris), neither draft nor prerelease. Annotated tag object `0eb0b23a359b48f71e1a1068b9fd0531e531ba81` resolves to preparation #134, `dd95197d838587b01c97fae7f7c1b2cf41f0a5ef`. [CI run 41514463300](https://github.com/VincentMardon/professional-hello-world/actions/runs/41514463300) succeeded, including the new coverage inspection and Pages deployment. This supersedes earlier preparation-pending notices; no additional local tests or application changes are claimed by this prose follow-up. Living-guide updates and the proposed 4.9.2 contributor workflow remain subsequent work.

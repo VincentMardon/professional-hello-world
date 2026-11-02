@@ -100,7 +100,7 @@ Version **4.2.0 — Two Reading Rooms Obtain a Corridor** is [published](docs/RE
 
 ## Documentation Directorate
 
-A new contributor check compares generated reference pages with catalogue declarations. The [4.9.1 preparation notes](docs/RELEASE-4.9.1.md) explain its scope and local refusal exercise; this release is not yet published.
+Version **4.9.1 — The Register Refuses an Unassigned Contract** is [published](docs/RELEASE-4.9.1.md). Its contributor check compares generated reference pages with catalogue declarations. The annotated tag targets preparation #134, which passed CI and Pages deployment, including the new coverage inspection.
 
 Start with the [documentation overview](docs/README.md) for a guided map of the current project. It is readable from the repository and supplies the new `/doc` route; the generated documentation HTML has been inspected locally, and Vincent confirms local checks and manual navigation checks for the new bottom-right homepage link. The exact release-preparation commit passed CI and Pages deployment. The [documentation delivery plan](docs/DOCUMENTATION-DELIVERY.md) sets small release checkpoints, with the first in-application entrance delivered in 4.1.0.
 

@@ -9,7 +9,13 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
-- Add reference-output coverage inspection, six focused validator tests, and a CI step after reference generation/freshness. The runner accepts the twelve-page inventory and rejects an unregistered generated page in Vincent's local exercise. Candidate 4.9.1 is locally prepared with aligned versions, 104 passing tests, successful documentation checks, and a successful production build; remote CI and publication remain pending. See [preparation notes](docs/RELEASE-4.9.1.md).
+## [4.9.1] — 2026-11-02
+
+### The Register Refuses an Unassigned Contract
+
+Stable v4.9.1 was published at 20:47:55 UTC (21:47:55 in Paris). Its annotated tag targets preparation #134, with successful exact-commit CI and Pages deployment. See the [release notes](docs/RELEASE-4.9.1.md).
+
+- Add reference-output coverage inspection, six focused validator tests, and a CI step after reference generation/freshness. The runner accepts the twelve-page inventory and rejects an unregistered generated page in Vincent's local exercise. Version 4.9.1 has aligned versions, 104 passing tests, successful documentation checks, and a successful production build. Its exact preparation commit passed remote CI and Pages deployment before stable publication.
 
 - Document the catalogue/navigation runner, generated-reference Git-status inspection, and two-pass local-link inspector. Clarify failure reporting, generation prerequisites, occurrence counters, and deferred checks. Comments only; no new validation capability or version change.
 
