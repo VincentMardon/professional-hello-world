@@ -96,6 +96,30 @@ export const documents = {
     file: "DEPENDENCIES.md",
     slug: ["dependencies"],
   },
+  contributionTutorial: {
+    title: "Contribution tutorial",
+    metadataTitle: "Contribution Tutorial — Professional Hello World",
+    description:
+      "Follow an explanation from authored source to verified publication.",
+    file: "CONTRIBUTION-TUTORIAL.md",
+    slug: ["contributing"],
+  },
+  glossary: {
+    title: "Glossary",
+    metadataTitle: "Glossary — Professional Hello World",
+    description:
+      "Understand the documentation vocabulary and its practical boundaries.",
+    file: "GLOSSARY.md",
+    slug: ["glossary"],
+  },
+  architectureDecisions: {
+    title: "Architecture decisions",
+    metadataTitle: "Architecture Decisions",
+    description:
+      "Understand current choices, tradeoffs, and reasons to revisit them.",
+    file: "ARCHITECTURE-DECISIONS.md",
+    slug: ["decisions"],
+  },
   engineReference: {
     title: "Reference — useBeepEngine",
     metadataTitle: "useBeepEngine Reference — Professional Hello World",

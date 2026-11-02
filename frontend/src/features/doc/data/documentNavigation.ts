@@ -31,6 +31,9 @@ export const documentGroups: readonly DocumentGroup[] = [
       "dependencies",
       "operations",
       "documentationWorkshop",
+      "contributionTutorial",
+      "glossary",
+      "architectureDecisions",
     ],
   },
   {

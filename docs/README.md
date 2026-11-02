@@ -6,7 +6,7 @@ Professional Hello World is an artistic and technical learning project that gran
 
 The Directorate exists to make that machinery understandable. Visitors are entitled to learn what the project does, contributors need to know where behavior lives, and maintainers should be able to explain a decision without excavating every preceding ceremony. The paperwork is extravagant. The underlying explanations must earn their space.
 
-**Current implementation — November 2, 2026:** twenty selected documents share the reader: eight authored guides and twelve generated reference pages. Catalogue-driven static routes, grouped navigation, breadcrumbs, group-local previous/next links, heading permalinks, an on-page contents list, static section search, the theme switch, and Mermaid zoom/fitting/fullscreen are implemented. [4.9.1](RELEASE-4.9.1.md) is the latest verified stable release and adds generated-reference coverage inspection. Historical release notes preserve their own publication evidence.
+**Current implementation — November 2, 2026:** twenty-three selected documents share the reader: eleven authored guides and twelve generated reference pages. Catalogue-driven static routes, grouped navigation, breadcrumbs, group-local previous/next links, heading permalinks, an on-page contents list, static section search, the theme switch, and Mermaid zoom/fitting/fullscreen are implemented. [4.9.1](RELEASE-4.9.1.md) is the latest verified stable release and adds generated-reference coverage inspection. Historical release notes preserve their own publication evidence.
 
 **Reading model:** the catalogue selects sources and metadata; a separate navigation declaration assigns every selected document to one reading group. Reception uses its explicit route, while the remaining selected paths use one static catch-all route. Adding a guide does not require another page wrapper. The visual redesign remains reserved for Part IX.
 
@@ -25,6 +25,9 @@ Continue with the [Directorate of Structural Disproportion — architecture](ARC
 | Which technical contracts are extracted from source? | [Generated reference index](generated/reference/README.md) and [initialization hook](generated/reference/features/audio-test/hooks/useBeepEngine.md) |
 | What does the access form actually protect? | [Trust boundaries](TRUST-BOUNDARIES.md) |
 | Which machinery belongs to PHW and which comes from packages? | [Dependencies](DEPENDENCIES.md) |
+| How do I add an explanation from source to publication? | [Contribution tutorial](CONTRIBUTION-TUTORIAL.md) |
+| What do catalogue, freshness, coverage, and static search mean here? | [Glossary](GLOSSARY.md) |
+| Why were the current documentation boundaries chosen? | [Architecture decisions](ARCHITECTURE-DECISIONS.md) |
 | How should I contribute? | [Contribution process](../CONTRIBUTING.md) |
 | What changed in the latest verified milestone? | [4.9.1 release notes](RELEASE-4.9.1.md) and [changelog](../CHANGELOG.md) |
 | How does work become a release? | [Release process](RELEASE-PROCESS.md) |

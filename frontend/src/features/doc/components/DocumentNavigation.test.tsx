@@ -66,12 +66,7 @@ describe("the Ministry's directory and bounded reading corridors", () => {
 
   it.each([
     ["overview", "Previous:", "Next: Architecture", "/doc/architecture"],
-    [
-      "documentationWorkshop",
-      "Next:",
-      "Previous: Operations",
-      "/doc/operations",
-    ],
+    ["architectureDecisions", "Next:", "Previous: Glossary", "/doc/glossary"],
     [
       "referenceOverview",
       "Previous:",

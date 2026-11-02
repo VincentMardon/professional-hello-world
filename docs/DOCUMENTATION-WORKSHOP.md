@@ -17,6 +17,8 @@ PHW keeps explanation, reference, operational instructions, historical records, 
 
 A new source comment is not a substitute for explaining the architecture. A witty wiki scene is not the only place an operator should learn how to run a check.
 
+For a complete worked contribution path, use the [contribution tutorial](CONTRIBUTION-TUTORIAL.md). The [glossary](GLOSSARY.md) defines the working vocabulary; the [architecture decisions](ARCHITECTURE-DECISIONS.md) explain current tradeoffs and conditions for revisiting them.
+
 ## 2. Write from evidence
 
 Identify the implementation being described. Inspect its actual callers and failure paths before explaining what it guarantees. When a claim depends on a run, give the exact commit and relevant result. Keep the distinctions visible: configured workflow, locally observed behavior, reported manual test, successful remote run, and public release.
@@ -33,7 +35,7 @@ For application presentation, add an entry to `frontend/src/features/doc/data/do
 
 Keep the catalogue entry coherent: the source must exist, its slug must identify the intended public path, and its metadata must describe that document. Run `npm run docs:catalogue:check` to inspect catalogue declarations and complete, unique group membership. Readability from GitHub and readability from the application are separate checks.
 
-The catalogue currently selects eight authored guides and twelve generated reference pages. The reception remains explicit; the remaining paths share the catch-all route. No new renderer is required just to publish another guide. A registered source also enters the static search inventory when pages are generated.
+The catalogue currently selects eleven authored guides and twelve generated reference pages. The reception remains explicit; the remaining paths share the catch-all route. No new renderer is required just to publish another guide. A registered source also enters the static search inventory when pages are generated.
 
 ## 4. Use diagrams to answer a question
 

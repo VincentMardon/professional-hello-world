@@ -19,7 +19,7 @@ Begin with the URL you are investigating. Then follow composition into the relev
 | `/doc/audio-lifecycle/` | [Lifecycle route](../frontend/src/app/doc/%5B...slug%5D/page.tsx) | Select the authored sound explanation |
 | `/doc/reference/use-beep-engine/` | [Reference route](../frontend/src/app/doc/%5B...slug%5D/page.tsx) | Select generated hook documentation |
 
-The base path comes from [Next configuration](../frontend/next.config.ts). The table omits that prefix for readability. All documentation destinations except reception now use one generic catch-all route. The [catalogue](../frontend/src/features/doc/data/documents.ts) supplies twenty selected documents: eight guides and twelve generated reference pages, with metadata and slug segments. Static parameter generation exports those paths; no additional wrapper is needed for an entry. The table gives representative destinations rather than the full inventory.
+The base path comes from [Next configuration](../frontend/next.config.ts). The table omits that prefix for readability. All documentation destinations except reception now use one generic catch-all route. The [catalogue](../frontend/src/features/doc/data/documents.ts) supplies twenty-three selected documents: eleven guides and twelve generated reference pages, with metadata and slug segments. Static parameter generation exports those paths; no additional wrapper is needed for an entry. The table gives representative destinations rather than the full inventory.
 
 ## 3. The shared envelope
 

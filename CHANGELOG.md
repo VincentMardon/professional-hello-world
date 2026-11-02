@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Author a source-to-publication contribution tutorial, a project glossary, and five retrospective architecture decision records. Link the repository-readable material from reception and the workshop. Register all three documents in the reader catalogue and Guides sequence, bringing the selected inventory to twenty-three documents. No new tooling capability or version increment is claimed.
+
 - Refresh seven living guides against the current twenty-document reader, grouped navigation, shared heading addresses, static search, expanded reference, and separate documentation gates. Explain the search pipeline by responsibility and remove superseded current-state notices. Prose only; no new reader capability or version increment.
 
 ## [4.9.1] — 2026-11-02

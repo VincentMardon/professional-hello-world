@@ -73,7 +73,7 @@ Label used in documentation navigation.
 
 > **DocumentId** = keyof *typeof* [`documents`](#documents)
 
-Defined in: [features/doc/data/documents.ts:188](https://github.com/VincentMardon/professional-hello-world/blob/main/frontend/src/features/doc/data/documents.ts#L188)
+Defined in: [features/doc/data/documents.ts:212](https://github.com/VincentMardon/professional-hello-world/blob/main/frontend/src/features/doc/data/documents.ts#L212)
 
 Internal identifiers derived from the maintained document catalogue.
 
@@ -81,9 +81,9 @@ Internal identifiers derived from the maintained document catalogue.
 
 ### documentEntries
 
-> `const` **documentEntries**: \[`"overview"` \| `"architecture"` \| `"audioLifecycle"` \| `"operations"` \| `"frontendGuide"` \| `"documentationWorkshop"` \| `"trustBoundaries"` \| `"dependencies"` \| `"engineReference"` \| `"referenceOverview"` \| `"audioTestReference"` \| `"soundReference"` \| `"catalogueReference"` \| `"diagramViewportReference"` \| `"mermaidReference"` \| `"catalogueValidationReference"` \| `"linkExtractionReference"` \| `"destinationInspectionReference"` \| `"errorReference"` \| `"themeReference"`, [`DocumentDefinition`](#documentdefinition)\][]
+> `const` **documentEntries**: \[`"overview"` \| `"architecture"` \| `"audioLifecycle"` \| `"operations"` \| `"frontendGuide"` \| `"documentationWorkshop"` \| `"trustBoundaries"` \| `"dependencies"` \| `"contributionTutorial"` \| `"glossary"` \| `"architectureDecisions"` \| `"engineReference"` \| `"referenceOverview"` \| `"audioTestReference"` \| `"soundReference"` \| `"catalogueReference"` \| `"diagramViewportReference"` \| `"mermaidReference"` \| `"catalogueValidationReference"` \| `"linkExtractionReference"` \| `"destinationInspectionReference"` \| `"errorReference"` \| `"themeReference"`, [`DocumentDefinition`](#documentdefinition)\][]
 
-Defined in: [features/doc/data/documents.ts:197](https://github.com/VincentMardon/professional-hello-world/blob/main/frontend/src/features/doc/data/documents.ts#L197)
+Defined in: [features/doc/data/documents.ts:221](https://github.com/VincentMardon/professional-hello-world/blob/main/frontend/src/features/doc/data/documents.ts#L221)
 
 Exposes catalogue entries in declaration order for routing and inspection.
 
@@ -127,6 +127,30 @@ Selects the documents published by the documentation reader.
 ###### architecture.title
 
 > `readonly` **title**: `"Architecture"` = `"Architecture"`
+
+##### architectureDecisions
+
+> `readonly` **architectureDecisions**: `object`
+
+###### architectureDecisions.description
+
+> `readonly` **description**: `"Understand current choices, tradeoffs, and reasons to revisit them."` = `"Understand current choices, tradeoffs, and reasons to revisit them."`
+
+###### architectureDecisions.file
+
+> `readonly` **file**: `"ARCHITECTURE-DECISIONS.md"` = `"ARCHITECTURE-DECISIONS.md"`
+
+###### architectureDecisions.metadataTitle
+
+> `readonly` **metadataTitle**: `"Architecture Decisions"` = `"Architecture Decisions"`
+
+###### architectureDecisions.slug
+
+> `readonly` **slug**: readonly \[`"decisions"`\]
+
+###### architectureDecisions.title
+
+> `readonly` **title**: `"Architecture decisions"` = `"Architecture decisions"`
 
 ##### audioLifecycle
 
@@ -223,6 +247,30 @@ Selects the documents published by the documentation reader.
 ###### catalogueValidationReference.title
 
 > `readonly` **title**: `"Reference — catalogue validation"` = `"Reference — catalogue validation"`
+
+##### contributionTutorial
+
+> `readonly` **contributionTutorial**: `object`
+
+###### contributionTutorial.description
+
+> `readonly` **description**: `"Follow an explanation from authored source to verified publication."` = `"Follow an explanation from authored source to verified publication."`
+
+###### contributionTutorial.file
+
+> `readonly` **file**: `"CONTRIBUTION-TUTORIAL.md"` = `"CONTRIBUTION-TUTORIAL.md"`
+
+###### contributionTutorial.metadataTitle
+
+> `readonly` **metadataTitle**: `"Contribution Tutorial — Professional Hello World"` = `"Contribution Tutorial — Professional Hello World"`
+
+###### contributionTutorial.slug
+
+> `readonly` **slug**: readonly \[`"contributing"`\]
+
+###### contributionTutorial.title
+
+> `readonly` **title**: `"Contribution tutorial"` = `"Contribution tutorial"`
 
 ##### dependencies
 
@@ -391,6 +439,30 @@ Selects the documents published by the documentation reader.
 ###### frontendGuide.title
 
 > `readonly` **title**: `"Frontend guide"` = `"Frontend guide"`
+
+##### glossary
+
+> `readonly` **glossary**: `object`
+
+###### glossary.description
+
+> `readonly` **description**: `"Understand the documentation vocabulary and its practical boundaries."` = `"Understand the documentation vocabulary and its practical boundaries."`
+
+###### glossary.file
+
+> `readonly` **file**: `"GLOSSARY.md"` = `"GLOSSARY.md"`
+
+###### glossary.metadataTitle
+
+> `readonly` **metadataTitle**: `"Glossary — Professional Hello World"` = `"Glossary — Professional Hello World"`
+
+###### glossary.slug
+
+> `readonly` **slug**: readonly \[`"glossary"`\]
+
+###### glossary.title
+
+> `readonly` **title**: `"Glossary"` = `"Glossary"`
 
 ##### linkExtractionReference
 
@@ -599,9 +671,9 @@ catalogue at runtime.
 
 ### findDocument()
 
-> **findDocument**(`slug`): \[`"overview"` \| `"architecture"` \| `"audioLifecycle"` \| `"operations"` \| `"frontendGuide"` \| `"documentationWorkshop"` \| `"trustBoundaries"` \| `"dependencies"` \| `"engineReference"` \| `"referenceOverview"` \| `"audioTestReference"` \| `"soundReference"` \| `"catalogueReference"` \| `"diagramViewportReference"` \| `"mermaidReference"` \| `"catalogueValidationReference"` \| `"linkExtractionReference"` \| `"destinationInspectionReference"` \| `"errorReference"` \| `"themeReference"`, [`DocumentDefinition`](#documentdefinition)\] \| `undefined`
+> **findDocument**(`slug`): \[`"overview"` \| `"architecture"` \| `"audioLifecycle"` \| `"operations"` \| `"frontendGuide"` \| `"documentationWorkshop"` \| `"trustBoundaries"` \| `"dependencies"` \| `"contributionTutorial"` \| `"glossary"` \| `"architectureDecisions"` \| `"engineReference"` \| `"referenceOverview"` \| `"audioTestReference"` \| `"soundReference"` \| `"catalogueReference"` \| `"diagramViewportReference"` \| `"mermaidReference"` \| `"catalogueValidationReference"` \| `"linkExtractionReference"` \| `"destinationInspectionReference"` \| `"errorReference"` \| `"themeReference"`, [`DocumentDefinition`](#documentdefinition)\] \| `undefined`
 
-Defined in: [features/doc/data/documents.ts:229](https://github.com/VincentMardon/professional-hello-world/blob/main/frontend/src/features/doc/data/documents.ts#L229)
+Defined in: [features/doc/data/documents.ts:253](https://github.com/VincentMardon/professional-hello-world/blob/main/frontend/src/features/doc/data/documents.ts#L253)
 
 Finds the first catalogue entry matching the supplied route segments.
 
@@ -615,7 +687,7 @@ Reader-route segments excluding the /doc prefix.
 
 #### Returns
 
-\[`"overview"` \| `"architecture"` \| `"audioLifecycle"` \| `"operations"` \| `"frontendGuide"` \| `"documentationWorkshop"` \| `"trustBoundaries"` \| `"dependencies"` \| `"engineReference"` \| `"referenceOverview"` \| `"audioTestReference"` \| `"soundReference"` \| `"catalogueReference"` \| `"diagramViewportReference"` \| `"mermaidReference"` \| `"catalogueValidationReference"` \| `"linkExtractionReference"` \| `"destinationInspectionReference"` \| `"errorReference"` \| `"themeReference"`, [`DocumentDefinition`](#documentdefinition)\] \| `undefined`
+\[`"overview"` \| `"architecture"` \| `"audioLifecycle"` \| `"operations"` \| `"frontendGuide"` \| `"documentationWorkshop"` \| `"trustBoundaries"` \| `"dependencies"` \| `"contributionTutorial"` \| `"glossary"` \| `"architectureDecisions"` \| `"engineReference"` \| `"referenceOverview"` \| `"audioTestReference"` \| `"soundReference"` \| `"catalogueReference"` \| `"diagramViewportReference"` \| `"mermaidReference"` \| `"catalogueValidationReference"` \| `"linkExtractionReference"` \| `"destinationInspectionReference"` \| `"errorReference"` \| `"themeReference"`, [`DocumentDefinition`](#documentdefinition)\] \| `undefined`
 
 The matching identifier and declaration, or undefined.
 
@@ -631,7 +703,7 @@ Catalogue validation is responsible for rejecting duplicate routes.
 
 > **getDocumentRoute**(`document`): `string`
 
-Defined in: [features/doc/data/documents.ts:212](https://github.com/VincentMardon/professional-hello-world/blob/main/frontend/src/features/doc/data/documents.ts#L212)
+Defined in: [features/doc/data/documents.ts:236](https://github.com/VincentMardon/professional-hello-world/blob/main/frontend/src/features/doc/data/documents.ts#L236)
 
 Builds a reader path from a validated document declaration.
 

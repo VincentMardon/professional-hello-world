@@ -32,7 +32,7 @@ The audio-page suite mocks the engine and substitutes the panel for the access g
 
 ## Documentation — One manuscript, more than one reading context
 
-The explicit `/doc` reception and a shared `/doc/[...slug]` route select documents from the catalogue in `frontend/src/features/doc/data/documents.ts`. It currently registers eight authored guides and twelve generated reference pages. Static parameter generation exports the selected paths; a new catalogue entry does not require a new route wrapper.
+The explicit `/doc` reception and a shared `/doc/[...slug]` route select documents from the catalogue in `frontend/src/features/doc/data/documents.ts`. It currently registers eleven authored guides and twelve generated reference pages. Static parameter generation exports the selected paths; a new catalogue entry does not require a new route wrapper.
 
 The shared asynchronous reader loads the chosen Markdown and the complete selected-source search index during rendering. Markdown belongs to the repository, route selection belongs to the application, and exported HTML belongs in `frontend/out`. No persistent application server or arbitrary filesystem-reading endpoint is deployed.
 
