@@ -9,6 +9,8 @@ and this project adheres (ironically) to [Semantic Versioning](https://semver.or
 
 ## [Unreleased]
 
+- Add a repository technical-debt register for documentation implementation tradeoffs, verification gaps, and closure evidence, separating optional extensions from debt. Record the post-design return to the principal page and the target of 5.0.0 before the end of 2026, with scope still to be defined. Link the register from the project README and record the Part VIII exit review. Prose only; no version increment or new capability.
+
 ## [4.9.2] — 2026-11-03
 
 ### One Application to Inspect the Department

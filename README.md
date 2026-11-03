@@ -111,6 +111,7 @@ Start with the [documentation overview](docs/README.md) for a guided map of the 
 - [Contributing](CONTRIBUTING.md): tone, working practices, and documentation conventions.
 - [Correspondence registry](records/README.md): issued administrative satire and the standing format for future letters, beginning with the refusal of pull request No. 1.
 - [Changelog](CHANGELOG.md): an unusually eventful history of very small changes.
+- [Technical debt](docs/TECHNICAL-DEBT.md): observed maintenance tradeoffs, verification gaps, and evidence needed to close them.
 - [Recovery addendum](docs/postmortem-unsaved-guideline.md#recovery-addendum--the-maintainer-was-also-unsaved): the more personal context, for those who want it.
 - [Collaboration rules](AGENTS.md): Vincent writes the code; the assistant explains proposals and may edit documentation.
 
